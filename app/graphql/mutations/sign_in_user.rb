@@ -8,6 +8,9 @@ module Mutations
       field :user, Types::UserType, null: true
   
       def resolve(email: nil)
+        buffer = "ass"
+        debugger
+        other = "balls"
         return unless email
   
         user = User.find_by email: email[:email]
@@ -17,7 +20,10 @@ module Mutations
         crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
         token = crypt.encrypt_and_sign("user-id:#{user.id}")
         # token = SecureRandom::urlsafe_base64
-
+           buffer = "ass"
+        debugger
+        other = "balls"
+        #This is where we are running into a problem - context is nil
         context[:session][:token] = token
 
         { user: user, token: token }
