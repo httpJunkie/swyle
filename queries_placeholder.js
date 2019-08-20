@@ -1,28 +1,22 @@
-`{
-    article(id: $id) {
-        title body
-        author {
-            id
-            username
-        }
-    }
-}`
+
 
 `{
-  article(id: 2) {
+  article(id: $id) {
     title
     snippet
     author {
+      id
       username
     }
   }
 }`
 
 `{
-    article(id: 2) {
+    article(id: $id) {
         title
         body
         author {
+            id
             username
         }
     }
