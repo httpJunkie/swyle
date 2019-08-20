@@ -4,5 +4,6 @@ module Types
     field :sign_in_user, mutation: Mutations::SignInUser
     field :create_article, mutation: Mutations::CreateArticle
     field :delete_article, mutation: Mutations::DeleteArticle
+    field :update_article, mutation: Mutations::UpdateArticle
   end
 end

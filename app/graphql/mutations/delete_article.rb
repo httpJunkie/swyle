@@ -6,7 +6,6 @@ module Mutations
   
       def resolve(id: nil)
           article = Article.find(id)
-          debugger
           article.destroy
           #Destroy
       end
