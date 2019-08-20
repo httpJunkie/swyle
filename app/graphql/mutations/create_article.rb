@@ -7,9 +7,12 @@ module Mutations
     
 
     def resolve(title: nil, body: nil)
+      snippet = body[0, 100]
+      #TODO: regexp the hell out of this
         Article.create!(
             title: title,
             body: body,
+            snippet: snippet,
             user: context[:current_user]
         )
     end
