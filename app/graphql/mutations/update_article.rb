@@ -12,7 +12,10 @@ module Mutations
           #Return if article isn't found, add error message later.
           article.title = title
           article.body = body
+          article.snippet = body[0, 100]
           article.save
+          article
+          #The mutation updates the database but something goes wrong on GraphQL's end.
           #TODO: add backend error handling on this resolver.
       end
     end

@@ -4,6 +4,7 @@ module Types
     field :id, Int, null: false
     field :author, UserType, null: false, method: :user
     field :title, String, null: false
+    field :snippet, String, null: false
     field :body, String, null: false
   end
 end
