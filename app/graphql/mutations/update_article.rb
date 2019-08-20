@@ -1,6 +1,8 @@
 module Mutations
     class UpdateArticle < BaseMutation
       argument :id, Int, required: true
+      argument :title, String, required: true
+      argument :body, String, required: true
       
       type Types::ArticleType
   
