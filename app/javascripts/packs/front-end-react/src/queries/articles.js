@@ -1,17 +1,6 @@
+import gql from 'graphql-tag';
 
-
-`{
-  article(id: $id) {
-    title
-    snippet
-    author {
-      id
-      username
-    }
-  }
-}`
-
-`{
+const articles = gql`{
     articles{
         title
         snippet
@@ -21,3 +10,5 @@
         }
     }
 }`
+
+export default articles;
