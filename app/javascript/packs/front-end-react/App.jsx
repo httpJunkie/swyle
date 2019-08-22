@@ -3,14 +3,20 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from "react-apollo"
 import { client } from "./apollo"
 import Index from './src/components/index';
-import Route from 'react-router';
+import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
     render() {
         return (
-            <ApolloProvider client={client}>
-                    <Index />
-            </ApolloProvider>
+            <BrowserRouter>
+                <ApolloProvider client={client}>
+                    <Switch>
+                        <Route exact path="/" component={Index} />
+                    </Switch>
+                </ApolloProvider>
+            </BrowserRouter>
+
         );
     }
 }
