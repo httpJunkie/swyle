@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+20.times do
+    User.create(
+        username: Faker::Name.unique.name,
+        email: Faker::Internet.free_email,
+        password: "demodemo"
+    )
+end
+
+100.times do
+    body = Faker::Lorem.paragraph(sentence_count: 10)
+    snippet = body[0..99]
+    title = "#{Faker::NatoPhoneticAlphabet.code_word} #{Faker::Coffee.blend_name} #{Faker::House.furniture}" 
+    Article.create(
+        title: title,
+        body: body,
+        snippet: snippet,
+        user_id: rand(0..19)
+    )
+end
