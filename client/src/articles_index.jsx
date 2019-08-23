@@ -12,7 +12,6 @@ class ArticlesIndex extends Component {
         return (
             <Query query={articles}>
                 {({ loading, error, data }) => {
-                    console.log(data)
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                     return data.articles.map((article) => (
