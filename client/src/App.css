@@ -3,17 +3,41 @@
  flex-direction: column;
  justify-content: space-between;
  align-items: center;
+ background: #444;
 }
 
 .article-index-card {
   color: black;
+  border-radius: 4px;
   text-align: justify;
+  padding: 2rem;
+  margin: .5rem;
+  background: aliceblue;
+   width: 30rem;
+   height: fit-content;
+}
+
+.article-index-card:hover {
+  cursor: pointer;
+  padding: 3rem;
+  transition: .2s;
 }
 
 .article-index-title {
   text-align: center;
 }
 
+.article-index-subtitle {
+  font-style: italic;
+  font-weight: 200;
+}
+
 .article-index-snippet {
-  width: 20rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.article-card-tags {
+  color: rgb(165, 165, 165);
+  font-weight: 500
 }
