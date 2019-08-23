@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import articles from '../queries/articles';
+import articles from './queries/articles';
 import { Query } from "react-apollo";
 
-class Index extends Component {
+class ArticlesIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -28,4 +28,4 @@ class Index extends Component {
     }
 }
 
-export default Index;
+export default ArticlesIndex;

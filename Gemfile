@@ -7,6 +7,7 @@ ruby '2.5.3'
 gem 'rails', '~> 6.0.0'
 gem 'pry-rails'
 gem 'bcrypt'
+gem 'rack-cors'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'graphql', '1.8.13'
