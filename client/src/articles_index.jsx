@@ -22,7 +22,6 @@ class ArticlesIndex extends Component {
                         </div>
                     ))
                 }}
-
             </Query>
         );
     }
