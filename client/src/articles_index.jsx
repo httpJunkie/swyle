@@ -22,7 +22,8 @@ class ArticlesIndex extends Component {
                             <div className="article-index-card" key={article.id}>
                               <h2 className="article-index-title">{article.title}</h2>
                               <h3 className="article-index-subtitle">by {article.author.username}</h3>
-                                <p className="article-index-snippet">{article.snippet}</p>
+                              <p className="article-index-snippet">{article.snippet}<span className="article-index-show-link">{"...more"}</span></p>
+                                
                                 <ArticleTags tags={["butt", "ass"] } />
                             </div>
                         ))}

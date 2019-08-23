@@ -3,7 +3,7 @@
  flex-direction: column;
  justify-content: space-between;
  align-items: center;
- background: #444;
+ background: #001935;
 }
 
 .article-index-card {
@@ -12,9 +12,8 @@
   text-align: justify;
   padding: 2rem;
   margin: .5rem;
-  background: aliceblue;
-   width: 30rem;
-   height: fit-content;
+  background: white;
+  width: 20rem;
 }
 
 .article-index-card:hover {
@@ -25,19 +24,34 @@
 
 .article-index-title {
   text-align: center;
+  font-weight: 500;
+  font-size: 32px;
 }
 
 .article-index-subtitle {
   font-style: italic;
   font-weight: 200;
+  text-align: center;
+}
+
+.article-index-show-link {
+  text-decoration: underline;
+  margin-left: 1rem;
 }
 
 .article-index-snippet {
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
+  font-weight: 500;
 }
 
 .article-card-tags {
-  color: rgb(165, 165, 165);
+  color: rgb(102, 100, 100);
   font-weight: 500
 }
+/* 
+.darken {
+
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(YOUR IMAGE HERE);
+
+} */
