@@ -14,12 +14,18 @@ class ArticlesIndex extends Component {
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
-                    return data.articles.map((article) => (
-                        <div key={article.id}>
-                            <h2>{article.title}- by {article.author.username}</h2>
-                            <p>{article.snippet}</p>
-                        </div>
-                    ))
+
+                    return ( 
+                    <div className="article-index-page"> 
+                      {  data.articles.map((article) => (
+                            <div className="article-index-card" key={article.id}>
+                              <h2 className="article-index-title">{article.title}</h2>
+                              <h3 className="article-index-subtitle">by {article.author.username}</h3>
+                                <p className="article-index-snippet">{article.snippet}</p>
+                            </div>
+                        ))}
+                    </div>
+                    )
                 }}
             </Query>
         );
