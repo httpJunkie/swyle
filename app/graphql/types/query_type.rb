@@ -31,5 +31,10 @@ module Types
       User.all 
     end
 
+    field :current_user, UserType, null: false 
+    def current_user
+      context[:current_user]
+    end
+
   end #class end
 end #module end 
