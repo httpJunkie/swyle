@@ -15,9 +15,10 @@ class Header extends Component {
         return (
         <Query query={currentUser}>
                 {({ loading, error, data }) => {
+                    console.log(!data.currentUser);
                     if (loading) return <p></p>;
-                    if (error) return <p></p>;
-                        console.log(data);
+                    // if (error) return <p></p>;
+                      
                 return (
                     <div className="header">
                         <div className="header-top" >
@@ -29,16 +30,17 @@ class Header extends Component {
 
                             </form>
                             {
-                                data.currentUser ?
-                                <div className="header-session-buttons">
-                                    <h3>Hello, {data.currentUser.username}</h3>
-                                    <button className="header-login">Logout</button>
-                                </div>
-                                 :                          
+                                !data.currentUser ?
+                                                       
                             <div className="header-session-buttons">
                                 <button className="header-login">Login</button>
                                 <button className="header-register">Register</button>
                             </div>
+                            :
+                                    <div className="header-session-buttons">
+                                        <h3>Hello, {data.currentUser.username}</h3>
+                                        <button className="header-login">Logout</button>
+                                    </div>
                            }
                         </div>
                         <NavBar />

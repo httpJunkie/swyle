@@ -31,7 +31,7 @@ module Types
       User.all 
     end
 
-    field :current_user, UserType, null: false 
+    field :current_user, UserType, null: true 
     def current_user
       context[:current_user]
     end
