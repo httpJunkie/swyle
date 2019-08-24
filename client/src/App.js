@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { ApolloProvider } from "react-apollo"
 import {ApolloClient}  from 'apollo-client';
 import ArticlesIndex from './articles_index';
+import Header from './header';
 import { Switch, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <ApolloProvider client={client}>
+          <Header />
           <Switch>
             <Route exact path="/" component={ArticlesIndex} />
           </Switch>
