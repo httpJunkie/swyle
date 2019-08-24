@@ -23,8 +23,8 @@ class ArticlesIndex extends Component {
                               <h2 className="article-index-title">{article.title}</h2>
                               <h3 className="article-index-subtitle">by {article.author.username}</h3>
                               <p className="article-index-snippet">{article.snippet}<span className="article-index-show-link">{"...more"}</span></p>
-                                
                                 <ArticleTags tags={["butt", "ass"] } />
+                                <h4>0 Comments 0 Likes</h4>                           
                             </div>
                         ))}
                     </div>

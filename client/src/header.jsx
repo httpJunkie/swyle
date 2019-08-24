@@ -11,10 +11,12 @@ class Header extends Component {
         return (
             <div className="header">
                 <div className="header-top" >
-                    <span className="header-site-name">SWYLE</span>
+                    <div className="header-site-name" />>
                     <form className="header-search">
                         <input className="header-search-bar" type="text">
                         </input>
+                        <div className="header-search-submit" />
+
                     </form>
                     <div className="header-session-buttons">
                         <button className="header-login">Login</button>

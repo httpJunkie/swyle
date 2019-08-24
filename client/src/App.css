@@ -1,7 +1,6 @@
 .article-index-page {
  display: flex;
- flex-direction: row;
- flex-wrap: wrap;
+ flex-direction: column;
  align-items: center;
  background: #001935;
  position: relative;
@@ -17,7 +16,7 @@
   padding: 2rem;
   margin: .5rem;
   background: white;
-  width: 300px;
+  width: 50%;
 }
 
 .article-index-card:hover {
@@ -73,6 +72,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   border-bottom: 1px solid gray;
   align-items: center;
   padding: .5rem;
+  width: 100%;
 }
 
 .header-site-name {
@@ -80,12 +80,76 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   font-size: 28px;
   margin: 1rem;
   color: white;
+  background-image: url("./images/swyle_logo_001.png");
+  height: 4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
 }
+
+.header-search {
+  position: relative;
+}
+.header-search-bar {
+  padding: .4rem;
+  border-radius: 4px;
+  background: rgb(86, 78, 197);
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+.header-search-submit {
+  background-image: url("./images/searchicon.png");
+  background-size: contain;
+  border: none;
+  border-radius: 4px;
+  position: absolute;
+  right: .1rem;
+  bottom: .04rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: .1rem;
+}
+
+.header-search-submit:hover {
+  cursor: pointer;
+}
+
+.header-session-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 8rem;
+}
+
+.header-login {
+  padding-left: 13px;
+  padding-right: 13px;  color: rgb(10, 4, 88);
+  background: white;
+  font-weight: 700;
+  height: 32px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.header-register {
+  border: 2px solid white;
+  color: white;
+  background: rgb(10, 4, 88);
+  font-weight: 700;
+  padding-left: 13px;
+  padding-right: 13px;
+  height: 32px;
+  border-radius: 3px;
+  margin-left: 10px;
+
+}
+
 
 .nav-bar {
   color: white;
   font-family: sans-serif;
   display: flex;
   align-items: center;
-  padding: .5rem;
+  padding: .6rem;
 }
