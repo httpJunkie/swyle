@@ -4,6 +4,7 @@ import { graphql } from 'react-apollo';
 import mutation from './mutations/sign_in_user';
 import query from './queries/current_user';
 import $ from 'jquery';
+import ErrorsModal from './errors_modal';
 
 class Login extends Component {
 
@@ -68,6 +69,8 @@ class Login extends Component {
                         <input className="submit" type="submit" />
                     </div>
                 </form>
+                { this.state.errors && <ErrorsModal errors={this.state.errors} clearErrors={this.clearErrors} /> }
+
             </div>
         )
     }
@@ -78,4 +81,3 @@ export default graphql(query)(
     graphql(mutation)(Login)
 );
 
-// { this.state.errors && <ErrorsModal errors={this.state.errors} clearErrors={this.clearErrors} /> }
