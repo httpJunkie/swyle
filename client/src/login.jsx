@@ -34,8 +34,10 @@ class Login extends Component {
         event.preventDefault();
         this.props.mutate({
             variables: {
-                email: this.state.email,
-                password: this.state.password
+                email: {
+                    email: this.state.email,
+                    password: this.state.password
+                    }     
             },
             refetchQueries: [{ query }]
         }).then(res => {
