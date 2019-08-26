@@ -1,5 +1,8 @@
 import { HttpLink } from 'apollo-link-http';
 import { ApolloLink, Observable } from 'apollo-link';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { onError } from 'apollo-link-error';
+import { ApolloClient } from 'apollo-client';
 
 const getTokens = () => {
     const tokens = {
@@ -65,8 +68,24 @@ const createErrorLink = () => onError(({ graphQLErrors, networkError, operation 
 })
 
 
-const link = ApolloLink.from([
-    createErrorLink(),
-    createLinkWithToken(),
-    createHttpLink(),
-])
+
+
+
+export const createClient = (cache, requestLink) => {
+    return new ApolloClient({
+        link: ApolloLink.from([
+            createErrorLink(),
+            createLinkWithToken(),
+            createHttpLink(),
+        ]),
+        cache,
+    });
+};
+
+export const createCache = () => {
+    const cache = new InMemoryCache();
+    if (process.env.NODE_ENV === 'development') {
+        window.secretVariableToStoreCache = cache;
+    }
+    return cache;
+};
