@@ -1,2 +1,13 @@
-<h1>Index#index</h1>
-<p>Find me in app/views/index/index.html.erb</p>
+<%= javascript_pack_tag 'front-end-react/App' %>
+<%= stylesheet_pack_tag 'front-end-react/assets/stylesheets/App' %>
+<%= javascript_pack_tag 'index' %>
+<%= csrf_meta_tags %>
+  <head>
+    <title>Swyle</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+  </head>
+
+  <div id="root">
+  </div> 

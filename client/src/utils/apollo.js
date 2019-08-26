@@ -5,13 +5,14 @@ import { onError } from 'apollo-link-error';
 import { ApolloClient } from 'apollo-client';
 
 const getTokens = () => {
+    debugger;
     const tokens = {
         "X-CSRF-Token": document
             .querySelector('meta[name="csrf-token"]')
             .getAttribute("content")
     };
     const authToken = localStorage.getItem("mlToken");
-    debugger;
+    console.log("Authtoken", authToken)
     return authToken ? { ...tokens, Authorization: authToken } : tokens;
 };
 
@@ -56,6 +57,7 @@ const createHttpLink = () => new HttpLink({
 const logError = (error) => console.error(error);
 const createErrorLink = () => onError(({ graphQLErrors, networkError, operation }) => {
     if (graphQLErrors) {
+
         logError('GraphQL - Error', {
             errors: graphQLErrors,
             operationName: operation.operationName,
@@ -63,6 +65,7 @@ const createErrorLink = () => onError(({ graphQLErrors, networkError, operation 
         });
     }
     if (networkError) {
+        debugger
         logError('GraphQL - NetworkError', networkError);
     }
 })

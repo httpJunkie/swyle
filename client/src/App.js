@@ -15,14 +15,10 @@ import { createHashHistory } from 'history';
 import {Query} from 'react-apollo';
 import currentUser from './queries/current_user';
 import { createCache, createClient } from './utils/apollo';
-// import { InMemoryCache } from 'apollo-cache-inmemory';
-// import { HttpLink } from 'apollo-link-http';
-// import { ApolloLink, Observable } from 'apollo-link';
-// import { ApolloClient } from 'apollo-client';
-// import { onError } from 'apollo-link-error';
 
 
 const history = createHashHistory();
+
 // const cache = new InMemoryCache();
 
 // const link = new HttpLink({
@@ -35,9 +31,7 @@ const history = createHashHistory();
 //   link
 // })
 
-
-
-
+const client = createClient(createCache());
 
 const testArea = () => {
   return <div />
@@ -45,13 +39,13 @@ const testArea = () => {
 
 class App extends Component {
   render() {   
+ 
     return (
       <BrowserRouter history={history}>
-        <ApolloProvider client={createClient(createCache())}>
+        <ApolloProvider client={client}>
           <Query query={currentUser}> 
             {({data, loading })=> {
             if (loading) return <p/>
-            console.log(data)
             return (
             <div>
               <Header currentUser={null}/>
