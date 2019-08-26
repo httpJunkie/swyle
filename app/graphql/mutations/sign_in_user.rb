@@ -23,6 +23,8 @@ module Mutations
         # #This is where we are running into a problem - context is nil
         # context[:session][:token] = token
           token = Base64.encode64(user.email)
+          debugger
+          butt = "butt"
         { user: user, token: token }
       end
     end

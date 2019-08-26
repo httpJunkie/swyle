@@ -52,11 +52,12 @@ class GraphqlController < ApplicationController
   # end
 
     def current_user
-    token = request.headers["Authorization"].to_s
-    email = Base64.decode64(token)
-    dick = "tracy"
-    debugger
-    butthead="you"
-    User.find_by(email: email)
+      token = request.headers["Authorization"].to_s
+      #Above line is returning nil
+      email = Base64.decode64(token)
+      dick = "tracy"
+      debugger
+      butthead="you"
+      User.find_by(email: email)
   end
 end
