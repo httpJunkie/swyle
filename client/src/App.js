@@ -13,11 +13,11 @@ import { createHashHistory } from 'history';
 import {Query} from 'react-apollo';
 import currentUser from './queries/current_user';
 import { createCache, createClient } from './utils/apollo';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
-import { ApolloLink, Observable } from 'apollo-link';
-import { ApolloClient } from 'apollo-client';
-import { onError } from 'apollo-link-error';
+// import { InMemoryCache } from 'apollo-cache-inmemory';
+// import { HttpLink } from 'apollo-link-http';
+// import { ApolloLink, Observable } from 'apollo-link';
+// import { ApolloClient } from 'apollo-client';
+// import { onError } from 'apollo-link-error';
 
 
 const history = createHashHistory();

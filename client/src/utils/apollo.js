@@ -47,7 +47,7 @@ const createLinkWithToken = () =>
 
 
 const createHttpLink = () => new HttpLink({
-    uri: '/graphql',
+    uri: 'http://localhost:3000/graphql',
     credentials: 'include',
 })
 
