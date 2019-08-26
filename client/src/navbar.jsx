@@ -6,7 +6,7 @@ const NavBar = props => {
         <div className="nav-bar">
             <Link className={`nav-bar-link${currentPanel === "/" ? "-active" : ''}`} to="/">Home</Link>
             <Link className={`nav-bar-link${currentPanel === "/trending" ? "-active" : ''}`} to="/trending">Swyl'd 'n Crazy</Link>
-            <Link className={`nav-bar-link${currentPanel === "/about" ? "-active" : ''}`} to="/">About</Link>
+            <Link className={`nav-bar-link${currentPanel === "/about" ? "-active" : ''}`} to="/about">About</Link>
         </div>
     )
 }
