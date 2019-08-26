@@ -7,6 +7,8 @@ import { ApolloProvider } from "react-apollo"
 import ArticlesIndex from './articles_index';
 import Header from './header';
 import Login from './login';
+import Trending from './trending';
+import About from './about';
 import { Switch, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createHashHistory } from 'history';
@@ -56,7 +58,9 @@ class App extends Component {
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
                   <Route exact path="/login" component={Login} />
+                  <Route exact path="/trending" component={Trending} />
                   <Route exact path="/headertest" component={testArea}/>
+                  <Route exact path="/about" component={About} />
               </Switch>
           </div> 
             )
