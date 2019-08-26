@@ -6,4 +6,5 @@ const currentUser = gql`{
     username
     }
 }`
+
 export default currentUser

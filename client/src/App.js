@@ -22,6 +22,10 @@ const client = new ApolloClient({
   link
 })
 
+const testArea = () => {
+  return <div />
+}
+
 class App extends Component {
   render() {
     return (
@@ -31,6 +35,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={ArticlesIndex} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/headertest" component={testArea}/>
           </Switch>
         </ApolloProvider>
       </BrowserRouter>

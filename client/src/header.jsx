@@ -11,11 +11,15 @@ class Header extends Component {
         }
     }
 
+    componentWillReceiveProps(newProps) {
+        console.log("New Props:", newProps)
+    }
+
     render() {
         return (
         <Query query={currentUser}>
                 {({ loading, error, data }) => {
-                    console.log(!data.currentUser);
+                    console.log(data);
                     if (loading) return <p></p>;
                     // if (error) return <p></p>;
                       

@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo';
 import mutation from './mutations/sign_in_user';
-import query from './queries/current_user';
+import currentUser from './queries/current_user';
 import $ from 'jquery';
 import ErrorsModal from './errors_modal';
 
@@ -35,14 +35,13 @@ class Login extends Component {
         event.preventDefault();
         this.props.mutate({
             variables: {
-                email: {
                     email: this.state.email,
                     password: this.state.password
-                    }     
             },
-            refetchQueries: [{ query }]
+            refetchQueries: [{ query: currentUser }]
         }).then(res => {
-            this.props.history.push('/')
+            debugger;
+            this.props.history.push('/headertest')
         })
             .catch(res => {
                 this.setState({ errors: res.graphQLErrors })
@@ -77,7 +76,7 @@ class Login extends Component {
 }
 
 
-export default graphql(query)(
+export default graphql(currentUser)(
     graphql(mutation)(Login)
 );
 
