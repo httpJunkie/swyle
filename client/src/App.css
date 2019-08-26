@@ -161,6 +161,12 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   text-decoration: none;
 }
 
+.header-personal-greeting {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .nav-bar {
   color: white;
   font-family: sans-serif;

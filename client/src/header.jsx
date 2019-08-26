@@ -32,7 +32,7 @@ class Header extends Component {
                         <button className="header-register">Register</button>
                     </div>
                     :
-                            <div className="header-session-buttons">
+                            <div className="header-personal-greeting">
                                 <h3>Hello, {this.props.currentUser.username || "nobody"} </h3>
                                 <button className="header-login">Logout</button>
                             </div>
