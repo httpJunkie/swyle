@@ -10,6 +10,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { createHashHistory } from 'history';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
+import {Query} from 'react-apollo';
+import currentUser from './queries/current_user';
+
 
 const history = createHashHistory();
 const cache = new InMemoryCache();
@@ -27,20 +30,32 @@ const testArea = () => {
 }
 
 class App extends Component {
-  render() {
+  render() {   
     return (
       <BrowserRouter history={history}>
         <ApolloProvider client={client}>
-          <Header />
-          <Switch>
-            <Route exact path="/" component={ArticlesIndex} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/headertest" component={testArea}/>
-          </Switch>
+          <Query query={currentUser}> 
+          {({ loading, error, data }) => {
+            debugger;
+            return (
+            <div>
+              <Header />
+               <Switch>
+               <Route exact path="/" component={ArticlesIndex} />
+               <Route exact path="/login" component={Login} />
+               <Route exact path="/headertest" component={testArea}/>
+              </Switch>
+          </div> 
+            )
+        }}
+          
+          </Query>
+       
         </ApolloProvider>
       </BrowserRouter>
 
-    );
+    )
+   
   }
 }
 

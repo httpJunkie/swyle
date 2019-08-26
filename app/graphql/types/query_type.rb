@@ -33,7 +33,7 @@ module Types
 
     field :current_user, UserType, null: true 
     def current_user
-      context[:session][:current_user]
+      context[:current_user]
     end
 
   end #class end

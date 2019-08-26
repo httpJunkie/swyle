@@ -44,6 +44,7 @@ class Login extends Component {
             this.props.history.push('/headertest')
         })
             .catch(res => {
+                debugger;
                 this.setState({ errors: res.graphQLErrors })
             });
     }
