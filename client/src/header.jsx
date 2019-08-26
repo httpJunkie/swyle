@@ -17,7 +17,7 @@ class Header extends Component {
         return (
             <div className="header">
                 <div className="header-top" >
-                    <div className="header-site-name" />>
+                    <div className="header-site-name" />
                     <form className="header-search">
                         <input className="header-search-bar" type="text">
                         </input>

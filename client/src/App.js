@@ -52,7 +52,7 @@ class App extends Component {
             console.log(data)
             return (
             <div>
-              <Header currentUser={data.currentUser}/>
+              <Header currentUser={null}/>
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
                   <Route exact path="/login" component={Login} />

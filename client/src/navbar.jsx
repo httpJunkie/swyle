@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = props => {
     return (
         <div className="nav-bar">
-            <span>This is a navbar, will eventually have links in it</span>
+            <Link to="/">Home</Link>
+            <Link to="/">Swyl'd 'n Crazy</Link>
+            <Link to="/">About</Link>
         </div>
     )
 }
