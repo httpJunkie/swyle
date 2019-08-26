@@ -4,21 +4,20 @@
 import './App.css';
 import React, { Component } from 'react';
 import { ApolloProvider } from "react-apollo"
-import {ApolloClient}  from 'apollo-client';
-import { onError } from 'apollo-link-error';
 import ArticlesIndex from './articles_index';
 import Header from './header';
 import Login from './login';
 import { Switch, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createHashHistory } from 'history';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
-import { ApolloLink, Observable } from 'apollo-link';
 import {Query} from 'react-apollo';
 import currentUser from './queries/current_user';
 import { createCache, createClient } from './utils/apollo';
-
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink } from 'apollo-link-http';
+import { ApolloLink, Observable } from 'apollo-link';
+import { ApolloClient } from 'apollo-client';
+import { onError } from 'apollo-link-error';
 
 
 const history = createHashHistory();
