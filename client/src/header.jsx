@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import NavBar from './navbar';
-
+import {Link} from 'react-router-dom'
 class Header extends Component {
     constructor(props) {
         super(props)
@@ -28,7 +28,7 @@ class Header extends Component {
                         !this.props.currentUser ?
                                                 
                     <div className="header-session-buttons">
-                        <button className="header-login">Login</button>
+                        <Link to="/login" className="header-login">Login</Link>
                         <button className="header-register">Register</button>
                     </div>
                     :

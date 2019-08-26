@@ -40,11 +40,9 @@ class Login extends Component {
             },
             refetchQueries: [{ query: currentUser }]
         }).then(res => {
-            debugger;
             this.props.history.push('/headertest')
         })
             .catch(res => {
-                debugger;
                 this.setState({ errors: res.graphQLErrors })
             });
     }

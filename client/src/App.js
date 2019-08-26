@@ -35,15 +35,16 @@ class App extends Component {
       <BrowserRouter history={history}>
         <ApolloProvider client={client}>
           <Query query={currentUser}> 
-          {({ loading, error, data }) => {
-            debugger;
+          {(props) => {
+            const anass = "yourmom";
+            if (props.data.loading) return <p/>
             return (
             <div>
-              <Header />
+              <Header currentUser={props.data.currentUser}/>
                <Switch>
-               <Route exact path="/" component={ArticlesIndex} />
-               <Route exact path="/login" component={Login} />
-               <Route exact path="/headertest" component={testArea}/>
+                  <Route exact path="/" component={ArticlesIndex} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/headertest" component={testArea}/>
               </Switch>
           </div> 
             )
