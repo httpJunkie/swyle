@@ -12,14 +12,16 @@ const getTokens = async () => {
     };
     const authToken = await localStorage.getItem("mlToken");
     console.log("AuthToken:", authToken);
-    return authToken ? { ...tokens, Authorization: authToken } : tokens;
+    return authToken ? { ...tokens, Authorization: authToken, buttmunch: "chickenbitch" } : tokens;
 };
  
 
 const setTokenForOperation = async operation => {
+    console.log(getTokens());
     return operation.setContext({
         headers: {
-            ...getTokens()
+            ...getTokens(),
+            buttmunch: "chickenbitch"
         }
     });
 };

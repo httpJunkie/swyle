@@ -19,9 +19,7 @@ module Mutations
      
           token = Base64.encode64(user.email)
         { user: user, token: token }
-         rescue ActiveRecord::RecordNotFound
-          raise GraphQL::ExecutionError, "user not found"
-         end
+       
       end
     end
   end

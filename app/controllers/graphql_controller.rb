@@ -55,6 +55,7 @@ class GraphqlController < ApplicationController
       token = request.headers["Authorization"].to_s
       #Above line is returning nil
       email = Base64.decode64(token)
+      debugger
       puts(token)
       User.find_by(email: email)
   end
