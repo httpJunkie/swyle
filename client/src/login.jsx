@@ -19,7 +19,6 @@ class Login extends Component {
         }
         // This format is far, far easier to debug than using the arrow methods.
         this.handleFormChange = this.handleFormChange.bind(this);
-        this.login = this.login.bind(this);
         this.clearErrors = this.clearErrors.bind(this);
     }
 
@@ -33,34 +32,6 @@ class Login extends Component {
         });
     }
 
-    //  login() {
-    //     event.preventDefault();
-    //     this.props.mutate({
-    //         variables: {
-    //                 email: this.state.email,
-    //                 password: this.state.password
-    //         },
-    //         refetchQueries: [{ query: currentUser }]
-    //     }).then(res => {
-    //         console.log("result:", res)
-    //         const token = res.data.signInUser.token
-    //     if (token) {
-    //         localStorage.setItem("mlToken", token)
-    //     }
-            
-    //     }).then( () => {
-    //         this.props.history.push('/headertest')
-    //     })
-    //         .catch(res => {
-    //             this.setState({ errors: res.graphQLErrors })
-    //         });
-    // }
-
-    login(mutation) {
-        // e.preventDefault();
-        mutation
-    }
-    
     allowOrPreventScrolling() {
         if (this.state.errors) {
             $('body').css('overflow', 'hidden');
@@ -106,7 +77,7 @@ class Login extends Component {
                                                     }
 
                                                 }).then(() => {
-                                                    this.props.history.push('/headertest')
+                                                    this.props.history.push('/')
                                                 })
                                                     .catch(res => {
                                                         this.setState({ errors: res.graphQLErrors })

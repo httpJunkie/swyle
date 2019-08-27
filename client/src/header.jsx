@@ -5,12 +5,16 @@ class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            shutUpLint: true
+            shutUpLint: true,
+            currentUser: this.props.currentUser
         }
     }
 
     componentWillReceiveProps(newProps) {
         console.log("New Props:", newProps)
+        if (this.props.currentUser !== newProps.currentUser) {
+            this.setState({ currentUser: newProps.currentUser})
+        }
     }
 
     render() {

@@ -72,8 +72,20 @@ const createErrorLink = () => onError(({ graphQLErrors, networkError, operation 
 
 
 
+// export const createClient = (cache, requestLink) => {
+//     return new ApolloClient({
+//         link: ApolloLink.from([
+//             createErrorLink(),
+//             createLinkWithToken(),
+//             createHttpLink(),
+//         ]),
+//         cache,
+//     });
+// };
+
+
 export const createClient = (cache, requestLink) => {
-    return new ApolloClient({
+    const client = new ApolloClient({
         link: ApolloLink.from([
             createErrorLink(),
             createLinkWithToken(),
@@ -81,6 +93,7 @@ export const createClient = (cache, requestLink) => {
         ]),
         cache,
     });
+    return client;
 };
 
 export const createCache = () => {
