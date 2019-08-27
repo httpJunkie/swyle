@@ -4,18 +4,17 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
 import { ApolloClient } from 'apollo-client';
 
-const getTokens = () => {
-    debugger;
+const getTokens = async () => {
     const tokens = {
         "X-CSRF-Token": document
             .querySelector('meta[name="csrf-token"]')
             .getAttribute("content")
     };
-    const authToken = localStorage.getItem("mlToken");
-    console.log("Authtoken", authToken)
+    const authToken = await localStorage.getItem("mlToken");
+    console.log("AuthToken:", authToken);
     return authToken ? { ...tokens, Authorization: authToken } : tokens;
 };
-
+ 
 
 const setTokenForOperation = async operation => {
     return operation.setContext({
@@ -65,7 +64,6 @@ const createErrorLink = () => onError(({ graphQLErrors, networkError, operation 
         });
     }
     if (networkError) {
-        debugger
         logError('GraphQL - NetworkError', networkError);
     }
 })

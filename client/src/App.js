@@ -19,18 +19,6 @@ import { createCache, createClient } from './utils/apollo';
 
 const history = createHashHistory();
 
-// const cache = new InMemoryCache();
-
-// const link = new HttpLink({
-//   uri: 'http://localhost:3000/graphql',
-//   credentials: 'include'
-// })
-
-// const client = new ApolloClient({
-//   cache,
-//   link
-// })
-
 const client = createClient(createCache());
 
 const testArea = () => {
@@ -48,7 +36,7 @@ class App extends Component {
             if (loading) return <p/>
             return (
             <div>
-              <Header currentUser={null}/>
+              <Header currentUser={data.currentUser}/>
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
                   <Route exact path="/login" component={Login} />
