@@ -21,7 +21,6 @@ const setTokenForOperation = async operation => {
     return operation.setContext({
         headers: {
             ... await getTokens(),
-            buttmunch: "chickenbitch"
         }
     });
 };
