@@ -17,7 +17,6 @@ const getTokens = async () => {
  
 
 const setTokenForOperation = async operation => {
-    console.log(getTokens());
     return operation.setContext({
         headers: {
             ... await getTokens(),

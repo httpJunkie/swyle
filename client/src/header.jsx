@@ -16,15 +16,19 @@ class Header extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        console.log("New Props:", newProps)
         if (this.props.currentUser !== newProps.currentUser) {
             this.setState({ currentUser: newProps.currentUser})
         }
     }
 
     logout () {
-        // localStorage.setItem("mlToken", "")
-        this.props.mutate({ refetchQueries: [{ currentUser }]})
+        this.props.mutate({ refetchQueries: [{ query: currentUser }]}).then( res => {
+            const blankToken = res.data.logout.email;
+            localStorage.setItem("mlToken", blankToken);
+        }
+        ).then( res => {
+            this.setState({currentUser: null})
+        })
     }
 
     render() {
