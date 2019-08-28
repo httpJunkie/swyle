@@ -9,12 +9,23 @@ import ErrorsModal from './errors_modal';
 class Register extends Component {
     constructor(props) {
         super(props) 
-            this.state={
+            this.state = {
                 username: null,
                 email: null,
                 password: null,
                 passwordConfirm: null
             }
+        this.handleFormChange = this.handleFormChange.bind(this);
+        this.clearErrors = this.clearErrors.bind(this);
+    }
+    clearErrors() {
+        this.setState({ errors: null })
+    }
+
+    handleFormChange(field) {
+        return event => this.setState({
+            [field]: event.currentTarget.value,
+        });
     }
 }
 
