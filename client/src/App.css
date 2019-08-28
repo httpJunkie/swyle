@@ -173,6 +173,20 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     padding: .5rem;
 }
 
+.image-index-card {
+    color: black;
+    border-radius: 4px;
+    padding: 2rem;
+    margin: .5rem;
+    background: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .nav-bar {
   color: white;
   font-family: sans-serif;
@@ -184,6 +198,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .nav-bar-link {
   text-decoration: none;
+  color: white;
   padding: .5rem;
   border-bottom: 3px solid transparent;
 }

@@ -5,6 +5,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { ApolloProvider } from "react-apollo"
 import ArticlesIndex from './articles_index';
+import ImagesIndex from './images_index';
 import Header from './header';
 import Login from './login';
 import Trending from './trending';
@@ -38,6 +39,7 @@ class App extends Component {
               <Header currentUser={data.currentUser}/>
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
+                  <Route exact path="/images" component={ImagesIndex} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/trending" component={Trending} />
                   <Route exact path="/headertest" component={testArea}/>
