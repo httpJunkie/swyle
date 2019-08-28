@@ -53,29 +53,29 @@ class Register extends Component {
                                     });
                                 }}
                             >
-                                {(signInUser, { loading: authenticating }) =>
+                                {(createUser, { loading: authenticating }) =>
                                     authenticating ? (
                                         "..."
                                     ) : (
                                             <div className="session-page" >
                                                 <form onSubmit={event => {
                                                     event.preventDefault();
-                                                    signInUser({
+                                                    createUser({
                                                         variables: {
                                                             email: this.state.email,
-                                                            password: this.state.password
+                                                            username: this.state.username,
+                                                            password: this.state.password,
                                                         }
                                                     }).then(res => {
-                                                        console.log("result:", res)
-                                                        const token = res.data.signInUser.token
+                                                        console.log("Register Result:", res)
+                                                        const token = res.data.createUser.token
                                                         if (token) {
                                                             localStorage.setItem("mlToken", token)
                                                         }
 
                                                     }).then(() => {
                                                         this.props.history.push('/')
-                                                    })
-                                                        .catch(res => {
+                                                    }).catch(res => {
                                                             this.setState({ errors: res.graphQLErrors })
                                                         })
                                                 }} className="session-form">

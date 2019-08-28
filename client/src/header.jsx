@@ -47,7 +47,7 @@ class Header extends Component {
                                                 
                     <div className="header-session-buttons">
                         <Link to="/login" className="header-login">Login</Link>
-                        <button className="header-register">Register</button>
+                        <Link to="/register" className="header-register">Register</Link>
                     </div>
                     :
                             <div className="header-personal-greeting">

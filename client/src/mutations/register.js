@@ -1,12 +1,12 @@
 import gql from 'graphql-tag'
 
-const register = gql`mutation {
+const register = gql`mutation createUser($email: String!, $username: String!, $password: String!) {
     createUser(
-        username:,
+        username: $username,
         authProvider: {
             email: {
-                email: ,
-                password:
+                email: $email,
+                password: $password
             }
         }
     ) {

@@ -8,6 +8,7 @@ import ArticlesIndex from './articles_index';
 import ImagesIndex from './images_index';
 import Header from './header';
 import Login from './login';
+import Register from './register';
 import Trending from './trending';
 import About from './about';
 import { Switch, Route } from 'react-router-dom';
@@ -41,6 +42,7 @@ class App extends Component {
                   <Route exact path="/" component={ArticlesIndex} />
                   <Route exact path="/images" component={ImagesIndex} />
                   <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
                   <Route exact path="/trending" component={Trending} />
                   <Route exact path="/headertest" component={testArea}/>
                   <Route exact path="/about" component={About} />
