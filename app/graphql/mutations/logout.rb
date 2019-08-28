@@ -1,6 +1,6 @@
 module Mutations
     class Logout < BaseMutation    
-        field :email, Types::String, null: true
+        field :email, String, null: true
         def resolve 
             debugger
         {email: ""}
