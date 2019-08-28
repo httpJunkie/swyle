@@ -46,10 +46,10 @@ class Register extends Component {
                         return (
                             <Mutation
                                 mutation={mutation}
-                                update={(cache, { data: { signInUser } }) => {
+                                update={(cache, { data: { createUser } }) => {
                                     cache.writeQuery({
                                         query: currentUser,
-                                        data: { currentUser: signInUser.user }
+                                        data: { currentUser: createUser.user }
                                     });
                                 }}
                             >
@@ -79,11 +79,15 @@ class Register extends Component {
                                                             this.setState({ errors: res.graphQLErrors })
                                                         })
                                                 }} className="session-form">
-                                                    <h1>Log In</h1>
+                                                    <h1>Sign Up</h1>
                                                     <input className="auth-field" type="text" value={this.state.email}
                                                         onChange={this.handleFormChange('email')} placeholder="Email" />
+                                                    <input className="auth-field" type="text" value={this.state.username}
+                                                        onChange={this.handleFormChange('username')} placeholder="username" />
                                                     <input className="auth-field" type="password" value={this.state.password}
                                                         onChange={this.handleFormChange('password')} placeholder="Password" />
+                                                    <input className="auth-field" type="password" value={this.state.passwordConfirm}
+                                                        onChange={this.handleFormChange('passwordConfirm')} placeholder="Confirm Password" />
                                                     <div className="form-footer">
                                                         <input className="submit" type="submit" />
                                                     </div>
@@ -97,6 +101,7 @@ class Register extends Component {
                         );
 
                     }
+                    return <Redirect to="/" />
                 }}
             </Query>
         )
