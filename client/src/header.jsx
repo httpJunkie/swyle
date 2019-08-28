@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import NavBar from './navbar';
+import logout from './mutations/logout';
 import {Link} from 'react-router-dom'
+import {graphql} from 'react-apollo';
+import currentUser from './queries/current_user';
+
 class Header extends Component {
     constructor(props) {
         super(props)
@@ -8,6 +12,7 @@ class Header extends Component {
             shutUpLint: true,
             currentUser: this.props.currentUser
         }
+        this.logout = this.logout.bind(this)
     }
 
     componentWillReceiveProps(newProps) {
@@ -15,6 +20,11 @@ class Header extends Component {
         if (this.props.currentUser !== newProps.currentUser) {
             this.setState({ currentUser: newProps.currentUser})
         }
+    }
+
+    logout () {
+        // localStorage.setItem("mlToken", "")
+        this.props.mutate({ refetchQueries: [{ currentUser }]})
     }
 
     render() {
@@ -29,7 +39,7 @@ class Header extends Component {
 
                     </form>
                     {
-                        !this.props.currentUser ?
+                        !this.state.currentUser ?
                                                 
                     <div className="header-session-buttons">
                         <Link to="/login" className="header-login">Login</Link>
@@ -37,8 +47,8 @@ class Header extends Component {
                     </div>
                     :
                             <div className="header-personal-greeting">
-                                <h3>Hello, {this.props.currentUser.username || "nobody"} </h3>
-                                <button className="header-login">Logout</button>
+                                <h3>Hello, {this.state.currentUser.username || "nobody"} </h3>
+                                <button className="header-login" onClick={this.logout}>Logout</button>
                             </div>
                     }
                 </div>
@@ -49,4 +59,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default graphql(logout)(Header);
