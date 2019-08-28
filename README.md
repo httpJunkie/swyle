@@ -16,7 +16,15 @@ This is an option for all-text postings.
 
 Full registration and login functionality.
 
+## Tags
+
+Posts may have a many-to-many relation with any number of tags; clicking on a tag will fetch articles that are linked to that tag on the join table.
+
 # Technologies Used
 
 Ruby on Rails, GraphQL, Apollo Server, React, Node, Webpack, AWS
 Fluffy description pending.
+
+## TODOS
+
+*  
