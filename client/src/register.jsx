@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {Redirect } from 'react-router-dom';
 import {Query, Mutation} from 'react-apollo';
+import mutation from './mutations/register';
+import currentUser from './queries/current_user';
+import $ from 'jquery';
+import ErrorsModal from './errors_modal';
 
 class Register extends Component {
     constructor(props) {
