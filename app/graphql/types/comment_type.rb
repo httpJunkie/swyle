@@ -5,5 +5,6 @@ module Types
     field :commentor, UserType, null: false, method: :user
     field :body, String, null: false
     field :post_type, String, null: false
+    field :post, types[PostUnion]
   end
 end

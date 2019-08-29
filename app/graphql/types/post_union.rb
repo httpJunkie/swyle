@@ -6,7 +6,7 @@ module Types
         if object.is_a?(Article)
           Types::ArticleType
         else
-            Types::ImageType
+          Types::ImageType
         end
     end
    end 
