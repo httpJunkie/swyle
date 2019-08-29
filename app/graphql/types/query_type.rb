@@ -33,8 +33,6 @@ module Types
 
     field :current_user, UserType, null: true 
     def current_user
-      butt = "you"
-      # debugger
       context[:current_user]
     end
   end #class end
