@@ -19,6 +19,7 @@ const getTokens = async () => {
 const setTokenForOperation = async operation => {
     return operation.setContext({
         headers: {
+            // eslint-disable-next-line
             ... await getTokens(),
         }
     });

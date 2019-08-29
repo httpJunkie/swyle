@@ -28,3 +28,4 @@ Fluffy description pending.
 ## TODOS
 
 *  Force all usernames to lower case prior to saving, then convert login and register usernames and email to lower case as well.
+*  Currently, signing up does not cause one to automatically log in. This must be rectified.

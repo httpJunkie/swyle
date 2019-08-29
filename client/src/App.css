@@ -153,6 +153,9 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   height: 32px;
   border-radius: 3px;
   margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -240,13 +243,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background: rgb(10, 4, 88);
   width: 20rem;
   padding: 1.5rem;
-  height: 20rem;
+  height: fit-content;
   position: relative;
   /* top: 5rem; */
   border-radius: 4px;
   margin-bottom: 10rem;
   margin-top: 5rem;
   border: 1px solid gray;
+  box-sizing: border-box;
 }
 
 .session-form > h1 {
