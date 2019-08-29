@@ -6,6 +6,6 @@ module Types
     field :title, String, null: false
     field :snippet, String, null: false
     field :body, String, null: false
-    field :comments, [CommentType], method: :comments
+    field :comments, [CommentType], method: :comments, null: true
   end
 end
