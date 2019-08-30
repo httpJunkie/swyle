@@ -4,6 +4,6 @@ module Types
       field :username, String, null: false
       field :email, String, null: false
       field :articles, [ArticleType], null: true, method: :articles
-      field :comments, [CommentType]. null: true, method: :comments
+      field :comments, [CommentType], null: true, method: :comments
     end
   end
