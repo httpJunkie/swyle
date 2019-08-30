@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Query} from 'react-apollo';
 import article from './queries/article';
+import CommentSection from './comment_section';
 
 class ArticleShow extends Component {
 
@@ -12,25 +13,12 @@ class ArticleShow extends Component {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                         const article = data.article;
+                        console.log(data)
                     return (
                         <div className="article-show-page">
                             <h1>{article.title}</h1>
-                            <p>{article.body}</p>
-                            {
-                                article.comments.length > 0 ?
-                                <div>
-                                    {article.comments.map(
-                                        comment =>{
-                                            return <div key={comment.body}>
-                                                <p>{comment.body}</p>
-                                                <h3> {`${comment.commentor.username}, on ${comment.createdAt}`}</h3>
-                                            </div>
-                                        }
-                                    )}
-                                </div>
-                                :
-                                <h4>Nobody has commented on this yet.</h4>
-                            }
+                            <p>{article.body}</p>            
+                              <CommentSection comments={article.comments} type={"Article"} currentUser={data.currentUser}/>
                         </div>
                     )
                 }}
