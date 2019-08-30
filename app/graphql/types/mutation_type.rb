@@ -6,5 +6,6 @@ module Types
     field :delete_article, mutation: Mutations::DeleteArticle
     field :update_article, mutation: Mutations::UpdateArticle
     field :logout, mutation: Mutations::Logout
+    field :post_comment, mutation: Mutations::PostComment
   end
 end
