@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { ApolloProvider } from "react-apollo"
 import ArticlesIndex from './articles_index';
 import ImagesIndex from './images_index';
+import ArticleShow from './article_show';
 import Header from './header';
 import Login from './login';
 import Register from './register';
@@ -40,6 +41,7 @@ class App extends Component {
               <Header currentUser={data.currentUser}/>
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
+                  <Route exact path={"/articles/:articleID"} component={ArticleShow}/>
                   <Route exact path="/images" component={ImagesIndex} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />

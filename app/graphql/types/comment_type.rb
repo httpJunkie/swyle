@@ -6,5 +6,6 @@ module Types
     field :body, String, null: false
     field :post_type, String, null: false
     field :post, PostUnion, null: false, method: :post
+    field :created_at, String, null: false
   end
 end
