@@ -16,7 +16,7 @@ module Types
       argument :id, Int, required: true
     end
     def user_by_id(argument)
-      User.find(argument[:id])
+      User.find(argument[:id].to_i)
     end
 
     field :user_by_username, UserType, null: false do 

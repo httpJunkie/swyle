@@ -1,0 +1,35 @@
+/** 
+ * The purpose of this file is to provide a blank skeleton for the complex returns required
+ * by the Mutation and Query tags.  Honestly, what was wrong with the old way, where it's done at the
+ * export level?
+ */
+
+import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+// import QUERY from './queries/QUERY';
+
+class ClassName extends Component {
+
+    render() {
+        if (!this.props.babaganoush) {
+            return <div></div>
+        }
+        return (
+            <Query query={dummy}>
+                {({ loading, error, data }) => {
+                    if (loading) return <p>Loading...</p>;
+                    if (error) return <p>Error :(</p>;
+                    debugger;
+                    return (
+                        <div className="article-show-page">
+                            <h1></h1>
+                        </div>
+                    )
+                }}
+            </Query>
+        )
+    }
+
+}
+
+export default ClassName;
