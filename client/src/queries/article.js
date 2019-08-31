@@ -8,13 +8,6 @@ const article = gql`
             author {
                 username
             }
-            comments{
-                body
-                createdAt
-                commentor {
-                    username
-                }
-        }
     },
       currentUser {
         id

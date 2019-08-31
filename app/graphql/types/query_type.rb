@@ -35,5 +35,19 @@ module Types
     def current_user
       context[:current_user]
     end
+
+    field :comments_by_post, [CommentType], null: true do
+      argument :post_id, Integer, required: true
+      argument :post_type, String, required: true
+    end
+    def comments_by_post(args)
+      if args[:post_type] == "Article"
+        Article.find(args[:post_id]).comments
+      elsif args[:post_type] == "Image"
+        ImagePost.find(args[:post_id]).comments
+      else
+        raise "Invalid post type. How did you find this error? You must have some 1337 skill0rz"
+      end 
+    end
   end #class end
 end #module end 
