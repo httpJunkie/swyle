@@ -13,6 +13,13 @@ module Types
      Article.find(argument[:id])
     end
 
+    field :image, ImageType, null: false do
+      argument :id, Int, required: true
+    end
+    def image(argument)
+      ImagePost.find(argument[:id])
+    end
+
     field :user_by_id, UserType, null: false do 
       argument :id, Int, required: true
     end

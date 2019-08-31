@@ -9,7 +9,7 @@ module Types
     field :count, Integer, null: false do 
       :comments.size
     end
-    field :image, String, null: false
+    field :image, String, null: false, method: :image_url
     
   end
 end

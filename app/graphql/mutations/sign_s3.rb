@@ -29,8 +29,11 @@ module Mutations
                        key: filename,
                        acl: 'public-read',
                        content_type: filetype)
+                         #s3://swyle-dev/images/08312019-1dmio-lawsey-png
+       debugger
+        url = "https://#{ENV['S3_BUCKET_NAME']}.s3.amazonaws.com/#{filename}"
      { 
-       url: "https//#{ENV['S3_BUCKET_NAME']}.s3.#{ENV['AWS_REGION']}.amazonaws.com/images/#{filename}", 
+       url: url, 
        signed_request: presigned_request
       }
     end
