@@ -8,6 +8,8 @@ gem 'rails', '~> 6.0.0'
 gem 'pry-rails'
 gem 'bcrypt'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'paperclip'
+gem 'aws-sdk-s3'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
