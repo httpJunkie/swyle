@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 const postComment = gql`
-mutation postComment($body: String!, $userId: Integer!, $postId: Integer!, $postType: String!){
+mutation postComment($body: String!, $userId: Int!, $postId: Int!, $postType: String!){
   postComment(
     body: $body, 
     userId: $userId, 

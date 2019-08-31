@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Mutation, Query} from 'react-apollo';
 import {Link} from 'react-router-dom';
 import postComment from './mutations/post_comment';
-import comments from './queries/comments_by_post';
+import commentsByPost from './queries/comments_by_post';
 
 class CommentSection extends Component {
     //Will need to refetch queries upon a successful commentation
@@ -27,10 +27,8 @@ class CommentSection extends Component {
     }
 
     render () {
-        // Simple Refactor: wrap the comments in a query, for getting comments by post id, be sure to use type as well.
-        // if Article, Article.find(:id).comments easy peasy duck soup chonmage
         return (
-            <Query query={comments} variables={{postId: this.props.postId, postType: this.props.type}}>
+            <Query query={commentsByPost} variables={{postId: this.props.postId, postType: this.props.type}}>
             {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
@@ -45,11 +43,40 @@ class CommentSection extends Component {
                             }
                         )}
                         { this.props.currentUser ? 
-                    
-                            <form className="comment-add" onSubmit={this.postComment}>
-                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")}/>
-                                <input type="submit" name="Post Comment" value="Post Comment"/>
-                            </form>         
+                            <Mutation mutation={postComment}
+                                update={(cache, { data: { postComment } }) => {
+                                    // const { comments } = cache.readQuery({ query: commentsByPost });
+                                    // cache.writeQuery({
+                                    //     query: commentsByPost,
+                                    //     data: { commentsByPost: comments.concat([postComment]) },
+                                    // });
+                                }}
+                                refetchQueries={[{ query: commentsByPost, variables: {postId: this.props.postId, postType: this.props.type} }]}
+                                >     
+                                {(postComment, loading) =>   
+                                    !loading ? (
+                                        "..."
+                                    ) :  (   
+                                            <form className="comment-add" onSubmit={event => {
+                                                event.preventDefault();
+                                                console.log(`userid: ${this.props.currentUser.id}, postId: ${this.props.postId},  postType: ${this.props.type}`)
+                                                postComment({
+                                                    variables: {
+                                                        body: this.state.body,
+                                                        userId: this.props.currentUser.id,
+                                                        postId: this.props.postId,
+                                                        postType: this.props.type
+                                                    }
+                                                }).then(res => {
+                                                    console.log("comment Result:", res)
+                                                })}}>
+                                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")}/>
+                                                <input type="submit" name="Post Comment" value="Post Comment"/>
+                                            </form>  
+                                        ) 
+                                }
+    
+                            </Mutation>     
                         :
                             <span>Please <Link to="/login">Log In</Link> or <Link to="register">Sign Up</Link> to post comments</span>
                         }
