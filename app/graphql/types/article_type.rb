@@ -7,5 +7,8 @@ module Types
     field :snippet, String, null: false
     field :body, String, null: false
     field :comments, [CommentType], method: :comments, null: true
+    field :count, Integer, null: false do 
+      :comments.size
+    end
   end
 end

@@ -50,12 +50,45 @@
   color: rgb(102, 100, 100);
   font-weight: 500
 }
+
+.article-show-page {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
 /* 
 .darken {
 
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(YOUR IMAGE HERE);
 
 } */
+
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: normal; */
+    padding: 1rem;
+    font-family: sans-serif;
+    font-weight: 400;
+    border: 1px solid black;
+}
+
+.comment {
+  padding: 1rem;
+}
+
+.comment-body {
+  
+}
+
+.comment-who-and-when {
+  font-size: 14px;
+  font-style: italic;
+  color: gray;
+}
 
 
 .header { 

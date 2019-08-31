@@ -26,7 +26,7 @@ class ArticlesIndex extends Component {
                               <h3 className="article-index-subtitle">by {article.author.username}</h3>
                               <p className="article-index-snippet">{article.snippet}<Link className="article-index-show-link" to={`/articles/${article.id}`}>{"...more"}</Link></p>
                                 <ArticleTags tags={["lookAtThisTag", "othertag"] } />
-                                <h4>0 Comments 0 Likes</h4>                           
+                                <h4>{article.count} Comments 0 Likes</h4>                           
                             </div>
                         ))}
                     </div>

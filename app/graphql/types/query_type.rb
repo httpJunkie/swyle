@@ -8,8 +8,9 @@ module Types
     field :article, ArticleType, null: false do
       argument :id, Int, required: true
     end
+    field :count, Integer, null: false
     def article(argument)
-      Article.find(argument[:id])
+     Article.find(argument[:id])
     end
 
     field :user_by_id, UserType, null: false do 

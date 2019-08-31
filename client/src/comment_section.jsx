@@ -10,7 +10,7 @@ class CommentSection extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            body: null
+            body: ""
         }
         this.postComment = this.postComment.bind(this)
         this.handleFormChange = this.handleFormChange.bind(this);
@@ -35,21 +35,17 @@ class CommentSection extends Component {
                 return (
                     <div className="comments-section">
                         {data.commentsByPost.map(
-                            comment => {
-                                return <div key={comment.body} className="comment">
-                                    <p>{comment.body}</p>
-                                    <span> {`${comment.commentor.username}, on ${comment.createdAt}`}</span>
+                            (comment, index) => {
+                                const commentStyle = index % 2 === 0 ? {"background":"lightgrey"} : {"background":"white"}
+                                return <div key={comment.body} className="comment" style={commentStyle}>
+                                    <p className="comment-body">{comment.body}</p>
+                                    <span className="comment-who-and-when"> {`${comment.commentor.username}, on ${comment.createdAt}`}</span>
                                 </div>
                             }
                         )}
                         { this.props.currentUser ? 
                             <Mutation mutation={postComment}
                                 update={(cache, { data: { postComment } }) => {
-                                    // const { comments } = cache.readQuery({ query: commentsByPost });
-                                    // cache.writeQuery({
-                                    //     query: commentsByPost,
-                                    //     data: { commentsByPost: comments.concat([postComment]) },
-                                    // });
                                 }}
                                 refetchQueries={[{ query: commentsByPost, variables: {postId: this.props.postId, postType: this.props.type} }]}
                                 >     
@@ -59,7 +55,6 @@ class CommentSection extends Component {
                                     ) :  (   
                                             <form className="comment-add" onSubmit={event => {
                                                 event.preventDefault();
-                                                console.log(`userid: ${this.props.currentUser.id}, postId: ${this.props.postId},  postType: ${this.props.type}`)
                                                 postComment({
                                                     variables: {
                                                         body: this.state.body,
