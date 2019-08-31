@@ -13,7 +13,8 @@ const image = gql`
     },
       currentUser {
         id
-      }
+      },
+    imageIds
 }
 `
 

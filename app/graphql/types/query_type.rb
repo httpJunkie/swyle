@@ -22,7 +22,12 @@ module Types
 
     field :images, [ImageType], null: false
     def images
-      ImagePost.all
+     ImagePost.all
+    end
+
+    field :image_ids, [Integer], null: false
+    def image_ids
+      ImagePost.all.ids
     end
 
     field :user_by_id, UserType, null: false do 

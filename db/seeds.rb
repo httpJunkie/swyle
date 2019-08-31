@@ -26,13 +26,43 @@
 #     )
 # end
 
-100.times do
-    title = "#{Faker::NatoPhoneticAlphabet.code_word} #{Faker::Company.profession}"
-    description = Faker::Lorem.sentence(word_count: 8)
-    ImagePost.create(
-        title: title,
-        description: description,
+# 100.times do
+#     title = "#{Faker::NatoPhoneticAlphabet.code_word} #{Faker::Company.profession}"
+#     description = Faker::Lorem.sentence(word_count: 8)
+#     ImagePost.create(
+#         title: title,
+#         description: description,
+#         user_id: rand(0..19),
+#         image_url:  "https://picsum.photos/id/#{rand(500)}/500/"
+#     )
+# end
+
+article_ids = []
+Article.all.each do |article|
+    article_ids.push(article.id)
+end
+
+image_ids = []
+ImagePost.all.each do |image|
+    image_ids.push(image.id)
+end
+
+20.times do
+    body =  Faker::Quotes::Shakespeare.hamlet_quote
+    Comment.create(
+        post_type: "ImagePost",
+        post_id: image_ids.sample,
         user_id: rand(0..19),
-        image_url:  "https://picsum.photos/id/#{rand(500)}/500/"
+        body: body
+    )
+end
+
+20.times do 
+    body =  Faker::Games::WorldOfWarcraft.quote
+    Comment.create(
+        user_id: rand(0..19),
+        body: body,
+        post_id: article_ids.sample,
+        post_type: "Article"
     )
 end
