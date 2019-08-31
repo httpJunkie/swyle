@@ -17,7 +17,7 @@ class ImageShow extends Component {
                     return (
                         <div className="article-show-page">
                             <h1>{image.title}</h1>
-                            <img src={image.image}/>>
+                            <img src={image.image}/>
                             <p>{image.description}</p>
                             <CommentSection type={"Image"} currentUser={data.currentUser} postId={argument} />
                         </div>

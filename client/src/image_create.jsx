@@ -10,8 +10,15 @@ import axios from 'axios';
 class ImageCreate extends Component {
     constructor(props) {
         super(props)
-        this.state = { image: null, fileTooBig: false, invalidType: false, imageURL: null, title: "", description: ""}
+        this.state = { 
+            image: null, 
+            fileTooBig: false, 
+            invalidType: false, 
+            imageURL: null, 
+            title: "", 
+            description: ""}
         this.handleFileChange = this.handleFileChange.bind(this)
+        this.handleFormChange = this.handleFormChange.bind(this)
         this.save = this.save.bind(this)
         this.formatFilename = this.formatFilename.bind(this)
         this.uploadToS3 = this.uploadToS3.bind(this)
@@ -24,12 +31,6 @@ class ImageCreate extends Component {
             this.setState({ fileTooBig: true, image: null, photoURL: null })
             return false;
         }
-
-        // if (!VALID_FILETYPES[file.type]) {
-        //     // Extra security in case the html accept gets bypassed.
-        //     this.setState({ invalidType: true, image: null, photoURL: null })
-        //     return false
-        // }
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
             this.setState({ image: file, photoURL: fileReader.result, fileTooBig: false, invalidType: false });
@@ -37,6 +38,12 @@ class ImageCreate extends Component {
         fileReader.readAsDataURL(file);
         
    }
+
+    handleFormChange(field) {
+        return event => this.setState({
+            [field]: event.currentTarget.value,
+        });
+    }
 
     formatFilename(filename) {
         const date = moment().format("MMDDYYYY");
@@ -58,7 +65,9 @@ class ImageCreate extends Component {
             }
         }
         await axios.put(signedRequest, file, options)
-            .then(res => console.log(res)).catch(console.log("Aws failed to save, please check your bucket"));
+            .then(res => {
+               
+            }).catch(console.log("Aws failed to save, please check your bucket"));
     }
 
    async save(e) {
@@ -74,10 +83,12 @@ class ImageCreate extends Component {
        await this.uploadToS3(image, signedRequest)
        this.props.mutate({
            variables: {
-               title: "dummytitle",
-               description: "nondescript",
+               title: this.state.title,
+               description: this.state.description,
                image: url
            }
+       }).then(res =>{
+           this.props.history.push(`/images/${res.data.createImagePost.id}`)
        })
    }
 
@@ -90,7 +101,9 @@ class ImageCreate extends Component {
                    onChange={this.handleFileChange}
                    accept="image/png, image/jpeg, image/gif, image/bmp, image/jpg"
                />
-                   <input type="submit" className="submit" value="Post Image" disabled={!this.state.image}/>
+                <input className="image-text-field" type="text" onChange={this.handleFormChange("title")} placeholder="Image Title" value={this.state.title}/>
+                <input className="image-text-field" type="text" onChange={this.handleFormChange("description")} placeholder="Description (optional)" value={this.state.description}/>
+                <input type="submit" className="submit" value="Post Image" disabled={!this.state.image}/>
                </form>
         </div>
       )

@@ -10,7 +10,6 @@
     
 
     def resolve(title: nil, description: "", image: nil)
-        debugger
         ImagePost.create!(
             title: title,
             description: description,
