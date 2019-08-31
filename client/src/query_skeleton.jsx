@@ -14,8 +14,9 @@ class ClassName extends Component {
         if (!this.props.babaganoush) {
             return <div></div>
         }
+        const argval = "this would normally come from state or props"
         return (
-            <Query query={dummy}>
+            <Query query={dummy} variables={{ argname: argval }}>
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;

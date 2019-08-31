@@ -18,7 +18,7 @@ class ArticleShow extends Component {
                         <div className="article-show-page">
                             <h1>{article.title}</h1>
                             <p>{article.body}</p>            
-                              <CommentSection comments={article.comments} type={"Article"} currentUser={data.currentUser}/>
+                              <CommentSection comments={article.comments} type={"Article"} currentUser={data.currentUser} postId={argument}/>
                         </div>
                     )
                 }}

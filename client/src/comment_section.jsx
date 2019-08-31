@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Mutation} from 'react-apollo';
+import {Mutation, Query} from 'react-apollo';
 import {Link} from 'react-router-dom';
 import postComment from './mutations/post_comment';
 
@@ -15,16 +15,19 @@ class CommentSection extends Component {
         this.handleFormChange = this.handleFormChange.bind(this);
     }
 
-    postComment() {
-
-    }
-
     handleFormChange(field) {
         return event => this.setState({
             [field]: event.currentTarget.value,
         });
     }
+
+    postComment() {
+        console.log("Pingas")
+    }
+
     render () {
+        // Simple Refactor: wrap the comments in a query, for getting comments by post id, be sure to use type as well.
+        // if Article, Article.find(:id).comments easy peasy duck soup chonmage
         return (
             <div className="comments-section">
                 {this.props.comments.map(
@@ -36,14 +39,12 @@ class CommentSection extends Component {
                     }
                 )}
                  { this.props.currentUser ? 
-                 <Mutation>
-                       <form className="comment-add">
+               
+                    <form className="comment-add" onSubmit={this.postComment}>
                         <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")}/>
-                        <input type="submit">Post Comment</input>
-                    </form>
-                 </Mutation>
-                  
-                    :
+                        <input type="submit" name="Post Comment" value="Post Comment"/>
+                     </form>         
+                   :
                     <span>Please <Link to="/login">Log In</Link> or <Link to="register">Sign Up</Link> to post comments</span>
                 }
             </div> 
