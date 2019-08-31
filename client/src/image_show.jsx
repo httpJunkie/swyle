@@ -19,7 +19,7 @@ class ImageShow extends Component {
                             <h1>{image.title}</h1>
                             <img src={image.image}/>
                             <p>{image.description}</p>
-                            <CommentSection type={"Image"} currentUser={data.currentUser} postId={argument} />
+                            <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} />
                         </div>
                     )
                 }}

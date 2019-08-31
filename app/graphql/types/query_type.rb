@@ -51,7 +51,7 @@ module Types
     def comments_by_post(args)
       if args[:post_type] == "Article"
         Article.find(args[:post_id]).comments
-      elsif args[:post_type] == "Image"
+      elsif args[:post_type] == "ImagePost"
         ImagePost.find(args[:post_id]).comments
       else
         raise "Invalid post type. How did you find this error? You must have some 1337 skill0rz"
