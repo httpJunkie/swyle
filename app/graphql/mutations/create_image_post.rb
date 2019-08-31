@@ -15,7 +15,7 @@
             title: title,
             description: description,
             user: context[:current_user],
-            image: image
+            image_url: image
         )
     end
   end
