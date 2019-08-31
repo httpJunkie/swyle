@@ -29,8 +29,6 @@ module Mutations
                        key: filename,
                        acl: 'public-read',
                        content_type: filetype)
-                       debugger
-# 
      { 
        url: "https//#{ENV['S3_BUCKET_NAME']}.s3.#{ENV['AWS_REGION']}.amazonaws.com/images/#{filename}", 
        signed_request: presigned_request

@@ -6,7 +6,7 @@
     argument :description, String, required: false
     argument :image, String, required: true
     
-    type Types::ArticleType
+    type Types::ImageType
     
 
     def resolve(title: nil, description: "", image: nil)
