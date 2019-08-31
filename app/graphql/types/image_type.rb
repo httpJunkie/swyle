@@ -7,8 +7,7 @@ module Types
     field :count, Integer, null: false do 
       :comments.size
     end
-    field :url, types.String do
-       resolve ->(image_post, _args, _ctx) {image_post.image.url }
-    end
+    field :image, String, null: false
+    
   end
 end
