@@ -68,9 +68,9 @@ class CommentSection extends Component {
                                                         postType: this.props.type
                                                     }
                                                 }).then(res => {
-                                                    console.log("comment Result:", res)
+                                                    this.setState({body: ""})
                                                 })}}>
-                                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")}/>
+                                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")} value={this.state.body}/>
                                                 <input type="submit" name="Post Comment" value="Post Comment"/>
                                             </form>  
                                         ) 
