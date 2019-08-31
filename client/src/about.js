@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div>
+        <div className="about-page">
             About the site, will commit this thing paragraph by paragraph.
         </div>
     )

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import articles from './queries/articles';
+import images from './queries/images';
 import { Query } from "react-apollo";
 import ArticleTags from './article_tags';
+import {Link} from 'react-router-dom';
 
 class ImagesIndex extends Component {
     constructor(props) {
@@ -11,29 +12,27 @@ class ImagesIndex extends Component {
 
     render() {
         return (
-            <Query query={articles}>
+            <Query query={images}>
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
 
                     return (
-                        <div className="article-index-page">
-                            <div className="article-index-card" >
-                                <h2 className="article-index-title">Placeholder</h2>
-                                <p className="article-index-snippet">
-                                    Here, all posts with images will be indexed
-                                </p>
-                            </div>
-                            <div className="image-index-card" > 
-                                <img alt="" style={{"width":"40rem"}}src="https://i.imgur.com/Y1XJZy0.jpg"/>
-                                <p>This is a lovely road in the hills near Quincy, Massachusetts.  </p>
-                            </div>
-                            <div className="image-index-card" >
-                                <img alt=""  style={{ "width": "40rem" }} src="https://peopledotcom.files.wordpress.com/2019/05/prince-harry-d.jpg?crop=510px%2C63px%2C869px%2C869px&resize=1200%2C1200" />
-                                <p>I just Swyl'd about Harry  </p>
-                                <ArticleTags tags={["lookAtThisTag", "othertag"]} />
-                                <h4>0 Comments 0 Likes</h4>  
-                            </div>
+                        <div className="image-index-page">
+                            {data.images.map(image =>
+                                  {return (
+                                      <div className="image-index-card" 
+                                      key={`${image.title}${image.author.username}`}>
+                                          <Link to={`/images/${image.id}`}>
+                                           <img className="image-index-thumb"src={image.image} alt={image.title} />
+                                          </Link>
+                                          <span>by {image.author.username}</span>
+                                          <span>{image.count} Comments, 0 Likes</span>
+                                      </div>
+                                  )
+                                      
+                                  }   
+                            )}
                         </div>
                     )
                 }}

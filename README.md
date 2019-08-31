@@ -28,4 +28,4 @@ Fluffy description pending.
 ## TODOS
 
 *  Force all usernames to lower case prior to saving, then convert login and register usernames and email to lower case as well.
-*  Currently, signing up does not cause one to automatically log in. This must be rectified.
+*  Adding a comment, and then navigating to image index by way of the navbar, does not update the comment count; refreshing the page does. 

@@ -11,7 +11,6 @@ const getTokens = async () => {
             .getAttribute("content")
     };
     const authToken = await localStorage.getItem("mlToken");
-    console.log("AuthToken:", authToken);
     return authToken ? { ...tokens, Authorization: authToken } : tokens;
 };
  

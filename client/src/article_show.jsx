@@ -11,10 +11,8 @@ class ArticleShow extends Component {
             <Query query={article} variables={{ id: argument}}>
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
-                    debugger
                     if (error) return <p>Error :(</p>;
                         const article = data.article;
-                        console.log(data)
                     return (
                         <div className="article-show-page">
                             <h1>{article.title}</h1>

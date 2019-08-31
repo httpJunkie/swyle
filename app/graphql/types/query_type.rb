@@ -20,6 +20,11 @@ module Types
       ImagePost.find(argument[:id])
     end
 
+    field :images, [ImageType], null: false
+    def images
+      ImagePost.all
+    end
+
     field :user_by_id, UserType, null: false do 
       argument :id, Int, required: true
     end
