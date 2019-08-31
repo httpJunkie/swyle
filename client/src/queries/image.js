@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 const image = gql`
     query image($id: Int!){
         image(id: $id){
+            id
             title
             description
             image
