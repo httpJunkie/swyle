@@ -1,11 +1,31 @@
 .about-page {
-   background: #001935;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: #001935;
+ position: relative;
+ top: -8rem;
+ padding-top: 8rem;
+ padding-left: 2rem;
+ padding-right: 2rem;
+ font-family: sans-serif;
+}
+
+.about-page >h1 {
+  color: white;
 }
 
 .about-section {
   background: white;
   width: 40rem;
   border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.about-section > h2 {
+    text-align: center;
 }
 
 

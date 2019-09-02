@@ -6,7 +6,14 @@ const About = () => {
             <h1>About Swyle</h1>
             <div className="about-section">
                 <h2>Mission</h2>
-                <p></p>
+                <p>To create a better blogging experience.</p>
+                <h3>Core Principles</h3>
+                <ul>
+                    <li>Users have a right to free speech - the only content prohibited on Swyle are threats, solicitation, and the depiction of minors</li>
+                    <li>Users have a right to not have their content hidden by algorithms - no shadow banning, and no treating any post as "irrelevant".</li>
+                    <li>Users have a right to not be spied on</li>
+                    <li>Users have a right to non-obtrusive advertising - adverts will be placed in a manner that they do not interfere in browsing, reading, posting, or editing</li>
+                </ul>
             </div>
         </div>
     )
