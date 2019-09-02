@@ -41,7 +41,12 @@ class CommentSection extends Component {
                         {data.commentsByPost.map(
                             (comment, index) => {
                                 const commentStyle = index % 2 === 0 ? {"background":"lightgrey"} : {"background":"white"}
-                                return <Comment comment={comment} commentStyle={commentStyle} currentUser={this.props.currentUser} articleAuthorId={this.props.articleAuthorId}/>
+                                return <Comment 
+                                        comment={comment} 
+                                        commentStyle={commentStyle} 
+                                        currentUser={this.props.currentUser} 
+                                        articleAuthorId={this.props.articleAuthorId}
+                                        />
                             }
                         )}
 

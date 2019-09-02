@@ -3,6 +3,7 @@ import {Mutation} from 'react-apollo';
 import comments from './queries/comments_by_post';
 import deleteComment from './mutations/delete_comment';
 import CommentEdit from './comment_edit';
+import $ from 'jquery';
 
 class Comment extends Component {
 
@@ -11,11 +12,17 @@ class Comment extends Component {
         this.state = {
             editing: false
         }
+
+        this.cancelEdit = this.cancelEdit.bind(this)
+    }
+
+    cancelEdit () {
+        this.setState({editing: false})
     }
 
     render() {
         if (this.state.editing) {
-            return < CommentEdit body={this.props.body} />
+            return < CommentEdit body={this.props.body} cancelEdit={this.cancelEdit}/>
         } else {
             return (
                 <div key={this.props.comment.body} className="comment" style={this.props.commentStyle}>
