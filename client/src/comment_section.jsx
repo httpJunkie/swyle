@@ -35,6 +35,8 @@ class CommentSection extends Component {
                         
                 return (
                     <div className="comments-section">
+                        
+                        
                         {data.commentsByPost.map(
                             (comment, index) => {
                                 const commentStyle = index % 2 === 0 ? {"background":"lightgrey"} : {"background":"white"}
@@ -50,6 +52,7 @@ class CommentSection extends Component {
                                 </div>
                             }
                         )}
+
                         { this.props.currentUser ? 
                             <Mutation mutation={postComment}
                                 update={(cache, { data: { postComment } }) => {
