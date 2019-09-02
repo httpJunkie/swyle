@@ -70,10 +70,12 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     flex-direction: column;
     justify-content: space-between;
     /* align-items: normal; */
-    padding: 1rem;
     font-family: sans-serif;
     font-weight: 400;
     border: 1px solid black;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 40rem;
 }
 
 .comment {
@@ -81,12 +83,15 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   display: flex;
   justify-content: space-between;
   position: relative;
-  width: 98%;
+  /* width: 100%; */
+  max-width: 40rem;
   overflow: hidden;
+  position: relative;
+  z-index: 400;
 }
 
 .comment-body {
-  
+  word-wrap: normal;
 }
 
 .comment-buttons {
@@ -125,6 +130,60 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   font-size: 14px;
   font-style: italic;
   color: gray;
+}
+
+.confirmation-modal {
+    height: 100%;
+    padding: 1rem;
+    left: 0;
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 8000;
+    background: rgb(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-dialog {
+  border-radius: 4px;
+  position: relative;
+  top: .5rem;
+  padding: .5rem;
+  z-index: 9000;
+  text-align:center;
+  background: white;
+  margin: .2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.confirmation-dialog > h4 {
+  margin-top: .5rem;
+}
+
+.confirm-btn-yes {
+  background: white;
+  color: blue;
+  border: 2px solid blue;
+}
+
+.confirm-btn-no {
+  background: blue;
+  color: white;
+}
+
+
+.confirm-btn-yes:hover {
+   cursor: pointer;
+}
+
+.confirm-btn-no:hover {
+   cursor: pointer;
 }
 
 

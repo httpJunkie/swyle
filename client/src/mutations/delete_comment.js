@@ -7,3 +7,5 @@ mutation deleteComment($id: Int!)
 }
   
 }`
+
+export default deleteComment;
