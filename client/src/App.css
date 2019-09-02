@@ -241,6 +241,20 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   width: 20rem;
 }
 
+.image-show-carousel {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.image-show-image {
+  width: 30rem;
+}
+
+.image-show-title {
+  text-align: center;
+}
+
 
 .nav-bar {
   color: white;

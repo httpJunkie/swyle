@@ -47,8 +47,8 @@ ImagePost.all.each do |image|
     image_ids.push(image.id)
 end
 
-20.times do
-    body =  Faker::Quotes::Shakespeare.hamlet_quote
+50.times do
+    body =  Faker::Lorem.paragraph(sentence_count: rand(4..8))
     Comment.create(
         post_type: "ImagePost",
         post_id: image_ids.sample,
@@ -57,8 +57,8 @@ end
     )
 end
 
-20.times do 
-    body =  Faker::Games::WorldOfWarcraft.quote
+50.times do 
+    body =  Faker::Lorem.paragraph(sentence_count: rand(4..8))
     Comment.create(
         user_id: rand(0..19),
         body: body,

@@ -20,13 +20,14 @@ class ImageShow extends Component {
                     return (
                         <div className="article-show-page">
                             <div style={{"flexDirection": "row", "display": "flex"}}>
-                                <Link to={`/images/${prev}`}>Previous</Link>
+                                <Link className="image-show-carousel" to={`/images/${prev}`}>Previous</Link>
                                 <div style={{ "flexDirection": "column", "display": "flex"}}>
-                                    <h1>{image.title}</h1>
-                                    <img src={image.image}/>
+                                    
+                                    <img className="image-show-image" src={image.image}/>
+                                    <h4 className="image-show-title">{image.title}, by {image.author.username}</h4>
                                     <p>{image.description}</p>
                               </div>
-                                <Link to={`/images/${next}`}>Next</Link>
+                                <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
                             </div>     
                         <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} />
                         </div>
