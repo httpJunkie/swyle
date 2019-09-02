@@ -10,6 +10,7 @@ module Types
       :comments.size
     end
     field :image, String, null: false, method: :image_url
+    field :created, String, method: :created_at, null: false
     
   end
 end

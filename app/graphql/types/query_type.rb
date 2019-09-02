@@ -2,7 +2,7 @@ module Types
   class QueryType < Types::BaseObject
     field :articles, [ArticleType], null: false
     def articles
-      Article.all 
+      Article.all.order(created_at: :desc)
     end
 
     field :article, ArticleType, null: false do
@@ -22,7 +22,7 @@ module Types
 
     field :images, [ImageType], null: false
     def images
-     ImagePost.all
+     ImagePost.all.order(created_at: :desc)
     end
 
     field :image_ids, [Integer], null: false
@@ -60,9 +60,9 @@ module Types
     end
     def comments_by_post(args)
       if args[:post_type] == "Article"
-        Article.find(args[:post_id]).comments
+        Article.find(args[:post_id]).comments.order(created_at: :desc)
       elsif args[:post_type] == "ImagePost"
-        ImagePost.find(args[:post_id]).comments
+        ImagePost.find(args[:post_id]).comments.order(created_at: :desc)
       else
         raise "Invalid post type. How did you find this error? You must have some 1337 skill0rz"
       end 

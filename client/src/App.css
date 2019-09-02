@@ -41,6 +41,10 @@
  padding-right: 2rem;
 }
 
+.article-index-page > h1 {
+  color: white;
+}
+
 .article-index-card {
   color: black;
   border-radius: 4px;
@@ -341,10 +345,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 
 .image-index-page {
- display: flex;
- flex-direction: row;
- flex-wrap: wrap;
- align-items: center;
+ color: white;
+ text-align: center;
  background: #001935;
  position: relative;
  top: -8rem;
@@ -352,6 +354,13 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
  padding-left: 2rem;
  padding-right: 2rem;
 
+}
+
+.image-index-spread {
+  display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ align-items: center;
 }
 
 .image-index-card {

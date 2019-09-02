@@ -6,6 +6,7 @@ const images = gql`{
         title
         image
         count
+        created
         author {
             id
             username

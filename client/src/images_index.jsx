@@ -19,6 +19,8 @@ class ImagesIndex extends Component {
 
                     return (
                         <div className="image-index-page">
+                            <h1>Newest Images</h1>
+                            <div className="image-index-spread">
                             {data.images.map(image =>
                                   {return (
                                       <div className="image-index-card" 
@@ -33,6 +35,7 @@ class ImagesIndex extends Component {
                                       
                                   }   
                             )}
+                            </div>
                         </div>
                     )
                 }}

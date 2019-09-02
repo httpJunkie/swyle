@@ -11,16 +11,18 @@ class ArticlesIndex extends Component {
     }
 
     render() {
-        const date = Date.now();    
+        const date = Date.now(); 
+         
         return (
             <Query query={articles}>
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
-
+                    const articles = data.articles;
                     return ( 
                     <div className="article-index-page"> 
-                      {  data.articles.map((article) => (
+                      <h1>Newest Articles</h1> 
+                      {  articles.map((article) => (
                             <div className="article-index-card" key={`${article.id}${article.title}${date}`}>
                               <h2 className="article-index-title">{article.title}</h2>
                               <h3 className="article-index-subtitle">by {article.author.username}</h3>
