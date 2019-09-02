@@ -1,3 +1,14 @@
+.about-page {
+   background: #001935;
+}
+
+.about-section {
+  background: white;
+  width: 40rem;
+  border-radius: 4px;
+}
+
+
 .article-index-page {
  display: flex;
  flex-direction: column;

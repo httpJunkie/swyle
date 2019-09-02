@@ -3,7 +3,11 @@ import React from 'react'
 const About = () => {
     return (
         <div className="about-page">
-            About the site, will commit this thing paragraph by paragraph.
+            <h1>About Swyle</h1>
+            <div className="about-section">
+                <h2>Mission</h2>
+                <p></p>
+            </div>
         </div>
     )
 }
