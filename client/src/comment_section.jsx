@@ -32,14 +32,21 @@ class CommentSection extends Component {
             {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
+                        
                 return (
                     <div className="comments-section">
                         {data.commentsByPost.map(
                             (comment, index) => {
                                 const commentStyle = index % 2 === 0 ? {"background":"lightgrey"} : {"background":"white"}
                                 return <div key={comment.body} className="comment" style={commentStyle}>
-                                    <p className="comment-body">{comment.body}</p>
-                                    <span className="comment-who-and-when"> {`${comment.commentor.username}, on ${comment.createdAt}`}</span>
+                                    <div style={{"display":"flex", "flexDirection":"column"}}>
+                                        <p className="comment-body">{comment.body}</p>
+                                        <span className="comment-who-and-when"> {`${comment.commentor.username}, on ${comment.createdAt}`}</span>
+                                    </div>
+                                    <div>
+                                        {(this.props.currentUser.id === comment.commentor.id || this.props.currentUser.id === this.props.articleAuthorId) && <span>Edit Delete</span>}
+                                    </div>
+                                   
                                 </div>
                             }
                         )}

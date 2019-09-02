@@ -6,6 +6,7 @@ const article = gql`
             title
             body
             author {
+                id
                 username
             }
     },
