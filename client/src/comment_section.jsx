@@ -36,7 +36,40 @@ class CommentSection extends Component {
                         
                 return (
                     <div className="comments-section">
-                        
+
+                        {this.props.currentUser ?
+                            <Mutation mutation={postComment}
+                                update={(cache, { data: { postComment } }) => {
+                                }}
+                                refetchQueries={[{ query: commentsByPost, variables: { postId: this.props.postId, postType: this.props.type } }]}
+                            >
+                                {(postComment, loading) =>
+                                    !loading ? (
+                                        "..."
+                                    ) : (
+                                            <form className="comment-add" onSubmit={event => {
+                                                event.preventDefault();
+                                                postComment({
+                                                    variables: {
+                                                        body: this.state.body,
+                                                        userId: this.props.currentUser.id,
+                                                        postId: this.props.postId,
+                                                        postType: this.props.type
+                                                    }
+                                                }).then(res => {
+                                                    this.setState({ body: "" })
+                                                })
+                                            }}>
+                                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")} value={this.state.body} />
+                                                <input type="submit" name="Post Comment" value="Post Comment" />
+                                            </form>
+                                        )
+                                }
+
+                            </Mutation>
+                            :
+                            <span>Please <Link to="/login">Log In</Link> or <Link to="register">Sign Up</Link> to post comments</span>
+                        }                        
                         
                         {data.commentsByPost.map(
                             (comment, index) => {
@@ -53,38 +86,6 @@ class CommentSection extends Component {
                             }
                         )}
 
-                        { this.props.currentUser ? 
-                            <Mutation mutation={postComment}
-                                update={(cache, { data: { postComment } }) => {
-                                }}
-                                refetchQueries={[{ query: commentsByPost, variables: {postId: this.props.postId, postType: this.props.type} }]}
-                                >     
-                                {(postComment, loading) =>   
-                                    !loading ? (
-                                        "..."
-                                    ) :  (   
-                                            <form className="comment-add" onSubmit={event => {
-                                                event.preventDefault();
-                                                postComment({
-                                                    variables: {
-                                                        body: this.state.body,
-                                                        userId: this.props.currentUser.id,
-                                                        postId: this.props.postId,
-                                                        postType: this.props.type
-                                                    }
-                                                }).then(res => {
-                                                    this.setState({body: ""})
-                                                })}}>
-                                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")} value={this.state.body}/>
-                                                <input type="submit" name="Post Comment" value="Post Comment"/>
-                                            </form>  
-                                        ) 
-                                }
-    
-                            </Mutation>     
-                        :
-                            <span>Please <Link to="/login">Log In</Link> or <Link to="register">Sign Up</Link> to post comments</span>
-                        }
                     </div>
                 )
             }}
