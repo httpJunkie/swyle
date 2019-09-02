@@ -3,6 +3,7 @@ import {Mutation, Query} from 'react-apollo';
 import {Link} from 'react-router-dom';
 import postComment from './mutations/post_comment';
 import commentsByPost from './queries/comments_by_post';
+import Comment from './comment';
 
 class CommentSection extends Component {
     //Will need to refetch queries upon a successful commentation
@@ -40,16 +41,7 @@ class CommentSection extends Component {
                         {data.commentsByPost.map(
                             (comment, index) => {
                                 const commentStyle = index % 2 === 0 ? {"background":"lightgrey"} : {"background":"white"}
-                                return <div key={comment.body} className="comment" style={commentStyle}>
-                                    <div style={{"display":"flex", "flexDirection":"column"}}>
-                                        <p className="comment-body">{comment.body}</p>
-                                        <span className="comment-who-and-when"> {`${comment.commentor.username}, on ${comment.createdAt}`}</span>
-                                    </div>
-                                    <div>
-                                        {(this.props.currentUser.id === comment.commentor.id || this.props.currentUser.id === this.props.articleAuthorId) && <span>Edit Delete</span>}
-                                    </div>
-                                   
-                                </div>
+                                return <Comment comment={comment} commentStyle={commentStyle} currentUser={this.props.currentUser} articleAuthorId={this.props.articleAuthorId}/>
                             }
                         )}
 
