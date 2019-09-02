@@ -8,6 +8,7 @@ query commentsByPost($postId: Int!, $postType: String!){
       id
     }
     body
+    id
     createdAt
   }
 }

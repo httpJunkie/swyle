@@ -30,7 +30,7 @@ class CommentEdit extends Component {
                         !loading ? (
                             "..."
                         ) : ( 
-                                <form style={{ "display": "flex" }} onSubmit={event => {
+                                <form style={{ "display": "flex", "width":"100%"}} onSubmit={event => {
                                     event.preventDefault();
                                     updateComment({
                                         variables: {
@@ -38,7 +38,6 @@ class CommentEdit extends Component {
                                             id: this.props.comment.id
                                         }
                                     }).then(res => {
-                                        debugger;
                                         this.props.cancelEdit();
                                     })
                                 }}>
