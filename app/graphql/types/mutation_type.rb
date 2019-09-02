@@ -7,6 +7,7 @@ module Types
     field :update_article, mutation: Mutations::UpdateArticle
     field :logout, mutation: Mutations::Logout
     field :post_comment, mutation: Mutations::PostComment
+    field :delete_comment, mutation: Mutations::DeleteComment
     field :create_image_post, mutation: Mutations::CreateImagePost
     field :sign_s3, mutation: Mutations::SignS3
   end
