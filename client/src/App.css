@@ -80,15 +80,23 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .comment-body {
   
 }
 
+.comment-buttons {
+  display: flex;
+  justify-content: inherit;
+  align-items: flex-start;
+  height: fit-content;
+}
+
 .comment-edit-btn {
-  margin: 2px;
-  padding: .5rem;
+  margin: 5px;
+  padding: .6rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url('./images/editpen.png');
@@ -100,8 +108,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 }
 
 .comment-delete-btn {
-  margin: 2px;
-  padding: .5rem;
+  margin: 5px;
+  padding: .6rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url('./images/deletex.png');

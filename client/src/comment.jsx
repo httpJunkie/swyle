@@ -35,7 +35,7 @@ class Comment extends Component {
                         <p className="comment-body">{this.props.comment.body}</p>
                         <span className="comment-who-and-when"> {`${this.props.comment.commentor.username}, on ${this.props.comment.createdAt}`}</span>
                     </div>
-                    <div>
+                    <div className="comment-buttons">
                         {(this.props.currentUser.id === this.props.comment.commentor.id) && <span className="comment-edit-btn" onClick={this.editComment}/>}
                         {(this.props.currentUser.id === this.props.comment.commentor.id || this.props.currentUser.id === this.props.articleAuthorId) && <span className="comment-delete-btn" />}
                     </div>
