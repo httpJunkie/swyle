@@ -60,7 +60,7 @@ class CommentSection extends Component {
                                                     this.setState({ body: "" })
                                                 })
                                             }}>
-                                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")} value={this.state.body} />
+                                                <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")} value={this.state.body} resize="none"/>
                                                 <input type="submit" name="Post Comment" value="Post Comment" />
                                             </form>
                                         )

@@ -15,8 +15,12 @@ class ArticleShow extends Component {
                         const article = data.article;
                     return (
                         <div className="article-show-page">
-                            <h1>{article.title}</h1>
-                            <p>{article.body}</p>            
+                            <div className="article-section">
+                                 <h1>{article.title}</h1>
+                                 <h3>by {article.author.username}</h3>
+                                 <p>{article.body}</p> 
+                            </div>
+                                      
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
                         </div>
                     )

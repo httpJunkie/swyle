@@ -87,11 +87,26 @@
 }
 
 .article-show-page {
-  background: white;
+  background: #001935;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   align-items: center;
+}
+
+.article-section {
+  background: white;
+  border-radius: 4px;
+  padding: 1rem;
+  align-items: center;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.article-section > p {
+  text-align: left;
 }
 /* 
 .darken {
@@ -111,6 +126,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     box-sizing: border-box;
     overflow: hidden;
     width: 40rem;
+    background: white;
 }
 
 .comment {
@@ -125,8 +141,20 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   z-index: 400;
 }
 
+.comment-add {
+  height: 7rem;
+  padding: 1rem;
+}
+.comment-add > textarea {
+    width: -webkit-fill-available;
+    height: 3rem;
+    padding: 1rem;
+    resize: none;
+}
+
 .comment-body {
   word-wrap: normal;
+  width:33rem;
 }
 
 .comment-buttons {
