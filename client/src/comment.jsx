@@ -14,6 +14,11 @@ class Comment extends Component {
         }
 
         this.cancelEdit = this.cancelEdit.bind(this)
+        this.editComment = this.editComment.bind(this);
+    }
+
+    editComment () {
+        this.setState({editing: true})
     }
 
     cancelEdit () {
@@ -31,8 +36,8 @@ class Comment extends Component {
                         <span className="comment-who-and-when"> {`${this.props.comment.commentor.username}, on ${this.props.comment.createdAt}`}</span>
                     </div>
                     <div>
-                        {(this.props.currentUser.id === this.props.comment.commentor.id) && <span>Edit</span>}
-                        {(this.props.currentUser.id === this.props.comment.commentor.id || this.props.currentUser.id === this.props.articleAuthorId) && <span>Delete</span>}
+                        {(this.props.currentUser.id === this.props.comment.commentor.id) && <span className="comment-edit-btn" onClick={this.editComment}/>}
+                        {(this.props.currentUser.id === this.props.comment.commentor.id || this.props.currentUser.id === this.props.articleAuthorId) && <span className="comment-delete-btn" />}
                     </div>
 
                 </div>

@@ -12,11 +12,14 @@ class CommentEdit extends Component {
 
     render () {
         return(
-            <form>
+            <div className="comment">
+                <form>
                 <textarea value={this.state.body}/>
                 <input type="submit" />
-                <button> onClick={this.props.cancelEdit}Cancel</button>
+                <button onClick={this.props.cancelEdit}> Cancel</button>
             </form>
+            </div>
+            
         )
     }
 }

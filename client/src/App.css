@@ -86,6 +86,31 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   
 }
 
+.comment-edit-btn {
+  margin: 2px;
+  padding: .5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./images/editpen.png');
+}
+
+.comment-edit-btn:hover {
+  cursor: pointer;
+  color: light-gray;
+}
+
+.comment-delete-btn {
+  margin: 2px;
+  padding: .5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./images/deletex.png');
+}
+
+.comment-delete-btn:hover {
+  cursor: pointer;
+}
+
 .comment-who-and-when {
   font-size: 14px;
   font-style: italic;
