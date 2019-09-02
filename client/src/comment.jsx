@@ -27,7 +27,7 @@ class Comment extends Component {
 
     render() {
         if (this.state.editing) {
-            return < CommentEdit body={this.props.body} cancelEdit={this.cancelEdit}/>
+            return < CommentEdit comment={this.props.comment} cancelEdit={this.cancelEdit} postId={this.props.postId} postType={this.props.postType}/>
         } else {
             return (
                 <div key={this.props.comment.body} className="comment" style={this.props.commentStyle}>

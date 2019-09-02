@@ -81,6 +81,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   display: flex;
   justify-content: space-between;
   position: relative;
+  width: 98%;
+  overflow: hidden;
 }
 
 .comment-body {

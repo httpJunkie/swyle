@@ -46,6 +46,8 @@ class CommentSection extends Component {
                                         commentStyle={commentStyle} 
                                         currentUser={this.props.currentUser} 
                                         articleAuthorId={this.props.articleAuthorId}
+                                        postType={this.props.postType}
+                                        postId={this.props.postId}
                                         />
                             }
                         )}
