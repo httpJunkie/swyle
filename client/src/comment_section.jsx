@@ -61,7 +61,7 @@ class CommentSection extends Component {
                                                 })
                                             }}>
                                                 <textarea placeholder="Please Enter your comment here" onChange={this.handleFormChange("body")} value={this.state.body} resize="none"/>
-                                                <input type="submit" name="Post Comment" value="Post Comment" />
+                                                <input className="comment-submit"type="submit" name="Post Comment" value="Post Comment" />
                                             </form>
                                         )
                                 }
@@ -70,7 +70,7 @@ class CommentSection extends Component {
                             :
                             <span>Please <Link to="/login">Log In</Link> or <Link to="register">Sign Up</Link> to post comments</span>
                         }                        
-                        
+                        <h4 style={{"marginLeft":"1rem"}}>Latest Comments</h4>
                         {data.commentsByPost.map(
                             (comment, index) => {
                                 const commentStyle = index % 2 === 0 ? {"background":"lightgrey"} : {"background":"white"}
