@@ -2,7 +2,6 @@ module Mutations
     class UpdateArticle < BaseMutation
       argument :id, Int, required: true
       argument :title, String, required: true
-      argument :body, String, required: true
       
       type Types::ArticleType
   
@@ -11,8 +10,6 @@ module Mutations
           return unless article
           #Return if article isn't found, add error message later.
           article.title = title
-          article.body = body
-          article.snippet = body[0, 100]
           article.save
           article
           #The mutation updates the database but something goes wrong on GraphQL's end.
