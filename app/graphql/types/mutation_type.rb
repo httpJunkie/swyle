@@ -5,7 +5,8 @@ module Types
     field :logout, mutation: Mutations::Logout
 
     field :create_article, mutation: Mutations::CreateArticle
-    field :update_article, mutation: Mutations::UpdateArticle
+    field :update_article_title, mutation: Mutations::UpdateArticleTitle
+    field :update_article_body, mutation: Mutations::UpdateArticleBody
     field :delete_article, mutation: Mutations::DeleteArticle
   
 

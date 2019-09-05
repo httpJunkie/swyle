@@ -1,5 +1,5 @@
 module Mutations
-    class UpdateArticle < BaseMutation
+    class UpdateArticleTitle < BaseMutation
       argument :id, Int, required: true
       argument :title, String, required: true
       
