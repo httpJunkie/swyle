@@ -10,6 +10,8 @@ class ArticleBodyEdit extends Component {
             id: this.props.id
         }
         this.handleFormChange = this.handleFormChange.bind(this)
+        //TODO: Adapt the code below.
+        //this.bioEditHeight = document.getElementById("char-bio").offsetHeight;
     }
 
     handleFormChange(field) {
