@@ -13,8 +13,8 @@ class ArticleBodyEdit extends Component {
     render() {
         return (
             <div>
-                <Mutation mutation={updateArticleTitle}
-                    update={(cache, { data: { updateArticleTitle } }) => {
+                <Mutation mutation={updateArticleBody}
+                    update={(cache, { data: { updateArticleBody } }) => {
                     }}
                     refetchQueries={[{ query: article, variables: { id: this.props.id } }]}
 
@@ -24,9 +24,9 @@ class ArticleBodyEdit extends Component {
                     ) : (
                             <form style={{ "display": "flex", "width": "100%" }} onSubmit={event => {
                                 event.preventDefault();
-                                updateArticleTitle({
+                                updateArticleBody({
                                     variables: {
-                                        title: this.state.title,
+                                        body: this.state.body,
                                         id: this.props.id
                                     }
                                 }).then(res => {
