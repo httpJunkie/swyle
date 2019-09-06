@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Mutation} from 'react-apollo';
 import updateArticleTitle from './mutations/update_article_title'
+import article from './queries/article';
 
 class ArticleTitleEdit extends Component {
     constructor(props) {
@@ -12,7 +13,32 @@ class ArticleTitleEdit extends Component {
     }
     render() {
         return (
-            <div>placeholder</div>
+            <div>
+                <Mutation mutation={updateArticleTitle}
+                    update={(cache, { data: { updateArticleTitle } }) => {
+                    }}
+                    refetchQueries={[{ query: article, variables: { id: this.props.id} }]}
+                
+                >{(updateComment, loading) =>
+                    !loading ? (
+                        "..."
+                    ) : ( 
+                        <form style={{ "display": "flex", "width": "100%" }} onSubmit={event => {
+                            event.preventDefault();
+                            updateArticleTitle({
+                                variables: {
+                                    title: this.state.title,
+                                    id: this.props.id
+                                }
+                            }).then(res => {
+                                this.props.cancelEdit();
+                            })
+                        }}>
+                        </form>
+                    )}
+                </Mutation>
+            
+            </div>
         )
     }
 }
