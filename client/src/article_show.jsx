@@ -2,8 +2,18 @@ import React, {Component} from 'react';
 import {Query} from 'react-apollo';
 import article from './queries/article';
 import CommentSection from './comment_section';
+import ArticleBodyEdit from './article_body_edit';
+import ArticleTitleEdit from './article_title_edit';
 
 class ArticleShow extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            editingBody: false,
+            editingTitle: false
+        }
+    }
 
     render() {
        const argument = parseInt(this.props.match.params.articleID)
