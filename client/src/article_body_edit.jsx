@@ -9,7 +9,15 @@ class ArticleBodyEdit extends Component {
             body: this.props.body,
             id: this.props.id
         }
+        this.handleFormChange = this.handleFormChange.bind(this)
     }
+
+    handleFormChange(field) {
+        return event => this.setState({
+            [field]: event.currentTarget.value,
+        });
+    }
+
     render() {
         return (
             <div>
