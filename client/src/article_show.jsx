@@ -42,9 +42,22 @@ class ArticleShow extends Component {
                     return (
                         <div className="article-show-page">
                             <div className="article-section">
-                                 {!this.state.editingTitle ? <h1>{article.title}</h1> : <ArticleTitleEdit cancelEdit={this.cancelEdit} />}
+                                {!this.state.editingTitle ? 
+                                 <h1>{
+                                   article.title}{article.author.id === data.currentUser.id && 
+                                     <span className="comment-edit-btn" onClick={this.editField} name="Title"/>
+                                   }
+                                 </h1> 
+                                   : 
+                                <ArticleTitleEdit cancelEdit={this.cancelEdit} />}
                                  <h3>by {article.author.username}</h3>
-                                {!this.state.editingBody ? <p>{article.body}</p> : <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}/> }
+                                {!this.state.editingBody ? 
+                                  <p>
+                                    {article.body} 
+                                    {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="body" />}
+                                  </p> 
+                                   : 
+                                  <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}/> }
                             </div>
                                       
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
