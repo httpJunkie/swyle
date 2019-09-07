@@ -10,4 +10,4 @@ const updateArticleBody = gql`
     }
 `;
 
-export default UpdateArticleBody
+export default updateArticleBody

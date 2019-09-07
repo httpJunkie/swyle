@@ -4,6 +4,7 @@ import article from './queries/article';
 import CommentSection from './comment_section';
 import ArticleBodyEdit from './article_body_edit';
 import ArticleTitleEdit from './article_title_edit';
+import $ from 'jquery';
 
 class ArticleShow extends Component {
 
@@ -15,6 +16,7 @@ class ArticleShow extends Component {
         }
         this.cancelEdit = this.cancelEdit.bind(this);
         this.finishEdit = this.finishEdit.bind(this);
+        this.editField = this.editField.bind(this);
     }
 
     cancelEdit(event) {
@@ -49,7 +51,7 @@ class ArticleShow extends Component {
                                    }
                                  </h1> 
                                    : 
-                                <ArticleTitleEdit cancelEdit={this.cancelEdit} />}
+                                    <ArticleTitleEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}  id={article.id}/>}
                                  <h3>by {article.author.username}</h3>
                                 {!this.state.editingBody ? 
                                   <p>
@@ -57,7 +59,7 @@ class ArticleShow extends Component {
                                     {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="body" />}
                                   </p> 
                                    : 
-                                  <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}/> }
+                                  <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id}/> }
                             </div>
                                       
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
