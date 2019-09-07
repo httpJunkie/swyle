@@ -39,9 +39,10 @@ class ArticleTitleEdit extends Component {
                                     id: this.props.id
                                 }
                             }).then(res => {
-                                this.props.cancelEdit();
+                                this.props.finishEdit("Title");
                             })
                         }}>
+                            <button onClick={this.props.cancelEdit} name="Title">Cancel</button>
                         </form>
                     )}
                 </Mutation>

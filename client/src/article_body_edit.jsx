@@ -40,9 +40,10 @@ class ArticleBodyEdit extends Component {
                                         id: this.props.id
                                     }
                                 }).then(res => {
-                                    this.props.cancelEdit();
+                                    this.props.finishEdit("Body");
                                 })
                             }}>
+                            <button onClick={this.props.cancelEdit} name="Body">Cancel</button>
                             </form>
                         )}
                 </Mutation>

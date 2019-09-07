@@ -13,11 +13,22 @@ class ArticleShow extends Component {
             editingBody: false,
             editingTitle: false
         }
-        this.cancelEdit = this.cancelEdit.bind(this)
+        this.cancelEdit = this.cancelEdit.bind(this);
+        this.finishEdit = this.finishEdit.bind(this);
     }
 
-    cancelEdit(field) {
+    cancelEdit(event) {
+        $('body').css('overflow', 'auto');
+        this.setState({ [`editing${event.target.name}`]: false })
+    }
+
+    finishEdit(field) {
+        $('body').css('overflow', 'auto');
         this.setState({ [`editing${field}`]: false })
+    }
+
+    editField(event) {
+        this.setState({ [`editing${event.target.name}`]: true });
     }
 
     render() {
@@ -33,7 +44,7 @@ class ArticleShow extends Component {
                             <div className="article-section">
                                  {!this.state.editingTitle ? <h1>{article.title}</h1> : <ArticleTitleEdit cancelEdit={this.cancelEdit} />}
                                  <h3>by {article.author.username}</h3>
-                                {!this.state.editingBody ? <p>{article.body}</p> : <ArticleBodyEdit cancelEdit={this.cancelEdit}/> }
+                                {!this.state.editingBody ? <p>{article.body}</p> : <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}/> }
                             </div>
                                       
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
