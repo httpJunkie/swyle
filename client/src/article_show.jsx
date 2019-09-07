@@ -30,7 +30,7 @@ class ArticleShow extends Component {
     }
 
     editField(event) {
-        this.setState({ [`editing${event.target.name}`]: true });
+        this.setState({ [`editing${event.currentTarget.name}`]: true });
     }
 
     render() {
@@ -51,15 +51,15 @@ class ArticleShow extends Component {
                                    }
                                  </h1> 
                                    : 
-                                    <ArticleTitleEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}  id={article.id}/>}
+                                    <ArticleTitleEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}  id={article.id} title={article.title}/>}
                                  <h3>by {article.author.username}</h3>
                                 {!this.state.editingBody ? 
                                   <p>
                                     {article.body} 
-                                    {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="body" />}
+                                    {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="Body" />}
                                   </p> 
                                    : 
-                                  <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id}/> }
+                                  <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id} body={article.body}/> }
                             </div>
                                       
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />

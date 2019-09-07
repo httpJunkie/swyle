@@ -42,6 +42,7 @@ class ArticleTitleEdit extends Component {
                                 this.props.finishEdit("Title");
                             })
                         }}>
+                            <input type="text" value={this.state.title}></input>
                             <button onClick={this.props.cancelEdit} name="Title">Cancel</button>
                         </form>
                     )}

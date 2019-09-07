@@ -44,6 +44,7 @@ class ArticleBodyEdit extends Component {
                                     this.props.finishEdit("Body");
                                 })
                             }}>
+                                <input type="textarea" value={this.state.body}></input>
                             <button onClick={this.props.cancelEdit} name="Body">Cancel</button>
                             </form>
                         )}
