@@ -13,6 +13,11 @@ class ArticleShow extends Component {
             editingBody: false,
             editingTitle: false
         }
+        this.cancelEdit = this.cancelEdit.bind(this)
+    }
+
+    cancelEdit(field) {
+        this.setState({ [`editing${field}`]: false })
     }
 
     render() {
@@ -26,9 +31,9 @@ class ArticleShow extends Component {
                     return (
                         <div className="article-show-page">
                             <div className="article-section">
-                                 <h1>{article.title}</h1>
+                                 {!this.state.editingTitle ? <h1>{article.title}</h1> : <ArticleTitleEdit cancelEdit={this.cancelEdit} />}
                                  <h3>by {article.author.username}</h3>
-                                 <p>{article.body}</p> 
+                                {!this.state.editingBody ? <p>{article.body}</p> : <ArticleBodyEdit cancelEdit={this.cancelEdit}/> }
                             </div>
                                       
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
