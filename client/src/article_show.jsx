@@ -55,7 +55,7 @@ class ArticleShow extends Component {
                                     <ArticleTitleEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}  id={article.id} title={article.title}/>}
                                  <h3>by {article.author.username}</h3>
                                 {!this.state.editingBody ? 
-                                  <p>
+                                  <p className="article-show-body" id="article-body">
                                     {article.body} 
                                         {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="Body" id="Body"/>}
                                   </p> 

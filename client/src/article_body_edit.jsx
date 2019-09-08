@@ -12,7 +12,7 @@ class ArticleBodyEdit extends Component {
         }
         this.handleFormChange = this.handleFormChange.bind(this)
         //TODO: Adapt the code below.
-        //this.bioEditHeight = document.getElementById("char-bio").offsetHeight;
+        this.bodyEditHeight = document.getElementById("article-body").offsetHeight;
     }
 
     handleFormChange(field) {
@@ -22,6 +22,8 @@ class ArticleBodyEdit extends Component {
     }
 
     render() {
+
+        console.log(this.bodyEditHeight)
         return (
             <div className="edit-body">
                 <Mutation mutation={updateArticleBody}
@@ -44,7 +46,12 @@ class ArticleBodyEdit extends Component {
                                     this.props.finishEdit("Body");
                                 })
                             }}>
-                                <input type="textarea" value={this.state.body}></input>
+                            <input className="edit-body-textarea" 
+                              type="textarea" 
+                              onChange={this.handleFormChange("body")} 
+                              value={this.state.body}
+                              style={{"height":`${this.bodyEditHeight}px`}}
+                            />
                             <button onClick={this.props.cancelEdit} name="Body">Cancel</button>
                             </form>
                         )}
