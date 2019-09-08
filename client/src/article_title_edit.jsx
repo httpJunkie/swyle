@@ -43,8 +43,10 @@ class ArticleTitleEdit extends Component {
                             })
                         }}>
                             <input className="edit-title-text" type="text" value={this.state.title} onChange={this.handleFormChange("title")}></input>
-                            <input type="submit" className="confirm-btn-yes" name="Save"/>
-                            <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Title">Cancel</button>
+                            <span className="edit-save-or-cancel">
+                                <input type="submit" value="Save"className="confirm-btn-yes" name="Save" />
+                                <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Title">Cancel</button>
+                            </span>
                         </form>
                     )}
                 </Mutation>

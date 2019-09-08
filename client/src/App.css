@@ -262,16 +262,22 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .confirm-btn-yes {
   background: white;
-  color: blue;
-  border: 2px solid blue;
+  color: #0A0458;
+  border: 2px solid #0A0458;
   margin: .1rem;
+  border-radius: 3px;
+  font-weight: bold;
+  font-style: sans-serif;
 }
 
 .confirm-btn-no {
-  background: blue;
+  background: #0A0458;
   color: white;
-  border: 2px solid blue;
+  border: 2px solid #0A0458;
   margin: .1rem;
+  border-radius: 3px;
+  font-weight: bold;
+  font-style: sans-serif;
 }
 
 
@@ -284,9 +290,9 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 }
 
 
-/* .edit-title {
-
-} */
+.edit-title {
+  position: relative;
+}
 
 .edit-title-text {
    display: block;
@@ -298,8 +304,10 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     font-weight: bold;
     padding: .5rem;
     border: none;
-    border-bottom: 1px solid black;
     font-family: sans-serif;
+    color: gray;
+    border-bottom: 1px solid black;
+
 }
 
 .edit-title-text:focus {
@@ -314,6 +322,11 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .edit-body-textarea {
 
+}
+
+.edit-save-or-cancel {
+  position: absolute;
+  top: 3.5rem;
 }
 
 .header { 
