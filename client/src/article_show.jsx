@@ -30,9 +30,8 @@ class ArticleShow extends Component {
     }
 
     editField(event) {
-        const torsion = event.target.name;
-        debugger;
-        this.setState({ [`editing${event.target.name}`]: true });
+        event.preventDefault();
+        this.setState({ [`editing${event.target.id}`]: true });
     }
 
     render() {
@@ -47,9 +46,9 @@ class ArticleShow extends Component {
                         <div className="article-show-page">
                             <div className="article-section">
                                 {!this.state.editingTitle ? 
-                                 <h1>{
+                                 <h1 className="article-show-title">{
                                    article.title}{article.author.id === data.currentUser.id && 
-                                     <span className="comment-edit-btn" onClick={this.editField} name="Title" value="Title"/>
+                                     <span className="comment-edit-btn" onClick={this.editField} name="Title" id="Title"/>
                                    }
                                  </h1> 
                                    : 
@@ -58,7 +57,7 @@ class ArticleShow extends Component {
                                 {!this.state.editingBody ? 
                                   <p>
                                     {article.body} 
-                                    {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="Body" value="Body"/>}
+                                        {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="Body" id="Body"/>}
                                   </p> 
                                    : 
                                   <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id} body={article.body}/> }

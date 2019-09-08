@@ -31,7 +31,7 @@ class ArticleTitleEdit extends Component {
                     !loading ? (
                         "..."
                     ) : ( 
-                        <form style={{ "display": "flex", "width": "100%" }} onSubmit={event => {
+                    <form className="edit-title" onSubmit={event => {
                             event.preventDefault();
                             updateArticleTitle({
                                 variables: {
@@ -42,8 +42,9 @@ class ArticleTitleEdit extends Component {
                                 this.props.finishEdit("Title");
                             })
                         }}>
-                            <input type="text" value={this.state.title}></input>
-                            <button onClick={this.props.cancelEdit} name="Title">Cancel</button>
+                            <input className="edit-title-text" type="text" value={this.state.title}></input>
+                            <input type="submit" className="confirm-btn-yes" name="Save"/>
+                            <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Title">Cancel</button>
                         </form>
                     )}
                 </Mutation>

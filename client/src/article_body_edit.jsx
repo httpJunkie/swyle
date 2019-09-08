@@ -23,7 +23,7 @@ class ArticleBodyEdit extends Component {
 
     render() {
         return (
-            <div>
+            <div className="edit-body">
                 <Mutation mutation={updateArticleBody}
                     update={(cache, { data: { updateArticleBody } }) => {
                     }}
