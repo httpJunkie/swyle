@@ -52,7 +52,9 @@ class ArticleBodyEdit extends Component {
                               value={this.state.body}
                               style={{"height":`${this.bodyEditHeight}px`}}
                             />
-                            <button onClick={this.props.cancelEdit} name="Body">Cancel</button>
+                            <input type="submit" value="Save" className="confirm-btn-yes" name="Save" />
+
+                                    <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Body">Cancel</button>
                             </form>
                         )}
                 </Mutation>
