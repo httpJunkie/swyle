@@ -292,6 +292,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .edit-title {
   position: relative;
+  width: -webkit-fill-available;
 }
 
 .edit-title-text {
@@ -307,6 +308,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     font-family: sans-serif;
     color: gray;
     border-bottom: 1px solid black;
+    min-width: fit-content;
 
 }
 
@@ -316,17 +318,18 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 
 .edit-body {
-
+  width: 100%;
+  height: auto;
 }
 
 
 .edit-body-textarea {
-
+   width: 100%;
 }
 
 .edit-save-or-cancel {
-  position: absolute;
-  top: 3.5rem;
+  /* position: absolute;
+  top: 3.5rem; */
 }
 
 .header { 

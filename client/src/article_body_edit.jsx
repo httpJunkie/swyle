@@ -35,7 +35,7 @@ class ArticleBodyEdit extends Component {
                     !loading ? (
                         "..."
                     ) : (
-                            <form style={{ "display": "flex", "width": "100%" }} onSubmit={event => {
+                            <form className="edit-body" onSubmit={event => {
                                 event.preventDefault();
                                 updateArticleBody({
                                     variables: {
@@ -46,15 +46,18 @@ class ArticleBodyEdit extends Component {
                                     this.props.finishEdit("Body");
                                 })
                             }}>
-                            <input className="edit-body-textarea" 
+                            <textarea className="edit-body-textarea" 
                               type="textarea" 
+                              wrap="hard"
+                              cols="40"
                               onChange={this.handleFormChange("body")} 
                               value={this.state.body}
                               style={{"height":`${this.bodyEditHeight}px`}}
                             />
-                            <input type="submit" value="Save" className="confirm-btn-yes" name="Save" />
-
-                                    <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Body">Cancel</button>
+                            <span className="edit-save-or-cancel">
+                                <input type="submit" value="Save" className="confirm-btn-yes" name="Save" />
+                                <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Body">Cancel</button>
+                            </span>
                             </form>
                         )}
                 </Mutation>
