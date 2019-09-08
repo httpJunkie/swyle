@@ -296,6 +296,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 }
 
 .edit-title-text {
+  width: -webkit-fill-available;
    display: block;
     font-size: 2em;
     margin-block-start: 0.67em;

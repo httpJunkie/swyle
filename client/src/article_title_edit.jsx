@@ -21,7 +21,7 @@ class ArticleTitleEdit extends Component {
 
     render() {
         return (
-            <div>
+            <div className="edit-title">
                 <Mutation mutation={updateArticleTitle}
                     update={(cache, { data: { updateArticleTitle } }) => {
                     }}
