@@ -31,7 +31,7 @@ class ArticleBodyEdit extends Component {
                     }}
                     refetchQueries={[{ query: article, variables: { id: this.props.id } }]}
 
-                >{(updateComment, loading) =>
+                >{(updateArticleBody, loading) =>
                     !loading ? (
                         "..."
                     ) : (
