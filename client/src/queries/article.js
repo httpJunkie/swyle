@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 const article = gql`
     query article($id: Int!){
         article(id: $id){
+            id
             title
             body
             author {

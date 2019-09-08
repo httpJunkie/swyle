@@ -27,7 +27,7 @@ class ArticleTitleEdit extends Component {
                     }}
                     refetchQueries={[{ query: article, variables: { id: this.props.id} }]}
                 
-                >{(updateComment, loading) =>
+                >{(updateArticleTitle, loading) =>
                     !loading ? (
                         "..."
                     ) : ( 
@@ -42,7 +42,7 @@ class ArticleTitleEdit extends Component {
                                 this.props.finishEdit("Title");
                             })
                         }}>
-                            <input className="edit-title-text" type="text" value={this.state.title}></input>
+                            <input className="edit-title-text" type="text" value={this.state.title} onChange={this.handleFormChange("title")}></input>
                             <input type="submit" className="confirm-btn-yes" name="Save"/>
                             <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Title">Cancel</button>
                         </form>
