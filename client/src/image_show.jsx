@@ -6,6 +6,14 @@ import {Link} from 'react-router-dom';
 
 class ImageShow extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            editingTitle: false,
+            editingDescription: false
+        }
+    }
+
     render() {
         const argument = parseInt(this.props.match.params.imageID)
         return (

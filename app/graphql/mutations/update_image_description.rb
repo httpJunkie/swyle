@@ -1,5 +1,5 @@
 module Mutations
-    class UpdateImageTitle < BaseMutation
+    class UpdateImageDescription < BaseMutation
       argument :id, Int, required: true
       argument :description, String, required: true
       
