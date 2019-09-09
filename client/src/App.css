@@ -458,6 +458,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     padding: .5rem;
 }
 
+.image-edit-btn {
+  margin: 5px;
+  padding: .6rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./images/editpenwhite.png');
+}
+
 
 .image-index-page {
  color: white;
@@ -510,6 +518,9 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   color: white;
   margin-block-end: unset;
   font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-show-description {
@@ -517,6 +528,9 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   font-style: italic;
   text-align: center;
   margin-block-start: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
