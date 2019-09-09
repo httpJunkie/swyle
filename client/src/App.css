@@ -94,6 +94,11 @@
   align-items: center;
 }
 
+.article-show-body {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .article-show-title {
   font-family: sans-serif;
 }
@@ -159,6 +164,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     padding: 1rem;
     resize: none;
     border-radius: 4px;
+    resize: none;
 }
 
 .comment-submit {
