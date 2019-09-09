@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import image from './queries/image';
 import CommentSection from './comment_section';
+import ImageDescriptionEdit from './image_description_edit';
+import ImageTitleEdit from './image_title_edit';
 import {Link} from 'react-router-dom';
+import $ from 'jquery';
+
 
 class ImageShow extends Component {
 
@@ -12,6 +16,24 @@ class ImageShow extends Component {
             editingTitle: false,
             editingDescription: false
         }
+        this.cancelEdit = this.cancelEdit.bind(this);
+        this.finishEdit = this.finishEdit.bind(this);
+        this.editField = this.editField.bind(this);
+    }
+
+    cancelEdit(event) {
+        $('body').css('overflow', 'auto');
+        this.setState({ [`editing${event.target.name}`]: false })
+    }
+
+    finishEdit(field) {
+        $('body').css('overflow', 'auto');
+        this.setState({ [`editing${field}`]: false })
+    }
+
+    editField(event) {
+        event.preventDefault();
+        this.setState({ [`editing${event.target.id}`]: true });
     }
 
     render() {
@@ -32,7 +54,10 @@ class ImageShow extends Component {
                                 <div style={{ "flexDirection": "column", "display": "flex"}}>
                                     
                                     <img className="image-show-image" src={image.image}/>
-                                    <h2 className="image-show-title">{image.title}, by {image.author.username}</h2>
+                                    <h2 className="image-show-title">                                        
+                                      {image.author.id === data.currentUser.id && 
+                                      <span className="comment-edit-btn" onClick={this.editField} name="Title" id="Title" />}
+                                      {image.title}, by {image.author.username}</h2>
                                     <p className="image-show-description">"{image.description}"</p>
                               </div>
                                 <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
