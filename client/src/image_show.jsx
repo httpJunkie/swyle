@@ -24,7 +24,7 @@ class ImageShow extends Component {
                                 <div style={{ "flexDirection": "column", "display": "flex"}}>
                                     
                                     <img className="image-show-image" src={image.image}/>
-                                    <h4 className="image-show-title">{image.title}, by {image.author.username}</h4>
+                                    <h2 className="image-show-title">{image.title}, by {image.author.username}</h2>
                                     <p className="image-show-description">"{image.description}"</p>
                               </div>
                                 <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
