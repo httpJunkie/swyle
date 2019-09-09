@@ -3,15 +3,14 @@ import postArticle from './mutations/post_article';
 import currentUser from './queries/current_user';
 import { graphql } from 'react-apollo';
 import * as compose from 'lodash.flowright';
-import gql from 'graphql-tag';
-import moment from 'moment';
+
 
 class ArticleCreate extends Component {
     constructor(props) {
         super(props)
         this.state = {
             title: "",
-            description: ""
+            body: ""
         }
         this.handleFormChange = this.handleFormChange.bind(this)
         this.save = this.save.bind(this)
@@ -26,24 +25,14 @@ class ArticleCreate extends Component {
 
     async save(e) {
         e.preventDefault();
-        const image = this.state.image;
-        const response = await this.props.s3Sign({
-            variables: {
-                filename: this.formatFilename(image.name),
-                filetype: image.type
-            }
-        });
-        const { signedRequest, url } = response.data.signS3;
-        await this.uploadToS3(image, signedRequest)
         this.props.mutate({
             variables: {
                 title: this.state.title,
-                description: this.state.description,
-                image: url
+                body: this.state.body,
             }
         }).then(res => {
             debugger;
-            this.props.history.push(`/articles/${res.data.createImagePost.id}`)
+            this.props.history.push(`/articles/${res.data.id}`)
         })
     }
 
@@ -51,14 +40,9 @@ class ArticleCreate extends Component {
         return (
             <div>
                 <form onSubmit={this.save}>
-                    <input className="image-input"
-                        type="file"
-                        onChange={this.handleFileChange}
-                        accept="image/png, image/jpeg, image/gif, image/bmp, image/jpg"
-                    />
-                    <input className="image-text-field" type="text" onChange={this.handleFormChange("title")} placeholder="Image Title" value={this.state.title} />
-                    <input className="image-text-field" type="text" onChange={this.handleFormChange("description")} placeholder="Description (optional)" value={this.state.description} />
-                    <input type="submit" className="submit" value="Post Image" disabled={!this.state.image} />
+                    <input className="image-text-field" type="text" onChange={this.handleFormChange("title")} placeholder="Article Title" value={this.state.title} />
+                    <textarea className="image-text-field" type="text" onChange={this.handleFormChange("body")} placeholder="Write your article here" value={this.state.description} />
+                    <input type="submit" className="submit" value="Post Image" disabled={!this.state.body} />
                 </form>
             </div>
         )
@@ -70,5 +54,5 @@ class ArticleCreate extends Component {
 export default compose(
     graphql(currentUser)
 )(
-    graphql(postImage)(ArticleCreate)
+    graphql(postArticle)(ArticleCreate)
 )
