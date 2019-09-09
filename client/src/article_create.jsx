@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import postImage from './mutations/post_image';
+import postArticle from './mutations/post_article';
 import currentUser from './queries/current_user';
 import { graphql } from 'react-apollo';
 import * as compose from 'lodash.flowright';
@@ -42,7 +42,8 @@ class ArticleCreate extends Component {
                 image: url
             }
         }).then(res => {
-            this.props.history.push(`/images/${res.data.createImagePost.id}`)
+            debugger;
+            this.props.history.push(`/articles/${res.data.createImagePost.id}`)
         })
     }
 
