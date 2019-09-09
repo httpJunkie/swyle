@@ -1,14 +1,14 @@
 module Mutations
     class UpdateImageTitle < BaseMutation
       argument :id, Int, required: true
-      argument :title, String, required: true
+      argument :description, String, required: true
       
       type Types::ImageType
   
-      def resolve(id: nil, title: "")
+      def resolve(id: nil, description: "")
           image = ImagePost.find(id)
           return unless image
-          image.title = title
+          image.description = description
           image.save
           image
       end
