@@ -12,8 +12,6 @@ module Mutations
           article.title = title
           article.save
           article
-          #The mutation updates the database but something goes wrong on GraphQL's end.
-          #TODO: add backend error handling on this resolver.
       end
     end
   end
