@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
-import updateArticleTitle from './mutations/update_article_title'
-import article from './queries/article';
+import updateImageTitle from './mutations/update_image_title'
+import image from './queries/image';
 
 class ImageTitleEdit extends Component {
     constructor(props) {
@@ -22,18 +22,18 @@ class ImageTitleEdit extends Component {
     render() {
         return (
             <div className="edit-title">
-                <Mutation mutation={updateArticleTitle}
-                    update={(cache, { data: { updateArticleTitle } }) => {
+                <Mutation mutation={updateImageTitle}
+                    update={(cache, { data: { updateImageTitle } }) => {
                     }}
-                    refetchQueries={[{ query: article, variables: { id: this.props.id } }]}
+                    refetchQueries={[{ query: image, variables: { id: this.props.id } }]}
 
-                >{(updateArticleTitle, loading) =>
+                >{(updateImageTitle, loading) =>
                     !loading ? (
                         "..."
                     ) : (
                             <form className="edit-title" onSubmit={event => {
                                 event.preventDefault();
-                                updateArticleTitle({
+                                    updateImageTitle({
                                     variables: {
                                         title: this.state.title,
                                         id: this.props.id

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import updateImageDescription from './mutations/update_image_description';
-import article from './queries/article';
+import image from './queries/image';
 
 class ImageDescriptionEdit extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class ImageDescriptionEdit extends Component {
                 <Mutation mutation={updateImageDescription}
                     update={(cache, { data: { updateImageDescription } }) => {
                     }}
-                    refetchQueries={[{ query: article, variables: { id: this.props.id } }]}
+                    refetchQueries={[{ query: image, variables: { id: this.props.id } }]}
 
                 >{(updateImageDescription, loading) =>
                     !loading ? (
