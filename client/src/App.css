@@ -507,6 +507,13 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .image-show-title {
   text-align: center;
+  color: white;
+}
+
+.image-show-description {
+  color: gray;
+  font-style: italic;
+  text-align: center;
 }
 
 
