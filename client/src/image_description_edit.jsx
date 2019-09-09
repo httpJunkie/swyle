@@ -42,7 +42,7 @@ class ImageDescriptionEdit extends Component {
                                     this.props.finishEdit("Description");
                                 })
                             }}>
-                                <input className="edit-description-text" type="text" value={this.state.title} onChange={this.handleFormChange("description")}></input>
+                                <input className="edit-description-text" type="text" value={this.state.description} onChange={this.handleFormChange("description")}></input>
                                 <span className="edit-save-or-cancel">
                                     <input type="submit" value="Save" className="confirm-btn-yes" name="Save" />
                                     <button onClick={this.props.cancelEdit} className="confirm-btn-no" name="Description">Cancel</button>

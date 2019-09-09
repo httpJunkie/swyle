@@ -1,6 +1,8 @@
+import gql from 'graphql-tag';
+
 const updateImageDescription = gql`
-    mutation updateImageTitle($id: Int!, $description: String!) {
-        updateImageTitle(id: $id, description: $description) {
+    mutation updateImageDescription($id: Int!, $description: String!) {
+        updateImageDescription(id: $id, description: $description) {
             id
             description
             title

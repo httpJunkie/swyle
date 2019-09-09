@@ -54,11 +54,30 @@ class ImageShow extends Component {
                                 <div style={{ "flexDirection": "column", "display": "flex"}}>
                                     
                                     <img className="image-show-image" src={image.image}/>
-                                    <h2 className="image-show-title">                                        
+
+                                  {  this.state.editingTitle? (
+                                      <ImageTitleEdit cancelEdit={this.cancelEdit} 
+                                        id={image.id} title={image.title} 
+                                        finishEdit={this.finishEdit}/>
+                                      ) : (
+                                     <h2 className="image-show-title">                                        
                                       {image.author.id === data.currentUser.id && 
                                       <span className="comment-edit-btn" onClick={this.editField} name="Title" id="Title" />}
                                       {image.title}, by {image.author.username}</h2>
-                                    <p className="image-show-description">"{image.description}"</p>
+                                      )
+                                    }
+
+                                    { this.state.editingDescription ? (
+                                        <ImageDescriptionEdit cancelEdit={this.cancelEdit} 
+                                         id={image.id} description={image.description} 
+                                         finishEdit={this.finishEdit} />
+                                    ) : (
+                                    <p className="image-show-description">
+                                        "{image.description}"
+                                        {image.author.id === data.currentUser.id && 
+                                        <span className="comment-edit-btn" onClick={this.editField} name="Description" id="Description" />}
+                                    </p>
+                                    )}
                               </div>
                                 <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
                             </div>     
