@@ -31,15 +31,14 @@ class ArticleCreate extends Component {
                 body: this.state.body,
             }
         }).then(res => {
-            debugger;
-            this.props.history.push(`/articles/${res.data.id}`)
+            this.props.history.push(`/articles/${res.data.createArticle.id}`)
         })
     }
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.save}>
+            <div className="article-create-page">
+                <form className="article-create-form"onSubmit={this.save}>
                     <input className="image-text-field" type="text" onChange={this.handleFormChange("title")} placeholder="Article Title" value={this.state.title} />
                     <textarea className="image-text-field" type="text" onChange={this.handleFormChange("body")} placeholder="Write your article here" value={this.state.description} />
                     <input type="submit" className="submit" value="Post Image" disabled={!this.state.body} />

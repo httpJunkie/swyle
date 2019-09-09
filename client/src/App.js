@@ -9,6 +9,7 @@ import ImagesIndex from './images_index';
 import ImageCreate from './image_create';
 import ImageShow from './image_show';
 import ArticleShow from './article_show';
+import ArticleCreate from './article_create';
 import Header from './header';
 import Login from './login';
 import Register from './register';
@@ -43,10 +44,13 @@ class App extends Component {
               <Header currentUser={data.currentUser}/>
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
+                  <Route exact path={"/articles/new"} component={ArticleCreate} />
                   <Route exact path={"/articles/:articleID"} component={ArticleShow}/>
+
                   <Route exact path="/images/new" component={ImageCreate} />
                   <Route exact path={"/images/:imageID"} component={ImageShow} />
                   <Route exact path="/images" component={ImagesIndex} />
+
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/trending" component={Trending} />

@@ -28,6 +28,18 @@
     text-align: center;
 }
 
+.article-create-page {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: #001935;
+ position: relative;
+ top: -8rem;
+ padding-top: 8rem;
+ padding-left: 2rem;
+ padding-right: 2rem;
+}
+
 
 .article-index-page {
  display: flex;

@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 const postArticle = gql`
-  mutation createArticle($image: String!, $title: String!, $body: String) {
+  mutation createArticle($title: String!, $body: String!) {
     createArticle(body: $body, title: $title) {
       title
       id
