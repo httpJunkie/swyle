@@ -39,8 +39,8 @@ class ArticleCreate extends Component {
         return (
             <div className="article-create-page">
                 <form className="article-create-form"onSubmit={this.save}>
-                    <input className="image-text-field" type="text" onChange={this.handleFormChange("title")} placeholder="Article Title" value={this.state.title} />
-                    <textarea className="image-text-field" type="text" onChange={this.handleFormChange("body")} placeholder="Write your article here" value={this.state.description} />
+                    <input className="article-create-title" type="text" onChange={this.handleFormChange("title")} placeholder="Article Title" value={this.state.title} />
+                    <textarea className="article-create-body" type="text" onChange={this.handleFormChange("body")} placeholder="Write your article here" value={this.state.description} />
                     <input type="submit" className="submit" value="Post Image" disabled={!this.state.body} />
                 </form>
             </div>

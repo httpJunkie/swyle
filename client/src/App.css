@@ -38,6 +38,38 @@
  padding-top: 8rem;
  padding-left: 2rem;
  padding-right: 2rem;
+ height: -webkit-fill-available;
+}
+
+.article-create-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: space-between;
+  height:fit-content;
+  background: white;
+  margin-top: 2rem;
+  width: 40rem;
+}
+
+.article-create-title {
+  font-size: 32px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: .5rem;
+}
+
+.article-create-title:focus {
+  outline: none
+}
+
+.article-create-body {
+
+}
+
+.article-create-body:focus {
+  outline: none;
 }
 
 
