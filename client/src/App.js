@@ -55,7 +55,7 @@ class App extends Component {
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
 
-                  <Route exact path="/dashboard" component={UserDash} />
+                  <Route exact path="/dashboard" render={(props) => <UserDash currentUser={data.currentUser}/>} />
 
                   <Route exact path="/trending" component={Trending} />
                   <Route exact path="/headertest" component={testArea}/>
