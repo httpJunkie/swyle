@@ -20,10 +20,9 @@ class ClassName extends Component {
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
-                    debugger;
                     return (
-                        <div className="article-show-page">
-                            <h1></h1>
+                        <div >
+                          
                         </div>
                     )
                 }}

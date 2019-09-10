@@ -11,6 +11,7 @@ import ImageShow from './image_show';
 import ArticleShow from './article_show';
 import ArticleCreate from './article_create';
 import Header from './header';
+import UserDash from './user_dash'
 import Login from './login';
 import Register from './register';
 import Trending from './trending';
@@ -53,6 +54,9 @@ class App extends Component {
 
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
+
+                  <Route exact path="/dashboard" component={UserDash} />
+
                   <Route exact path="/trending" component={Trending} />
                   <Route exact path="/headertest" component={testArea}/>
                   <Route exact path="/about" component={About} />
