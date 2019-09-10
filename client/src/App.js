@@ -33,6 +33,7 @@ const testArea = () => {
 }
 
 class App extends Component {
+
   render() {   
     return (
       <BrowserRouter history={history}>
