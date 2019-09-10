@@ -67,5 +67,15 @@ module Types
         raise "Invalid post type. How did you find this error? You must have some 1337 skill0rz"
       end 
     end
+
+    field :posts_by_user, [PostUnion], null: true do 
+      argument :user_id, Integer, required: true
+    end
+    def posts_by_user(arg)
+      
+      user = User.find(arg[:user_id])
+      recents = (user.articles + user.image_posts).sort_by { |k| k[:created_at] }
+      recents
+    end
   end #class end
 end #module end 
