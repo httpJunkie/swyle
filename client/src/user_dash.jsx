@@ -21,7 +21,21 @@ class UserDash extends Component {
           return (<Redirect to="/login"/>)
       } else {
           return (
-              <h1>There is a user, his name is {this.state.currentUser.username}</h1>
+              <div className="user-dashboard">
+
+                <div className="user-recent-activity">
+
+                    <div className="user-posts">
+
+                    </div>
+
+                    <div className="user-comments">
+                        
+                    </div>
+
+                </div>
+
+              </div>
           )
       }
   }
