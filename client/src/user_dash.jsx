@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import {currentUser} from './queries/current_user';
+import {Query} from 'react-apollo';
+import postsByUser from './queries/posts_by_user';
 import {Redirect, withRouter} from 'react-router-dom';
 
 class UserDash extends Component {
-
 
     constructor(props) {
         super(props)
@@ -26,11 +26,22 @@ class UserDash extends Component {
                 <div className="user-recent-activity">
 
                     <div className="user-posts">
+                          <Query query={postsByUser} variables={{ userId: this.state.currentUser.id }}>
+                              {({ loading, error, data }) => {
+                                  if (loading) return <p>Loading...</p>;
+                                  if (error) return <p>Error :(</p>;
+                                    debugger
+                                      {data.postsByUser.map( post => {
+                                          return(<div>
+                                            </div>)
+                                      })}
+                              }}
+                          </Query>
 
                     </div>
 
                     <div className="user-comments">
-                        
+
                     </div>
 
                 </div>
