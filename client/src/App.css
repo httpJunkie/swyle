@@ -1,3 +1,7 @@
+body {
+   background: #001935;
+}
+
 .about-page {
  display: flex;
  flex-direction: column;
@@ -65,7 +69,9 @@
 }
 
 .article-create-body {
-
+  min-height: 20rem;
+  padding: .5rem;
+  border: none;
 }
 
 .article-create-body:focus {
@@ -660,4 +666,19 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .session-form > input:focus {
   outline: none;
+}
+
+.submit {
+  border-radius: 5px;
+  background: #00b8ff;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding: .5rem;
+  width: fit-content;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background:#659bb1;
 }
