@@ -24,7 +24,6 @@ class UserDash extends Component {
               <div className="user-dashboard">
 
                 <div className="user-recent-activity">
-
                     <div className="user-posts">
                           <Query query={postsByUser} variables={{ userId: this.state.currentUser.id }}>
                               {({ loading, error, data }) => {
@@ -36,8 +35,8 @@ class UserDash extends Component {
                                           return(
                                             <div className="user-posts-card" key={`${post.title}${post.id}`}>
                                                 <h3>{post.title}</h3>
-                                                {post.image && <div className="thumbnail-container"><img className="" src={post.image} /> </div>}
-                                                {post.snippet && <p>{post.snippet}</p>}
+                                                {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} /> </div>}
+                                                {post.snippet && <p>{post.snippet}<span style={{"color":"gray"}}>...</span></p>}
                                             </div>
                                             )
                                       })}

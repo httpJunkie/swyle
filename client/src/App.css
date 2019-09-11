@@ -682,3 +682,37 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   cursor: pointer;
   background:#659bb1;
 }
+
+.user-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-recent-activity {
+  display: flex;
+  width: 100%;
+}
+
+.user-posts {
+  width: 20rem;
+}
+
+.user-comments {
+  width: 20rem;
+}
+
+.user-posts-card{
+  background: white;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 3px;
+  width: 20rem;
+}
+
+.user-posts-thumbnail-container {
+  width: 20rem;
+}
+
+.user-posts-thumbnail-container > img{
+  width: 100%;
+}
