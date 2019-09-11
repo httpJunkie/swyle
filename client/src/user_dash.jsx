@@ -34,8 +34,10 @@ class UserDash extends Component {
                                       <div>
                                         {data.postsByUser.map( post => {
                                           return(
-                                            <div key={`${post.title}${post.id}`}>
-                                                
+                                            <div className="user-posts-card" key={`${post.title}${post.id}`}>
+                                                <h3>{post.title}</h3>
+                                                {post.image && <div className="thumbnail-container"><img className="" src={post.image} /> </div>}
+                                                {post.snippet && <p>{post.snippet}</p>}
                                             </div>
                                             )
                                       })}
