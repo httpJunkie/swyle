@@ -6,7 +6,7 @@ validates :title, presence: true
 
 
 #ImagePost takes on the name of post for the purposes of this association
-has_many :comments, as: :post,
+has_many :comments, as: :post, dependent: :destroy,
 primary_key: :id,
 foreign_key: :post_id,
 class_name: "Comment"

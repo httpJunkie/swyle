@@ -1,7 +1,7 @@
 class Article  < ApplicationRecord
     validates :body, :title, presence: true
 
-    has_many :comments, as: :post,
+    has_many :comments, as: :post, dependent: :destroy,
     primary_key: :id,
     foreign_key: :post_id,
     class_name: "Comment"

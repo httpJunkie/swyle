@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Query} from 'react-apollo';
 import postsByUser from './queries/posts_by_user';
+import commentsByUser from './queries/comments_by_user';
 import {Redirect, withRouter} from 'react-router-dom';
 
 class UserDash extends Component {
@@ -53,6 +54,25 @@ class UserDash extends Component {
 
                     <div className="user-comments">
                           <h3>Recent Comments</h3>
+                          <Query query={commentsByUser} variables={{ userId: this.state.currentUser.id }}>
+                              {({ loading, error, data }) => {
+                                  if (loading) return <p>Loading...</p>;
+                                  if (error) return <p>Error </p>;
+                                  debugger;
+                                  return (
+                                      <div>
+                                          <h3>Recent Posts</h3>
+                                          {data.commentsByUser.map(comment => {
+                                              return (
+                                                  <div className="user-comments-card" key={`${comment.id}`}>
+                                                  
+                                                  </div>
+                                              )
+                                          })}
+                                      </div>
+                                  )
+                              }}
+                          </Query>
                     </div>
 
                 </div>
