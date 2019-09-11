@@ -6,9 +6,7 @@ import { ApolloClient } from 'apollo-client';
 import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import introspectionQueryResultData from './fragmentTypes.json';
 
-const fragmentMatcher = new IntrospectionFragmentMatcher({
-    introspectionQueryResultData
-});
+
 
 const getTokens = async () => {
     const tokens = {
@@ -103,7 +101,10 @@ export const createClient = (cache, requestLink) => {
 };
 
 export const createCache = () => {
-    const cache = new InMemoryCache();
+    const fragmentMatcher = new IntrospectionFragmentMatcher({
+        introspectionQueryResultData
+    });
+    const cache = new InMemoryCache({fragmentMatcher});
     if (process.env.NODE_ENV === 'development') {
         window.secretVariableToStoreCache = cache;
     }

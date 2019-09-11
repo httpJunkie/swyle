@@ -29,15 +29,18 @@ class UserDash extends Component {
                           <Query query={postsByUser} variables={{ userId: this.state.currentUser.id }}>
                               {({ loading, error, data }) => {
                                   if (loading) return <p>Loading...</p>;
-                                  if (error) return <p>Error :(</p>;
-                                    debugger
-                                      {data.postsByUser.map( post => {
+                                  if (error) return <p>Error </p>;
+                                    return (
+                                      <div>
+                                        {data.postsByUser.map( post => {
                                           return(
                                             <div key={`${post.title}${post.id}`}>
                                                 
                                             </div>
                                             )
                                       })}
+                                      </div>
+                                    )
                               }}
                           </Query>
 
