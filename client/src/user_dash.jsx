@@ -32,8 +32,11 @@ class UserDash extends Component {
                                   if (error) return <p>Error :(</p>;
                                     debugger
                                       {data.postsByUser.map( post => {
-                                          return(<div>
-                                            </div>)
+                                          return(
+                                            <div key={`${post.title}${post.id}`}>
+                                                
+                                            </div>
+                                            )
                                       })}
                               }}
                           </Query>
