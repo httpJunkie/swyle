@@ -14,6 +14,11 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: "ImagePost" 
   
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: "Comment"
+
   # def password=(password)
   #   @password = password
   #   self.password_digest = BCrypt::Password.create(password)
