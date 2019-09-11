@@ -58,14 +58,18 @@ class UserDash extends Component {
                               {({ loading, error, data }) => {
                                   if (loading) return <p>Loading...</p>;
                                   if (error) return <p>Error </p>;
-                                  debugger;
                                   return (
                                       <div>
                                           <h3>Recent Posts</h3>
                                           {data.commentsByUser.map(comment => {
                                               return (
                                                   <div className="user-comments-card" key={`${comment.id}`}>
-                                                  
+                                                    <h4>You posted</h4>
+                                                    <p>{comment.body}</p>
+                                                    <h4> <span>
+                                                          On <span>{comment.post.title}</span> by <span>{comment.post.author.username}</span> at 
+                                                          <span>{"insert created at here"}</span>  
+                                                      </span> </h4>
                                                   </div>
                                               )
                                           })}
