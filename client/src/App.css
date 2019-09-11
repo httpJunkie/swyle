@@ -689,31 +689,68 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   padding: 1rem;
 }
 
+.user-dashboard-title {
+  font-weight: 300;
+  color: white;
+}
+
 .user-recent-activity {
   display: flex;
   width: 100%;
-  justify-content: center;
-    background: lightgray;
+  justify-content: space-around;
+  background: rgb(255, 255, 255, .5);
+  position: relative;
+}
+
+.user-recent-message {
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+  margin-block-end: unset;
+  background: rgb(255, 255, 255, .5);
 }
 
 .user-posts {
-  width: 20rem;
+  width: 35rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-comments {
-  width: 20rem;
+  width: 35rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-posts-card{
   background: white;
-  padding: 2rem;
-  margin: 1rem;
+  padding: 1rem;
   border-radius: 3px;
-  width: 20rem;
+  width: 30rem;
+  margin: .5rem;
+}
+
+.user-comments-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 3px;
+  width: 30rem;
+  margin: .5rem;
+}
+
+.user-comments-card-body {
+  color: gray;
+  font-style: italic;
 }
 
 .user-posts-thumbnail-container {
-  width: 20rem;
+  width: 30rem;
 }
 
 .user-posts-thumbnail-container > img{

@@ -5,6 +5,7 @@ query commentsByUser($userId: Int!){
     commentsByUser(userId: $userId) {
     body
     id
+    createdAt
     post{
       __typename
       ... on Article {

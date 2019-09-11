@@ -16,7 +16,6 @@ class Header extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        debugger;
         if (this.props.currentUser !== newProps.currentUser) {
             this.setState({ currentUser: newProps.currentUser})
         }
