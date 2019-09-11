@@ -22,7 +22,10 @@ class UserDash extends Component {
       } else {
           return (
               <div className="user-dashboard">
-
+              <div className="user-profile">
+                <h1>User Dashboard For {this.state.currentUser.username}</h1>
+                <h3></h3>
+              </div>
                 <div className="user-recent-activity">
                     <div className="user-posts">
                           <Query query={postsByUser} variables={{ userId: this.state.currentUser.id }}>
@@ -31,6 +34,7 @@ class UserDash extends Component {
                                   if (error) return <p>Error </p>;
                                     return (
                                       <div>
+                                          <h3>Recent Posts</h3>
                                         {data.postsByUser.map( post => {
                                           return(
                                             <div className="user-posts-card" key={`${post.title}${post.id}`}>
@@ -48,7 +52,7 @@ class UserDash extends Component {
                     </div>
 
                     <div className="user-comments">
-
+                          <h3>Recent Comments</h3>
                     </div>
 
                 </div>

@@ -686,11 +686,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 .user-dashboard {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .user-recent-activity {
   display: flex;
   width: 100%;
+  justify-content: center;
+    background: lightgray;
 }
 
 .user-posts {
