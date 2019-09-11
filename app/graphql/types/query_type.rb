@@ -68,6 +68,13 @@ module Types
       end 
     end
 
+    field :comments_by_user, [CommentType], null: true do 
+      argument :user_id, Integer, required: true
+    end
+    def comments_by_user(args)
+      User.find(args[:user_id]).comments.order(created_at: :desc)
+    end
+
     field :posts_by_user, [PostUnion], null: true do 
       argument :user_id, Integer, required: true
     end
