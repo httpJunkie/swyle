@@ -7,6 +7,7 @@ const articles = gql`{
         snippet
         count
         created
+        likeCount
         author {
             id
             username

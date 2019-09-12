@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 const article = gql`
     query article($id: Int!){
         article(id: $id){
-            likeCount
             id
             title
             body
