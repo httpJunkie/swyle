@@ -68,6 +68,10 @@ body {
   outline: none
 }
 
+.image-input {
+  color: white;
+}
+
 .article-create-body {
   min-height: 20rem;
   padding: .5rem;
@@ -518,6 +522,31 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 .image-creation-form {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  background: rgb(255, 255, 255, .5);
+  justify-content: space-between;
+}
+
+.image-creation-form > h1 {
+  color: white;
+  font-weight: 300;
+}
+
+.image-creation-form > input {
+  border: none;
+}
+
+.image-creation-title {
+  border: none;
+  font-size: 32px;
+  background: rgb(255, 255, 255, .5);
+  padding: .5rem;
+}
+
+.image-creation-desc {
+  border: none;
+  background: rgb(255, 255, 255, .5);
+ padding: .5rem;
 }
 
 .image-creation-placeholder {
@@ -526,6 +555,10 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   padding: 1rem;
   border: 1px dashed black;
   background: rgb(255, 255, 255, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
 .image-creation-preview { 

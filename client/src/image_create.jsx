@@ -103,17 +103,19 @@ class ImageCreate extends Component {
        return (
         <div className="image-creation-page">
                <div className="image-input-container">
-                   {this.state.image ? <div className="image-creation-preview"><img src={this.state.photoURL} /></div> : <div className="image-creation-placeholder"/>}
+                   {this.state.image ? <div className="image-creation-preview"><img src={this.state.photoURL} /></div> : <div className="image-creation-placeholder"><p>Your image will appear here in preview</p></div>}
                </div>
             <form onSubmit={this.save} className="image-creation-form">
+                   <h1>Post a New Image</h1>
+
                    <input className="image-input"
                        type="file"
                        onChange={this.handleFileChange}
                        accept="image/png, image/jpeg, image/gif, image/bmp, image/jpg"
                    />
              
-                <input className="image-text-field" type="text" onChange={this.handleFormChange("title")} placeholder="Image Title" value={this.state.title}/>
-                <input className="image-text-field" type="text" onChange={this.handleFormChange("description")} placeholder="Description (optional)" value={this.state.description}/>
+                <input className="image-creation-title" type="text" onChange={this.handleFormChange("title")} placeholder="Image Title" value={this.state.title}/>
+                <input className="image-creation-desc" type="text" onChange={this.handleFormChange("description")} placeholder="Description (optional)" value={this.state.description}/>
                 <input type="submit" className="submit" value="Post Image" disabled={!this.state.image}/>
                </form>
         </div>
