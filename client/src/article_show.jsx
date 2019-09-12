@@ -47,24 +47,31 @@ class ArticleShow extends Component {
                         <div className="article-show-page">
                             <div className="article-section">
                                 {!this.state.editingTitle ? 
-                                 <h1 className="article-show-title">{
-                                   article.title}{article.author.id === data.currentUser.id && 
-                                     <span className="comment-edit-btn" onClick={this.editField} name="Title" id="Title"/>
-                                   }
+                                 <h1 className="article-show-title">
+                                 
+                                    {article.title}
+
+                                     { data.currentUser && (article.author.id === data.currentUser.id) && 
+                                      <span className="comment-edit-btn" onClick={this.editField} name="Title" id="Title"/>
+                                     }
                                  </h1> 
                                    : 
-                                    <ArticleTitleEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit}  id={article.id} title={article.title}/>}
+                                    <ArticleTitleEdit cancelEdit={this.cancelEdit} 
+                                    finishEdit={this.finishEdit}  id={article.id} title={article.title}/>
+                                    }
                                  <h3>by {article.author.username}</h3>
                                 {!this.state.editingBody ? 
                                   <p className="article-show-body" id="article-body">
-                                        {article.author.id === data.currentUser.id && <span className="comment-edit-btn" onClick={this.editField} name="Body" id="Body" />}
+                                        {data.currentUser && (article.author.id === data.currentUser.id) && 
+                                        <span className="comment-edit-btn" onClick={this.editField} 
+                                        name="Body" id="Body" />}
                                     {article.body} 
                                   </p> 
                                    : 
                                   <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id} body={article.body}/> }
                             </div>
 
-                              <LikesSection currentUser={data.currentUser} postId={argument}/>          
+                              <LikesSection type={"Article"} currentUser={data.currentUser} postId={argument} likers={data.article.likers}/>          
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
                         </div>
                     )

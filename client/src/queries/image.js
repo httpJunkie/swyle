@@ -7,6 +7,7 @@ const image = gql`
             title
             description
             image
+            likers
             author {
                 id
                 username
