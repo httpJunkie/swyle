@@ -6,6 +6,7 @@ import * as compose from 'lodash.flowright';
 import gql from 'graphql-tag';
 import moment from 'moment';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class ImageCreate extends Component {
     constructor(props) {
@@ -93,6 +94,12 @@ class ImageCreate extends Component {
    }
 
    render() {
+       if (this.props.data.loading) {
+           return<p>Loading</p>
+       }
+       if (!this.props.data.currentUser) {
+           return <Redirect to="/login" />
+       }
        return (
         <div>
             <form onSubmit={this.save}>

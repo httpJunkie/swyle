@@ -3,7 +3,7 @@ import postArticle from './mutations/post_article';
 import currentUser from './queries/current_user';
 import { graphql } from 'react-apollo';
 import * as compose from 'lodash.flowright';
-
+import {Redirect} from 'react-router-dom';
 
 class ArticleCreate extends Component {
     constructor(props) {
