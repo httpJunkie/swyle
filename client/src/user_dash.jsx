@@ -35,7 +35,7 @@ class UserDash extends Component {
                 <div className="user-recent-activity">  
 
                     <div className="user-posts">
-                          <h3 style={{ "textAlign": "center"}}> Posts</h3>
+                          <h3 style={{ "textAlign": "center", "color":"white"}}> Posts</h3>
                           <Query query={postsByUser} variables={{ userId: this.state.currentUser.id }}>
                               {({ loading, error, data }) => {
                                   if (loading) return <p>Loading...</p>;
@@ -59,7 +59,7 @@ class UserDash extends Component {
                     </div>
 
                     <div className="user-comments">
-                          <h3 style={{ "textAlign": "center"}}> Comments</h3>
+                         <h3 style={{ "textAlign": "center", "color": "white"}}> Comments</h3>
                           <Query query={commentsByUser} variables={{ userId: this.state.currentUser.id }}>
                               {({ loading, error, data }) => {
                                   if (loading) return <p>Loading...</p>;
