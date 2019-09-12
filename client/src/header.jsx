@@ -60,6 +60,10 @@ class Header extends Component {
                                 <button className="header-login" onClick={this.logout}>Logout</button>
                             </div>
                     }
+                    <div className="new-post-buttons">
+                        <Link to="/images/new"/>
+                        <Link to="/articles/new"/>
+                    </div>
                 </div>
                 <NavBar />
             </div>
