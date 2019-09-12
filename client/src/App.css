@@ -623,6 +623,19 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   cursor: pointer;
 }
 
+.new-article-btn {
+  padding: 2rem;
+  
+}
+
+.new-image-btn {
+padding: 2rem;
+}
+
+.new-post-buttons {
+
+}
+
 .session-page {
   background: #001935;
   display: flex;

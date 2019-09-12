@@ -61,8 +61,8 @@ class Header extends Component {
                             </div>
                     }
                     <div className="new-post-buttons">
-                        <Link to="/images/new"/>
-                        <Link to="/articles/new"/>
+                        <Link className="new-image-btn" to="/images/new"/>
+                        <Link className="new-article-btn" to="/articles/new"/>
                     </div>
                 </div>
                 <NavBar />
