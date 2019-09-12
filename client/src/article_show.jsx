@@ -4,6 +4,7 @@ import article from './queries/article';
 import CommentSection from './comment_section';
 import ArticleBodyEdit from './article_body_edit';
 import ArticleTitleEdit from './article_title_edit';
+import LikesSection from './likes_section';
 import $ from 'jquery';
 
 class ArticleShow extends Component {
@@ -62,7 +63,8 @@ class ArticleShow extends Component {
                                    : 
                                   <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id} body={article.body}/> }
                             </div>
-                                      
+
+                              <LikesSection currentUser={data.currentUser} postId={argument}/>          
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
                         </div>
                     )
