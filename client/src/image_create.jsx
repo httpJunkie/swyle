@@ -105,7 +105,7 @@ class ImageCreate extends Component {
                <div className="image-input-container">
                    {this.state.image ? <div className="image-creation-preview"><img src={this.state.photoURL} /></div> : <div className="image-creation-placeholder"/>}
                </div>
-            <form onSubmit={this.save}>
+            <form onSubmit={this.save} className="image-creation-form">
                    <input className="image-input"
                        type="file"
                        onChange={this.handleFileChange}

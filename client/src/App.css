@@ -508,6 +508,36 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     padding: .5rem;
 }
 
+.image-creation-page {
+  display: flex;
+  width: 100%;
+  padding: 2rem;
+  justify-content: space-around;
+}
+
+.image-creation-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-creation-placeholder {
+  height: 20rem;
+  width: 20rem;
+  padding: 1rem;
+  border: 1px dashed black;
+  background: rgb(255, 255, 255, .5);
+}
+
+.image-creation-preview { 
+  height: 20rem;
+  width: 20rem;
+  padding: 1rem;
+}
+
+.image-creation-preview > img {
+  height: 100%;
+}
+
 .image-edit-btn {
   margin: 5px;
   padding: .6rem;
