@@ -51,9 +51,13 @@ body {
   padding: 1rem;
   justify-content: space-between;
   height:fit-content;
-  background: white;
+  background: rgb(255, 255, 255, .5);
   margin-top: 2rem;
   width: 40rem;
+}
+
+.article-create-form > input {
+  border: none;
 }
 
 .article-create-title {
@@ -62,6 +66,9 @@ body {
   border-left: none;
   border-right: none;
   margin-bottom: .5rem;
+  background: rgb(255, 255, 255, .5);
+  padding: .5rem;
+
 }
 
 .article-create-title:focus {
@@ -76,6 +83,8 @@ body {
   min-height: 20rem;
   padding: .5rem;
   border: none;
+  background: rgb(255, 255, 255, .5);
+
 }
 
 .article-create-body:focus {
@@ -534,6 +543,10 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .image-creation-form > input {
   border: none;
+}
+
+.image-creation-form > input:focus {
+  outline: none;
 }
 
 .image-creation-title {
