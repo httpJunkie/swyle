@@ -36,6 +36,12 @@ class ArticleCreate extends Component {
     }
 
     render() {
+        if (this.props.data.loading) {
+            return <p>Loading</p>
+        }
+        if (!this.props.data.currentUser) {
+            return <Redirect to="/login" />
+        }
         return (
             <div className="article-create-page">
                 <form className="article-create-form"onSubmit={this.save}>
