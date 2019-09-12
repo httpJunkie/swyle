@@ -417,7 +417,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   border-bottom: 1px solid gray;
   align-items: center;
   padding: .5rem;
-  width: 100%;
+  width: 100%; 
 }
 
 .header-site-name {
