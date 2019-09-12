@@ -11,6 +11,11 @@ primary_key: :id,
 foreign_key: :post_id,
 class_name: "Comment"
 
+has_many :likes, as: :post, dependent: :destroy,
+primary_key: :id,
+foreign_key: :post_id,
+class_name: "Like"
+
 belongs_to :user,
 primary_key: :id,
 foreign_key: :user_id,
