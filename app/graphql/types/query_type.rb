@@ -9,6 +9,7 @@ module Types
       argument :id, Int, required: true
     end
     field :count, Integer, null: false
+    field :likeCount, Integer, null: false
     def article(argument)
      Article.find(argument[:id])
     end

@@ -10,6 +10,9 @@ module Types
     field :count, Integer, null: false do 
       :comments.size
     end
+    field :like_count, Integer, null: false do
+      :likes.size
+    end
     field :created, String, method: :created_at, null: false
   end
 end

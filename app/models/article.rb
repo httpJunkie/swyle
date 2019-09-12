@@ -19,4 +19,8 @@ class Article  < ApplicationRecord
     def count
         self.comments.size
     end
+
+    def like_count
+        self.likes.size
+    end
 end
