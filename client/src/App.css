@@ -630,6 +630,11 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background-size: contain;
 }
 
+.new-article-btn:hover {
+  padding: 1.5rem;
+  transition: all .2s;
+}
+
 .new-image-btn {
   padding: 1rem;
   background-image: url('./images/newimage.png');
@@ -637,8 +642,18 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background-size: contain;
 }
 
-.new-post-buttons {
+.new-image-btn:hover {
+  padding: 1.5rem;
+  transition: all .2s;
+}
 
+.new-post-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 5rem;
+  position: absolute;
+  right: 2rem;
 }
 
 .session-page {
