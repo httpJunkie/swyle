@@ -24,7 +24,6 @@ class UserDash extends Component {
           return (
               <div className="user-dashboard">
               <div className="user-profile">
-                <h1 className="user-dashboard-title">User Dashboard For {this.state.currentUser.username}</h1>
                 <h3></h3>
               </div>
 
