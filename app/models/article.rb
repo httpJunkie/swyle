@@ -23,4 +23,8 @@ class Article  < ApplicationRecord
     def like_count
         self.likes.size
     end
+
+    def likers 
+        self.likes.map {|like| like.user_id}
+    end
 end

@@ -13,6 +13,8 @@ module Types
     field :like_count, Integer, null: false do
       :likes.size
     end
+    #this is so that we can find the user ids of everyone who likes the post, image will have the same
+    field :likers, [Integer], method: :likers, null: true 
     field :created, String, method: :created_at, null: false
   end
 end

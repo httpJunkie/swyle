@@ -11,6 +11,6 @@ module Types
     end
     field :image, String, null: false, method: :image_url
     field :created, String, method: :created_at, null: false
-    
+    field :likers, [Integer], method: :likers, null: true 
   end
 end
