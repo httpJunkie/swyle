@@ -3,6 +3,7 @@ import { MdThumbUp, MdThumbDown} from 'react-icons/md';
 import {Mutation} from 'react-apollo';
 import likePost from './mutations/like_post';
 import article from './queries/article';
+import unlikePost from './mutations/unlike_post';
 
 class LikesSection extends Component {
 
@@ -25,7 +26,37 @@ class LikesSection extends Component {
         return (
             <div className="likes-section" style={{"color":"white"}}>
                 <div className="like-or-dislike">
-                   
+                       {  userLikesIt ?
+                        <Mutation
+                            mutation={unlikePost}
+                            refetchQueries={[{ query: article, variables: { id: this.props.postId, } }]}
+                            update={(cache, { data: { unlikePost } }) => {
+                            }}>
+                            {(unlikePost, loading) =>
+                                !loading ? (
+                                    "..."
+                                ) : (
+                                        <span>
+                                            <MdThumbUp className="like-thumb-yes"
+                                                onClick={event => {
+                                                    event.preventDefault();
+                                                    unlikePost({
+                                                        variables: {
+                                                            userId: this.state.currentUser.id,
+                                                            postId: this.props.postId,
+                                                            postType: this.props.type
+                                                        }
+                                                    }).then(res => {
+                                                        // this.setState({ body: "" })
+                                                    })
+
+                                                }}
+                                            />
+                                            {this.props.numLikes}
+                                        </span>
+                                    )}
+                        </Mutation>
+                           :                    
                         <Mutation 
                             mutation={likePost}
                         refetchQueries={[{ query: article, variables: { id: this.props.postId,}}]}
@@ -36,10 +67,9 @@ class LikesSection extends Component {
                                     "..."
                                 ) : (
                                 <span> 
-                                  <MdThumbUp className={userLikesIt ? "like-thumb-yes" : "like-thumb-no"} 
+                                  <MdThumbUp className="like-thumb-no" 
                                             onClick={event => {
                                                 event.preventDefault();
-                                                if (!userLikesIt) {
                                                 likePost({
                                                     variables: {
                                                         userId: this.state.currentUser.id,
@@ -49,17 +79,14 @@ class LikesSection extends Component {
                                                 }).then(res => {
                                                     // this.setState({ body: "" })
                                                 })
-                                             } else {
-                                                 console.log("You already like this, silly")
-                                                 return false;
-                                             }
+                                           
                                             }}
                                   /> 
                                   {this.props.numLikes}
                                 </span>
                                 )}     
                         </Mutation>
-                   
+                       }
                 </div>
             </div>
         )
