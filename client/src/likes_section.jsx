@@ -39,6 +39,7 @@ class LikesSection extends Component {
                                   <MdThumbUp className={userLikesIt ? "like-thumb-yes" : "like-thumb-no"} 
                                             onClick={event => {
                                                 event.preventDefault();
+                                                if (!userLikesIt) {
                                                 likePost({
                                                     variables: {
                                                         userId: this.state.currentUser.id,
@@ -48,6 +49,10 @@ class LikesSection extends Component {
                                                 }).then(res => {
                                                     // this.setState({ body: "" })
                                                 })
+                                             } else {
+                                                 console.log("You already like this, silly")
+                                                 return false;
+                                             }
                                             }}
                                   /> 
                                   {this.props.numLikes}
