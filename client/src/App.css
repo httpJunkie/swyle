@@ -677,13 +677,19 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
    align-items: center;
 }
 
+.like-or-dislike > span {
+  display: flex;
+  align-items: center;
+}
 
 .like-thumb-yes {
   color: blue;
+  padding: .5rem;
 }
 
 .like-thumb-no {
   color: gray;
+  padding: .5rem;
 }
 
 .like-thumb-no:hover {
