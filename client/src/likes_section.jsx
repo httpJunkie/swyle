@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { MdThumbUp, MdThumbDown} from 'react-icons/md';
 import {Mutation} from 'react-apollo';
 import likePost from './mutations/like_post';
+import article from './queries/article';
 
 class LikesSection extends Component {
 
@@ -27,6 +28,7 @@ class LikesSection extends Component {
                    
                         <Mutation 
                             mutation={likePost}
+                        refetchQueries={[{ query: article, variables: { id: this.props.postId,}}]}
                             update={(cache, { data: { likePost } }) => {
                             }}>
                             {(likePost, loading) =>
