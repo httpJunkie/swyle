@@ -46,7 +46,6 @@ class LikesSection extends Component {
                                                         postType: this.props.type
                                                     }
                                                 }).then(res => {
-                                                    debugger;
                                                     // this.setState({ body: "" })
                                                 })
                                             }}
