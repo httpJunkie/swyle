@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 const unlikePost = gql`
-mutation unlike($postType: String!, $userId: Int!, $postId: Int!) { 
-        unlike(postType: $postType, userId: $userId, postId: $postId) {
+mutation unlikePost($postType: String!, $userId: Int!, $postId: Int!) { 
+        unlikePost(postType: $postType, userId: $userId, postId: $postId) {
             id
     }  
 }

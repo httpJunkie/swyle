@@ -15,6 +15,7 @@ module Types
     field :delete_comment, mutation: Mutations::DeleteComment
 
     field :like_post, mutation: Mutations::LikePost
+    field :unlike_post, mutation: Mutations::UnlikePost
     
     field :create_image_post, mutation: Mutations::CreateImagePost
     field :update_image_title, mutation: Mutations::UpdateImageTitle
