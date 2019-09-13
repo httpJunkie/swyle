@@ -5,14 +5,18 @@ class LikesSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentUserLikesIt: this.props.currentUser ? this.props.likers.includes(this.props.currentUser.id) : false
+            currentUser: this.props.currentUser
         }
+    }
+
+    componentDidUpdate(newProps) {
+        debugger
     }
 
     render() {
         return (
             <div className="likes-section" style={{"color":"white"}}>
-              { this.state.currentUserLikesIt ? "You like this" : "You have no opinion on this"}
+                {this.state.currentUser && this.props.likers.includes(this.state.currentUser.id)  ? "You like this" : "You have no opinion on this"}
             </div>
         )
     }
