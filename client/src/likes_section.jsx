@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { MdThumbUp, MdThumbDown} from 'react-icons/md';
+import {Mutation} from 'react-apollo';
+import likePost from './mutations/like_post';
 
 class LikesSection extends Component {
 
@@ -22,7 +24,36 @@ class LikesSection extends Component {
         return (
             <div className="likes-section" style={{"color":"white"}}>
                 <div className="like-or-dislike">
-                    <span> <MdThumbUp className={userLikesIt ? "like-thumb-yes" : "like-thumb-no"} /> {this.props.numLikes}</span>
+                   
+                        <Mutation 
+                            mutation={likePost}
+                            update={(cache, { data: { likePost } }) => {
+                            }}>
+                            {(likePost, loading) =>
+                                !loading ? (
+                                    "..."
+                                ) : (
+                                <span> 
+                                  <MdThumbUp className={userLikesIt ? "like-thumb-yes" : "like-thumb-no"} 
+                                            onClick={event => {
+                                                event.preventDefault();
+                                                likePost({
+                                                    variables: {
+                                                        userId: this.state.currentUser.id,
+                                                        postId: this.props.postId,
+                                                        postType: this.props.type
+                                                    }
+                                                }).then(res => {
+                                                    debugger;
+                                                    // this.setState({ body: "" })
+                                                })
+                                            }}
+                                  /> 
+                                  {this.props.numLikes}
+                                </span>
+                                )}     
+                        </Mutation>
+                   
                 </div>
             </div>
         )
