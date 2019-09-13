@@ -22,9 +22,8 @@ class LikesSection extends Component {
         return (
             <div className="likes-section" style={{"color":"white"}}>
                 <div className="like-or-dislike">
-                    <MdThumbUp className={userLikesIt ? "like-thumb-yes" : "like-thumb-no" }/>
+                    <span> <MdThumbUp className={userLikesIt ? "like-thumb-yes" : "like-thumb-no"} /> {this.props.numLikes}</span>
                 </div>
-                { userLikesIt ? "You like this" : "You have no opinion on this"}
             </div>
         )
     }

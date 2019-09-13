@@ -660,6 +660,38 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   align-items: center;
 }
 
+.likes-section {
+ background: white;
+ padding: .5rem;
+ display: flex;
+ justify-content: center;
+ width: 100%;
+}
+
+.like-or-dislike {
+   color: black;
+   font-family: sans-serif;
+   font-weight: bold;  
+   position: relative;
+   display: flex;
+   align-items: center;
+}
+
+
+.like-thumb-yes {
+  color: blue;
+}
+
+.like-thumb-no {
+  color: gray;
+}
+
+.like-thumb-no:hover {
+  cursor: pointer;
+}
+.like-thumb-yes:hover {
+  cursor: pointer;
+}
 
 .nav-bar {
   color: white;
