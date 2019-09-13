@@ -9,8 +9,11 @@ class LikesSection extends Component {
         }
     }
 
-    componentDidUpdate(newProps) {
-        debugger
+
+    componentWillReceiveProps(newProps) {
+        if (this.props.currentUser !== newProps.currentUser) {
+            this.setState({currentUser: newProps.currentUser})
+        }
     }
 
     render() {
