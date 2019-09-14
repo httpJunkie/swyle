@@ -6,6 +6,7 @@ const images = gql`{
         title
         image
         count
+        likeCount
         created
         author {
             id

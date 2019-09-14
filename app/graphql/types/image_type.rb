@@ -9,6 +9,9 @@ module Types
     field :count, Integer, null: false do 
       :comments.size
     end
+    field :like_count, Integer, null: false do
+      :likes.size
+    end
     field :image, String, null: false, method: :image_url
     field :created, String, method: :created_at, null: false
     field :likers, [Integer], method: :likers, null: true 

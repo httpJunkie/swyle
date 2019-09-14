@@ -27,7 +27,7 @@ class LikesSection extends Component {
     render() {
         const userLikesIt = this.state.currentUser && this.props.likers.includes(this.state.currentUser.id);
         const refetch = QUERIES[this.props.type]
-        console.log(refetch)
+        console.log(this.props.numLikes)
         return (
             <div className="likes-section" style={{"color":"white"}}>
                 <div className="like-or-dislike">

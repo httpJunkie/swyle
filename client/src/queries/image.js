@@ -8,6 +8,7 @@ const image = gql`
             description
             image
             likers
+            likeCount
             author {
                 id
                 username
