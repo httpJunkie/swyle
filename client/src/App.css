@@ -639,6 +639,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   justify-content: center;
   padding: .5rem;
   width: 5rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .image-show-carousel {
