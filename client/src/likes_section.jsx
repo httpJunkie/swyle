@@ -45,6 +45,9 @@ class LikesSection extends Component {
                                             <MdThumbUp className="like-thumb-yes"
                                                 onClick={event => {
                                                     event.preventDefault();
+                                                    if (!this.state.currentUser) {
+                                                        return false;
+                                                    }
                                                     unlikePost({
                                                         variables: {
                                                             userId: this.state.currentUser.id,
@@ -75,6 +78,10 @@ class LikesSection extends Component {
                                   <MdThumbUp className="like-thumb-no" 
                                             onClick={event => {
                                                 event.preventDefault();
+                                                if (!this.state.currentUser) {
+                                                    alert("Must be logged in to like")
+                                                    return false;
+                                                }
                                                 likePost({
                                                     variables: {
                                                         userId: this.state.currentUser.id,
