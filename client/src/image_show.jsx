@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import image from './queries/image';
 import CommentSection from './comment_section';
+import LikesSection from './likes_section';
 import ImageDescriptionEdit from './image_description_edit';
 import ImageTitleEdit from './image_title_edit';
 import {Link} from 'react-router-dom';
@@ -90,6 +91,7 @@ class ImageShow extends Component {
                                         <span className="image-edit-btn" onClick={this.editField} name="Description" id="Description" />}
                                     </p>
                                     )}
+                                    <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={data.article.likers} numLikes={data.article.likeCount} />          
                               </div>
                                 <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
                             </div>     
