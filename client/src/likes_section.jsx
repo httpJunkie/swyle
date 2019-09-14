@@ -3,7 +3,10 @@ import { MdThumbUp, MdThumbDown} from 'react-icons/md';
 import {Mutation} from 'react-apollo';
 import likePost from './mutations/like_post';
 import article from './queries/article';
+import image from './queries/image';
 import unlikePost from './mutations/unlike_post';
+
+const QUERIES = {"Article": article, "ImagePost": image};
 
 class LikesSection extends Component {
 
@@ -23,14 +26,15 @@ class LikesSection extends Component {
 
     render() {
         const userLikesIt = this.state.currentUser && this.props.likers.includes(this.state.currentUser.id);
-        console.log(this.props.likers)
+        const refetch = QUERIES[this.props.type]
+        console.log(refetch)
         return (
             <div className="likes-section" style={{"color":"white"}}>
                 <div className="like-or-dislike">
                        {  userLikesIt ?
                         <Mutation
                             mutation={unlikePost}
-                            refetchQueries={[{ query: article, variables: { id: this.props.postId, } }]}
+                            refetchQueries={[{ query: refetch, variables: { id: this.props.postId, } }]}
                             update={(cache, { data: { unlikePost } }) => {
                             }}>
                             {(unlikePost, loading) =>
@@ -60,7 +64,7 @@ class LikesSection extends Component {
                            :                    
                         <Mutation 
                             mutation={likePost}
-                        refetchQueries={[{ query: article, variables: { id: this.props.postId,}}]}
+                        refetchQueries={[{ query: refetch, variables: { id: this.props.postId,}}]}
                             update={(cache, { data: { likePost } }) => {
                             }}>
                             {(likePost, loading) =>

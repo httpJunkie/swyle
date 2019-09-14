@@ -91,7 +91,7 @@ class ImageShow extends Component {
                                         <span className="image-edit-btn" onClick={this.editField} name="Description" id="Description" />}
                                     </p>
                                     )}
-                                    <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={data.article.likers} numLikes={data.article.likeCount} />          
+                                    <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={image.likers} numLikes={image.likeCount} />          
                               </div>
                                 <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
                             </div>     
