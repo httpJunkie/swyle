@@ -91,11 +91,13 @@ class ImageShow extends Component {
                                         <span className="image-edit-btn" onClick={this.editField} name="Description" id="Description" />}
                                     </p>
                                     )}
-                                    <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={image.likers} numLikes={image.likeCount} />          
                               </div>
                                 <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
+                            </div>
+                            <div className="image-likes-container">
+                                <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={image.likers} numLikes={image.likeCount} />          
                             </div>     
-                        <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} />
+                            <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} />
                         </div>
                     )
                 }}
