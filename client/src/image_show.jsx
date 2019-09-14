@@ -74,7 +74,7 @@ class ImageShow extends Component {
                                      <h2 className="image-show-title">                                        
                                  
                                       {image.title}, by {image.author.username}
-                                      {image.author.id === data.currentUser.id &&
+                                      {data.currentUser && (image.author.id === data.currentUser.id) &&
                                       <span className="image-edit-btn" onClick={this.editField} name="Title" id="Title" />}  
                                     </h2>
                                       )
@@ -87,7 +87,7 @@ class ImageShow extends Component {
                                     ) : (
                                     <p className="image-show-description">
                                         "{image.description}"
-                                        {image.author.id === data.currentUser.id && 
+                                        {data.currentUser && (image.author.id === data.currentUser.id) && 
                                         <span className="image-edit-btn" onClick={this.editField} name="Description" id="Description" />}
                                     </p>
                                     )}
