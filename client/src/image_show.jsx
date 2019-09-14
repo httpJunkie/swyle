@@ -63,8 +63,13 @@ class ImageShow extends Component {
                             <div style={{"flexDirection": "row", "display": "flex"}}>
                                 <Link className="image-show-carousel" to={`/images/${prev}`}>Previous</Link>
                                 <div style={{ "flexDirection": "column", "display": "flex"}}>
-                                    
-                                    <img className="image-show-image" src={image.image}/>
+                                    <div style={{"position":"relative"}}>
+                                        <img className="image-show-image" src={image.image}/>
+                                        <div className="image-likes-container">
+                                            <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={image.likers} numLikes={image.likeCount} />
+                                        </div>  
+                                    </div>
+                               
 
                                   {  this.state.editingTitle? (
                                       <ImageTitleEdit cancelEdit={this.cancelEdit} 
@@ -94,9 +99,7 @@ class ImageShow extends Component {
                               </div>
                                 <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
                             </div>
-                            <div className="image-likes-container">
-                                <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={image.likers} numLikes={image.likeCount} />          
-                            </div>     
+                             
                             <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} />
                         </div>
                     )
