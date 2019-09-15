@@ -5,7 +5,21 @@ import { onError } from 'apollo-link-error';
 import { ApolloClient } from 'apollo-client';
 import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import introspectionQueryResultData from './fragmentTypes.json';
+import ActionCable from 'actioncable';
+import ActionCableLink from 'graphql-ruby-client/subscriptions/ActionCableLink';
 
+const getCableUrl = () => {
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const host = window.location.hostname;
+    const port = process.env.CABLE_PORT || '3000';
+    const authToken = localStorage.getItem('mlToken');
+    return `${protocol}//${host}:${port}/cable?token=${authToken}`;
+};
+
+const createActionCableLink = () => {
+    const cable = ActionCable.createConsumer(getCableUrl());
+    return new ActionCableLink({ cable });
+};
 
 
 const getTokens = async () => {
