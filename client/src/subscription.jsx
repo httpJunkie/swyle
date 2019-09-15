@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { ArticleSubscription } from './subscriptions/article_added';
+import ArticlesubScription from './subscriptions/article_added';
 
 const Subscription = ({ subscribeToMore }) => {
   useEffect(() => {
     return subscribeToMore({
-      document: ArticleSubscription,
+      document: ArticlesubScription,
       updateQuery: (prev, { subscriptionData }) => {
         if (!subscriptionData.data) return prev;
         const { articleAdded } = subscriptionData.data;

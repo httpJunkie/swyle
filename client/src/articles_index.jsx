@@ -3,6 +3,7 @@ import articles from './queries/articles';
 import { Query } from "react-apollo";
 import {Link} from 'react-router-dom';
 import ArticleTags from './article_tags';
+import Subscription from './subscription';
 
 class ArticlesIndex extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class ArticlesIndex extends Component {
          
         return (
             <Query query={articles}>
-                {({ loading, error, data }) => {
+                {({ loading, error, data, subscribeToMore }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                     const articles = data.articles;
@@ -31,6 +32,7 @@ class ArticlesIndex extends Component {
                                 <h4>{article.count} Comments {article.likeCount} Likes</h4>                           
                             </div>
                         ))}
+                            <Subscription subscribeToMore={subscribeToMore} />
                     </div>
                     )
                 }}

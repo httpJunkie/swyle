@@ -1,9 +1,10 @@
 import gql from 'graphql-tag';
 
-const articleAdded = gql`
+const ArticleSubscription = gql`
 subscription ArticleSubscription {
   articleAdded {
-    id
+     
+            id
     title
     body
     likers
@@ -11,8 +12,10 @@ subscription ArticleSubscription {
     author {
         id
         username
+      }
     }
-  }
+    
+}
 `
 
-export default articleAdded;
+export default ArticleSubscription;
