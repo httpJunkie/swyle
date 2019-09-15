@@ -656,6 +656,11 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   height: 25rem;
 }
 
+.image-show-inner {
+  position: relative;
+  max-width: fit-content;
+}
+
 .image-show-title {
   text-align: center;
   color: white;

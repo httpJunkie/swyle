@@ -60,10 +60,10 @@ class ImageShow extends Component {
                     const prev = ownIndex === 0 ? (data.imageIds[data.imageIds.length - 1]) : data.imageIds[ownIndex - 1];
                     return (
                         <div className="article-show-page">
-                            <div style={{"flexDirection": "row", "display": "flex"}}>
+                            <div style={{"flexDirection": "row", "display": "flex", "alignItems":"center"}}>
                                 <Link className="image-show-carousel" to={`/images/${prev}`}>Previous</Link>
-                                <div style={{ "flexDirection": "column", "display": "flex"}}>
-                                    <div style={{"position":"relative"}}>
+                                <div style={{ "flexDirection": "column", "display": "flex", "alignItems": "center"}}>
+                                    <div className="image-show-inner">
                                         <img className="image-show-image" src={image.image}/>
                                         <div className="image-likes-container">
                                             <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={image.likers} numLikes={image.likeCount} />
