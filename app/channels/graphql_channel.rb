@@ -17,5 +17,11 @@ class GraphqlChannel < ApplicationCable::Channel
  end
 
   def unsubscribed
+    @subscription_ids.each do |sid|
+      SwyleSchema.subscriptions.delete_subscription(sid)
+    end
+  end
+
+  def unsubscribed
   end
 end
