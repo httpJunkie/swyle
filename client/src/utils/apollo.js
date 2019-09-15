@@ -21,6 +21,12 @@ const createActionCableLink = () => {
     return new ActionCableLink({ cable });
 };
 
+const hasSubscriptionOperation = ({ query: { definitions } }) =>
+    definitions.some(
+        ({ kind, operation }) =>
+            kind === 'OperationDefinition' && operation === 'subscription'
+    );
+
 
 const getTokens = async () => {
     const tokens = {
