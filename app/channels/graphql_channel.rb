@@ -22,6 +22,22 @@ class GraphqlChannel < ApplicationCable::Channel
     end
   end
 
-  def unsubscribed
+   private
+
+  def execute_query(data)
+    SwyleSchema.execute(
+      query: data["query"],
+      context: context,
+      variables: data["variables"],
+      operation_name: data["operationName"]
+    )
+  end
+
+  def context
+    {
+      current_user_id: current_user&.id,
+      current_user: current_user,
+      channel: self
+    }
   end
 end
