@@ -113,7 +113,12 @@ export const createClient = (cache, requestLink) => {
         link: ApolloLink.from([
             createErrorLink(),
             createLinkWithToken(),
-            createHttpLink(),
+            ApolloLink.split(
+                hasSubscriptionOperation,
+                createActionCableLink(),
+                createHttpLink(),
+            )
+            // createHttpLink(),
         ]),
         cache,
     });
