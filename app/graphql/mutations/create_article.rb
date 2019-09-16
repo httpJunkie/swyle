@@ -23,7 +23,7 @@ module Mutations
         
         if article.save 
           SwyleSchema.subscriptions.trigger("articleAdded", {}, article)
-          debugger
+          
           # { article: article}
           article
         else
