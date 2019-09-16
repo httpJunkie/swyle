@@ -15,15 +15,16 @@ class ArticlesIndex extends Component {
         subscribeToMore({
             document: ArticleSubscription,
             updateQuery: (prev, { subscriptionData }) => {
+                debugger
                 if (!subscriptionData.data) return prev
                 debugger;
                 const newArticle = subscriptionData.data.articleAdded
                 const exists = prev.feed.articles.find(({ id }) => id === newArticle.id);
                 if (exists) return prev;
-
+                debugger;
                 return Object.assign({}, prev, {
-                    feed: {
-                        articles: [newArticle, ...prev.feed.articles],
+                    data: {
+                        articles: [newArticle, ...prev.data.articles],
                     }
                 })
             }
