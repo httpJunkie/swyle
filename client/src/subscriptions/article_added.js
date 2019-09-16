@@ -19,7 +19,6 @@ subscription ArticleSubscription {
     }
    }
     
-}
-`
+}`
 
 export default ArticleSubscription;

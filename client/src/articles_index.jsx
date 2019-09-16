@@ -3,12 +3,15 @@ import articles from './queries/articles';
 import { Query } from "react-apollo";
 import {Link} from 'react-router-dom';
 import ArticleTags from './article_tags';
-import Subscription from './subscription';
 
 class ArticlesIndex extends Component {
     constructor(props) {
         super(props);
         this.state = {}
+    }
+
+    subscribeToNewArticles() {
+
     }
 
     render() {
@@ -32,7 +35,6 @@ class ArticlesIndex extends Component {
                                 <h4>{article.count} Comments {article.likeCount} Likes</h4>                           
                             </div>
                         ))}
-                            <Subscription subscribeToMore={subscribeToMore} />
                     </div>
                     )
                 }}

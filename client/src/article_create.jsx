@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import postArticle from './mutations/post_article';
 import currentUser from './queries/current_user';
+import articles from './queries/articles';
 import { graphql } from 'react-apollo';
 import * as compose from 'lodash.flowright';
 import {Redirect} from 'react-router-dom';
@@ -29,7 +30,8 @@ class ArticleCreate extends Component {
             variables: {
                 title: this.state.title,
                 body: this.state.body,
-            }
+            },
+            refetchQueries: [{query: articles}]
         }).then(res => {
             this.props.history.push(`/articles/${res.data.createArticle.id}`)
         })
