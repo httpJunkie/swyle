@@ -16,12 +16,16 @@ class ArticlesIndex extends Component {
             document: ArticleSubscription,
             updateQuery: (prev, { subscriptionData }) => {
                 
-                if (!subscriptionData.data) return prev
-                
+                if (!subscriptionData.data) {
+                    debugger
+                    return prev
+                }
                 const newArticle = subscriptionData.data.articleAdded
+                debugger
                 const exists = prev.feed.articles.find(({ id }) => id === newArticle.id);
-                if (exists) return prev;
-                
+                if (exists) {
+                    return prev;
+                }
                 return Object.assign({}, prev, {
                     data: {
                         articles: [newArticle, ...prev.data.articles],
@@ -40,7 +44,6 @@ class ArticlesIndex extends Component {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                     this.subscribeToNewArticles(subscribeToMore)
-                    debugger;
                     const articles = data.articles;
                     return ( 
                     <div className="article-index-page"> 

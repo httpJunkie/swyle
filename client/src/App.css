@@ -807,7 +807,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 }
 
 .session-form {
-  background: rgb(10, 4, 88);
+  background: rgb(255, 255, 255, .6);
   width: 20rem;
   padding: 1.5rem;
   height: fit-content;
@@ -843,6 +843,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .submit {
   border-radius: 5px;
+  border: none;
   background: #00b8ff;
   color: white;
   font-weight: bold;
