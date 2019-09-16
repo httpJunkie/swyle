@@ -810,7 +810,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background: rgb(255, 255, 255, .6);
   width: 20rem;
   padding: 1.5rem;
-  height: fit-content;
+  /* height: fit-content; */
   position: relative;
   /* top: 5rem; */
   border-radius: 4px;
@@ -833,7 +833,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   border-bottom: 1px solid gray;
   color: white;
   position: relative;
-  margin: 1rem;
+  margin: .5rem;
   font-size: large;
 }
 
