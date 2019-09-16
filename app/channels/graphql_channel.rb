@@ -4,17 +4,17 @@ class GraphqlChannel < ApplicationCable::Channel
   end
 
   def execute(data)
-  result = execute_query(data)
+    result = execute_query(data)
 
-  payload = {
-    result: result.subscription? ? { data: nil } : result.to_h,
-    more: result.subscription?
-  }
+    payload = {
+      result: result.subscription? ? { data: nil } : result.to_h,
+      more: result.subscription?
+    }
 
-  @subscription_ids << context[:subscription_id] if result.context[:subscription_id]
+    @subscription_ids << context[:subscription_id] if result.context[:subscription_id]
 
-  transmit(payload) 
- end
+    transmit(payload) 
+  end
 
   def unsubscribed
     @subscription_ids.each do |sid|
@@ -25,6 +25,7 @@ class GraphqlChannel < ApplicationCable::Channel
    private
 
   def execute_query(data)
+    
     SwyleSchema.execute(
       query: data["query"],
       context: context,

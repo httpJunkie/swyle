@@ -31,6 +31,7 @@ class ArticleCreate extends Component {
                 body: this.state.body,
             }
         }).then(res => {
+            debugger
             this.props.history.push(`/articles/${res.data.createArticle.id}`)
         })
     }

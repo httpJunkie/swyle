@@ -20,10 +20,16 @@ module Mutations
         article.body = body
         article.snippet = snippet
         article.user = context[:current_user]
+        
         if article.save 
           SwyleSchema.subscriptions.trigger("articleAdded", {}, article)
-          {article: article}
+          debugger
+          # { article: article}
+          article
+        else
+          { errors: article.errors.full_messages }
         end
     end
+
   end
 end
