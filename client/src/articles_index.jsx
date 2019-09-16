@@ -3,6 +3,7 @@ import articles from './queries/articles';
 import { Query } from "react-apollo";
 import {Link} from 'react-router-dom';
 import ArticleTags from './article_tags';
+import ArticleSubscription from './subscriptions/article_added';
 
 class ArticlesIndex extends Component {
     constructor(props) {
@@ -10,8 +11,23 @@ class ArticlesIndex extends Component {
         this.state = {}
     }
 
-    subscribeToNewArticles() {
+    subscribeToNewArticles(subscribeToMore) {
+        subscribeToMore({
+            document: ArticleSubscription,
+            updateQuery: (prev, { subscriptionData }) => {
+                if (!subscriptionData.data) return prev
+                debugger;
+                const newArticle = subscriptionData.data.articleAdded
+                const exists = prev.feed.articles.find(({ id }) => id === newArticle.id);
+                if (exists) return prev;
 
+                return Object.assign({}, prev, {
+                    feed: {
+                        articles: [newArticle, ...prev.feed.articles],
+                    }
+                })
+            }
+        })
     }
 
     render() {
@@ -22,6 +38,8 @@ class ArticlesIndex extends Component {
                 {({ loading, error, data, subscribeToMore }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
+                    this.subscribeToNewArticles(subscribeToMore)
+                    debugger;
                     const articles = data.articles;
                     return ( 
                     <div className="article-index-page"> 
