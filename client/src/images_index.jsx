@@ -29,7 +29,7 @@ class ImagesIndex extends Component {
                                            <img className="image-index-thumb"src={image.image} alt={image.title} />
                                           </Link>
                                           <span>by {image.author.username}</span>
-                                          <span>{image.count} Comments, 0 Likes</span>
+                                          <span>{image.count} Comments, {image.likeCount} Likes</span>
                                       </div>
                                   )
                                       
