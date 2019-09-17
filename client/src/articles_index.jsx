@@ -3,7 +3,7 @@ import articles from './queries/articles';
 import { Query } from "react-apollo";
 import {Link} from 'react-router-dom';
 import ArticleTags from './article_tags';
-import ArticleSubscription from './subscriptions/article_added';
+import Subscription from './subscription';
 
 class ArticlesIndex extends Component {
     constructor(props) {
@@ -11,29 +11,6 @@ class ArticlesIndex extends Component {
         this.state = {}
     }
 
-    subscribeToNewArticles(subscribeToMore) {
-        subscribeToMore({
-            document: ArticleSubscription,
-            updateQuery: (prev, { subscriptionData }) => {
-                
-                if (!subscriptionData.data) {
-                    debugger
-                    return prev
-                }
-                const newArticle = subscriptionData.data.articleAdded
-                debugger
-                const exists = prev.feed.articles.find(({ id }) => id === newArticle.id);
-                if (exists) {
-                    return prev;
-                }
-                return Object.assign({}, prev, {
-                    data: {
-                        articles: [newArticle, ...prev.data.articles],
-                    }
-                })
-            }
-        })
-    }
 
     render() {
         const date = Date.now(); 
@@ -43,7 +20,6 @@ class ArticlesIndex extends Component {
                 {({ loading, error, data, subscribeToMore }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
-                    this.subscribeToNewArticles(subscribeToMore)
                     const articles = data.articles;
                     return ( 
                     <div className="article-index-page"> 
@@ -57,6 +33,7 @@ class ArticlesIndex extends Component {
                                 <h4>{article.count} Comments {article.likeCount} Likes</h4>                           
                             </div>
                         ))}
+                        <Subscription subscribeToMore={subscribeToMore} />
                     </div>
                     )
                 }}
