@@ -810,14 +810,15 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background: rgb(255, 255, 255, .6);
   width: 20rem;
   padding: 1.5rem;
-  /* height: fit-content; */
   position: relative;
   top: 1rem;
   border-radius: 4px;
-  margin-bottom: 10rem;
-  /* margin-top: 5rem; */
   border: 1px solid gray;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .session-form > h1 {
@@ -850,7 +851,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   color: white;
   font-weight: bold;
   font-family: sans-serif;
-  padding: .5rem;
+  padding: .6rem;
+  margin: .2rem;
   width: fit-content;
 }
 
