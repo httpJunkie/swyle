@@ -812,17 +812,19 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   padding: 1.5rem;
   /* height: fit-content; */
   position: relative;
-  /* top: 5rem; */
+  top: 1rem;
   border-radius: 4px;
   margin-bottom: 10rem;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   border: 1px solid gray;
   box-sizing: border-box;
 }
 
 .session-form > h1 {
   text-align: center;
-  color: white;
+  font-weight: 300;
+  font-size: 28pt;
+  color: rgb(245, 245, 245);
 }
 
 .session-form > input {
@@ -833,7 +835,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   border-bottom: 1px solid gray;
   color: white;
   position: relative;
-  margin: .5rem;
+  margin: .2rem;
   font-size: large;
 }
 
