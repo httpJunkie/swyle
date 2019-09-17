@@ -13,6 +13,7 @@ const getCableUrl = () => {
     const host = window.location.hostname;
     const port = process.env.CABLE_PORT || '3000';
     const authToken = localStorage.getItem('mlToken');
+    debugger;
     return `${protocol}//${host}:${port}/cable?token=${authToken}`;
 };
 

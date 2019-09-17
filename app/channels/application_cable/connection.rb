@@ -9,9 +9,10 @@ module ApplicationCable
     private
 
     def current_user
-      #this is turning up blank.
       token = request.params[:token].to_s
       email = Base64.decode64(token)
+      # debugger
+      # email = "fiery@swagger.com"
       User.find_by(email: email)
     end
   end
