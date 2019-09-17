@@ -488,6 +488,19 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     text-decoration: none;
 }
 
+.header-login:hover {
+  background: lightgray;
+  color: rgb(23, 12, 175);
+  transition: all .1s;
+}
+
+.header-register:hover {
+  color: lightgray;
+  background: rgb(23, 12, 175);
+  transition: all .1s;
+  border: 2px solid lightgray;
+}
+
 .header-register {
   border: 2px solid white;
   color: white;
