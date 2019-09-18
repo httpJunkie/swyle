@@ -16,6 +16,7 @@ import Login from './login';
 import Register from './register';
 import Trending from './trending';
 import About from './about';
+import Adverts from './adverts';
 import { Switch, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createHashHistory } from 'history';
@@ -61,6 +62,7 @@ class App extends Component {
                   <Route exact path="/trending" component={Trending} />
                   <Route exact path="/headertest" component={testArea}/>
                   <Route exact path="/about" component={About} />
+                  <Route exact path="/sponsors" component={Adverts} />
               </Switch>
           </div> 
             )
