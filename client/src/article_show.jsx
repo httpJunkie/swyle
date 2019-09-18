@@ -46,6 +46,10 @@ class ArticleShow extends Component {
                     return (
                         <div className="article-show-page">
                             <div className="article-section">
+                                {data.currentUser && (article.author.id === data.currentUser.id) && 
+                                    <Mutation>
+
+                                    </Mutation>}
                                 {!this.state.editingTitle ? 
                                  <h1 className="article-show-title">
                                  
