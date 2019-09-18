@@ -3,6 +3,7 @@ import {Query} from 'react-apollo';
 import article from './queries/article';
 import articles from './queries/articles';
 import deleteArticle from './mutations/delete_article';
+import  { graphql } from 'react-apollo'
 import CommentSection from './comment_section';
 import ArticleBodyEdit from './article_body_edit';
 import ArticleTitleEdit from './article_title_edit';
@@ -40,6 +41,11 @@ class ArticleShow extends Component {
 
     deleteArticle(e) {
         e.preventDefault();
+        this.props.mutate({
+
+        }).then(res => {
+            this.props.history.push("/");
+        })
     }
 
     render() {
@@ -92,4 +98,4 @@ class ArticleShow extends Component {
 
 }
 
-export default ArticleShow;
+export default graphql(deleteArticle)(ArticleShow);
