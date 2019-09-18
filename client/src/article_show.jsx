@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Query} from 'react-apollo';
 import article from './queries/article';
+import articles from './queries/articles';
+import deleteArticle from './mutations/delete_article';
 import CommentSection from './comment_section';
 import ArticleBodyEdit from './article_body_edit';
 import ArticleTitleEdit from './article_title_edit';
@@ -18,6 +20,7 @@ class ArticleShow extends Component {
         this.cancelEdit = this.cancelEdit.bind(this);
         this.finishEdit = this.finishEdit.bind(this);
         this.editField = this.editField.bind(this);
+        this.deleteArticle = this.deleteArticle.bind(this);
     }
 
     cancelEdit(event) {
@@ -35,6 +38,10 @@ class ArticleShow extends Component {
         this.setState({ [`editing${event.target.id}`]: true });
     }
 
+    deleteArticle(e) {
+        e.preventDefault();
+    }
+
     render() {
        const argument = parseInt(this.props.match.params.articleID)
         return (
@@ -47,9 +54,8 @@ class ArticleShow extends Component {
                         <div className="article-show-page">
                             <div className="article-section">
                                 {data.currentUser && (article.author.id === data.currentUser.id) && 
-                                    <Mutation>
+                                 <span onClick={this.deleteArticle}>DeleteMe</span>}
 
-                                    </Mutation>}
                                 {!this.state.editingTitle ? 
                                  <h1 className="article-show-title">
                                  
