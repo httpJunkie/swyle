@@ -44,7 +44,7 @@ class ArticleShow extends Component {
         e.preventDefault();
         debugger;
         this.props.mutate({
-            variables: { id: e.target.id },
+            variables: { id: parseInt(e.currentTarget.id) },
             refetchQueries: [{query: articles}]
         }).then(res => {
             this.props.history.push("/");
@@ -63,7 +63,7 @@ class ArticleShow extends Component {
                         <div className="article-show-page">
                             <div className="article-section">
                                 {data.currentUser && (article.author.id === data.currentUser.id) && 
-                                 <MdDelete id={article.id} onClick={this.deleteArticle}>DeleteMe</MdDelete>}
+                                 <MdDelete className="post-delete-btn" id={article.id} onClick={this.deleteArticle}>DeleteMe</MdDelete>}
 
                                 {!this.state.editingTitle ? 
                                  <h1 className="article-show-title">
