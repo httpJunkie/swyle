@@ -9,6 +9,7 @@ import ArticleBodyEdit from './article_body_edit';
 import ArticleTitleEdit from './article_title_edit';
 import LikesSection from './likes_section';
 import $ from 'jquery';
+import { MdDelete} from 'react-icons/md';
 
 class ArticleShow extends Component {
 
@@ -60,7 +61,7 @@ class ArticleShow extends Component {
                         <div className="article-show-page">
                             <div className="article-section">
                                 {data.currentUser && (article.author.id === data.currentUser.id) && 
-                                 <span onClick={this.deleteArticle}>DeleteMe</span>}
+                                 <MdDelete onClick={this.deleteArticle}>DeleteMe</MdDelete>}
 
                                 {!this.state.editingTitle ? 
                                  <h1 className="article-show-title">
