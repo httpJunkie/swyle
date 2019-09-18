@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ArticleSubscription from './subscriptions/article_added';
-import  { graphql } from 'react-apollo';
 
 
 const Subscription = ({ subscribeToMore }) => {

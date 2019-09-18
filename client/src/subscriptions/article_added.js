@@ -11,12 +11,7 @@ subscription ArticleSubscription {
         author {
             id
             username
-        },
-    currentUser {
-      id
-      username
-      email
-    }
+        }
    }
     
 }`
