@@ -7,7 +7,7 @@ const Adverts = () => {
             <h2>Swyle wa goran no suponsaa no teikyou de okurishimasu</h2>
             <div className="ad">
                 <h3 className="ad-title">Your Ad Here</h3>
-                <p className="ad-body">Advertise on Swyle!</p>
+                <p className="ad-body">Advertise on Swyle! Thanks to the lack of analytics, your company's name will never be hidden!</p>
             </div>
         </div>
     )
