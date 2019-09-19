@@ -7,6 +7,7 @@ import ImageDescriptionEdit from './image_description_edit';
 import ImageTitleEdit from './image_title_edit';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
+import { MdDelete } from 'react-icons/md';
 
 
 class ImageShow extends Component {
@@ -20,6 +21,10 @@ class ImageShow extends Component {
         this.cancelEdit = this.cancelEdit.bind(this);
         this.finishEdit = this.finishEdit.bind(this);
         this.editField = this.editField.bind(this);
+        this.deleteImage = this.deleteImage.bind(this);
+    }
+    deleteImage() {
+        console.log("honk honk")
     }
 
     cancelEdit(event) {
@@ -65,6 +70,10 @@ class ImageShow extends Component {
                                 <div style={{ "flexDirection": "column", "display": "flex", "alignItems": "center"}}>
                                     <div className="image-show-inner">
                                         <img className="image-show-image" src={image.image}/>
+                                        <div className="image-delete-container">
+                                            {data.currentUser && (image.author.id === data.currentUser.id) &&
+                                                <MdDelete className="post-delete-btn" onClick={this.deleteImage}/>}
+                                        </div>
                                         <div className="image-likes-container">
                                             <LikesSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} likers={image.likers} numLikes={image.likeCount} />
                                         </div>  
