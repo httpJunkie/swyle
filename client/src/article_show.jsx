@@ -77,7 +77,7 @@ class ArticleShow extends Component {
                         <div className="article-show-page">
                             <div className="article-section">
                                 {data.currentUser && (article.author.id === data.currentUser.id) && 
-                                 <MdDelete className="post-delete-btn"  onClick={this.deleteArticle}>DeleteMe</MdDelete>}
+                                 <MdDelete className="post-delete-btn"  onClick={this.openModal}>DeleteMe</MdDelete>}
 
                                 {!this.state.editingTitle ? 
                                  <h1 className="article-show-title">
@@ -106,7 +106,7 @@ class ArticleShow extends Component {
                             </div>
 
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
-                            {this.state.confirmationOpen && <ConfirmationModal title={article.title} close={this.closeModal} confirm={this.deleteArticle}/>}
+                            {this.state.confirmationOpen && <ConfirmationModal title={article.title} cancel={this.closeModal} confirm={this.deleteArticle}/>}
                         </div>
                     )
                 }}
