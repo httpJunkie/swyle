@@ -293,6 +293,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url('./images/editpen.png');
+  position: absolute;
+  right: 3rem;
 }
 
 .comment-edit-btn:hover {
