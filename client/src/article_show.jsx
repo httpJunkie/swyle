@@ -10,6 +10,7 @@ import ArticleTitleEdit from './article_title_edit';
 import LikesSection from './likes_section';
 import $ from 'jquery';
 import { MdDelete} from 'react-icons/md';
+import ConfirmationModal from './confirmation_modal';
 
 class ArticleShow extends Component {
 
@@ -17,12 +18,25 @@ class ArticleShow extends Component {
         super(props)
         this.state = {
             editingBody: false,
-            editingTitle: false
+            editingTitle: false,
+            confirmationOpen: false
         }
         this.cancelEdit = this.cancelEdit.bind(this);
         this.finishEdit = this.finishEdit.bind(this);
         this.editField = this.editField.bind(this);
         this.deleteArticle = this.deleteArticle.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+    }
+
+    closeModal(){
+        $('body').css('overflow', 'auto');
+        this.setState({confirmationOpen: false})
+    }
+
+    openModal() {
+        $('body').css('overflow', 'hidden');
+        this.setState({ confirmationOpen: true })
     }
 
     cancelEdit(event) {
