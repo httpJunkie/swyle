@@ -623,18 +623,6 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   height: 100%;
 }
 
-.image-delete-container {
-  background: rgb(255,255,255,.3);
-  position: absolute;
-  top: .5rem;
-  right: .5rem;
-  border-radius: 4px;
-}
-
-.image-delete-container:hover {
-  background: white;
-  transition: all .2s;
-}
 
 .image-edit-btn {
   margin: 5px;
@@ -855,9 +843,9 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 }
 
 .post-delete-btn {
-  /* position: absolute; */
-  /* right: .5rem; */
-  /* top: .5rem; */
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
   font-size: 24px;
   padding: .5rem;
 }
