@@ -328,8 +328,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 8000;
-    background: rgb(0,0,0,.5);
+    z-index: 9000;
+    background: rgb(255,255,255,.6);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -340,7 +340,9 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   border-radius: 4px;
   position: relative;
   top: .5rem;
-  padding: .5rem;
+  padding: 1.5rem;
+  width: 20rem;
+  height: 10rem;
   z-index: 9000;
   text-align:center;
   background: white;
@@ -348,6 +350,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 1px 1px 2px black;
 }
 
 .confirmation-dialog > h4 {
