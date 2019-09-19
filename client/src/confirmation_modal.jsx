@@ -5,8 +5,8 @@ const ConfirmationModal = (props) => {
     return (
         <div className="confirmation-modal">
             <div className="confirmation-dialog">
-                <h3>Are you sure you want to delete {props.title}?</h3>
-                <div style={{"display": "flex"}}>     
+                <h4>Are you sure you want to delete <span>"{props.title}"</span>?</h4>
+                <div className="confirmation-icons" style={{"display": "flex"}}>     
                     <MdCheck className="confirmation-yes" onClick={props.confirm} />
                 <MdClose className="confirmation-no" onClick={props.cancel} />
 
