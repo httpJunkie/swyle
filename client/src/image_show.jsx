@@ -7,7 +7,7 @@ import ImageDescriptionEdit from './image_description_edit';
 import ImageTitleEdit from './image_title_edit';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
-import { MdDelete } from 'react-icons/md';
+import { MdDelete, MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 
 
 class ImageShow extends Component {
