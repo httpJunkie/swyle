@@ -106,6 +106,7 @@ class ArticleShow extends Component {
                             </div>
 
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
+                            {this.state.confirmationOpen && <ConfirmationModal title={article.title} close={this.closeModal} confirm={this.deleteArticle}/>}
                         </div>
                     )
                 }}
