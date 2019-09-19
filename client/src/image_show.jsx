@@ -66,7 +66,7 @@ class ImageShow extends Component {
                     return (
                         <div className="article-show-page">
                             <div style={{"flexDirection": "row", "display": "flex", "alignItems":"center"}}>
-                                <Link className="image-show-carousel" to={`/images/${prev}`}>Previous</Link>
+                                <Link className="image-show-carousel" to={`/images/${prev}`}><MdNavigateBefore /></Link>
                                 <div style={{ "flexDirection": "column", "display": "flex", "alignItems": "center"}}>
                                     <div className="image-show-inner">
                                         <img className="image-show-image" src={image.image}/>
@@ -106,7 +106,7 @@ class ImageShow extends Component {
                                     </p>
                                     )}
                               </div>
-                                <Link className="image-show-carousel" to={`/images/${next}`}>Next</Link>
+                                <Link className="image-show-carousel" to={`/images/${next}`}><MdNavigateNext /></Link>
                             </div>
                              
                             <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} />
