@@ -341,7 +341,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   position: relative;
   top: .5rem;
   padding: 1.5rem;
-  width: 20rem;
+  width: 24rem;
   height: 10rem;
   z-index: 9000;
   text-align:center;
@@ -358,28 +358,35 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .confirmation-icons {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 2rem;
+  position: relative;
 }
 
 .confirmation-yes {
   color: green;
   font-size: 28px;
   margin: .5rem;
+  position: absolute;
+  right: 50%;
+  
 }
 
 .confirmation-no {
   color: red;
   font-size: 28px;
   margin: .5rem;
+  position: absolute;
+  left: 50%;
 }
 
 .confirmation-yes:hover {
   cursor: pointer;
+  font-size: 32px;
 }
 
 .confirmation-no:hover {
   cursor: pointer;
+  font-size: 32px;
 }
 
 .confirm-btn-yes {
