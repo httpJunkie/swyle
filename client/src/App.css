@@ -342,14 +342,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   top: .5rem;
   padding: 1.5rem;
   width: 24rem;
-  height: 10rem;
+  height: 5rem;
   z-index: 9000;
   text-align:center;
   background: white;
   margin: .2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .confirmation-dialog > h4 {
@@ -367,7 +367,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   font-size: 28px;
   margin: .5rem;
   position: absolute;
-  right: 50%;
+  right: 60%;
   
 }
 
@@ -376,17 +376,19 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   font-size: 28px;
   margin: .5rem;
   position: absolute;
-  left: 50%;
+  left: 60%;
 }
 
 .confirmation-yes:hover {
   cursor: pointer;
   font-size: 32px;
+  transition: all .1s;
 }
 
 .confirmation-no:hover {
   cursor: pointer;
   font-size: 32px;
+  transition: all .1s;
 }
 
 .confirm-btn-yes {

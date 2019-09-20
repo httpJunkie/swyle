@@ -1,19 +1,36 @@
 import gql from 'graphql-tag';
 
+// const ArticleSubscription = gql`
+// subscription ArticleSubscription {
+//    articleAdded { 
+//         id
+//         title
+//         body
+//         likers
+//         likeCount
+//         author {
+//             id
+//             username
+//         }
+//    }
+    
+// }`
+
 const ArticleSubscription = gql`
 subscription ArticleSubscription {
-   articleAdded { 
+   articleAdded {
+    id
+    title
+    snippet
+    count
+    created
+    likeCount
+    author {
         id
-        title
-        body
-        likers
-        likeCount
-        author {
-            id
-            username
-        }
+        username
+    }
    }
-    
+
 }`
 
 export default ArticleSubscription;
