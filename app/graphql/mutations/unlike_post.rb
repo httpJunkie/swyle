@@ -10,6 +10,7 @@ module Mutations
             if post_type === "Article"
                 article = Article.find(post_id.to_i)
                 SwyleSchema.subscriptions.trigger("articleUnliked", {}, article)
+                article
             end
         end
     end

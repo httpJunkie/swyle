@@ -8,10 +8,8 @@ module Types
     def article_liked 
     end
 
-   end
-
     field :article_unliked, Types::ArticleType, null: false, description: "Article was unliked"
-    def article_liked 
+    def article_unliked 
     end
     
    end

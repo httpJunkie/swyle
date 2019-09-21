@@ -20,10 +20,16 @@ const Subscription = ({ subscribeToMore }) => {
         const {articleLiked} = subscriptionData.data;
 
         if(articleLiked) {
-          debugger;
           return {
             items: prev.articles.map(el =>
               el.id === articleLiked.id ? { ...el, ...articleLiked } : el)
+          }
+        }
+        const {articleUnliked} = subscriptionData.data
+        if (articleUnliked) {
+          return {
+            items: prev.articles.map(el =>
+              el.id === articleUnliked.id ? { ...el, ...articleUnliked } : el)
           }
         }
 
