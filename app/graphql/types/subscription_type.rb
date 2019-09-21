@@ -11,6 +11,10 @@ module Types
     field :article_unliked, Types::ArticleType, null: false, description: "Article was unliked"
     def article_unliked 
     end
+
+    field :article_updated, Types::ArticleType, null: false, description: "Article was updated"
+    def article_updated 
+    end
     
    end
 end

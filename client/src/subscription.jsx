@@ -7,7 +7,6 @@ const Subscription = ({ subscribeToMore }) => {
     return subscribeToMore({
       document: ArticleSubscription,
       updateQuery: (prev, { subscriptionData }) => {
-        console.log("subdata: ", subscriptionData.data)
         if (!subscriptionData.data) return prev;
         const { articleAdded } = subscriptionData.data;
         if (articleAdded) {
@@ -21,14 +20,22 @@ const Subscription = ({ subscribeToMore }) => {
 
         if(articleLiked) {
           return {
-            items: prev.articles.map(el =>
+            articles: prev.articles.map(el =>
               el.id === articleLiked.id ? { ...el, ...articleLiked } : el)
           }
         }
         const {articleUnliked} = subscriptionData.data
         if (articleUnliked) {
           return {
-            items: prev.articles.map(el =>
+            articles: prev.articles.map(el =>
+              el.id === articleUnliked.id ? { ...el, ...articleUnliked } : el)
+          }
+        }
+
+        const {articleUpdated} = subscriptionData.data;
+        if (articleUpdated) {
+          return {
+            articles: prev.articles.map(el =>
               el.id === articleUnliked.id ? { ...el, ...articleUnliked } : el)
           }
         }
