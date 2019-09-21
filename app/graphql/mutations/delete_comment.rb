@@ -9,6 +9,7 @@ module Mutations
           post = comment.post
           comment.destroy
           SwyleSchema.subscriptions.trigger("articleUpdated", {}, post)
+          SwyleSchema.subscriptions.trigger("commentDeleted", {}, comment)
           post
       end
     end

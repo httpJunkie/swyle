@@ -20,11 +20,11 @@ module Types
     def comment_added
     end
 
-    field :comment_updated, Types::CommentType, null: false, description: "Article was updated"
+    field :comment_updated, Types::CommentType, null: false, description: "comment was updated"
     def comment_updated 
     end
 
-    field :comment_deleted, Types::CommentType, null: false, description: "Article was updated"
+    field :comment_deleted, Types::CommentType, null: false, description: "comment was deleted"
     def comment_deleted 
     end
     
