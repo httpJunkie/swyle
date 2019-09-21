@@ -5,6 +5,7 @@ import postComment from './mutations/post_comment';
 import commentsByPost from './queries/comments_by_post';
 import Comment from './comment';
 
+
 class CommentSection extends Component {
     //Will need to refetch queries upon a successful commentation
 
