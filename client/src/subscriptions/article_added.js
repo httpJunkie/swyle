@@ -13,6 +13,19 @@ subscription ArticleSubscription {
         id
         username
     }
+   },
+
+    articleLiked {
+    id
+    title
+    snippet
+    count
+    created
+    likeCount
+    author {
+        id
+        username
+    }
    }
 
 }`
