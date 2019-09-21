@@ -1,17 +1,34 @@
 import gql from 'graphql-tag';
-import CommentSubscription from '../comment_subscription';
 
 const CommentSubscription = gql`
 subscription CommentSubscription {
    commentAdded {
-    commentquery stuff
+    commentor {
+      username
+      id
+    }
+    body
+    id
+    createdAt
    },
 
     commentUpdated {
-      commentquery stuff
+      commentor {
+      username
+      id
+    }
+    body
+    id
+    createdAt
    },
    commentDeleted {
-       commentquery stuff
+       commentor {
+      username
+      id
+    }
+    body
+    id
+    createdAt
    }
 }`
 
