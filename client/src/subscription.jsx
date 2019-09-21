@@ -17,9 +17,14 @@ const Subscription = ({ subscribeToMore }) => {
           }
           return { articles: [articleAdded].concat(prev.articles) };
         }
+        const {articleLiked} = subscriptionData.data;
 
         if(articleLiked) {
-          console.log("something got liked")
+          debugger;
+          return {
+            items: prev.articles.map(el =>
+              el.id === articleLiked.id ? { ...el, ...articleLiked } : el)
+          }
         }
 
         return prev;
