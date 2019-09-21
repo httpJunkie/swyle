@@ -26,8 +26,20 @@ subscription ArticleSubscription {
         id
         username
     }
-   }
+   },
 
+    articleUnliked {
+    id
+    title
+    snippet
+    count
+    created
+    likeCount
+    author {
+        id
+        username
+    }
+   }
 }`
 
 export default ArticleSubscription;
