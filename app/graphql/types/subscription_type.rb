@@ -15,6 +15,10 @@ module Types
     field :article_updated, Types::ArticleType, null: false, description: "Article was updated"
     def article_updated 
     end
+
+    field :comment_added, Types::CommentType, null: false, description: "Comment added"
+    def comment_added
+    end
     
    end
 end
