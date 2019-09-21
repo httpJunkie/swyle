@@ -19,6 +19,14 @@ module Types
     field :comment_added, Types::CommentType, null: false, description: "Comment added"
     def comment_added
     end
+
+    field :comment_updated, Types::CommentType, null: false, description: "Article was updated"
+    def comment_updated 
+    end
+
+    field :comment_deleted, Types::CommentType, null: false, description: "Article was updated"
+    def comment_deleted 
+    end
     
    end
 end
