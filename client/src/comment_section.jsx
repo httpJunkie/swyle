@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import postComment from './mutations/post_comment';
 import commentsByPost from './queries/comments_by_post';
 import Comment from './comment';
-
+import Subscription from './comment_subscription';
 
 class CommentSection extends Component {
     //Will need to refetch queries upon a successful commentation
@@ -31,7 +31,7 @@ class CommentSection extends Component {
     render () {
         return (
             <Query query={commentsByPost} variables={{postId: this.props.postId, postType: this.props.type}}>
-            {({ loading, error, data }) => {
+            {({ loading, error, data, subscribeToMore}) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                         
@@ -86,7 +86,7 @@ class CommentSection extends Component {
                                         />
                             }
                         )}
-
+                        <Subscription subscribeToMore={subscribeToMore} />
                     </div>
                 )
             }}

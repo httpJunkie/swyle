@@ -11,27 +11,26 @@ const Subscription = ({ subscribeToMore }) => {
 
                 const { commentAdded } = subscriptionData.data;
                 if (commentAdded) {
-                    const alreadyInList = prev.comments.find(e => e.id === commentAdded.id);
+                    const alreadyInList = prev.commentsByPost.find(e => e.id === commentAdded.id);
                     if (alreadyInList) {
                         return prev;
                     }
-                    return { comments: [commentAdded].concat(prev.comments) };
+                    return { commentsByPost: [commentAdded].concat(prev.commentsByPost) };
                 }
 
                 const { commentUpdated } = subscriptionData.data;
 
                 if (commentUpdated) {
                     return {
-                        comments: prev.comments.map(el =>
+                        commentsByPost: prev.commentsByPost.map(el =>
                             el.id === commentUpdated.id ? { ...el, ...commentUpdated } : el)
                     }
                 }
 
                 const {commentDeleted} = subscriptionData.data;
                 if (commentDeleted) {
-                    debugger;
                     return {
-                        comments: prev.comments.map(el =>
+                        commentsByPost: prev.commentsByPost.map(el =>
                             el.id === commentDeleted.id ? { } : el)
                     }
                 }
