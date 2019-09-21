@@ -13,8 +13,6 @@ module Mutations
             if post_type === "Article"
                 article = Article.find(post_id.to_i)
                 SwyleSchema.subscriptions.trigger("articleLiked", {}, article)
-            else
-                return false;
             end
             like
         end
