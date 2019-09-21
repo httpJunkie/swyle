@@ -1,43 +1,38 @@
 import React, { useEffect } from 'react';
-import ArticleSubscription from './subscriptions/article_added';
+import CommentSubscription from './subscriptions/article_added';
 
 
-const CommentSubscription = ({ subscribeToMore }) => {
+const Subscription = ({ subscribeToMore }) => {
     useEffect(() => {
         return subscribeToMore({
-            document: ArticleSubscription,
+            document: CommentSubscription,
             updateQuery: (prev, { subscriptionData }) => {
                 if (!subscriptionData.data) return prev;
-                const { articleAdded } = subscriptionData.data;
-                if (articleAdded) {
-                    const alreadyInList = prev.articles.find(e => e.id === articleAdded.id);
+
+                const { commentAdded } = subscriptionData.data;
+                if (commentAdded) {
+                    const alreadyInList = prev.comments.find(e => e.id === commentAdded.id);
                     if (alreadyInList) {
                         return prev;
                     }
-                    return { articles: [articleAdded].concat(prev.articles) };
+                    return { comments: [commentAdded].concat(prev.comments) };
                 }
-                const { articleLiked } = subscriptionData.data;
 
-                if (articleLiked) {
+                const { commentUpdated } = subscriptionData.data;
+
+                if (commentUpdated) {
                     return {
-                        articles: prev.articles.map(el =>
-                            el.id === articleLiked.id ? { ...el, ...articleLiked } : el)
-                    }
-                }
-                const { articleUnliked } = subscriptionData.data
-                if (articleUnliked) {
-                    return {
-                        articles: prev.articles.map(el =>
-                            el.id === articleUnliked.id ? { ...el, ...articleUnliked } : el)
+                        comments: prev.comments.map(el =>
+                            el.id === commentUpdated.id ? { ...el, ...commentUpdated } : el)
                     }
                 }
 
-                const { articleUpdated } = subscriptionData.data;
-
-                if (articleUpdated) {
+                const {commentDeleted} = subscriptionData.data;
+                if (commentDeleted) {
+                    debugger;
                     return {
-                        articles: prev.articles.map(el =>
-                            el.id === articleUpdated.id ? { ...el, ...articleUpdated } : el)
+                        comments: prev.comments.map(el =>
+                            el.id === commentDeleted.id ? { } : el)
                     }
                 }
 
@@ -48,4 +43,4 @@ const CommentSubscription = ({ subscribeToMore }) => {
     return null;
 };
 
-export default CommentSubscription;
+export default Subscription;
