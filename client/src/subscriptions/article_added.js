@@ -39,6 +39,19 @@ subscription ArticleSubscription {
         id
         username
     }
+   }, 
+
+    articleUpdated {
+    id
+    title
+    snippet
+    count
+    created
+    likeCount
+    author {
+        id
+        username
+    }
    }
 }`
 
