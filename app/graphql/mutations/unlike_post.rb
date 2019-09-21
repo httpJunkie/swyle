@@ -7,6 +7,10 @@ module Mutations
         def resolve(user_id: nil, post_id: nil, post_type: nil)
             like = Like.find_by(user_id: user_id, post_id: post_id, post_type: post_type)
             like.destroy
+            if post_type === "Article"
+                article = Article.find(post_id.to_i)
+                SwyleSchema.subscriptions.trigger("articleUnliked", {}, article)
+            end
         end
     end
   end
