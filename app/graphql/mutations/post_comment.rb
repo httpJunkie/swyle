@@ -12,6 +12,7 @@ module Mutations
             comment.post_id = post_id
             comment.post_type = post_type
             comment.save
+            SwyleSchema.subscriptions.trigger("articleUpdated", {}, comment.post)
             comment
         end
     end
