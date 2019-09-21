@@ -11,12 +11,15 @@ const Subscription = ({ subscribeToMore }) => {
         if (!subscriptionData.data) return prev;
         const { articleAdded } = subscriptionData.data;
         if (articleAdded) {
-          debugger;
           const alreadyInList = prev.articles.find(e => e.id === articleAdded.id);
           if (alreadyInList) {
             return prev;
           }
           return { articles: [articleAdded].concat(prev.articles) };
+        }
+
+        if(articleLiked) {
+          console.log("something got liked")
         }
 
         return prev;
