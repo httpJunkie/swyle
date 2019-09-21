@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import CommentSubscription from './subscriptions/article_added';
+import CommentSubscription from './subscriptions/comment_subscription';
 
 
 const Subscription = ({ subscribeToMore }) => {
