@@ -11,10 +11,12 @@ module Mutations
           #Return if article isn't found, add error message later.
           article.body = body
           article.snippet = body[0, 100]
-          article.save
-          article
-          #The mutation updates the database but something goes wrong on GraphQL's end.
-          #TODO: add backend error handling on this resolver.
+        if  article.save
+            SwyleSchema.subscriptions.trigger("articleUpdated", {}, article)
+            article
+        else
+          return article.errors.full_messages
+        end   
       end
     end
   end

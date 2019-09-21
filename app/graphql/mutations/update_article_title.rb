@@ -10,8 +10,12 @@ module Mutations
           return unless article
           #Return if article isn't found, add error message later.
           article.title = title
-          article.save
-          article
+        if  article.save
+            SwyleSchema.subscriptions.trigger("articleUpdated", {}, article)
+            article
+        else
+          return article.errors.full_messages
+        end  
       end
     end
   end
