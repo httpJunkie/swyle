@@ -21,9 +21,9 @@ subscription CommentSubscription {
     id
     createdAt
    },
-   
+
    commentDeleted {
-       commentor {
+      commentor {
       username
       id
     }

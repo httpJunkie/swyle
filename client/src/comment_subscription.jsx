@@ -10,6 +10,7 @@ const Subscription = ({ subscribeToMore }) => {
                 if (!subscriptionData.data) return prev;
 
                 const { commentAdded } = subscriptionData.data;
+                debugger
                 if (commentAdded) {
                     const alreadyInList = prev.commentsByPost.find(e => e.id === commentAdded.id);
                     if (alreadyInList) {
@@ -19,7 +20,7 @@ const Subscription = ({ subscribeToMore }) => {
                 }
 
                 const { commentUpdated } = subscriptionData.data;
-
+                debugger
                 if (commentUpdated) {
                     return {
                         commentsByPost: prev.commentsByPost.map(el =>
@@ -28,7 +29,9 @@ const Subscription = ({ subscribeToMore }) => {
                 }
 
                 const {commentDeleted} = subscriptionData.data;
+                debugger
                 if (commentDeleted) {
+                    debugger;
                     return {
                         commentsByPost: prev.commentsByPost.map(el =>
                             el.id === commentDeleted.id ? { } : el)

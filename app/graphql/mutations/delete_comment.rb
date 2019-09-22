@@ -7,9 +7,10 @@ module Mutations
       def resolve(id: nil) 
           comment = Comment.find(id)
           post = comment.post
+          comment_copy = comment
           comment.destroy
           SwyleSchema.subscriptions.trigger("articleUpdated", {}, post)
-          SwyleSchema.subscriptions.trigger("commentDeleted", {}, comment)
+          SwyleSchema.subscriptions.trigger("commentDeleted", {}, comment_copy)
           post
       end
     end
