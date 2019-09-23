@@ -14,6 +14,10 @@ module Mutations
                 article = Article.find(post_id.to_i)
                 SwyleSchema.subscriptions.trigger("articleLiked", {}, article)
             end
+            if post_type === "ImagePost"
+                image = ImagePost.find(post_id.to_i)
+                SwyleSchema.subscriptions.trigger("imageLiked", {}, image)
+            end
             like
         end
     end
