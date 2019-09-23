@@ -13,7 +13,20 @@ subscription ImageSubscription {
             id
             username
         }
-   }
+   },
+
+    imageUpdated {
+     id
+        title
+        image
+        count
+        likeCount
+        created
+        author {
+            id
+            username
+        }
+   },
 }`
 
 export default ImageSubscription;
