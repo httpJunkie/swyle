@@ -23,7 +23,10 @@ subscription CommentSubscription {
    },
 
    commentDeleted {
-     
+        commentor {
+      username
+      id
+    }
     body
     id
     createdAt
