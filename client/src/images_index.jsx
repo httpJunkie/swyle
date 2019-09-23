@@ -15,7 +15,7 @@ class ImagesIndex extends Component {
     render() {
         return (
             <Query query={images}>
-                {({ loading, error, data }) => {
+                {({ loading, error, data, subscribeToMore}) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
 
@@ -38,6 +38,7 @@ class ImagesIndex extends Component {
                                   }   
                             )}
                             </div>
+                            <Subscription subscribeToMore={subscribeToMore} />
                         </div>
                     )
                 }}
