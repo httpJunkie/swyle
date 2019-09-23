@@ -15,7 +15,7 @@ module Mutations
 
             if post_type === "ImagePost"
                 image = ImagePost.find(post_id.to_i)
-                SwyleSchema.subscriptions.trigger("imageUnliked", {} image)
+                SwyleSchema.subscriptions.trigger("imageUnliked", {}, image)
                 image
             end
         end
