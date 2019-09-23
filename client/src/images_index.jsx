@@ -3,6 +3,8 @@ import images from './queries/images';
 import { Query } from "react-apollo";
 import ArticleTags from './article_tags';
 import {Link} from 'react-router-dom';
+import Subscription from './image_subscription';
+
 
 class ImagesIndex extends Component {
     constructor(props) {
