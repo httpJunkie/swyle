@@ -35,7 +35,7 @@ const Subscription = ({ subscribeToMore }) => {
         const {articleUpdated} = subscriptionData.data;
         
         if (articleUpdated) {
-          debugger
+          
           return {
             articles: prev.articles.map(el =>
               el.id === articleUpdated.id ? { ...el, ...articleUpdated } : el)

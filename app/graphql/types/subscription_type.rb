@@ -25,8 +25,8 @@ module Types
     end
 
     field :comment_deleted, Types::CommentType, null: false, description: "comment was deleted"
-    def comment_deleted 
-      
+    def comment_deleted
+
     end
     
    end

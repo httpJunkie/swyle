@@ -19,13 +19,14 @@ const Subscription = ({ subscribeToMore }) => {
                 }
 
                 const { commentUpdated } = subscriptionData.data;
+                debugger
                 if (commentUpdated) {
                     return {
                         commentsByPost: prev.commentsByPost.map(el =>
                             el.id === commentUpdated.id ? { ...el, ...commentUpdated } : el)
                     }
                 }
-                debugger
+                
                 const {commentDeleted} = subscriptionData.data;
                 debugger
                 if (commentDeleted) {

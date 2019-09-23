@@ -8,7 +8,7 @@ module Mutations
           comment = Comment.find(id)
           post = comment.post
           commentor = comment.user
-          # SwyleSchema.subscriptions.trigger("commentDeleted", {}, comment)
+          SwyleSchema.subscriptions.trigger("commentDeleted", {}, comment)
           SwyleSchema.subscriptions.trigger("articleUpdated", {}, post)
           comment.destroy
           post
