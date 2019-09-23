@@ -27,6 +27,30 @@ subscription ImageSubscription {
             username
         }
    },
+    imageLiked {
+     id
+        title
+        image
+        count
+        likeCount
+        created
+        author {
+            id
+            username
+        }
+   },
+    imageUnliked {
+     id
+        title
+        image
+        count
+        likeCount
+        created
+        author {
+            id
+            username
+        }
+   },
 }`
 
 export default ImageSubscription;
