@@ -12,6 +12,12 @@ module Mutations
                 SwyleSchema.subscriptions.trigger("articleUnliked", {}, article)
                 article
             end
+
+            if post_type === "ImagePost"
+                image = ImagePost.find(post_id.to_i)
+                SwyleSchema.subscriptions.trigger("imageUnliked", {} image)
+                image
+            end
         end
     end
   end
