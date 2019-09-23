@@ -16,6 +16,8 @@ module Types
     def article_updated 
     end
 
+
+
     field :image_added, Types::ImageType, null: false, description: "An image was posted"
     def image_added    
     end
@@ -31,6 +33,8 @@ module Types
     field :image_updated, Types::ImageType, null: false, description: "image was updated"
     def image_updated 
     end
+
+    
 
     field :comment_added, Types::CommentType, null: false, description: "Comment added"
     def comment_added
