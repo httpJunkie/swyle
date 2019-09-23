@@ -5,6 +5,7 @@ import deleteComment from './mutations/delete_comment';
 import CommentEdit from './comment_edit';
 import $ from 'jquery';
 
+
 class Comment extends Component {
 
     constructor(props){

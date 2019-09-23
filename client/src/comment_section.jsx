@@ -32,6 +32,7 @@ class CommentSection extends Component {
         return (
             <Query query={commentsByPost} variables={{postId: this.props.postId, postType: this.props.type}}>
             {({ loading, error, data, subscribeToMore}) => {
+                
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                         
@@ -74,6 +75,7 @@ class CommentSection extends Component {
                         <h4 style={{"marginLeft":"1rem"}}>Latest Comments</h4>
                         {data.commentsByPost.map(
                             (comment, index) => {
+                                
                                 const commentStyle = index % 2 === 0 ? {"background":"lightgrey"} : {"background":"white"}
                                 return <Comment 
                                         comment={comment} 
