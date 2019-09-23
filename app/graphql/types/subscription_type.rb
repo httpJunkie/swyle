@@ -16,6 +16,22 @@ module Types
     def article_updated 
     end
 
+    field :image_added, Types::ImageType, null: false, description: "An image was posted"
+    def image_added    
+    end
+
+    field :image_liked, Types::ImageType, null: false, description: "image was liked"
+    def image_liked 
+    end
+
+    field :image_unliked, Types::ImageType, null: false, description: "image was unliked"
+    def image_unliked 
+    end
+
+    field :image_updated, Types::ImageType, null: false, description: "image was updated"
+    def image_updated 
+    end
+
     field :comment_added, Types::CommentType, null: false, description: "Comment added"
     def comment_added
     end
