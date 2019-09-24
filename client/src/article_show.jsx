@@ -11,6 +11,7 @@ import LikesSection from './likes_section';
 import $ from 'jquery';
 import { MdDelete} from 'react-icons/md';
 import ConfirmationModal from './confirmation_modal';
+import Subscription from './subscription';
 
 class ArticleShow extends Component {
 
@@ -69,7 +70,7 @@ class ArticleShow extends Component {
        const argument = parseInt(this.props.match.params.articleID)
         return (
             <Query query={article} variables={{ id: argument}}>
-                {({ loading, error, data }) => {
+                {({ loading, error, data, subscribeToMore}) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                         const article = data.article;
@@ -107,6 +108,7 @@ class ArticleShow extends Component {
 
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
                             {this.state.confirmationOpen && <ConfirmationModal title={article.title} cancel={this.closeModal} confirm={this.deleteArticle}/>}
+                            <Subscription subscribeToMore={subscribeToMore} />
                         </div>
                     )
                 }}
