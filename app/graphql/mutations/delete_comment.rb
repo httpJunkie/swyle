@@ -16,11 +16,12 @@ module Mutations
             commentor: {
               username: commentor.username, 
               id: commentor.id
-              }, }
+              }
+            }
           SwyleSchema.subscriptions.trigger("commentDeleted", {}, phony)
           SwyleSchema.subscriptions.trigger("articleUpdated", {}, post)
           comment.destroy
-          post
+          phony
       end
     end
   end
