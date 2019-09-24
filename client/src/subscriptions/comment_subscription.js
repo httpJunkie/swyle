@@ -23,7 +23,7 @@ subscription CommentSubscription {
    },
 
    commentDeleted {
-        commentor {
+      commentor {
       username
       id
     }

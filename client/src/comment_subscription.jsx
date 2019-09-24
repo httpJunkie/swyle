@@ -20,7 +20,7 @@ const Subscription = ({ subscribeToMore }) => {
                 }
 
                 const { commentUpdated } = subscriptionData.data;
-                
+                debugger
                 if (commentUpdated) {
                     return {
                         commentsByPost: prev.commentsByPost.map(el =>
