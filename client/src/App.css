@@ -221,7 +221,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     box-sizing: border-box;
     overflow: hidden;
     width: 40rem;
-    background: white;
+    background: rgb(255, 255, 255, .5);
 }
 
 .comment {
@@ -253,6 +253,15 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
     resize: none;
     border-radius: 4px;
     resize: none;
+}
+
+.comments-section > h4 {
+  margin-left: 1rem;
+  text-align: center;
+  font-weight: 200;
+  color: white;
+  font-size: 28px;
+  font-family: sans-serif;
 }
 
 .comment-submit {
