@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import mutation from '../mutations/delete_comment';
 
 const CommentSubscription = gql`
 subscription CommentSubscription {
