@@ -11,7 +11,8 @@ module Mutations
           commentor = comment.user
           phony = {
             id: comment.id, 
-            body: comment.body, 
+            body: comment.body,
+            createdAt: comment.created_at, 
             commentor: {
               username: commentor.username, 
               id: commentor.id
