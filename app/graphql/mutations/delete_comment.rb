@@ -1,5 +1,6 @@
 module Mutations
     class DeleteComment < BaseMutation
+      include Concurrent::Async
       argument :id, Int, required: true
       
       type Types::CommentType
@@ -8,8 +9,9 @@ module Mutations
           comment = Comment.find(id)
           post = comment.post
           commentor = comment.user
-          phony_comment = {commentor: {username: commentor.username, id: commentor.id}, body: comment.body, id: comment.body, createdAt: comment.createdAt }
-          SwyleSchema.subscriptions.trigger("commentDeleted", {}, phony_comment)
+          comment_clone = comment
+          
+          SwyleSchema.subscriptions.trigger("commentDeleted", {}, comment_clone).await
           SwyleSchema.subscriptions.trigger("articleUpdated", {}, post)
           comment.destroy
           post

@@ -9,8 +9,10 @@ module Mutations
           image = ImagePost.find(id)
           return unless image
           image.description = description
-          image.save
-          image
+          if image.save
+            SwyleSchema.subscriptions.trigger("imageUpdated", {}, image)
+            image
+          end
       end
     end
   end
