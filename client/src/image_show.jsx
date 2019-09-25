@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import image from './queries/image';
-import CommentSection from './comment_section';
+import CommentSection from './comment_section_refactor';
 import LikesSection from './likes_section';
 import ImageDescriptionEdit from './image_description_edit';
 import ImageTitleEdit from './image_title_edit';
@@ -109,7 +109,7 @@ class ImageShow extends Component {
                                 <Link className="image-show-carousel" to={`/images/${next}`}><MdNavigateNext /></Link>
                             </div>
                              
-                            <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} />
+                            <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} comments={image.comments} />
                         </div>
                     )
                 }}
