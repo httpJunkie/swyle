@@ -72,6 +72,7 @@ subscription ImageSubscription {
                 username
               }
             }
+        }
       
 }`
 
