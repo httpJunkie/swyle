@@ -13,10 +13,7 @@ subscription ArticleSubscription {
                 id
                 username
             }
-            currentUser {
-                id
-                username
-            }
+  
    },
 
     articleUnliked {
@@ -29,10 +26,6 @@ subscription ArticleSubscription {
                 id
                 username
             }
-            currentUser {
-                id
-                username
-            }
    }, 
 
     articleUpdated {
@@ -42,10 +35,6 @@ subscription ArticleSubscription {
             likers
             likeCount
             author {
-                id
-                username
-            }
-                 currentUser {
                 id
                 username
             }
