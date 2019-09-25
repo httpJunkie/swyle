@@ -33,19 +33,6 @@ module Types
     field :image_updated, Types::ImageType, null: false, description: "image was updated"
     def image_updated 
     end
-
-    
-
-    # field :comment_added, Types::CommentType, null: false, description: "Comment added"
-    # def comment_added
-    # end
-
-    # field :comment_updated, Types::CommentType, null: false, description: "comment was updated"
-    # def comment_updated 
-    # end
-    # field :comment_deleted, Types::CommentType, null: false
-    # def comment_deleted
-    # end
     
    end
 end
