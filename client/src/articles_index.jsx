@@ -3,7 +3,7 @@ import articles from './queries/articles';
 import { Query } from "react-apollo";
 import {Link} from 'react-router-dom';
 import ArticleTags from './article_tags';
-import Subscription from './subscription';
+import Subscription from './articles_subscription';
 
 const ArticlesIndex = () => {
         const date = Date.now();
