@@ -11,7 +11,13 @@ module Mutations
           #Return if comment isn't found, add error message later.
           comment.body = body
           if comment.save
-            SwyleSchema.subscriptions.trigger("commentUpdated", {}, comment)
+            if post_type === "Article"
+                SwyleSchema.subscriptions.trigger("articleUpdated", {}, comment.post)
+            end
+            if post_type === "ImagePost"
+                SwyleSchema.subscriptions.trigger("imageUpdated", {}, comment.post)
+            end
+            # SwyleSchema.subscriptions.trigger("commentUpdated", {}, comment)
             comment
           end
       end

@@ -19,7 +19,7 @@ module Mutations
                 SwyleSchema.subscriptions.trigger("imageUpdated", {}, comment.post)
             end
             
-            SwyleSchema.subscriptions.trigger("commentAdded", {}, comment)
+            # SwyleSchema.subscriptions.trigger("commentAdded", {}, comment)
             comment
         end
     end
