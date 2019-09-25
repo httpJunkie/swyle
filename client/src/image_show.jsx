@@ -8,7 +8,7 @@ import ImageTitleEdit from './image_title_edit';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import { MdDelete, MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
-import Subscription from 'image_subscription';
+import Subscription from './image_subscription';
 
 
 class ImageShow extends Component {
@@ -57,7 +57,7 @@ class ImageShow extends Component {
         const argument = parseInt(this.props.match.params.imageID)
         return (
             <Query query={image} variables={{ id: argument }}>
-                {({ loading, error, data }) => {
+                {({ loading, error, data, subscribeToMore }) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                     const image = data.image;
