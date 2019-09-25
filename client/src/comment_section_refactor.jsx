@@ -34,7 +34,7 @@ class CommentSection extends Component {
                                 <Mutation mutation={postComment}
                                     update={(cache, { data: { postComment } }) => {
                                     }}
-                                    refetchQueries={[{ query: query, variables: { postId: this.props.postId, postType: this.props.type } }]}
+                                    refetchQueries={[{ query: query, variables: { postId: this.props.postId } }]}
                                 >
                                     {(postComment, loading) =>
                                         !loading ? (

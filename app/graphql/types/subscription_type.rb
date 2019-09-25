@@ -36,13 +36,13 @@ module Types
 
     
 
-    field :comment_added, Types::CommentType, null: false, description: "Comment added"
-    def comment_added
-    end
+    # field :comment_added, Types::CommentType, null: false, description: "Comment added"
+    # def comment_added
+    # end
 
-    field :comment_updated, Types::CommentType, null: false, description: "comment was updated"
-    def comment_updated 
-    end
+    # field :comment_updated, Types::CommentType, null: false, description: "comment was updated"
+    # def comment_updated 
+    # end
     
    end
 end

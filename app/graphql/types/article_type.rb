@@ -6,7 +6,7 @@ module Types
     field :title, String, null: false
     field :snippet, String, null: false
     field :body, String, null: false
-    field :comments, [CommentType], method: :comments, null: true
+    field :comments, [CommentType], method: :latest_comments, null: true 
     field :count, Integer, null: false do 
       :comments.size
     end

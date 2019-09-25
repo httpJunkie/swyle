@@ -13,6 +13,15 @@ subscription ArticleSubscription {
                 id
                 username
             }
+            comments {
+              id
+              body
+              createdAt
+              commentor {
+                id
+                username
+              }
+            }
   
    },
 
@@ -26,6 +35,15 @@ subscription ArticleSubscription {
                 id
                 username
             }
+            comments {
+              id
+              body
+              createdAt
+              commentor {
+                id
+                username
+              }
+            }
    }, 
 
     articleUpdated {
@@ -37,6 +55,15 @@ subscription ArticleSubscription {
             author {
                 id
                 username
+            }
+            comments {
+              id
+              body
+              createdAt
+              commentor {
+                id
+                username
+              }
             }
     }
       

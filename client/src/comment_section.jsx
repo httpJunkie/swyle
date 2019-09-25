@@ -14,7 +14,6 @@ class CommentSection extends Component {
         this.state = {
             body: ""
         }
-        this.postComment = this.postComment.bind(this)
         this.handleFormChange = this.handleFormChange.bind(this);
     }
 
@@ -24,9 +23,6 @@ class CommentSection extends Component {
         });
     }
 
-    postComment() {
-        console.log("Pingas")
-    }
 
     render () {
         return (

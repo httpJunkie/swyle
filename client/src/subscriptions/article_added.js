@@ -39,6 +39,7 @@ subscription ArticleSubscription {
         id
         username
     }
+   
    }, 
 
     articleUpdated {

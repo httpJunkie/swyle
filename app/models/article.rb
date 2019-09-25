@@ -27,4 +27,8 @@ class Article  < ApplicationRecord
     def likers 
         self.likes.map {|like| like.user_id}
     end
+
+    def latest_comments
+        self.comments.order(created_at: :desc)
+    end
 end
