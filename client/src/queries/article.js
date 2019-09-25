@@ -12,6 +12,15 @@ const article = gql`
                 id
                 username
             }
+            comments {
+              id
+              body
+              createdAt
+              commentor {
+                id
+                username
+              }
+            }
     },
       currentUser {
         id

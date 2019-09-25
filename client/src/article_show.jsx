@@ -4,7 +4,7 @@ import article from './queries/article';
 import articles from './queries/articles';
 import deleteArticle from './mutations/delete_article';
 import  { graphql } from 'react-apollo'
-import CommentSection from './comment_section';
+import CommentSection from './comment_section_refactor';
 import ArticleBodyEdit from './article_body_edit';
 import ArticleTitleEdit from './article_title_edit';
 import LikesSection from './likes_section';
@@ -106,7 +106,7 @@ class ArticleShow extends Component {
                                   <LikesSection type={"Article"} currentUser={data.currentUser} postId={argument} likers={data.article.likers} numLikes={data.article.likeCount} />          
                             </div>
 
-                              <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} />
+                              <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} comments={article.comments}/>
                             {this.state.confirmationOpen && <ConfirmationModal title={article.title} cancel={this.closeModal} confirm={this.deleteArticle}/>}
                             <Subscription subscribeToMore={subscribeToMore} />
                         </div>
