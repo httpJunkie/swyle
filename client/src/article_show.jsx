@@ -11,7 +11,7 @@ import LikesSection from './likes_section';
 import $ from 'jquery';
 import { MdDelete} from 'react-icons/md';
 import ConfirmationModal from './confirmation_modal';
-import Subscription from './subscription';
+import Subscription from './article_subscription';
 
 class ArticleShow extends Component {
 
