@@ -21,13 +21,7 @@ subscription CommentSubscription {
     body
     id
     createdAt
-   }
-}`
-
-export default CommentSubscription;
-
-/**
- * ,
+   },
 
    commentDeleted {
       commentor {
@@ -38,4 +32,10 @@ export default CommentSubscription;
     id
     createdAt
    }
+}`
+
+export default CommentSubscription;
+
+/**
+ * 
  */
