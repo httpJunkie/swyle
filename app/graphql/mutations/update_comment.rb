@@ -8,9 +8,8 @@ module Mutations
   
       def resolve(id: nil, body: "", post_type: "")
           comment = Comment.find(id)
-          debugger
+          
           return unless comment
-          #Return if comment isn't found, add error message later.
           comment.body = body
           if comment.save
             if post_type === "Article"

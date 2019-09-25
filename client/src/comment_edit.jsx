@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Mutation} from 'react-apollo';
 import updateComment from './mutations/update_comment';
 import commentsByPost from './queries/comments_by_post';
+import article from './queries/article';
+import image from './queries/image';
 
 class CommentEdit extends Component {
     constructor(props) {
@@ -19,12 +21,13 @@ class CommentEdit extends Component {
     }
 
     render () {
+        const refetch = this.props.postType === "Article" ? article : image
         return(
             <div className="comment">
                 <Mutation mutation={updateComment}
                     update={(cache, { data: { updateComment } }) => {
                     }}
-                    refetchQueries={[{ query: commentsByPost, variables: { postId: this.props.postId, postType:  this.props.postType} }]}
+                    refetchQueries={[{ query: refetch, variables: { postId: this.props.postId} }]}
                 >
                     {(updateComment, loading) =>
                         !loading ? (
@@ -32,11 +35,12 @@ class CommentEdit extends Component {
                         ) : ( 
                                 <form style={{ "display": "flex", "width":"100%"}} onSubmit={event => {
                                     event.preventDefault();
+                    
                                     updateComment({
                                         variables: {
                                             body: this.state.body,
                                             id: this.props.comment.id,
-                                            post_type: this.props.postType
+                                            postType: this.props.postType
                                         }
                                     }).then(res => {
                                         this.props.cancelEdit();
