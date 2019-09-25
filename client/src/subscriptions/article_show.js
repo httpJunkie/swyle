@@ -1,3 +1,7 @@
+/**
+ * Article subscription for the show page
+ */
+
 import gql from 'graphql-tag';
 
 const ArticleSubscription = gql`
