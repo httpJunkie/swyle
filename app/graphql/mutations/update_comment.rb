@@ -10,9 +10,10 @@ module Mutations
           return unless comment
           #Return if comment isn't found, add error message later.
           comment.body = body
-          comment.save
-          SwyleSchema.subscriptions.trigger("commentUpdated", {}, comment)
-          comment
+          if comment.save
+            SwyleSchema.subscriptions.trigger("commentUpdated", {}, comment)
+            comment
+          end
       end
     end
   end

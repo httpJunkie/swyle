@@ -24,10 +24,8 @@ const Subscription = ({ subscribeToMore }) => {
                 }
 
                 const { articleUpdated } = subscriptionData.data;
-                debugger;
                 
                 if (articleUpdated) {
-                debugger
                     return {
                         article: articleUpdated
                     }

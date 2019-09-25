@@ -43,10 +43,6 @@ module Types
     field :comment_updated, Types::CommentType, null: false, description: "comment was updated"
     def comment_updated 
     end
-
-    field :comment_deleted, GraphQL::Types::JSON, null: false, description: "comment was deleted"
-    def comment_deleted
-    end
     
    end
 end

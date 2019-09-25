@@ -18,6 +18,7 @@ module Mutations
             if post_type === "ImagePost"
                 SwyleSchema.subscriptions.trigger("imageUpdated", {}, comment.post)
             end
+            
             SwyleSchema.subscriptions.trigger("commentAdded", {}, comment)
             comment
         end
