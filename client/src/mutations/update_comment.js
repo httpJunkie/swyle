@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 const updateComment = gql`
-mutation updateComment($id: Int!, $body: String!){
-  updateComment(id: $id, body:$body) {
+mutation updateComment($id: Int!, $body: String!, $postType: String!){
+  updateComment(id: $id, body:$body, postType: $postType) {
     body
     id
   }

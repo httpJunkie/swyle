@@ -35,7 +35,8 @@ class CommentEdit extends Component {
                                     updateComment({
                                         variables: {
                                             body: this.state.body,
-                                            id: this.props.comment.id
+                                            id: this.props.comment.id,
+                                            post_type: this.props.postType
                                         }
                                     }).then(res => {
                                         this.props.cancelEdit();

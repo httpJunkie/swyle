@@ -2,11 +2,13 @@ module Mutations
     class UpdateComment < BaseMutation
       argument :id, Int, required: true
       argument :body, String, required: true
+      argument :post_type, String, required: true
       
       type Types::CommentType
   
-      def resolve(id: nil, body: "")
+      def resolve(id: nil, body: "", post_type: "")
           comment = Comment.find(id)
+          debugger
           return unless comment
           #Return if comment isn't found, add error message later.
           comment.body = body
