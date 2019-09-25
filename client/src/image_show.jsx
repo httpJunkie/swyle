@@ -8,6 +8,7 @@ import ImageTitleEdit from './image_title_edit';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import { MdDelete, MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
+import Subscription from 'image_subscription';
 
 
 class ImageShow extends Component {
@@ -110,6 +111,7 @@ class ImageShow extends Component {
                             </div>
                              
                             <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} comments={image.comments} />
+                            <Subscription subscribeToMore={subscribeToMore} />
                         </div>
                     )
                 }}
