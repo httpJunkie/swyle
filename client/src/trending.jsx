@@ -28,6 +28,7 @@ class Trending extends Component {
            let valB = b[attribute];
            return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;
        });
+       return posts;
     }
 
     render() {
@@ -36,7 +37,9 @@ class Trending extends Component {
                 Insert spinny thingy here.
             </div>
         }
-        const posts = this.sortPosts(this.state.activePane);
+        const attribute = this.state.activePane === 'comments' ? 'count' : 'likeCount'
+        const posts = this.sortPosts(attribute);
+        
         return (  
         <div className="trending-posts-page">
             <h1 className="trending-posts-title">Most Popular Posts</h1>
@@ -56,7 +59,20 @@ class Trending extends Component {
             </div>
             <div className="trending-posts-backpane">
                 <div className="trending-posts-content">
-
+                {
+                        posts.map(
+                            post => {
+                                return (
+                                    <div className="user-posts-card" key={`${post.title}${post.id}`}>
+                                        <h3 >{post.title}</h3>
+                                        {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} /> </div>}
+                                        {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
+                                        <h4>{post.count} Comments {post.likeCount} Likes</h4>
+                                    </div>
+                                )
+                            }
+                        )
+                }
                 </div>
             </div>
 
