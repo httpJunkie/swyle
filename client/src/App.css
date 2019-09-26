@@ -968,6 +968,15 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background:#659bb1;
 }
 
+.trending-posts-tab-active {
+ background: white; 
+}
+
+.trending-posts-tab-inactive {
+  background: rgb(255, 255, 255, .5);
+}
+
+
 .user-dashboard {
   display: flex;
   flex-direction: column;
