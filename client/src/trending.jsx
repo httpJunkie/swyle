@@ -1,5 +1,7 @@
 /* eslint no-restricted-globals: 0 */  // --> OFF
 import React, {Component} from 'react';
+import {graphql} from 'react-apollo';
+import query from './queries/posts_by_popularity';
 
 class Trending extends Component {
 
@@ -24,6 +26,13 @@ class Trending extends Component {
     }
 
     render() {
+        if (this.props.data.loading) {
+            return <div>
+                Insert spinny thingy here.
+            </div>
+        }
+        debugger
+        const posts = this.props.data.posts
         return (  
         <div className="trending-posts-page">
             <h1 className="trending-posts-title">Most Popular Posts</h1>
@@ -52,4 +61,4 @@ class Trending extends Component {
     }
 }
 
-export default Trending;
+export default graphql(query)(Trending);

@@ -89,7 +89,7 @@ module Types
     field :posts_by_popularity, [PostUnion], null: true
     def posts_by_popularity
       all_posts = Article.all + ImagePost.all
-      all_posts.select {|post| post.likeCount > 0 || post.count > 0}
+      all_posts.select {|post| post.like_count > 0 || post.count > 0}
     end
 
   end #class end

@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 const postsByPopularity = gql`
-
+{
     postsByPopularity {
     __typename
     ... on Article {
@@ -14,6 +14,7 @@ const postsByPopularity = gql`
       title
       image	
     }
+}
 }
 `
 
