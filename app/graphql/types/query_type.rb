@@ -85,5 +85,12 @@ module Types
       recents = (user.articles + user.image_posts).sort_by { |k| k[:created_at] }
       recents
     end
+
+    field :posts_by_popularity, [PostUnion], null: true
+    def posts_by_popularity
+      all_posts = Article.all + ImagePost.all
+      all_posts.select {|post| post.likeCount > 0 || post.count > 0}
+    end
+
   end #class end
 end #module end 
