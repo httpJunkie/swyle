@@ -968,14 +968,34 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background:#659bb1;
 }
 
+.trending-posts-nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin-left: 1rem;
+}
+
 .trending-posts-tab-active {
  background: white; 
+ padding: 1rem;
+ border-radius: 4px;
 }
 
 .trending-posts-tab-inactive {
   background: rgb(255, 255, 255, .5);
+  padding: 1rem;
+  border-radius: 4px;
 }
 
+.trending-posts-backpane {
+  background: rgb(255, 255, 255, .5);
+  width: 50rem;
+}
+
+.trending-posts-content {
+  background: white;
+  width: 49rem;
+}
 
 .user-dashboard {
   display: flex;

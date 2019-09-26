@@ -19,6 +19,10 @@ class Trending extends Component {
         this.setState({activePane: selection})
     }
 
+    sortPosts(attribute) {
+
+    }
+
     render() {
         return (  
         <div className="trending-posts-page">
@@ -37,7 +41,12 @@ class Trending extends Component {
                     By Comments
                 </div>
             </div>
-            This particular component will use a graphql query finding articles sorted by most likes or whatever.
+            <div className="trending-posts-backpane">
+                <div className="trending-posts-content">
+
+                </div>
+            </div>
+
         </div>
         )
     }
