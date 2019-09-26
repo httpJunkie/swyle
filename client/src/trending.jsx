@@ -1,3 +1,4 @@
+/* eslint no-restricted-globals: 0 */  // --> OFF
 import React, {Component} from 'react';
 
 class Trending extends Component {
@@ -11,9 +12,11 @@ class Trending extends Component {
         this.selectPane = this.selectPane.bind(this)
     }
 
-    selectPane(e) {
-        e.preventDefault();
-        this.setState({activePane: e.target.name})
+    selectPane(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        let selection = event.target.getAttribute('name')
+        this.setState({activePane: selection})
     }
 
     render() {
@@ -21,10 +24,16 @@ class Trending extends Component {
         <div className="trending-posts-page">
             <h1 className="trending-posts-title">Most Popular Posts</h1>
             <div className="trending-posts-nav">
-                <div className={`trending-posts-tab${this.state.activePane === 'likes' ? '-active' : '-inactive'}`} name="likes">
+                <div className={`trending-posts-tab${this.state.activePane === 'likes' ? '-active' : '-inactive'}`} 
+                name="likes"
+                onClick={this.selectPane}
+                >
                     By Likes
                 </div>
-                    <div className={`trending-posts-tab${this.state.activePane === 'comments' ? '-active' : '-inactive'}`} name="comments">
+                    <div className={`trending-posts-tab${this.state.activePane === 'comments' ? '-active' : '-inactive'}`} 
+                    name="comments"
+                    onClick={this.selectPane}
+                    >
                     By Comments
                 </div>
             </div>
