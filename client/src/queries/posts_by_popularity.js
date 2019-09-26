@@ -8,11 +8,15 @@ const postsByPopularity = gql`
       id
       title
       snippet
+      count
+      likeCount
     }
     ... on Image {
       id
       title
       image	
+      count
+      likeCount
     }
 }
 }

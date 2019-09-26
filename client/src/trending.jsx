@@ -23,7 +23,7 @@ class Trending extends Component {
 
     sortPosts(attribute) {
        const posts = this.props.data.postsByPopularity.sort((b, a) => {
-           debugger
+           
            let valA = a[attribute];
            let valB = b[attribute];
            return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;
