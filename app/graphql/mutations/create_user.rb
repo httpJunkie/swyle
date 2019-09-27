@@ -10,11 +10,17 @@ module Mutations
       type Types::UserType
   
       def resolve(username: nil, auth_provider: nil)
-        User.create!(
+        user = User.new(
           username: username,
           email: auth_provider&.[](:email)&.[](:email),
           password: auth_provider&.[](:email)&.[](:password)
         )
+        if user.save
+          debugger 
+          token = issue_token(id: user.id)
+          cookies.signed[:jwt] = {value:  token, httponly: true}  
+          user
+        end
       #end
       rescue ActiveRecord::RecordInvalid => e
         GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(', ')}")
