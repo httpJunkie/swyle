@@ -7,7 +7,6 @@ class ApplicationController < ActionController::API
     decode_jwt(jwt)
   end
 
-  private
 
 # def current_user
 #     token = request.headers["Authorization"].to_s

@@ -28,7 +28,7 @@ module Mutations
           token = Jwt::TokenProvider.(user_id: user.id)
           { user: user, token: token }
         else
-          user.errors.full_messages
+         { errors: user.errors.full_messages}
         end
       end
 

@@ -16,12 +16,10 @@ module Mutations
           password: auth_provider&.[](:email)&.[](:password)
         )
         if user.save
-          token = issue_token(id: user.id)
-          cookies.signed[:jwt] = {value:  token, httponly: true} 
-          debugger 
-          user
+          token = Jwt::TokenProvider.(user_id: user.id)
+          { user: user, token: token }
         else 
-          user.errors.full_messages
+         { errors: user.errors.full_messages}
         end
       #end
       rescue ActiveRecord::RecordInvalid => e
