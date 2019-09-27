@@ -7,17 +7,26 @@ module Mutations
       field :token, String, null: true
       field :user, Types::UserType, null: true
   
-      def resolve(email: nil)
+      # def resolve(email: nil)
        
-        return unless email
+      #   return unless email
   
-        user = User.find_by email: email[:email]
+      #   user = User.find_by email: email[:email]
          
-        return unless user
+      #   return unless user
         
-        return unless user.authenticate(email[:password])
+      #   return unless user.authenticate(email[:password])
      
-          token = Base64.encode64(user.email)
+      #     token = Base64.encode64(user.email)
+      #   { user: user, token: token }
+       
+      # end
+      def resolve(email: nil)
+        return unless email
+        user = User.find_by email: email[:email]
+        if user && user.authenticate(email[:password])
+          token = issue_token(id: user.id)
+         cookies.signed[:jwt] = {value:  token, httponly: true}
         { user: user, token: token }
        
       end
