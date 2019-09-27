@@ -16,9 +16,9 @@ module Mutations
           password: auth_provider&.[](:email)&.[](:password)
         )
         if user.save
-          debugger 
           token = issue_token(id: user.id)
-          cookies.signed[:jwt] = {value:  token, httponly: true}  
+          cookies.signed[:jwt] = {value:  token, httponly: true} 
+          debugger 
           user
         else 
           user.errors.full_messages

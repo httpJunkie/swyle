@@ -41,19 +41,26 @@ class GraphqlController < ApplicationController
     render json: { error: { message: e.message, backtrace: e.backtrace }, data: {} }, status: 500
   end
 
-  # def current_user
-  #   return unless session[:token]
-  #   crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
-  #   token = crypt.decrypt_and_verify session[:token]
-  #   user_id = token.gsub('user-id:', '').to_i
-  #   User.find_by id: user_id
-  # rescue ActiveSupport::MessageVerifier::InvalidSignature
-  #   nil
+  def current_user
+    return unless session[:token]
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
+    token = crypt.decrypt_and_verify session[:token]
+    user_id = token.gsub('user-id:', '').to_i
+    debugger
+    User.find_by id: user_id
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    nil
+  end
+
+  #   def current_user
+  #     token = request.headers["Authorization"].to_s
+  #     email = Base64.decode64(token)
+  #     User.find_by(email: email)
   # end
 
-    def current_user
-      token = request.headers["Authorization"].to_s
-      email = Base64.decode64(token)
-      User.find_by(email: email)
-  end
+  # def current_user
+  #   ass = "ass"
+  #   debugger
+  #   butt = "butt"
+  # end
 end
