@@ -26,9 +26,13 @@ module Mutations
         user = User.find_by email: email[:email]
         if user && user.authenticate(email[:password])
           token = issue_token(id: user.id)
-         cookies.signed[:jwt] = {value:  token, httponly: true}
-        { user: user, token: token }
-       
+          cookies.signed[:jwt] = {value:  token, httponly: true}  
+          { user: user, token: token }
+        else
+          user.errors.full_messages
+        end
       end
+
+      
     end
   end
