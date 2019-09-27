@@ -20,6 +20,8 @@ module Mutations
           token = issue_token(id: user.id)
           cookies.signed[:jwt] = {value:  token, httponly: true}  
           user
+        else 
+          user.errors.full_messages
         end
       #end
       rescue ActiveRecord::RecordInvalid => e
