@@ -12,6 +12,7 @@ class Trending extends Component {
             activePane: "likes"
         }
         this.selectPane = this.selectPane.bind(this)
+        this.test = "test"
     }
 
     selectPane(event) {
