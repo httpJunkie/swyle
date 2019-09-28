@@ -3,11 +3,10 @@ module Jwt::UserAuthenticator
  
   def call(request_headers)
     @request_headers = request_headers
-    debugger
  
     begin
       payload, header = Jwt::TokenDecryptor.(token)
-      debugger
+      
       return User.find(payload['user_id'])
     rescue => e
       # log error here
