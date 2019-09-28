@@ -3,9 +3,10 @@ class GraphqlController < ApplicationController
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+    debugger
     context = {
        session: session,
-       current_user: current_user
+       current_user: session[:current_user]
     }
     result = SwyleSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
@@ -66,8 +67,8 @@ class GraphqlController < ApplicationController
 
   def current_user 
     ass  = "ass"
+    debugger
     user ||= Jwt::UserAuthenticator.(request.headers)
-    # debugger
     user
   end
 end

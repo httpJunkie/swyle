@@ -52,6 +52,8 @@ module Types
 
     field :current_user, UserType, null: true 
     def current_user
+      ass = "Ass"
+      debugger
       context[:current_user]
     end
 

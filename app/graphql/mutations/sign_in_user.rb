@@ -27,7 +27,7 @@ module Mutations
       #   end
       # end
 
-      
+    #Todo by EOD: 
       def resolve(email: nil)
         return unless email
         user = User.find_by email: email[:email]
