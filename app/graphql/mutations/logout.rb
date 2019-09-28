@@ -6,7 +6,7 @@ module Mutations
         # end
 
         def resolve
-            cookies.delete(:jwt)
+            {email: ""}
         end
     end
   end
