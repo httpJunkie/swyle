@@ -6,6 +6,8 @@ module Mutations
         # end
 
         def resolve
+            user = context[:current_user]
+            debugger
             {email: ""}
         end
     end
