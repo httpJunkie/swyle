@@ -65,6 +65,9 @@ class GraphqlController < ApplicationController
   # end
 
   def current_user 
-     @current_user ||= Jwt::UserAuthenticator.(request.headers)
+    ass  = "ass"
+    user ||= Jwt::UserAuthenticator.(request.headers)
+    debugger
+    user
   end
 end
