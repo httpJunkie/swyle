@@ -19,7 +19,6 @@ module Mutations
       #   end
       # end
 
-    #Todo by EOD: 
       def resolve(email: nil)
         return unless email
         user = User.find_by email: email[:email]
@@ -28,7 +27,6 @@ module Mutations
           context[:current_user] = user 
           context[:cookies].signed[:user_id] = user.id
           token = user.session_token
-          # cookies.signed[:user_id] = user.id
           { user: user, token: token }
         else
          { errors: user.errors.full_messages}
