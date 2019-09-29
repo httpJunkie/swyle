@@ -6,7 +6,7 @@ class GraphqlController < ApplicationController
     
     context = {
        session: session,
-       current_user: current_user
+       current_user: User.find_by(session_token: session[:session_token])
     }
     debugger
     result = SwyleSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
