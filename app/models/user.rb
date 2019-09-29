@@ -24,10 +24,6 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: "Like"
 
-  # def is_password?(password)
-  #   BCrypt::Password.new(self.password_digest).is_password?(password)
-  # end
-
 
   def reset_token
     self.session_token = Jwt::TokenProvider.(user_id: self.id)
