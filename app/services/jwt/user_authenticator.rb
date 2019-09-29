@@ -9,7 +9,6 @@ module Jwt::UserAuthenticator
       
       return User.find(payload['user_id'])
     rescue => e
-      # log error here
       return nil
     end
   end
