@@ -24,11 +24,6 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: "Like"
 
-  # def self.find_by_credentials(uname, pword)
-  #   user = User.find_by(username: uname)
-  #   user && user.is_password?(pword) ? user : nil
-  # end
-
   # def is_password?(password)
   #   BCrypt::Password.new(self.password_digest).is_password?(password)
   # end
