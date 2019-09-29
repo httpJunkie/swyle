@@ -3,7 +3,6 @@ module ApplicationCable
        identified_by :current_user
 
     def connect
-
       self.current_user = current_user
     end
 
@@ -16,9 +15,20 @@ module ApplicationCable
     #   User.find_by(email: email)
     # end
 
-    def current_user
-      user ||= Jwt::UserAuthenticator.(request.headers)
-      user
+    # def current_user
+    #   # user ||= Jwt::UserAuthenticator.(request.headers)
+    #   butt = "big"
+    #   debugger
+    #   user ||= User.find(session_token: session[:session_token])
+
+    #   user
+    # end
+
+    def current_user 
+            ass = "ass"
+      # debugger
+      user = User.find_by(id: cookies.signed[:user_id])
+      user 
     end
 
   end

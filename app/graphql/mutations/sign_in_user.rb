@@ -1,5 +1,7 @@
 module Mutations
     class SignInUser < BaseMutation
+
+      include ActionDispatch
       null true
   
       argument :email, Types::AuthProviderEmailInput, required: false
@@ -32,10 +34,10 @@ module Mutations
         return unless email
         user = User.find_by email: email[:email]
         if user && user.authenticate(email[:password])
-          context[:session][:session_token] = user.reset_token          
+          context[:session][:session_token] = user.reset_token        
           context[:current_user] = user 
           token = user.session_token
-          debugger
+          cookies.signed[:user_id] = user.id
           { user: user, token: token }
         else
          { errors: user.errors.full_messages}
