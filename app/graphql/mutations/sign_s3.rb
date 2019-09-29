@@ -15,13 +15,6 @@ module Mutations
         credentials: aws_credentials
         ).bucket(ENV['S3_BUCKET_NAME'])
         
-        # presigned_url = s3_bucket.presigned_post(
-        #     # key: "#{Rails.env}/#{SecureRandom.uuid}/${file_name}",
-        #     key: filename,
-        #     success_action_status: '201',
-        #     signature_expiration: (Time.now.utc + 15.minutes),
-        #     content_type: filetype,
-        # )
 
         signer = Aws::S3::Presigner.new
         presigned_request =  signer.presigned_url(:put_object,
