@@ -40,6 +40,7 @@ class UserDash extends Component {
                               {({ loading, error, data }) => {
                                   if (loading) return <p>Loading...</p>;
                                   if (error) return <p>Error </p>;
+                                  console.log("Current User In dash: ", this.state.currentUser)
                                     return (
                                       <div>
                                         {data.postsByUser.map( post => {

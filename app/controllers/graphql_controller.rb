@@ -3,11 +3,12 @@ class GraphqlController < ApplicationController
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
-    debugger
+    
     context = {
        session: session,
-       current_user: session[:current_user]
+       current_user: current_user
     }
+    debugger
     result = SwyleSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
   rescue => e
@@ -74,7 +75,8 @@ class GraphqlController < ApplicationController
 
   def current_user
     ass = "butt"
+    user = User.find_by(session_token: session[:session_token])
     debugger
-    @current_user ||= User.find_by(session_token: session[:session_token])
+    user
   end
 end

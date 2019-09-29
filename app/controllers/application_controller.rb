@@ -7,9 +7,5 @@ helper_method :current_user
 #     User.find_by(email: email)
 # end    
 
-  def current_user
-    ass = "butt"
-    debugger
-    @current_user ||= User.find_by(session_token: session[:session_token])
-  end
+
 end

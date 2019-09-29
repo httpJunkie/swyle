@@ -32,9 +32,9 @@ module Mutations
         return unless email
         user = User.find_by email: email[:email]
         if user && user.authenticate(email[:password])
-          user.reset_token
+          context[:session][:session_token] = user.reset_token          
           context[:current_user] = user 
-          token = "poop"
+          token = user.session_token
           debugger
           { user: user, token: token }
         else

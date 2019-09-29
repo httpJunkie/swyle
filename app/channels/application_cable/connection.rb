@@ -3,6 +3,7 @@ module ApplicationCable
        identified_by :current_user
 
     def connect
+
       self.current_user = current_user
     end
 
@@ -15,10 +16,10 @@ module ApplicationCable
     #   User.find_by(email: email)
     # end
 
-    def current_user 
+    def current_user
       user ||= Jwt::UserAuthenticator.(request.headers)
       user
     end
-    
+
   end
 end
