@@ -1,7 +1,6 @@
 module Mutations
     class SignInUser < BaseMutation
 
-      include ActionDispatch
       null true
   
       argument :email, Types::AuthProviderEmailInput, required: false
