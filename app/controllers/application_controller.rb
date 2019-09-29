@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
     helper_method :current_user
+    helper_method :cookies
 
     # def current_user
     #     token = request.headers["Authorization"].to_s

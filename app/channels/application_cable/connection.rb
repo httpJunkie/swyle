@@ -24,9 +24,7 @@ module ApplicationCable
     #   user
     # end
 
-    def current_user 
-            ass = "ass"
-      # debugger
+    def current_user       
       user = User.find_by(id: cookies.signed[:user_id])
       user 
     end

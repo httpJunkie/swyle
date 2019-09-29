@@ -1,4 +1,5 @@
 class GraphqlController < ApplicationController
+  include ActionController::Cookies
   def execute
     variables = ensure_hash(params[:variables])
     query = params[:query]
@@ -6,8 +7,10 @@ class GraphqlController < ApplicationController
     
     context = {
        session: session,
-       current_user: User.find_by(session_token: session[:session_token])
+       current_user: User.find_by(session_token: session[:session_token]),
+       cookies: cookies
     }
+  
     
     result = SwyleSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
