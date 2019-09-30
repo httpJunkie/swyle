@@ -18,7 +18,6 @@ module Mutations
               id: commentor.id
               }
             }
-          # SwyleSchema.subscriptions.trigger("commentDeleted", {}, phony)
           SwyleSchema.subscriptions.trigger("articleUpdated", {}, post)
           comment.destroy
           post
