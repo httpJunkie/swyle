@@ -16,6 +16,9 @@ module Types
 
     field :like_post, mutation: Mutations::LikePost
     field :unlike_post, mutation: Mutations::UnlikePost
+
+    field :create_funny, mutation: Mutations::CreateFunny
+    field :delete_funny, mutation: Mutations::DeleteFunny
     
     field :create_image_post, mutation: Mutations::CreateImagePost
     field :update_image_title, mutation: Mutations::UpdateImageTitle
