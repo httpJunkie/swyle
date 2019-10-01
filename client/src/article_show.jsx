@@ -103,7 +103,11 @@ class ArticleShow extends Component {
                                   </p> 
                                    : 
                                   <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id} body={article.body}/> }
-                                  <LikesSection type={"Article"} currentUser={data.currentUser} postId={argument} likers={data.article.likers} numLikes={data.article.likeCount} />          
+                                  <LikesSection type={"Article"} 
+                                    currentUser={data.currentUser} 
+                                    postId={argument} 
+                                    likers={data.article.likers} 
+                                    numLikes={data.article.likeCount} />          
                             </div>
 
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} comments={article.comments}/>
