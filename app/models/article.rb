@@ -41,13 +41,7 @@ class Article  < ApplicationRecord
         self.comments.order(created_at: :desc)
     end
 
-    # def reactions
-    #    {
-    #        "like" => {count: self.like_count, users: self.likers, type: "like"},
-    #        "funny" => {count: self.funnies.size, users: self.laughers, type: "funny"}
-    #     }
-    # end
-        def reactions
+    def reactions
        [
            {count: self.like_count, users: self.likers, type: "like"},
            {count: self.funnies.size, users: self.laughers, type: "funny"}
