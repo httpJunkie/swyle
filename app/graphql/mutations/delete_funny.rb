@@ -1,5 +1,5 @@
 module Mutations
-    class Deletefunny < BaseMutation    
+    class DeleteFunny < BaseMutation    
         argument :post_type, String, required: true
         argument :user_id, Integer, required: true
         argument :post_id, Integer, required: true
