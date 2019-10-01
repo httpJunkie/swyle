@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MdThumbUp, MdThumbDown } from 'react-icons/md';
+import { MdSentimentVerySatisfied } from 'react-icons/md';
 import { Mutation } from 'react-apollo';
 import createFunny from './mutations/create_funny';
 import article from './queries/article';
@@ -41,7 +41,7 @@ class FunnyCounter extends Component {
                                     "..."
                                 ) : (
                                         <span>
-                                            <MdThumbUp className="like-thumb-yes"
+                                            <MdSentimentVerySatisfied className="reaction-funny-yes"
                                                 onClick={event => {
                                                     event.preventDefault();
                                                     if (!this.state.currentUser) {
@@ -59,7 +59,7 @@ class FunnyCounter extends Component {
 
                                                 }}
                                             />
-                                            {this.props.numLikes}
+                                            {this.props.numLaughs}
                                         </span>
                                     )}
                         </Mutation>
@@ -74,7 +74,7 @@ class FunnyCounter extends Component {
                                     "..."
                                 ) : (
                                         <span>
-                                            <MdThumbUp className="like-thumb-no"
+                                            <MdSentimentVerySatisfied className="reaction-funny-no"
                                                 onClick={event => {
                                                     event.preventDefault();
                                                     if (!this.state.currentUser) {
@@ -88,12 +88,11 @@ class FunnyCounter extends Component {
                                                             postType: this.props.type
                                                         }
                                                     }).then(res => {
-                                                        // this.setState({ body: "" })
                                                     })
 
                                                 }}
                                             />
-                                            {this.props.numLikes}
+                                            {this.props.numLaughs}
                                         </span>
                                     )}
                         </Mutation>

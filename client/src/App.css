@@ -476,6 +476,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   /* top: 3.5rem;  */
 }
 
+
+
 .header { 
   height: auto;
   width: 100%;
@@ -901,6 +903,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   cursor: pointer;
   color: blue;
   transition: all .1s;
+}
+
+.reaction-funny-yes {
+  color: green;
+}
+
+.reaction-funny-no {
+  color: gray;
 }
 
 .session-page {
