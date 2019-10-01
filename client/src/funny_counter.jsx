@@ -32,11 +32,11 @@ class FunnyCounter extends Component {
                 <div className="like-or-dislike">
                     {userAlreadyLaughed ?
                         <Mutation
-                            mutation={unlikePost}
+                            mutation={deleteFunny}
                             refetchQueries={[{ query: refetch, variables: { id: this.props.postId, } }]}
-                            update={(cache, { data: { unlikePost } }) => {
+                            update={(cache, { data: { deleteFunny } }) => {
                             }}>
-                            {(unlikePost, loading) =>
+                            {(deleteFunny, loading) =>
                                 !loading ? (
                                     "..."
                                 ) : (
@@ -47,7 +47,7 @@ class FunnyCounter extends Component {
                                                     if (!this.state.currentUser) {
                                                         return false;
                                                     }
-                                                    unlikePost({
+                                                    deleteFunny({
                                                         variables: {
                                                             userId: this.state.currentUser.id,
                                                             postId: this.props.postId,
@@ -65,11 +65,11 @@ class FunnyCounter extends Component {
                         </Mutation>
                         :
                         <Mutation
-                            mutation={likePost}
+                            mutation={createFunny}
                             refetchQueries={[{ query: refetch, variables: { id: this.props.postId, } }]}
-                            update={(cache, { data: { likePost } }) => {
+                            update={(cache, { data: { createFunny } }) => {
                             }}>
-                            {(likePost, loading) =>
+                            {(createFunny, loading) =>
                                 !loading ? (
                                     "..."
                                 ) : (
@@ -81,7 +81,7 @@ class FunnyCounter extends Component {
                                                         alert("Find this funny? Log in to have it persist!")
                                                         return false;
                                                     }
-                                                    likePost({
+                                                    createFunny({
                                                         variables: {
                                                             userId: this.state.currentUser.id,
                                                             postId: this.props.postId,
