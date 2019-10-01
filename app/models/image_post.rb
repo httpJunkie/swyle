@@ -16,6 +16,11 @@ class ImagePost  < ApplicationRecord
     foreign_key: :post_id,
     class_name: "Like"
 
+    has_many :funnies, as: :post, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: "Funny"
+
     belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
