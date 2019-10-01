@@ -12,6 +12,7 @@ const article = gql`
                 id
                 username
             }
+            reactions
             comments {
               id
               body
