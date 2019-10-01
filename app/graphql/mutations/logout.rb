@@ -9,7 +9,6 @@ module Mutations
             user = context[:current_user]
             user.reset_token
             context[:current_user] = nil
-            debugger
             {email: ""}
         end
     end
