@@ -24,6 +24,11 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: "Like"
 
+  has_many :funnies,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: "Funny"
+
 
   def reset_token
     self.session_token = Jwt::TokenProvider.(user_id: self.id)
