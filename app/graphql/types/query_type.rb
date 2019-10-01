@@ -10,7 +10,7 @@ module Types
     end
     field :count, Integer, null: false
     field :likeCount, Integer, null: false
-    field :reactions, JSON, null: true
+    field :reactions, GraphQL::Types::JSON, null: true
     def article(argument)
      Article.find(argument[:id])
     end
