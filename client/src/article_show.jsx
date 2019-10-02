@@ -12,6 +12,7 @@ import $ from 'jquery';
 import { MdDelete} from 'react-icons/md';
 import ConfirmationModal from './confirmation_modal';
 import Subscription from './article_subscription';
+import Reaction from './reaction';
 
 class ArticleShow extends Component {
 
@@ -108,7 +109,18 @@ class ArticleShow extends Component {
                                     currentUser={data.currentUser} 
                                     postId={argument} 
                                     likers={data.article.likers} 
-                                    numLikes={data.article.likeCount} />          
+                                    numLikes={data.article.likeCount} />   
+                                    
+                                        <div>
+                                            {
+                                                article.reactions.map( reaction => {
+                                                    return (
+                                                        <Reaction postType={"Article"} postId={argument} currentUser={data.currentUser}
+                                                    reactionType={reaction.type} users={reaction.users} count={reaction.count}/>
+                                                    )           
+                                                })
+                                            }
+                                        </div>                                
                             </div>
 
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} comments={article.comments}/>
