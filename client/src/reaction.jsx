@@ -49,7 +49,7 @@ class Reaction extends Component {
 //    TODOS: likes-section into reaction-outer, like-or-dislike into reaction-inner
         return (
             <div className="likes-section">
-                <div className="like-or-dislike">
+                <div className="reaction">
                     {userReacted ?
                         <Mutation
                             mutation={deletion}

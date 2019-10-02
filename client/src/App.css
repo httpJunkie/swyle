@@ -905,6 +905,25 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   transition: all .1s;
 }
 
+.reaction-section {
+  display: flex;
+  align-items: center;
+}
+
+.reaction {
+   color: black;
+   font-family: sans-serif;
+   font-weight: bold;  
+   position: relative;
+   display: flex;
+   align-items: center;
+}
+
+.reaction > span {
+  display: flex;
+  align-items: center;
+}
+
 .reaction-funny-yes {
   color: green;
 }
