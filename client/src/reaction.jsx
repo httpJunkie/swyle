@@ -1,13 +1,16 @@
 /**
  * Expected Props
  *     users: array of integers, IDs of users who have reacted
- *     type: string, type of reaction
+ *     reactionType: string, type of reaction
+ *     postType: string, type of post.
+ *     postId: integer, ID of post.
  *     count: integer, number of current reactions of this type
  *     currentUser: Object representing a user.
  */
 
 import React, { Component } from 'react';
 import { MdThumbUp } from 'react-icons/md';
+import { FaRegLaughBeam }from 'react-icons/fa';
 import { Mutation } from 'react-apollo';
 import likePost from './mutations/like_post';
 import unlikePost from './mutations/unlike_post';
@@ -20,6 +23,7 @@ import image from './queries/image';
 const QUERIES = { "Article": article, "ImagePost": image };
 const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny}
 const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny}
+const ICONS = {'like': 'MdThumbUp', 'funny': 'FaRegLaughBeam'}
 
 class Reaction extends Component {
     constructor(props) {
@@ -38,10 +42,83 @@ class Reaction extends Component {
 
     render() {
         const userReacted = this.state.currentUser && this.props.users.includes(this.state.currentUser.id);
-        const refetch = QUERIES[this.props.type]
+        const refetch = QUERIES[this.props.postType];
+        const creation = CREATE_MUTATIONS[this.props.reactionType];
+        const deletion = DELETE_MUTATIONS[this.props.reactionType];
+        const Tag = ICONS[this.props.reactionType]
+
         return (
             <div>
+                <div className="like-or-dislike">
+                    {userReacted ?
+                        <Mutation
+                            mutation={deletion}
+                            refetchQueries={[{ query: refetch, variables: { id: this.props.postId, } }]}
+                            update={(cache, { data: { deletion } }) => {
+                            }}>
+                            {(deletion, loading) =>
+                                !loading ? (
+                                    "..."
+                                ) : (
+                                        <span>
+                                            <Tag className={`${this.props.reactionType}-icon-no`}
+                                                onClick={event => {
+                                                    event.preventDefault();
+                                                    if (!this.state.currentUser) {
+                                                        return false;
+                                                    }
+                                                    deletion({
+                                                        variables: {
+                                                            userId: this.state.currentUser.id,
+                                                            postId: this.props.postId,
+                                                            postType: this.props.type
+                                                        }
+                                                    }).then(res => {
+                                                        // this.setState({ body: "" })
+                                                    })
 
+                                                }}
+                                            />
+                                            {this.props.count}
+                                        </span>
+                                    )}
+                        </Mutation>
+                        :
+                        <Mutation
+                            mutation={creation}
+                            refetchQueries={[{ query: refetch, variables: { id: this.props.postId, } }]}
+                            update={(cache, { data: { creation } }) => {
+                            }}>
+                            {(creation, loading) =>
+                                !loading ? (
+                                    "..."
+                                ) : (
+                                        <span>
+                                            <Tag className={`${this.props.reactionType}-icon-no`}
+                                                onClick={event => {
+                                                    event.preventDefault();
+                                                    if (!this.state.currentUser) {
+                                                        alert("Must be logged in to like")
+                                                        return false;
+                                                    }
+                                                    creation({
+                                                        variables: {
+                                                            userId: this.state.currentUser.id,
+                                                            postId: this.props.postId,
+                                                            postType: this.props.type
+                                                        }
+                                                    }).then(res => {
+                                                        // this.setState({ body: "" })
+                                                    })
+
+                                                }}
+                                            />
+                                            {this.props.count}
+                                        </span>
+                                    )}
+                        </Mutation>
+                    }
+                </div>
             </div>
         )
     }
