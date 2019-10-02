@@ -23,6 +23,7 @@ module Types
     field :create_image_post, mutation: Mutations::CreateImagePost
     field :update_image_title, mutation: Mutations::UpdateImageTitle
     field :update_image_description, mutation: Mutations::UpdateImageDescription
+    field :delete_image, mutation: Mutations::DeleteImage
     field :sign_s3, mutation: Mutations::SignS3
   end
 end
