@@ -111,7 +111,7 @@ class ArticleShow extends Component {
                                     likers={data.article.likers} 
                                     numLikes={data.article.likeCount} />   
                                     
-                                        <div>
+                                        <div className="reaction-section">
                                             {
                                                 article.reactions.map( reaction => {
                                                     return (

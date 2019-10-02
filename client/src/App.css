@@ -913,6 +913,31 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   color: gray;
 }
 
+.reaction-like-yes {
+  color: blue;
+  padding: .5rem;
+}
+
+.reaction-like-no {
+  color: gray;
+  padding: .5rem;
+}
+
+.reaction-like-yes:hover {
+   cursor: pointer;
+}
+.reaction-like-no:hover {
+   cursor: pointer;
+}
+
+.reaction-funny-yes:hover {
+   cursor: pointer;
+}
+
+.reaction-funny-no:hover {
+   cursor: pointer;
+}
+
 .session-page {
   background: #001935;
   display: flex;

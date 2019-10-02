@@ -46,9 +46,9 @@ class Reaction extends Component {
         const creation = CREATE_MUTATIONS[this.props.reactionType];
         const deletion = DELETE_MUTATIONS[this.props.reactionType];
         const Tag = ICONS[this.props.reactionType]
-
+//    TODOS: likes-section into reaction-outer, like-or-dislike into reaction-inner
         return (
-            <div>
+            <div className="likes-section">
                 <div className="like-or-dislike">
                     {userReacted ?
                         <Mutation
@@ -61,7 +61,7 @@ class Reaction extends Component {
                                     "..."
                                 ) : (
                                         <span>
-                                            <Tag className={`${this.props.reactionType}-icon-no`}
+                                            <span className={`reaction-${this.props.reactionType}-yes`}
                                                 onClick={event => {
                                                     event.preventDefault();
                                                     if (!this.state.currentUser) {
@@ -71,15 +71,17 @@ class Reaction extends Component {
                                                         variables: {
                                                             userId: this.state.currentUser.id,
                                                             postId: this.props.postId,
-                                                            postType: this.props.type
+                                                            postType: this.props.postType
                                                         }
                                                     }).then(res => {
                                                         // this.setState({ body: "" })
                                                     })
 
-                                                }}
-                                            />
-                                            {this.props.count}
+                                                }}>
+                                                    <Tag />
+                                            </span>
+                                           
+                                            <span> {this.props.count}</span>
                                         </span>
                                     )}
                         </Mutation>
@@ -94,7 +96,7 @@ class Reaction extends Component {
                                     "..."
                                 ) : (
                                         <span>
-                                            <Tag className={`${this.props.reactionType}-icon-no`}
+                                            <span className={`reaction-${this.props.reactionType}-no`}
                                                 onClick={event => {
                                                     event.preventDefault();
                                                     if (!this.state.currentUser) {
@@ -105,15 +107,17 @@ class Reaction extends Component {
                                                         variables: {
                                                             userId: this.state.currentUser.id,
                                                             postId: this.props.postId,
-                                                            postType: this.props.type
+                                                            postType: this.props.postType
                                                         }
                                                     }).then(res => {
                                                         // this.setState({ body: "" })
                                                     })
 
-                                                }}
-                                            />
-                                            {this.props.count}
+                                                }}> 
+                                                 <Tag />
+                                            </span>
+                                           
+                                            <span> {this.props.count}</span>
                                         </span>
                                     )}
                         </Mutation>
