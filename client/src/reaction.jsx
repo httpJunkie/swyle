@@ -18,7 +18,6 @@ import createFunny from './mutations/create_funny';
 import deleteFunny from './mutations/delete_funny';
 import article from './queries/article';
 import image from './queries/image';
-import { create } from 'domain';
 
 
 const QUERIES = { "Article": article, "ImagePost": image };
