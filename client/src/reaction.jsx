@@ -10,7 +10,7 @@
 
 import React, { Component } from 'react';
 import { MdThumbUp } from 'react-icons/md';
-import { FaRegLaughBeam }from 'react-icons/fa';
+import { FaRegGrinSquint }from 'react-icons/fa';
 import { Mutation } from 'react-apollo';
 import likePost from './mutations/like_post';
 import unlikePost from './mutations/unlike_post';
@@ -23,7 +23,7 @@ import image from './queries/image';
 const QUERIES = { "Article": article, "ImagePost": image };
 const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny}
 const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny}
-const ICONS = {'like': MdThumbUp, 'funny': FaRegLaughBeam}
+const ICONS = { 'like': MdThumbUp, 'funny': FaRegGrinSquint}
 
 class Reaction extends Component {
     constructor(props) {
@@ -75,6 +75,7 @@ class Reaction extends Component {
                                                         }
                                                     }).then(res => {
                                                         // this.setState({ body: "" })
+                                                        debugger
                                                     })
 
                                                 }}>

@@ -105,22 +105,32 @@ class ArticleShow extends Component {
                                   </p> 
                                    : 
                                   <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id} body={article.body}/> }
-                                  <LikesSection type={"Article"} 
-                                    currentUser={data.currentUser} 
-                                    postId={argument} 
-                                    likers={data.article.likers} 
-                                    numLikes={data.article.likeCount} />   
-                                    
-                                        <div className="reaction-section">
-                                            {
-                                                article.reactions.map( reaction => {
-                                                    return (
-                                                        <Reaction postType={"Article"} postId={argument} currentUser={data.currentUser}
-                                                    reactionType={reaction.type} users={reaction.users} count={reaction.count}/>
-                                                    )           
-                                                })
-                                            }
-                                        </div>                                
+                                
+                                <LikesSection 
+                                    type={"Article"}
+                                    currentUser={data.currentUser}
+                                    postId={argument}
+                                    likers={data.article.likers}
+                                    numLikes={data.article.likeCount} />  
+                                 <div className="reaction-section">
+                                    {
+                                        article.reactions.map(reaction => {
+                                            return (
+                                                <div key={`shutuplint${reaction.type}`}>
+                                                    <Reaction 
+                                                    postType={"Article"} 
+                                                    currentUser={data.currentUser}
+                                                    postId={argument} 
+                                                    reactionType={reaction.type} 
+                                                    users={reaction.users} 
+                                                    count={reaction.count} />
+                                                </div>
+
+                                            )
+                                        })
+                                    }
+                                </div>    
+                                                       
                             </div>
 
                               <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} comments={article.comments}/>
@@ -136,3 +146,6 @@ class ArticleShow extends Component {
 }
 
 export default graphql(deleteArticle)(ArticleShow);
+
+
+
