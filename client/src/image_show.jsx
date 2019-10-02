@@ -10,6 +10,7 @@ import $ from 'jquery';
 import { MdDelete, MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import Subscription from './image_subscription';
 import images from './queries/images';
+import deleteImage from './mutations/delete_image';
 
 
 class ImageShow extends Component {
@@ -129,4 +130,4 @@ class ImageShow extends Component {
 
 }
 
-export default ImageShow;
+export default graphql(deleteImage)(ImageShow);
