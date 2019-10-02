@@ -123,6 +123,14 @@ class ArticleShow extends Component {
                                             )
                                         })
                                     }
+                                    <Reaction
+                                        postType={"Article"}
+                                        currentUser={data.currentUser}
+                                        postId={argument}
+                                        reactionType={"smart"}
+                                        users={[]}
+                                        count={0} />
+        
                                 </div>    
                                                        
                             </div>

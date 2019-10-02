@@ -10,7 +10,7 @@
 
 import React, { Component } from 'react';
 import { MdThumbUp } from 'react-icons/md';
-import { FaRegGrinSquint, FaLightbulb }from 'react-icons/fa';
+import { FaRegGrinSquint, FaRegLightbulb, FaRegThumbsUp }from 'react-icons/fa';
 import { Mutation } from 'react-apollo';
 import likePost from './mutations/like_post';
 import unlikePost from './mutations/unlike_post';
@@ -18,12 +18,13 @@ import createFunny from './mutations/create_funny';
 import deleteFunny from './mutations/delete_funny';
 import article from './queries/article';
 import image from './queries/image';
+import { create } from 'domain';
 
 
 const QUERIES = { "Article": article, "ImagePost": image };
-const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny}
-const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny}
-const ICONS = { 'like': MdThumbUp, 'funny': FaRegGrinSquint, 'smart': FaLightbulb}
+const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny}
+const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': createFunny}
+const ICONS = { 'like': FaRegThumbsUp, 'funny': FaRegGrinSquint, 'smart': FaRegLightbulb}
 
 class Reaction extends Component {
     constructor(props) {
