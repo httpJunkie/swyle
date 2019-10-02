@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Query } from 'react-apollo';
+import { Query, graphql } from 'react-apollo';
 import image from './queries/image';
 import CommentSection from './comment_section_refactor';
 import LikesSection from './likes_section';
