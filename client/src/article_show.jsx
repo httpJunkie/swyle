@@ -118,12 +118,12 @@ class ArticleShow extends Component {
                                             return (
                                                 <div key={`shutuplint${reaction.type}`}>
                                                     <Reaction 
-                                                    postType={"Article"} 
-                                                    currentUser={data.currentUser}
-                                                    postId={argument} 
-                                                    reactionType={reaction.type} 
-                                                    users={reaction.users} 
-                                                    count={reaction.count} />
+                                                        postType={"Article"} 
+                                                        currentUser={data.currentUser}
+                                                        postId={argument} 
+                                                        reactionType={reaction.type} 
+                                                        users={reaction.users} 
+                                                        count={reaction.count} />
                                                 </div>
 
                                             )

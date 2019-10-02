@@ -17,6 +17,7 @@ subscription ArticleSubscription {
                 id
                 username
             }
+            reactions
             comments {
               id
               body
@@ -39,6 +40,7 @@ subscription ArticleSubscription {
                 id
                 username
             }
+            reactions
             comments {
               id
               body
@@ -60,6 +62,7 @@ subscription ArticleSubscription {
                 id
                 username
             }
+            reactions
             comments {
               id
               body
