@@ -24,8 +24,15 @@ class ImageShow extends Component {
         this.editField = this.editField.bind(this);
         this.deleteImage = this.deleteImage.bind(this);
     }
-    deleteImage() {
-        console.log("honk honk")
+    deleteImage(e) {
+        e.preventDefault();
+        const id = this.props.match.params.imageID
+        this.props.mutate({
+            variables: { id: parseInt(id) },
+            refetchQueries: [{ query: images }]
+        }).then(res => {
+            this.props.history.push("/");
+        })
     }
 
     cancelEdit(event) {
