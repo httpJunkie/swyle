@@ -908,6 +908,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 .reaction-section {
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .reaction {
@@ -926,10 +928,13 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .reaction-funny-yes {
   color: green;
+    padding: .5rem;
 }
 
 .reaction-funny-no {
   color: gray;
+    padding: .5rem;
+
 }
 
 .reaction-like-yes {
@@ -938,6 +943,16 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 }
 
 .reaction-like-no {
+  color: gray;
+  padding: .5rem;
+}
+
+.reaction-smart-yes {
+  color: yellow;
+  padding: .5rem;
+}
+
+.reaction-smart-no {
   color: gray;
   padding: .5rem;
 }
