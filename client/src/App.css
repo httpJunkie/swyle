@@ -956,7 +956,7 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   color: gray;
   padding: .5rem;
 }
-
+/* TODO: convert this to scss...mak this .reaction--&:hover  */
 .reaction-like-yes:hover {
    cursor: pointer;
 }
@@ -970,6 +970,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 
 .reaction-funny-no:hover {
    cursor: pointer;
+}
+
+.reaction-smart-yes:hover{
+     cursor: pointer;
+}
+
+.reaction-smart-no:hover {
+     cursor: pointer;
 }
 
 .session-page {
