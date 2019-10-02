@@ -105,13 +105,7 @@ class ArticleShow extends Component {
                                   </p> 
                                    : 
                                   <ArticleBodyEdit cancelEdit={this.cancelEdit} finishEdit={this.finishEdit} id={article.id} body={article.body}/> }
-                                
-                                <LikesSection 
-                                    type={"Article"}
-                                    currentUser={data.currentUser}
-                                    postId={argument}
-                                    likers={data.article.likers}
-                                    numLikes={data.article.likeCount} />  
+                          
                                  <div className="reaction-section">
                                     {
                                         article.reactions.map(reaction => {
@@ -149,3 +143,10 @@ export default graphql(deleteArticle)(ArticleShow);
 
 
 
+
+// <LikesSection
+//     type={"Article"}
+//     currentUser={data.currentUser}
+//     postId={argument}
+//     likers={data.article.likers}
+//     numLikes={data.article.likeCount} />  
