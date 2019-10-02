@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import { MdDelete, MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import Subscription from './image_subscription';
+import images from './queries/images';
 
 
 class ImageShow extends Component {

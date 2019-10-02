@@ -65,8 +65,8 @@ class Comment extends Component {
                         <span className="comment-who-and-when"> {`${this.props.comment.commentor.username}, on ${this.props.comment.createdAt}`}</span>
                     </div>
                     <div className="comment-buttons">
-                        {(this.props.currentUser.id === this.props.comment.commentor.id) && <span className="comment-edit-btn" onClick={this.editComment}/>}
-                        {(this.props.currentUser.id === this.props.comment.commentor.id || this.props.currentUser.id === this.props.articleAuthorId) && <span className="comment-delete-btn" onClick={this.openConfirmationModal} />}
+                        {this.props.currentUser && ( (this.props.currentUser.id === this.props.comment.commentor.id)) && <span className="comment-edit-btn" onClick={this.editComment}/>}
+                        {this.props.currentUser &&  ((this.props.currentUser.id === this.props.comment.commentor.id) || this.props.currentUser.id === this.props.articleAuthorId) && <span className="comment-delete-btn" onClick={this.openConfirmationModal} />}
                         {this.state.confirmationOpen && (
                             <div className="confirmation-modal" style={{"top":`${this.state.top}`}}>
                                 <div className="confirmation-dialog">
