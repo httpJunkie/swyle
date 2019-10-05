@@ -1,3 +1,7 @@
+/**
+ * Displays all data for a single article
+ */
+
 import React, {Component} from 'react';
 import {Query} from 'react-apollo';
 import article from './queries/article';
