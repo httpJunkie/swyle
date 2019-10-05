@@ -1,3 +1,7 @@
+/**
+ * Edit form for the body of an article
+ */
+
 import React, {Component} from 'react';
 import {Mutation} from 'react-apollo';
 import updateArticleBody from './mutations/update_article_body'
