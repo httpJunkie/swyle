@@ -1,3 +1,7 @@
+/**
+ * Subscription component for the ArticleShow page.
+ */
+
 import React, { useEffect } from 'react';
 import ArticleSubscription from './subscriptions/article_show';
 
