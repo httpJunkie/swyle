@@ -1,3 +1,7 @@
+/** 
+ * Renders form for creating a new article
+ */
+
 import React, { Component } from 'react';
 import postArticle from './mutations/post_article';
 import currentUser from './queries/current_user';
