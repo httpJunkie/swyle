@@ -1,3 +1,7 @@
+/**
+ * Displays a single image and all of its information
+ */
+
 import React, { Component } from 'react';
 import { Query, graphql } from 'react-apollo';
 import image from './queries/image';
@@ -33,7 +37,7 @@ class ImageShow extends Component {
             variables: { id: parseInt(id) },
             refetchQueries: [{ query: images }]
         }).then(res => {
-            this.props.history.push("/");
+            this.props.history.push("/images");
         })
     }
 
