@@ -14,6 +14,7 @@ import Header from './header';
 import UserDash from './user_dash'
 import Login from './login';
 import Register from './register';
+import Search from './search';
 import Trending from './trending';
 import About from './about';
 import Adverts from './adverts';
@@ -62,6 +63,7 @@ class App extends Component {
                   <Route exact path="/trending" component={Trending} />
                   <Route exact path="/headertest" component={testArea}/>
                   <Route exact path="/about" component={About} />
+                  <Route exact path="/search" component={Search} />
                   <Route exact path="/sponsors" component={Adverts} />
               </Switch>
           </div> 
