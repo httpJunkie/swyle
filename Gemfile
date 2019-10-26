@@ -11,6 +11,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'paperclip'
 gem 'aws-sdk-s3'
 gem 'dotenv'
+gem 'search_object', '1.2.0'
+gem 'search_object_graphql', '0.1'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
