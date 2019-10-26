@@ -41,12 +41,7 @@ class Header extends Component {
             <div className="header">
                 <div className="header-top" >
                     <div className="header-site-name" />
-                    <form className="header-search">
-                        <input className="header-search-bar" type="text">
-                        </input>
-                        <div className="header-search-submit" />
-
-                    </form>
+                
                     {
                         !this.state.currentUser ?
                                                 

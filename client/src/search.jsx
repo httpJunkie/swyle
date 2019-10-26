@@ -11,6 +11,14 @@ class Search extends Component {
         }
     }
 
+    render() {
+        debugger;
+       return (           <div>
+           <h1>Expletive</h1>
+        </div>
+       ) 
+    }
+
 }
 
 export default Search;
