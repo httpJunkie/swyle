@@ -4,6 +4,7 @@ import logout from './mutations/logout';
 import {Link} from 'react-router-dom'
 import {graphql} from 'react-apollo';
 import currentUser from './queries/current_user';
+import HeaderSearch from './header_search';
 
 class Header extends Component {
     constructor(props) {
@@ -41,7 +42,7 @@ class Header extends Component {
             <div className="header">
                 <div className="header-top" >
                     <div className="header-site-name" />
-                
+                    <HeaderSearch />
                     {
                         !this.state.currentUser ?
                                                 
