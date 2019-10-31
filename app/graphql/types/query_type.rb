@@ -99,10 +99,8 @@ module Types
       argument :search_query, String, required: true
     end
     def posts_by_query(args)
-      debugger
       articles = Article.where("body like ?", "%#{args[:search_query]}%") + Article.where("title like ?", "%#{args[:search_query]}%")
       images = ImagePost.where("description like ?", "%#{args[:search_query]}%") + ImagePost.where("title like ?", "%#{args[:search_query]}%")
-      debugger
       (articles + images).sort_by { |k| k[:created_at] }
     end
 
