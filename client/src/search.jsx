@@ -10,9 +10,18 @@ const Search = (props) =>  {
                 {({ loading, error, data }) => {
                if (loading) return <p>Loading...</p>;
                if (error) return <p>Error :(</p>;
-
                return (
-                   <h1>expletive</h1>
+                   <div>
+                       {data.postsByQuery.map(post => {
+                           return (
+                               <div className="user-posts-card" key={`${post.title}${post.id}`}>
+                                   <h3 >{post.title}</h3>
+                                   {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} /> </div>}
+                                   {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
+                               </div>
+                           )
+                       })}
+                   </div>
                )}}
            </Query>
         </div>
