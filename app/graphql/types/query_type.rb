@@ -99,7 +99,7 @@ module Types
       argument :search_query, String, required: true
     end
     def posts_by_query(args)
-      query = args[:search_query.gsub("?q=", '')]
+      query = args[:search_query].gsub("?q=", '')
       debugger
       articles = Article.where("body like ?", "%#{query}%") + Article.where("title like ?", "%#{query}%")
       images = ImagePost.where("description like ?", "%#{query}%") + ImagePost.where("title like ?", "%#{query}%")
