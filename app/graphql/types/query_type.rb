@@ -100,16 +100,15 @@ module Types
     end
     def posts_by_query(args)
       queries = args[:search_query].gsub("?q=", '').split(' ')
-      debugger
       posts = []
-      queries.each do {|query|
-        posts << Article.where("body like ?", "%#{query}%") 
-        posts << Article.where("title like ?", "%#{query}%")
-        posts << ImagePost.where("description like ?", "%#{query}%") 
-        posts << ImagePost.where("title like ?", "%#{query}%")
-      }
-      debugger
-      posts.sort_by { |k| k[:created_at] }
+      queries.each do |query|
+        posts += Article.where("body like ?", "%#{query}%") 
+        posts += Article.where("title like ?", "%#{query}%")
+        posts += ImagePost.where("description like ?", "%#{query}%") 
+        posts += ImagePost.where("title like ?", "%#{query}%")
+      end
+      posts
+      # posts.sort_by { |k| k[:created_at] }
     end
 
   end #class end
