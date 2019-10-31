@@ -103,7 +103,7 @@ module Types
       articles = Article.where("description like ?", "%#{args[:search_query]}%") + Article.where("title like ?", "%#{args[:search_query]}%")
       images = ImagePost.where("description like ?", "%#{args[:search_query]}%") + ImagePost.where("title like ?", "%#{args[:search_query]}%")
       debugger
-      articles + images
+      (articles + images).sort_by { |k| k[:created_at] }
     end
 
   end #class end
