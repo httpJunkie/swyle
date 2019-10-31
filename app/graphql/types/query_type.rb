@@ -95,7 +95,9 @@ module Types
       all_posts.select {|post| post.like_count > 0 || post.count > 0}
     end
 
-    field :posts_by_query, [PostUnion], null: true
+    field :posts_by_query, [PostUnion], null: true do
+      argument :search_query, String, required: true
+    end
     def posts_by_query(search_query)
       posts = Article.all + ImagePost.all
       scope {posts}
