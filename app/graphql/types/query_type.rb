@@ -99,10 +99,17 @@ module Types
       argument :search_query, String, required: true
     end
     def posts_by_query(args)
-      query = args[:search_query].gsub("?q=", '')
-      articles = Article.where("body like ?", "%#{query}%") + Article.where("title like ?", "%#{query}%")
-      images = ImagePost.where("description like ?", "%#{query}%") + ImagePost.where("title like ?", "%#{query}%")
-      (articles + images).sort_by { |k| k[:created_at] }
+      queries = args[:search_query].gsub("?q=", '').split(' ')
+      debugger
+      posts = []
+      queries.each do {|query|
+        posts << Article.where("body like ?", "%#{query}%") 
+        posts << Article.where("title like ?", "%#{query}%")
+        posts << ImagePost.where("description like ?", "%#{query}%") 
+        posts << ImagePost.where("title like ?", "%#{query}%")
+      }
+      debugger
+      posts.sort_by { |k| k[:created_at] }
     end
 
   end #class end

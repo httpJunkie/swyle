@@ -14,7 +14,7 @@ const Search = (props) =>  {
                    <div>
                        {data.postsByQuery.map(post => {
                            return (
-                               <div className="user-posts-card" key={`${post.title}${post.id}`}>
+                               <div className="user-posts-card" key={`${post.title}${post.title.length}${post.id}`}>
                                    <h3 >{post.title}</h3>
                                    {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} /> </div>}
                                    {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
