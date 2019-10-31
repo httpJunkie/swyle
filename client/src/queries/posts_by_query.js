@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 const search = gql`
-postsByQuery($searchQuery: String!){
+query postsByQuery($searchQuery: String!){
     postsByQuery(searchQuery: $searchQuery) {
     __typename
     ... on Article {
