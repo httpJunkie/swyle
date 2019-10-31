@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { withApollo } from 'react-apollo'
+import { withApollo, Query } from 'react-apollo'
+import search from './queries/posts_by_query';
 
 class Search extends Component {
     
@@ -14,7 +15,9 @@ class Search extends Component {
     render() {
         console.log(this.props.location.search)
        return (           <div>
-           <h1>Expletive</h1>
+           <Query>
+
+           </Query>
         </div>
        ) 
     }
