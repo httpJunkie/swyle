@@ -12,7 +12,7 @@ class Search extends Component {
     }
 
     render() {
-        debugger;
+        console.log(this.props.location.search)
        return (           <div>
            <h1>Expletive</h1>
         </div>
