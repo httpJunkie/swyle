@@ -98,10 +98,12 @@ module Types
     field :posts_by_query, [PostUnion], null: true do
       argument :search_query, String, required: true
     end
-    def posts_by_query(search_query)
-      posts = Article.all + ImagePost.all
-      scope {posts}
-      option(:title, type: String)
+    def posts_by_query(args)
+      debugger
+      articles = Article.where("description like ?", "%#{args[:search_query]}%") + Article.where("title like ?", "%#{args[:search_query]}%")
+      images = ImagePost.where("description like ?", "%#{args[:search_query]}%") + ImagePost.where("title like ?", "%#{args[:search_query]}%")
+      debugger
+      articles + images
     end
 
   end #class end
