@@ -33,7 +33,7 @@ class Trending extends Component {
 
     render() {
         if (this.props.data.loading) {
-            return <div>
+            return <div className="spinny-loady-container">
                 Insert spinny thingy here.
             </div>
         }
@@ -43,7 +43,9 @@ class Trending extends Component {
         return (  
         <div className="trending-posts-page">
             <h1 className="trending-posts-title">Most Popular Posts</h1>
-            <div className="trending-posts-nav">
+          
+            <div className="trending-posts-backpane">
+                  <div className="trending-posts-nav">
                 <div className={`trending-posts-tab${this.state.activePane === 'likes' ? '-active' : '-inactive'}`} 
                 name="likes"
                 onClick={this.selectPane}
@@ -57,7 +59,6 @@ class Trending extends Component {
                     By Comments
                 </div>
             </div>
-            <div className="trending-posts-backpane">
                 <div className="trending-posts-content">
                 {
                         posts.map(

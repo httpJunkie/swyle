@@ -79,7 +79,6 @@ class ArticleShow extends Component {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
                         const article = data.article;
-                        console.log(article);
                     return (
                         <div className="article-show-page">
                             <div className="article-section">
