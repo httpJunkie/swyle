@@ -5,6 +5,7 @@
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
+    "@rails/webpacker": "^4.0.7",
     "actioncable": "^5.2.3",
     "apollo-boost": "^0.4.4",
     "graphql-ruby-client": "^1.6.6",
@@ -16,5 +17,8 @@
     "react_ujs": "^2.6.0",
     "turbolinks": "^5.2.0"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.9.0"
+  }
 }
