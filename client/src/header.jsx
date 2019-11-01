@@ -58,7 +58,7 @@ class Header extends Component {
                             </div>
                     }
                     <div className="new-post-buttons">
-                        <Link className="new-post-btn" to="/images/new"/>
+                        <Link className="new-post-btn" to="/images/new"><FaImage /></Link>/>
                         <Link className="new-post-btn" to="/articles/new"><FaFeather /></Link>
                     </div>
                 </div>
