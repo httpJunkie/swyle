@@ -8,8 +8,6 @@ const HeaderSearch = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(props);
-        debugger
         props.history.push(`/search?q=${query}`)
     }
 
@@ -25,5 +23,3 @@ const HeaderSearch = (props) => {
 }
 
 export default withRouter(HeaderSearch);
-
-{/* <Link className="header-search-submit" to={`/search?q=${query}`} /> */}
