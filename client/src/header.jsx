@@ -38,11 +38,12 @@ class Header extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div className="header">
                 <div className="header-top" >
                     <div className="header-site-name" />
-                    <HeaderSearch history={this.props.history}/>
+                    <HeaderSearch />
                     {
                         !this.state.currentUser ?
                                                 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import { withRouter } from 'react-router'
 
 const HeaderSearch = (props) => {
     const handleInputChange = e => {
@@ -12,7 +12,6 @@ const HeaderSearch = (props) => {
     }
 
     const [query, setQuery] = useState("");
-    console.log(props)
 
     return (
         <form className="header-search" onSubmit={handleSubmit}>
@@ -23,6 +22,6 @@ const HeaderSearch = (props) => {
     )
 }
 
-export default HeaderSearch;
+export default withRouter(HeaderSearch);
 
 {/* <Link className="header-search-submit" to={`/search?q=${query}`} /> */}
