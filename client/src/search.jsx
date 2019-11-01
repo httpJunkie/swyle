@@ -16,7 +16,7 @@ const Search = (props) =>  {
                    return <h1 style={{"color":"white", "margin":"2rem"}}>Sorry, no posts matched your query</h1>
                }
                return (
-                   <div>
+                   <div className="search-results-spread"> 
                        {data.postsByQuery.map(post => {
                            const url = parseUrl(post.__typename)
                            return (
