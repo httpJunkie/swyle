@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   end
   post "/graphql", to: "graphql#execute"
   mount ActionCable.server, at: '/cable'
-  mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   root :to =>  'index#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
