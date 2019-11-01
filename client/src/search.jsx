@@ -10,6 +10,9 @@ const Search = (props) =>  {
                 {({ loading, error, data }) => {
                if (loading) return <p>Loading...</p>;
                if (error) return <p>Error :(</p>;
+               if (data.postsByQuery.length === 0) {
+                   return <h1 style={{"color":"white", "margin":"2rem"}}>Sorry, no posts matched your query</h1>
+               }
                return (
                    <div>
                        {data.postsByQuery.map(post => {

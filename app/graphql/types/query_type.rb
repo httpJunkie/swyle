@@ -107,8 +107,7 @@ module Types
         posts += ImagePost.where("description like ?", "%#{query}%") 
         posts += ImagePost.where("title like ?", "%#{query}%")
       end
-      posts
-      # posts.sort_by { |k| k[:created_at] }
+      posts.uniq.sort_by { |k| k[:created_at] }
     end
 
   end #class end
