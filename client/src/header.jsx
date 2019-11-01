@@ -42,7 +42,7 @@ class Header extends Component {
             <div className="header">
                 <div className="header-top" >
                     <div className="header-site-name" />
-                    <HeaderSearch />
+                    <HeaderSearch history={this.props.history}/>
                     {
                         !this.state.currentUser ?
                                                 
