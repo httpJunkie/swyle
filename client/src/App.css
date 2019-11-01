@@ -859,13 +859,10 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   padding: .5rem;
   border-radius: 50%;
   border: 2px solid white;
-  /* background-image: url('./images/newarticle.png'); */
-  /* background-repeat: no-repeat; */
-  /* background-size: contain; */
+  background: #0A0458;
   color: white;
   font-size: 18px;
   position: absolute;
-  right: 0;
   text-align: center;
   display: flex;
 }
@@ -874,6 +871,8 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   padding: .6rem;
   font-size: 24px;
   transition: all .1s ease-in-out;
+  z-index: 9000;
+  background: rgb(4, 41, 86);
 }
 
 .new-image-btn {
