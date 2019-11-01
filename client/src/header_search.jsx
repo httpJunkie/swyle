@@ -8,7 +8,9 @@ const HeaderSearch = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        console.log(props);
         debugger
+        props.history.push(`/search?q=${query}`)
     }
 
     const [query, setQuery] = useState("");
