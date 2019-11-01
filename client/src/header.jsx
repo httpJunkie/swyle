@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {graphql} from 'react-apollo';
 import currentUser from './queries/current_user';
 import HeaderSearch from './header_search';
+import { FaFeather, FaImage}from 'react-icons/fa';
 
 class Header extends Component {
     constructor(props) {
@@ -57,8 +58,8 @@ class Header extends Component {
                             </div>
                     }
                     <div className="new-post-buttons">
-                        <Link className="new-image-btn" to="/images/new"/>
-                        <Link className="new-article-btn" to="/articles/new"/>
+                        <Link className="new-post-btn" to="/images/new"/>
+                        <Link className="new-post-btn" to="/articles/new"><FaFeather /></Link>
                     </div>
                 </div>
                 <NavBar />

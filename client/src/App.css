@@ -855,17 +855,24 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   cursor: pointer;
 }
 
-.new-article-btn {
-  padding: 1rem;
-  background-image: url('./images/newarticle.png');
-  background-repeat: no-repeat;
-  background-size: contain;
+.new-post-btn {
+  padding: .5rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  /* background-image: url('./images/newarticle.png'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+  color: white;
+  font-size: 18px;
   position: absolute;
   right: 0;
+  text-align: center;
+  display: flex;
 }
 
-.new-article-btn:hover {
-  padding: 1.2rem;
+.new-post-btn:hover {
+  padding: .6rem;
+  font-size: 24px;
   transition: all .1s ease-in-out;
 }
 
