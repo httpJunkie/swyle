@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: swyle_production
-  username: swyle
-  password: <%= ENV['SWYLE_DATABASE_PASSWORD'] %>
+  # username: swyle
+  # password: <%= ENV['SWYLE_DATABASE_PASSWORD'] %>
