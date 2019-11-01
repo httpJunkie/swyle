@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { withRouter } from 'react-router'
+import { FaSearch} from 'react-icons/fa';
 
 const HeaderSearch = (props) => {
     const handleInputChange = e => {
@@ -17,7 +18,7 @@ const HeaderSearch = (props) => {
         <form className="header-search" onSubmit={handleSubmit}>
             <input className="header-search-bar" type="text" value={query} onChange={handleInputChange}>
             </input>
-            <button type="submit" className="header-search-submit" />
+            <button type="submit" className="header-search-submit"> <FaSearch /></button>
         </form>
     )
 }

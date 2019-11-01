@@ -520,15 +520,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
 }
 
 .header-search-submit {
-  background-image: url("./images/searchicon.png");
-  background-size: contain;
+  background: none;
+  color: rgba(255,255,255,.6);
   border: none;
   border-radius: 4px;
   position: absolute;
-  right: .1rem;
-  bottom: .04rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  right: .2rem;
+  top: .2rem;
+  font-size: 20px;
   padding: .1rem;
 }
 
