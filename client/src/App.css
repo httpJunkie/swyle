@@ -875,18 +875,6 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   background: rgb(4, 41, 86);
 }
 
-.new-image-btn {
-  padding: 1rem;
-  background-image: url('./images/newimage.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-}
-
-.new-image-btn:hover {
-  padding: 1.2rem;
-  transition: all .1s ease-in-out;
-}
 
 .new-post-buttons {
   display: flex;
