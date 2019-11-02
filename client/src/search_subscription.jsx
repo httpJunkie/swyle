@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import SearchSubscription from './subscriptions/search_subscription';
 
 
-const Subscription = ({ subscribeToMore }) => {
+const Subscription = ({ subscribeToMore, query}) => {
     useEffect(() => {
         return subscribeToMore({
             document: SearchSubscription,
@@ -22,7 +22,7 @@ const Subscription = ({ subscribeToMore }) => {
                 if (articleAdded) {
                     const alreadyInList = prev.postsByQuery.find(e => e.id === articleAdded.id && e.__typename === "Article");
                     debugger;
-                    const match = articleAdded.body.match(props.query).length > 0 || articleAdded.title.match(props.query).length > 0
+                    const match = articleAdded.body.match(query).length > 0 || articleAdded.title.match(query).length > 0
                     if (alreadyInList) {
                         return prev;
                     }

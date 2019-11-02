@@ -28,7 +28,7 @@ const Search = (props) =>  {
                                </div>
                            )
                        })}
-                       <Subscription subscribeToMore={subscribeToMore} />
+                       <Subscription subscribeToMore={subscribeToMore} query={query}/>
                    </div>
                )}}
            </Query>
