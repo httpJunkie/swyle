@@ -8,7 +8,6 @@ const Subscription = ({ subscribeToMore }) => {
             document: SearchSubscription,
             updateQuery: (prev, { subscriptionData }) => {
                 if (!subscriptionData.data) return prev;
-                debugger;
                 const { imageAdded } = subscriptionData.data;
 
                 if (imageAdded) {
@@ -22,7 +21,8 @@ const Subscription = ({ subscribeToMore }) => {
                 const { articleAdded } = subscriptionData.data
                 if (articleAdded) {
                     const alreadyInList = prev.postsByQuery.find(e => e.id === articleAdded.id && e.__typename === "Article");
-              
+                    debugger;
+                    const match = articleAdded.body.match(props.query).length > 0 || articleAdded.title.match(props.query).length > 0
                     if (alreadyInList) {
                         return prev;
                     }

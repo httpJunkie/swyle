@@ -5,11 +5,13 @@ subscription SearchSubscription {
     imageAdded {
         id
         title
+        description
         image
    },
     articleAdded {
         id
         title
+        body
         snippet
    },
 }
