@@ -12,7 +12,9 @@ const Subscription = ({ subscribeToMore, query}) => {
 
                 if (imageAdded) {
                     const alreadyInList = prev.postsByQuery.find(e => e.id === imageAdded.id && e.__typename === "Image");
-                    if (alreadyInList) {
+                    const match = imageAdded.description.match(query.replace("?q=", "")).length > 0 || imageAdded.title.match(query.replace("?q=", "")).length > 0
+
+                    if (alreadyInList || !match) {
                         return prev;
                     }
                     return { postsByQuery: [imageAdded].concat(prev.postsByQuery) };
