@@ -3,6 +3,7 @@ import { withApollo, Query } from 'react-apollo'
 import search from './queries/posts_by_query';
 import {Link} from 'react-router-dom';
 import {parseUrl} from './helpers';
+import Subscription from './search_subscription';
 
 const Search = (props) =>  {
         const query = props.location.search;
