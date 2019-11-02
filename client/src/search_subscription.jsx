@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import SearchSubscription from './subscriptions/search_subscription';
+import {findMatch} from './helpers';
 
 
 const Subscription = ({ subscribeToMore, query}) => {
@@ -27,7 +28,7 @@ const Subscription = ({ subscribeToMore, query}) => {
                     //Specifically, I need to iterate over all the words in the query string and return true when i get a hit.
                     //Testers
                     console.log(query);
-                    const match = articleAdded.body.match(query.replace("?q=", "")).length > 0 || articleAdded.title.match(query.replace("?q=", "")).length > 0
+                    const match = findMatch(query, articleAdded.body) || findMatch(query, articleAdded.title);
                     if (alreadyInList || !match) {
                         return prev;
                     }
