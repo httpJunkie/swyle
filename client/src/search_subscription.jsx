@@ -24,6 +24,9 @@ const Subscription = ({ subscribeToMore, query}) => {
                 if (articleAdded) {
                     const alreadyInList = prev.postsByQuery.find(e => e.id === articleAdded.id && e.__typename === "Article");
                     //TODO get all this regexp stuff in a helper function, and import it.
+                    //Specifically, I need to iterate over all the words in the query string and return true when i get a hit.
+                    //Testers
+                    console.log(query);
                     const match = articleAdded.body.match(query.replace("?q=", "")).length > 0 || articleAdded.title.match(query.replace("?q=", "")).length > 0
                     if (alreadyInList || !match) {
                         return prev;
