@@ -10,7 +10,7 @@ const Search = (props) =>  {
 
        return (           <div>
            <Query query={search} variables={{ searchQuery: query }}>
-                {({ loading, error, data }) => {
+                {({ loading, error, data, subscribeToMore }) => {
                if (loading) return <p>Loading...</p>;
                if (error) return <p>Error :(</p>;
                if (data.postsByQuery.length === 0) {
@@ -28,6 +28,7 @@ const Search = (props) =>  {
                                </div>
                            )
                        })}
+                       <Subscription subscribeToMore={subscribeToMore} />
                    </div>
                )}}
            </Query>
