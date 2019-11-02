@@ -21,9 +21,9 @@ const Subscription = ({ subscribeToMore, query}) => {
                 const { articleAdded } = subscriptionData.data
                 if (articleAdded) {
                     const alreadyInList = prev.postsByQuery.find(e => e.id === articleAdded.id && e.__typename === "Article");
-                    debugger;
-                    const match = articleAdded.body.match(query).length > 0 || articleAdded.title.match(query).length > 0
-                    if (alreadyInList) {
+                    //TODO get all this regexp stuff in a helper function, and import it.
+                    const match = articleAdded.body.match(query.replace("?q=", "")).length > 0 || articleAdded.title.match(query.replace("?q=", "")).length > 0
+                    if (alreadyInList || !match) {
                         return prev;
                     }
                     return { postsByQuery: [articleAdded].concat(prev.postsByQuery) };
