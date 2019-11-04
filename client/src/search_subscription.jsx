@@ -13,7 +13,7 @@ const Subscription = ({ subscribeToMore, query}) => {
 
                 if (imageAdded) {
                     const alreadyInList = prev.postsByQuery.find(e => e.id === imageAdded.id && e.__typename === "Image");
-                    const match = imageAdded.description.match(query.replace("?q=", "")).length > 0 || imageAdded.title.match(query.replace("?q=", "")).length > 0
+                    const match = findMatch(query, imageAdded.description) || findMatch(query, imageAdded.title);
 
                     if (alreadyInList || !match) {
                         return prev;
