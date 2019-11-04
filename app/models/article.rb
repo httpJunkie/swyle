@@ -16,6 +16,11 @@ class Article  < ApplicationRecord
     foreign_key: :post_id,
     class_name: "Funny"
 
+    has_many :spicies, as: :post, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: "Spicy"
+
     belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
@@ -35,6 +40,10 @@ class Article  < ApplicationRecord
 
     def laughers 
         self.funnies.map {|funny| funny.user_id}
+    end
+
+    def burned
+        self.spicies.map {|spicy| spicy.user_id}
     end
 
     def latest_comments
