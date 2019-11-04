@@ -23,7 +23,7 @@ const ArticlesIndex = () => {
                                     <h3 className="article-index-subtitle">by {article.author.username}</h3>
                                     <p className="article-index-snippet">{article.snippet}<Link className="article-index-show-link" to={`/articles/${article.id}`}>{"...more"}</Link></p>
                                     <ArticleTags tags={["lookAtThisTag", "othertag"]} />
-                                    <h4>{article.count} Comments {article.likeCount} Likes</h4>
+                                    <h4>{article.count} Commented {article.likeCount} Liked</h4>
                                 </div>
                             ))}
                             <Subscription subscribeToMore={subscribeToMore} />
