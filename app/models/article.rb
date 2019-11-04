@@ -46,6 +46,10 @@ class Article  < ApplicationRecord
         self.spicies.map {|spicy| spicy.user_id}
     end
 
+     def spicy_count
+        self.spicies.size
+    end
+
     def latest_comments
         self.comments.order(created_at: :desc)
     end

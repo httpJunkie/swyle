@@ -44,6 +44,10 @@ class ImagePost  < ApplicationRecord
         self.spicies.map {|spicy| spicy.user_id}
     end
 
+    def spicy_count
+        self.spicies.size
+    end
+
     def like_count
         self.likes.size
     end
