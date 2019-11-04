@@ -58,6 +58,7 @@ class Article  < ApplicationRecord
        [
            {count: self.like_count, users: self.likers, type: "like"},
            {count: self.funnies.size, users: self.laughers, type: "funny"}
+           {count: self.spicy_count, users: self.burned, type: "spicy"}
        ]
     end
 end
