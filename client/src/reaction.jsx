@@ -10,7 +10,7 @@
 
 import React, { Component } from 'react';
 import { MdThumbUp } from 'react-icons/md';
-import { FaRegGrinSquint, FaRegLightbulb, FaRegThumbsUp }from 'react-icons/fa';
+import { FaRegGrinSquint, FaRegLightbulb, FaRegThumbsUp, FaPepperHot }from 'react-icons/fa';
 import { Mutation } from 'react-apollo';
 import likePost from './mutations/like_post';
 import unlikePost from './mutations/unlike_post';
