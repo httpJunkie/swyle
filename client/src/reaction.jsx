@@ -18,7 +18,10 @@ import createFunny from './mutations/create_funny';
 import deleteFunny from './mutations/delete_funny';
 import article from './queries/article';
 import image from './queries/image';
-
+/**
+ * TODO BY LIKE LUNCH
+ * Add the relevant mutation and icons for the new spicy reactions.
+ */
 
 const QUERIES = { "Article": article, "ImagePost": image };
 const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny}
