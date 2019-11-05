@@ -17,6 +17,9 @@
     "react_ujs": "^2.6.0",
     "turbolinks": "^5.2.0"
   },
+  "engines": {
+    "npm": ">1.0.20"
+  },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"
