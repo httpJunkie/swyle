@@ -5,6 +5,7 @@ namespace :webpacker do
   task :check_npm do
     begin
       npm_version = `npm --version`
+      puts "npm version is #{npm_version}"
       raise Errno::ENOENT if npm_version.blank?
       version = Gem::Version.new(npm_version)
 
