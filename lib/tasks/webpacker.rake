@@ -1,3 +1,6 @@
+#This forces Rails to use npm rather than yarn, or at least it should do.
+
+
 namespace :webpacker do
   task :check_npm do
     begin
