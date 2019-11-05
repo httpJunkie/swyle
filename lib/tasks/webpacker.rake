@@ -16,7 +16,7 @@ namespace :webpacker do
         $stderr.puts "Webpacker requires npm #{requirement} and you are using #{version}" && exit!
       end
     rescue Errno::ENOENT
-      $stderr.puts 'npm not installed, or you forgot to add the npm buildpack to Heroku?'
+      $stderr.puts 'npm not installed,'
       $stderr.puts 'Install NPM https://www.npmjs.com/get-npm' && exit!
     end
   end
