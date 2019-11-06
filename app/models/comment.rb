@@ -1,3 +1,5 @@
+
+#It's a comment, it consists of a single body of text.  
 class Comment < ApplicationRecord
 
     belongs_to :post, polymorphic: true,
