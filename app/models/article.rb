@@ -1,3 +1,7 @@
+# An article is a text composition which may be several paragraphs in length.
+# Users may comment on an article and react in various ways.
+
+
 class Article  < ApplicationRecord
     validates :body, :title, presence: true
 
