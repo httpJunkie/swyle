@@ -24,9 +24,13 @@ class Trending extends Component {
         this.setState({activePane: selection})
     }
 
+    /**
+     * Sorts posts based on a specific attribute such as comment count or number of likes.
+     * Yes, it does it on the front end, and I'm not sorry.
+     * @param {string} attribute 
+     */
     sortPosts(attribute) {
        const posts = this.props.data.postsByPopularity.sort((b, a) => {
-           
            let valA = a[attribute];
            let valB = b[attribute];
            return (valA < valB) ? -1 : (valA > valB) ? 1 : 0;
