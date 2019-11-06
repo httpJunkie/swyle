@@ -31,14 +31,16 @@ class ImagePost  < ApplicationRecord
     foreign_key: :user_id,
     class_name: "User"
 
+    #Number of comments
     def count
         self.comments.size
     end
-    
+
+    #Ids of likers, used to check whether current user has already liked an image
     def likers 
         self.likes.map {|like| like.user_id}
     end
-
+    #similar to Likers, returns ids of people who said "this article is spicy"
     def burned
         self.spicies.map {|spicy| spicy.user_id}
     end
