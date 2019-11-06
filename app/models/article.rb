@@ -30,34 +30,42 @@ class Article  < ApplicationRecord
     foreign_key: :user_id,
     class_name: "User"
 
+    #Number of comments
     def count
         self.comments.size
     end
 
+    #number of likes
     def like_count
         self.likes.size
     end
 
+    #Returns user IDs of those who have liked - to be deprecated once "reactions" starts working well with Subscriptions
     def likers 
         self.likes.map {|like| like.user_id}
     end
 
+    #Returns user IDs of those who found the article funny - to be deprecated once "reactions" starts working well with Subscriptions
     def laughers 
         self.funnies.map {|funny| funny.user_id}
     end
 
+    #Returns user IDs of those who reacted "spicy" - to be deprecated once "reactions" starts working well with Subscriptions
     def burned
         self.spicies.map {|spicy| spicy.user_id}
     end
 
+    #Number of spicies. Seems to be required even when the field exists on the GraphQL type
      def spicy_count
         self.spicies.size
     end
 
+    #Does what Facebook hates and returns comments in chronological order.
     def latest_comments
         self.comments.order(created_at: :desc)
     end
 
+    #Work in progress, sends the count and reactions of an article to the front end to be displayed with appropriate icon based on type
     def reactions
        [
            {count: self.like_count, users: self.likers, type: "like"},
