@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import TrendingSubscription from './subscriptions/trending_subscription';
 
-
+/**
+ * This is the subscription component for trending articles, using the useEffect hook.
+ * TODO: Try to get all Subscriptions in a single component if feasible. 
+ * Thoughts: But it doesn't make sense for image posts index to subscribe to articles, does it? so maybe they need to be separate components.
+ */
 const Subscription = ({ subscribeToMore }) => {
     useEffect(() => {
         return subscribeToMore({
@@ -19,7 +23,6 @@ const Subscription = ({ subscribeToMore }) => {
                 const { imageLiked } = subscriptionData.data;
 
                 if (imageLiked) {
-                    debugger
                     return {
                         images: prev.images.map(el =>
                             el.id === imageLiked.id ? { ...el, ...imageLiked } : el)
