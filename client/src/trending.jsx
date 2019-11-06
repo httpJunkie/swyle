@@ -5,6 +5,7 @@ import query from './queries/posts_by_popularity';
 
 /**
  * The trending page allows users to sort posts by Likes and by number of Comments. No insane analytics, just the goods fair and plain.
+ * The single responsibility of this component is "display a sorted list of posts based on user choices"
  */
 class Trending extends Component {
 
