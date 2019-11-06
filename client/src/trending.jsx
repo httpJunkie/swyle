@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import query from './queries/posts_by_popularity';
 
+/**
+ * The trending page allows users to sort posts by Likes and by number of Comments. No insane analytics, just the goods fair and plain.
+ */
 class Trending extends Component {
 
     constructor(props) {
