@@ -1,3 +1,8 @@
+/**
+ * This is the user dashboard where the current user's recent activity is displayed.
+ * Future: Also display recent posts from users that the current user follows.
+ */
+
 import React, {Component} from 'react'
 import {Query} from 'react-apollo';
 import postsByUser from './queries/posts_by_user';
