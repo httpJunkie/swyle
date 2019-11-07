@@ -5,7 +5,10 @@ import ArticleTags from './article_tags';
 import {Link} from 'react-router-dom';
 import Subscription from './images_subscription';
 
-
+/**
+ * Component for displaying all of the images in chronological order.  No analytics, no metrics,
+ * no assumptions. Deal with it.
+ */
 class ImagesIndex extends Component {
     constructor(props) {
         super(props);
