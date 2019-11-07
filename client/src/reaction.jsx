@@ -24,8 +24,8 @@ import image from './queries/image';
  */
 
 const QUERIES = { "Article": article, "ImagePost": image };
-const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny}
-const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': createFunny}
+const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny, "spicy": createFunny}
+const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': createFunny, "spicy": deleteFunny}
 const ICONS = { 'like': FaRegThumbsUp, 'funny': FaRegGrinSquint, 'smart': FaRegLightbulb, 'spicy': FaPepperHot}
 
 class Reaction extends Component {

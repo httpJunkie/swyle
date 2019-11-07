@@ -68,6 +68,7 @@ class ImageShow extends Component {
 
     render() {
         const argument = parseInt(this.props.match.params.imageID)
+        debugger;
         return (
             <Query query={image} variables={{ id: argument }}>
                 {({ loading, error, data, subscribeToMore }) => {
