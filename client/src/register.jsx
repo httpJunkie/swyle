@@ -6,6 +6,10 @@ import currentUser from './queries/current_user';
 import $ from 'jquery';
 import ErrorsModal from './errors_modal';
 
+/**
+ * Form for creating a new user.  Class component chosen largely for aesthetic reasons and 
+ * because it contains inputs.  
+ */
 class Register extends Component {
     constructor(props) {
         super(props) 
