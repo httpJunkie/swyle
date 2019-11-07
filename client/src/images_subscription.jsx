@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import ImageSubscription from './subscriptions/images_index';
 
-
+/**
+ * Subscription function for images, updates the INDEX page when a new image is uploaded
+ * 
+ */
 const Subscription = ({ subscribeToMore }) => {
     useEffect(() => {
         return subscribeToMore({
