@@ -8,6 +8,10 @@ import unlikePost from './mutations/unlike_post';
 
 const QUERIES = {"Article": article, "ImagePost": image};
 
+/**
+ * To Be Deprecated for a Reactions Section once it is completed.
+ */
+
 class LikesSection extends Component {
 
     constructor(props) {
