@@ -8,6 +8,10 @@ import $ from 'jquery';
 import ErrorsModal from './errors_modal';
 import {Redirect} from 'react-router-dom';
 
+
+/**
+ * User log in form
+ */
 class Login extends Component {
 
     constructor(props) {
