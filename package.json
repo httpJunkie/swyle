@@ -8,6 +8,7 @@
     "@rails/webpacker": "^4.0.7",
     "actioncable": "^5.2.3",
     "apollo-boost": "^0.4.4",
+    "babel-loader": "^8.0.6",
     "graphql-ruby-client": "^1.6.6",
     "graphql-tag": "^2.10.1",
     "react": "^16.11.0",
