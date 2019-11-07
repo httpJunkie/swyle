@@ -1,5 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+
+/**
+ * This is the app's main navigation bar. The current panel has a white underline.
+ * Might Do: Make the current panel's text white and the others gray instead.
+ */
 const NavBar = props => {
     const currentPanel = props.location.pathname
     return (
