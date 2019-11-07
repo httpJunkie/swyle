@@ -32,6 +32,10 @@ class Register extends Component {
         });
     }
 
+    /**
+     * Nifty trick for making one's error modals appear to cover the entire page when it's really
+     * just covering some visible portion.
+     */
     allowOrPreventScrolling() {
         if (this.state.errors) {
             $('body').css('overflow', 'hidden');
