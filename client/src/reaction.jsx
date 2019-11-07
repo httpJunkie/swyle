@@ -78,7 +78,6 @@ class Reaction extends Component {
                                                         }
                                                     }).then(res => {
                                                         // this.setState({ body: "" })
-                                                        debugger
                                                     })
 
                                                 }}>
