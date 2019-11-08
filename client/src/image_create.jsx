@@ -8,6 +8,10 @@ import moment from 'moment';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
+/**
+ * Form for creating an image_post
+ */
+
 class ImageCreate extends Component {
     constructor(props) {
         super(props)
