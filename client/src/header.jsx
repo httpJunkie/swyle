@@ -7,6 +7,12 @@ import currentUser from './queries/current_user';
 import HeaderSearch from './header_search';
 import { FaRegNewspaper, FaImage}from 'react-icons/fa';
 
+/**
+ * The app's main header.  Contains session (login, logout, register) buttons and search bar.
+ * Expected Props
+ *      currentUser: Object - the user currently in session.
+ */
+
 class Header extends Component {
     constructor(props) {
         super(props)
@@ -52,10 +58,10 @@ class Header extends Component {
                         <Link to="/register" className="header-register">Register</Link>
                     </div>
                     :
-                            <div className="header-personal-greeting">
-                                <h3>Hello, {this.state.currentUser.username || "nobody"} </h3>
-                                <button className="header-login" onClick={this.logout}>Logout</button>
-                            </div>
+                    <div className="header-personal-greeting">
+                        <h3>Hello, {this.state.currentUser.username || "nobody"} </h3>
+                        <button className="header-login" onClick={this.logout}>Logout</button>
+                    </div>
                     }
                     <div className="new-post-buttons">
                         <Link className="new-post-btn" to="/images/new" style={{"right":"0"}}><FaImage /></Link>/>
