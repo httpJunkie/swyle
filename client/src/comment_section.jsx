@@ -5,6 +5,9 @@ import postComment from './mutations/post_comment';
 import commentsByPost from './queries/comments_by_post';
 import Comment from './comment';
 import Subscription from './comment_subscription';
+/**
+ * Deprecated version; the delete subscription was returning errors.
+ */
 
 class CommentSection extends Component {
     //Will need to refetch queries upon a successful commentation
