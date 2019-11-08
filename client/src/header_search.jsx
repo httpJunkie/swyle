@@ -2,6 +2,11 @@ import React, {useState} from 'react';
 import { withRouter } from 'react-router'
 import { FaSearch} from 'react-icons/fa';
 
+/**
+ * Search form...it's for searching.
+ * Upon submission it pushes the user to a search page using their input in a graphql Query
+ */
+
 const HeaderSearch = (props) => {
     const handleInputChange = e => {
         setQuery(e.target.value)
