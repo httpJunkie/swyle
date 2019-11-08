@@ -17,6 +17,10 @@ import images from './queries/images';
 import deleteImage from './mutations/delete_image';
 
 
+/**
+ * Displays a single image post 
+ */
+
 class ImageShow extends Component {
 
     constructor(props) {
