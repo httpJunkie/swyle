@@ -3,6 +3,12 @@ import { Mutation } from 'react-apollo';
 import updateImageTitle from './mutations/update_image_title'
 import image from './queries/image';
 
+/**
+ * Component for editing the title of an image post.
+ * TODO: Merge with article_title_edit, conditionally mutate based on post type
+ */
+
+
 class ImageTitleEdit extends Component {
     constructor(props) {
         super(props)
