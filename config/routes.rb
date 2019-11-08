@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
   post "/graphql", to: "graphql#execute"
   mount ActionCable.server, at: '/cable'
-  # root 'index#index'
+  root 'index#index'
 end
 
 # Rails.application.routes.draw do

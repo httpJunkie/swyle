@@ -2,11 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:3001"
-    }
-  },
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "actioncable": "^5.2.3",
     "apollo-boost": "^0.4.4",
