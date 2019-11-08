@@ -5,6 +5,12 @@ import deleteComment from './mutations/delete_comment';
 import CommentEdit from './comment_edit';
 import $ from 'jquery';
 
+/**
+ * Displays the body, user, and time stamps of a single comment.
+ * 
+ * TODO: Convert to const format with useState React hook
+ */
+
 
 class Comment extends Component {
 
