@@ -93,6 +93,7 @@ GEM
     dotenv (2.7.5)
     erubi (1.8.0)
     ffi (1.11.1-x64-mingw32)
+    foreman (0.86.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     graphiql-rails (1.5.0)
@@ -232,6 +233,7 @@ DEPENDENCIES
   byebug
   dotenv
   faker!
+  foreman
   graphiql-rails (= 1.5.0)
   graphql (= 1.9.5)
   jbuilder (~> 2.7)
