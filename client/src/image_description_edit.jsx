@@ -3,6 +3,11 @@ import { Mutation } from 'react-apollo';
 import updateImageDescription from './mutations/update_image_description';
 import image from './queries/image';
 
+/**
+ * Form for editing the description of an image.
+ * TODO: Replace with functional version using hooks
+ */
+
 class ImageDescriptionEdit extends Component {
     constructor(props) {
         super(props)
