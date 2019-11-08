@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import CommentSubscription from './subscriptions/comment_subscription';
 
 
+/**
+ * DEPRECATED, do not use unless someone figures out how to fix the bug with deletion
+ * Add and Edit subscriptions work, but when you try to delete it throws a 500 server error.
+ * Upon deletion GraphQL tries to re-query for the deleted comment and causes a failure.
+ */
+
 const Subscription = ({ subscribeToMore }) => {
     useEffect(() => {
         return subscribeToMore({
