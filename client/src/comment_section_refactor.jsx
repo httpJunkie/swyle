@@ -6,8 +6,16 @@ import article from './queries/article';
 import image from './queries/image';
 import Comment from './comment';
 
+/**
+ * Contains user comments belonging to a given post, as well as a form for creating a new comment.
+ * 
+ * Expected Props
+ *      type: String - whether the post is an image or an article
+ *      postId: Integer - ID number of the post
+ *      comments: Array of objects - The comments themselves.
+ */
+
 class CommentSection extends Component {
-    //Will need to refetch queries upon a successful commentation
 
     constructor(props) {
         super(props)
