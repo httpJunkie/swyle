@@ -7,7 +7,6 @@ import article from './queries/article';
  * Component for editing the title of an article.
  * TODO: Merge with image_title_edit, conditionally mutate based on post type
  */
-
 class ArticleTitleEdit extends Component {
     constructor(props) {
         super(props)

@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import ArticleSubscription from './subscriptions/article_index';
 
+/**
+ * Subscription function for the articles index page; updates the index when a new article is created on a different client.
+ */
 
 const Subscription = ({ subscribeToMore }) => {
   useEffect(() => {
