@@ -5,6 +5,10 @@ import commentsByPost from './queries/comments_by_post';
 import article from './queries/article';
 import image from './queries/image';
 
+/**
+ * Component form for editing a user comment.  Refetches the query for which ever post it belongs to in order to update the dom
+ */
+
 class CommentEdit extends Component {
     constructor(props) {
         super(props)
