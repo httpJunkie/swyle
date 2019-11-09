@@ -1,5 +1,5 @@
 /**
- * Article subscription for the index page
+ * updates the Trending page when an article is liked, added, or updated. 
  */
 
 import gql from 'graphql-tag';
