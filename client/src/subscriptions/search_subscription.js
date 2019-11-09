@@ -1,3 +1,7 @@
+/**
+ * Subscription that updates search results when a matching post is created.
+ */
+
 import gql from 'graphql-tag';
 
 const SearchSubscription = gql`
