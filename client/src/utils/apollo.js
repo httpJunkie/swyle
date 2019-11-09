@@ -59,6 +59,9 @@ const setTokenForOperation = async operation => {
     });
 };
 
+/**
+ * Create the apollo link
+ */
 const createLinkWithToken = () =>
     new ApolloLink(
         (operation, forward) =>
