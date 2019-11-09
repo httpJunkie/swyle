@@ -8,6 +8,10 @@ import introspectionQueryResultData from './fragmentTypes.json';
 import ActionCable from 'actioncable';
 import ActionCableLink from 'graphql-ruby-client/subscriptions/ActionCableLink';
 
+/**
+ * This is the websockets URL
+ */
+
 const getCableUrl =  () => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     const host = window.location.hostname;

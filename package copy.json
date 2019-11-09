@@ -32,6 +32,6 @@
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "heroku-postbuild": "rake start"
+    "heroku-postbuild": "cd ./client && npm install && npm run build"
   }
 }
