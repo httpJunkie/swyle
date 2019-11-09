@@ -11,7 +11,7 @@ import ActionCableLink from 'graphql-ruby-client/subscriptions/ActionCableLink';
 const getCableUrl =  () => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     const host = window.location.hostname;
-    const port = process.env.CABLE_PORT || '3001';
+    const port = process.env.CABLE_PORT || '3000';
     const authToken =  localStorage.getItem('mlToken');
     return `${protocol}//${host}:${port}/cable?token=${authToken}`;
 };
