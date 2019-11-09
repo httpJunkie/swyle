@@ -1,3 +1,10 @@
+/**
+ * Queries for all comments belonging to a given post.
+ * Expects two arguments:
+ *    postId: Integer - ID number of the post in question pulled from the url wildcard
+ *    postType: String - should match the name of a model on the database, e.g., Article
+ */
+
 import gql from "graphql-tag"
 
 const comments = gql`
