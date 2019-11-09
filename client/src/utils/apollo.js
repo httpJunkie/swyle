@@ -35,7 +35,9 @@ const hasSubscriptionOperation = ({ query: { definitions } }) =>
             kind === 'OperationDefinition' && operation === 'subscription'
     );
 
-
+/**
+ * Grabs tokens from the document, used solely for websockets and not authorization
+ */
 const getTokens = async () => {
     const tokens = {
         "X-CSRF-Token": document
