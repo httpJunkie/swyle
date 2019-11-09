@@ -20,6 +20,10 @@ const getCableUrl =  () => {
     return `${protocol}//${host}:${port}/cable?token=${authToken}`;
 };
 
+/**
+ * Used in creating a link to Action Cable on the Rails API
+ */
+
 const createActionCableLink = () => {
     const cable = ActionCable.createConsumer(getCableUrl());
     return new ActionCableLink({ cable });
