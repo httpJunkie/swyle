@@ -1,3 +1,7 @@
+/**
+ * Queries for a single Article, expects an ID as an argument
+ */
+
 import gql from "graphql-tag";
 
 const article = gql`
