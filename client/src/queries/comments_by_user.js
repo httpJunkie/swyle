@@ -1,3 +1,7 @@
+/**
+ * Fetches all comments belonging to a specific user, generally the current user but will work for any user given a valid ID.
+ */
+
 import gql from "graphql-tag"
 
 const comments = gql`
