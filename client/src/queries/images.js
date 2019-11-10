@@ -1,3 +1,8 @@
+/**
+ * Fetches all of the images.
+ * TODO: Pagination and lazy loading.
+ */
+
 import gql from 'graphql-tag';
 
 const images = gql`{
