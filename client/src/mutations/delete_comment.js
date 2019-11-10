@@ -1,3 +1,8 @@
+/**
+ * Deletes a comment.
+ *  Argument: ID, Integer.  
+ */
+
 import gql from 'graphql-tag'
 
 const deleteComment = gql`
