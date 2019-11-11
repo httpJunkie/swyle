@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps, no-unused-vars */
 import React, { useEffect } from 'react';
 import ImageSubscription from './subscriptions/image_show';
 
