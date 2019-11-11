@@ -61,7 +61,6 @@ class ImageCreate extends Component {
     }
 
     async uploadToS3(file, signedRequest) {
-        const proxy = 'https://cors-anywhere.herokuapp.com/';
         const options = {
             headers: {
                 "Content-Type": file.type,
@@ -107,7 +106,7 @@ class ImageCreate extends Component {
        return (
         <div className="image-creation-page">
                <div className="image-input-container">
-                   {this.state.image ? <div className="image-creation-preview"><img src={this.state.photoURL} /></div> : <div className="image-creation-placeholder"><p>Your image will appear here in preview</p></div>}
+                   {this.state.image ? <div className="image-creation-preview"><img src={this.state.photoURL} alt="Preview"/></div> : <div className="image-creation-placeholder"><p>Your image will appear here in preview</p></div>}
                </div>
             <form onSubmit={this.save} className="image-creation-form">
                    <h1>Post a New Image</h1>
