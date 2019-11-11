@@ -5,7 +5,8 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
-gem "heroku-forward"
+gem 'i18n'
+gem 'heroku-forward'
 gem 'bcrypt'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'paperclip'
@@ -17,7 +18,7 @@ gem 'search_object_graphql', '0.1'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'graphql', '1.9.5'
+gem 'graphql'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
