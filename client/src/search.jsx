@@ -30,7 +30,7 @@ const Search = (props) =>  {
                            return (
                                <div className="user-posts-card" key={`${post.title}${post.title.length}${post.id}`}>
                                    <h3 ><Link to={`${url}/${post.id}`}>{post.title}</Link></h3>
-                                   {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} /> </div>}
+                                   {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={image.title} /> </div>}
                                    {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
                                </div>
                            )
@@ -43,4 +43,4 @@ const Search = (props) =>  {
        ) 
 }
 
-export default Search;
+export default withApollo(Search);
