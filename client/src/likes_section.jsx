@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { MdThumbUp, MdThumbDown} from 'react-icons/md';
+import { MdThumbUp} from 'react-icons/md';
 import {Mutation} from 'react-apollo';
 import likePost from './mutations/like_post';
 import article from './queries/article';

@@ -4,6 +4,8 @@ export const parseUrl = (string) => {
             return '/images';
         case "Article":
             return '/articles';
+        default:
+            return '/articles';
     }
 }
 
