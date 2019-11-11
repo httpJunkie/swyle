@@ -30,7 +30,7 @@ class UserDash extends Component {
           return (
               <div className="user-dashboard">
               <div className="user-profile">
-                <h3></h3>
+          <h3>{this.state.currentUser.username}'s Dashboard</h3>
               </div>
 
                 <div>
