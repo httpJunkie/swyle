@@ -3,7 +3,6 @@ import {graphql} from 'react-apollo';
 import comments from './queries/comments_by_post';
 import deleteComment from './mutations/delete_comment';
 import CommentEdit from './comment_edit';
-import $ from 'jquery';
 
 /**
  * Displays the body, user, and time stamps of a single comment.

@@ -74,7 +74,7 @@ class Trending extends Component {
                                 return (
                                     <div className="user-posts-card" key={`${post.title}${post.id}`}>
                                         <h3 >{post.title}</h3>
-                                        {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} /> </div>}
+                                        {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={post.image.title} /> </div>}
                                         {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
                                         <h4>{post.count} Comments {post.likeCount} Likes</h4>
                                     </div>

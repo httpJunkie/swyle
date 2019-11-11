@@ -72,7 +72,6 @@ class ImageShow extends Component {
 
     render() {
         const argument = parseInt(this.props.match.params.imageID)
-        debugger;
         return (
             <Query query={image} variables={{ id: argument }}>
                 {({ loading, error, data, subscribeToMore }) => {
@@ -88,7 +87,7 @@ class ImageShow extends Component {
                                 <Link className="image-show-carousel" to={`/images/${prev}`}><MdNavigateBefore /></Link>
                                 <div style={{ "flexDirection": "column", "display": "flex", "alignItems": "center"}}>
                                     <div className="image-show-inner">
-                                        <img className="image-show-image" src={image.image}/>
+                                        <img className="image-show-image" src={image.image} alt={image.title}/>
                                         <div className="image-delete-container">
                                             {data.currentUser && (image.author.id === data.currentUser.id) &&
                                                 <MdDelete className="post-delete-btn" onClick={this.deleteImage}/>}
