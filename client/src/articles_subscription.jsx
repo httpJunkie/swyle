@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/exhaustive-deps, no-unused-vars */
 import React, { useEffect } from 'react';
 import ArticleSubscription from './subscriptions/article_index';
 
