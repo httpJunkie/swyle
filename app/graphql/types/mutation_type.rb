@@ -19,6 +19,9 @@ module Types
 
     field :create_funny, mutation: Mutations::CreateFunny
     field :delete_funny, mutation: Mutations::DeleteFunny
+
+    field :create_spicy, mutation: Mutations::CreateSpicy
+    field :delete_spicy, mutation: Mutations::DeleteSpicy
     
     field :create_image_post, mutation: Mutations::CreateImagePost
     field :update_image_title, mutation: Mutations::UpdateImageTitle
