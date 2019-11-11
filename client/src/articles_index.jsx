@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import articles from './queries/articles';
 import { Query } from "react-apollo";
 import {Link} from 'react-router-dom';

@@ -11,7 +11,6 @@ import  { graphql } from 'react-apollo'
 import CommentSection from './comment_section_refactor';
 import ArticleBodyEdit from './article_body_edit';
 import ArticleTitleEdit from './article_title_edit';
-import LikesSection from './likes_section';
 import $ from 'jquery';
 import { MdDelete} from 'react-icons/md';
 import ConfirmationModal from './confirmation_modal';
