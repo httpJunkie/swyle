@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import images from './queries/images';
 import { Query } from "react-apollo";
-import ArticleTags from './article_tags';
 import {Link} from 'react-router-dom';
 import Subscription from './images_subscription';
 

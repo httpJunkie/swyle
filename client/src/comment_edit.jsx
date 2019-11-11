@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Mutation} from 'react-apollo';
 import updateComment from './mutations/update_comment';
-import commentsByPost from './queries/comments_by_post';
 import article from './queries/article';
 import image from './queries/image';
 
