@@ -16,8 +16,14 @@ module Mutations
           password: auth_provider&.[](:email)&.[](:password)
         )
         if user.save
-          token = Jwt::TokenProvider.(user_id: user.id)
+          # token = Jwt::TokenProvider.(user_id: user.id)
           # token = SecureRandom::urlsafe_base64
+          context[:session][:session_token] = user.reset_token        
+          context[:current_user] = user 
+          context[:cookies].signed[:user_id] = user.id
+          # token = user.session_token
+          # This token is used exclusively for websockets
+          token = SecureRandom::urlsafe_base64
           { user: user, token: token }
         else 
          { errors: user.errors.full_messages}
