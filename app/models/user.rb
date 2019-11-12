@@ -2,6 +2,7 @@
 class User < ApplicationRecord
  
   has_secure_password
+  after_initialize :ensure_token
   validates :username, presence: true, uniqueness: true 
   validates :email, presence: true, uniqueness: true
 
@@ -38,6 +39,6 @@ class User < ApplicationRecord
   end
 #Returns a new session token...shouldnt this be ||=? TODO: Check.
   def ensure_token
-    self.session_token = Jwt::TokenProvider.(user_id: self.id)
+    self.session_token ||= Jwt::TokenProvider.(user_id: self.id)
   end
 end
