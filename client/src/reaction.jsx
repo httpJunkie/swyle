@@ -16,6 +16,7 @@ import unlikePost from './mutations/unlike_post';
 import createFunny from './mutations/create_funny';
 import deleteFunny from './mutations/delete_funny';
 import createSpicy from './mutations/create_spicy';
+import deleteSpicy from './mutations/delete_spicy';
 import article from './queries/article';
 import image from './queries/image';
 /**
