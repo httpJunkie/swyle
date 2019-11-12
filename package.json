@@ -33,6 +33,6 @@
   },
   "scripts": {
     "heroku-postbuild": "cd ./client && npm install && npm run build",
-    "postinstall": "if [ \"$NODE_ENV\" = production ] ; then npm run build ; fi"
+    "postinstall": "if [ \"$NODE_ENV\" = production ] ; then npm run build ; "
   }
 }
