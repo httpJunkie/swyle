@@ -84,10 +84,14 @@ const createLinkWithToken = () =>
     );
 
 
-const createHttpLink = () => new HttpLink({
+const createHttpLink = () => { 
+    console.log("Look at this port:", process.env.PORT);
+    console.log("There is also a cable port maybe:", process.env.CABLE_PORT);
+    return new HttpLink({
     uri: `http://localhost:${process.env.PORT || '3000'}/graphql`,
     credentials: 'include',
 })
+}
 
 
 
