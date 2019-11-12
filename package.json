@@ -32,7 +32,6 @@
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-      "deploy": "cp -a build/. public",
-      "heroku-postbuild": "npm run build && npm run deploy"
+    "heroku-postbuild": "cd ./client && npm install && npm run build"
   }
 }
