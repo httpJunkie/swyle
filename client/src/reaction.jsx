@@ -15,6 +15,7 @@ import likePost from './mutations/like_post';
 import unlikePost from './mutations/unlike_post';
 import createFunny from './mutations/create_funny';
 import deleteFunny from './mutations/delete_funny';
+import createSpicy from './mutations/create_spicy';
 import article from './queries/article';
 import image from './queries/image';
 /**
@@ -23,8 +24,8 @@ import image from './queries/image';
  */
 
 const QUERIES = { "Article": article, "ImagePost": image };
-const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny, "spicy": createFunny}
-const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': createFunny, "spicy": deleteFunny}
+const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny, "spicy": createSpicy}
+const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': createFunny, "spicy": deleteSpicy}
 const ICONS = { 'like': FaRegThumbsUp, 'funny': FaRegGrinSquint, 'smart': FaRegLightbulb, 'spicy': FaPepperHot}
 
 class Reaction extends Component {
