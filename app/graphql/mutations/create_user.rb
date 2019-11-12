@@ -16,8 +16,8 @@ module Mutations
           password: auth_provider&.[](:email)&.[](:password)
         )
         if user.save
-          # token = Jwt::TokenProvider.(user_id: user.id)
-          token = SecureRandom::urlsafe_base64
+          token = Jwt::TokenProvider.(user_id: user.id)
+          # token = SecureRandom::urlsafe_base64
           { user: user, token: token }
         else 
          { errors: user.errors.full_messages}
