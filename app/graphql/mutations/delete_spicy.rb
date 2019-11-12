@@ -3,7 +3,7 @@ module Mutations
         argument :post_type, String, required: true
         argument :user_id, Integer, required: true
         argument :post_id, Integer, required: true
-        type Types::SpicyType, null: true
+        type Types::SpicyType
         def resolve(user_id: nil, post_id: nil, post_type: nil)
             spicy = Spicy.find_by(user_id: user_id, post_id: post_id, post_type: post_type)
             spicy.destroy
