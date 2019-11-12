@@ -94,8 +94,6 @@ const createLinkWithToken = () =>
 // }
 
 const createHttpLink = () => {
-  console.log("Look at this port:", process.env.PORT);
-  console.log("There is also a cable port maybe:", process.env.CABLE_PORT);
   return new HttpLink({
     uri: `/graphql`,
     credentials: "include"

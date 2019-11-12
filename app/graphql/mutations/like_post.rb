@@ -12,11 +12,11 @@ module Mutations
             like.save
             if post_type === "Article"
                 article = Article.find(post_id.to_i)
-                SwyleSchema.subscriptions.trigger("articleLiked", {}, article)
+                SwyleSchema.subscriptions.trigger("articleUpdated", {}, article)
             end
             if post_type === "ImagePost"
                 image = ImagePost.find(post_id.to_i)
-                SwyleSchema.subscriptions.trigger("imageLiked", {}, image)
+                SwyleSchema.subscriptions.trigger("imageUpdated", {}, image)
             end
             like
         end
