@@ -103,6 +103,8 @@ class Reaction extends Component {
                                             <span className={`reaction-${this.props.reactionType}-no`}
                                                 onClick={event => {
                                                     event.preventDefault();
+                                                    console.log("Reaction Props After Click:", this.props)
+                                                    console.log("Current User:", this.state.currentUser)
                                                     if (!this.state.currentUser) {
                                                         alert("Must be logged in to like")
                                                         return false;
