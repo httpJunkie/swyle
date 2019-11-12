@@ -36,7 +36,7 @@ module Swyle
     # Don't generate system test files.
   config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3002', 'localhost:3002', '*'
+        origins 'http://localhost:3002', 'localhost:3002', 'localhost'
         resource '*', :headers => :any, :methods => [:get, :post, :options], :credentials => true
       end
   end
