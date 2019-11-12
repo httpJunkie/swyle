@@ -10,14 +10,15 @@ module Mutations
             if post_type === "Article"
                 article = Article.find(post_id.to_i)
                 SwyleSchema.subscriptions.trigger("articleUpdated", {}, article)
-                article
+                # article
             end
 
             if post_type === "ImagePost"
                 image = ImagePost.find(post_id.to_i)
                 SwyleSchema.subscriptions.trigger("imageUpdated", {}, image)
-                image
+                # image
             end
+            like
         end
     end
   end
