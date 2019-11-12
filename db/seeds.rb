@@ -6,12 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.all.destroy
+
 20.times do
     User.create(
-        username: Faker::Name.unique.name,
+        username: Faker::Name,
         email: Faker::Internet.free_email,
         password: "demodemo"
     )
+end
+
+ids= [];
+User.all.each do |user| 
+    ids << user.id
 end
 
 50.times do
@@ -22,7 +29,7 @@ end
         title: title,
         body: body,
         snippet: snippet,
-        user_id: rand(0..19)
+        user_id: ids.sample
     )
 end
 
@@ -32,7 +39,7 @@ end
     ImagePost.create(
         title: title,
         description: description,
-        user_id: rand(0..19),
+        user_id: ids.sample,
         image_url:  "https://picsum.photos/id/#{rand(500)}/500/"
     )
 end
@@ -52,7 +59,7 @@ end
     Comment.create(
         post_type: "ImagePost",
         post_id: image_ids.sample,
-        user_id: rand(0..19),
+        user_id: ids.sample,
         body: body
     )
 end
@@ -60,7 +67,7 @@ end
 100.times do 
     body =  Faker::Lorem.paragraph(sentence_count: rand(4..8))
     Comment.create(
-        user_id: rand(0..19),
+        user_id: ids.sample,
         body: body,
         post_id: article_ids.sample,
         post_type: "Article"
