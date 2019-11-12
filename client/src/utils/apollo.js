@@ -17,7 +17,7 @@ const getCableUrl =  () => {
     const protocol = 'wss:';
     const host = window.location.hostname;
     const port = process.env.CABLE_PORT || '3000';
-    const authToken =  localStorage.getItem('mlToken');
+    const authToken =  localStorage.getItem('mlToken') || "babaganoosh";
     console.log(
       "Token Link thingy",
       `${protocol}//${host}:${port}/cable?token=${authToken}`
