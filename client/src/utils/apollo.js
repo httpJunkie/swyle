@@ -85,7 +85,7 @@ const createLinkWithToken = () =>
 
 
 const createHttpLink = () => new HttpLink({
-    uri: `http://localhost:${process.env.CABLE_PORT || '3000'}/graphql`,
+    uri: `http://localhost:${process.env.PORT || '3000'}/graphql`,
     credentials: 'include',
 })
 
