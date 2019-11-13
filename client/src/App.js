@@ -43,7 +43,6 @@ class App extends Component {
           <Query query={currentUser}> 
             {({data, loading })=> {
             if (loading) return <p/>
-            debugger;
             return (
             <div>
               <Header currentUser={data.currentUser}/>

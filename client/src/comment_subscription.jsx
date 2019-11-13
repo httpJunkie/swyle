@@ -36,9 +36,7 @@ const Subscription = ({ subscribeToMore }) => {
                 }
                 
                 // const {commentDeleted} = subscriptionData.data;
-                // debugger
                 // if (commentDeleted) {
-                //     debugger;
                 //     return {
                 //         commentsByPost: prev.commentsByPost.map(el =>
                 //             el.id === commentDeleted.id ? { } : el)
