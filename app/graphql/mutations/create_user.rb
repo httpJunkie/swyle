@@ -7,8 +7,9 @@ module Mutations
       argument :username, String, required: true
       argument :auth_provider, AuthProviderSignupData, required: false
   
-      type Types::UserType
-  
+      field :token, String, null: true
+      field :user, Types::UserType, null: true
+
       def resolve(username: nil, auth_provider: nil)
         user = User.new(
           username: username,
