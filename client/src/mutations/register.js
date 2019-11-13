@@ -10,9 +10,12 @@ const register = gql`mutation createUser($email: String!, $username: String!, $p
             }
         }
     ) {
-        id
+       user{
+         id
         email
-        username
+        username  
+       } 
+       token
     }
 }`
 
