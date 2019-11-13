@@ -38,8 +38,7 @@ class Header extends Component {
             })
         })
             .then( res => {
-            const blankToken = res.data.logout.email;
-            localStorage.setItem("mlToken", blankToken);
+            localStorage.setItem("mlToken", "");
             this.setState({ currentUser: null })
         })
     }
