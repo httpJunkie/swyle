@@ -6,5 +6,6 @@ module Types
       field :articles, [ArticleType], null: true, method: :articles
       field :comments, [CommentType], null: true, method: :comments
       field :likes, [LikeType], null: true, method: :likes
+      field :funnies, [FunnyType], null: true, method: :funnies
     end
   end
