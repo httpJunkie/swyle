@@ -38,8 +38,7 @@ class Header extends Component {
             })
         })
             .then( res => {
-                console.log("Result of Logging Out:", res)
-            localStorage.setItem("mlToken", "");
+            console.log("Result of Logging Out:", res)
             this.setState({ currentUser: null })
         })
     }
