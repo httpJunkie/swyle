@@ -9,6 +9,8 @@ module Mutations
             user = context[:current_user]
             user.reset_token
             context[:current_user] = nil
+            #Maybe this?
+            cookies.signed[:user_id] = nil
             {email: ""}
         end
     end
