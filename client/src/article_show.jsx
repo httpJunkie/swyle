@@ -147,9 +147,3 @@ export default graphql(deleteArticle)(ArticleShow);
 
 
 
-// <LikesSection
-//     type={"Article"}
-//     currentUser={data.currentUser}
-//     postId={argument}
-//     likers={data.article.likers}
-//     numLikes={data.article.likeCount} />  

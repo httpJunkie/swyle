@@ -984,6 +984,17 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
   color: gray;
   padding: .5rem;
 }
+
+.reaction-spicy-no {
+  color: gray;
+  padding: .5rem;
+}
+
+.reaction-spicy-yes {
+  color: red;
+  padding: .5rem;
+}
+
 /* TODO: convert this to scss...mak this .reaction--&:hover  */
 .reaction-like-yes:hover {
    cursor: pointer;
