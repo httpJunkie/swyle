@@ -22,7 +22,8 @@ const getCableUrl =  () => {
       "Token Link thingy",
       `${protocol}//${host}:${port}/cable?token=${authToken}`
     );
-    return `${protocol}//${host}:${port}/cable?token=${authToken}`;
+    // return `${protocol}//${host}:${port}/cable?token=${authToken}`;
+    return 'wss://afternoon-eyrie-69554.herokuapp.com/cable';
 };
 
 /**
