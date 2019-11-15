@@ -10,6 +10,7 @@ module ApplicationCable
 
     def current_user       
       user = User.find_by(id: cookies.signed[:user_id])
+      puts "I AM THE ACTION CABLE PAY ATTENTION TO ME"
       puts user ? "The user is: #{user.username}" : "User not found"
       user 
     end
