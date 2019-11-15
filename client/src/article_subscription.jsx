@@ -9,10 +9,10 @@ import ArticleSubscription from './subscriptions/article_show';
 
 const Subscription = ({ subscribeToMore }) => {
     useEffect(() => {
-        console.log("Trying to use effect inside the subscription.")
         return subscribeToMore({
             document: ArticleSubscription,
             updateQuery: (prev, { subscriptionData }) => {
+                console.log("Sub Data:", subscriptionData);
                 if (!subscriptionData.data) return prev;
                
                 const { articleLiked } = subscriptionData.data;
