@@ -3,9 +3,11 @@ module Mutations
         argument :post_type, String, required: true
         argument :user_id, Integer, required: true
         argument :post_id, Integer, required: true
-        type Types::SpicyType
+        # type Types::SpicyType
+        field :id, Integer, null: true
         def resolve(user_id: nil, post_id: nil, post_type: nil)
             spicy = Spicy.find_by(user_id: user_id, post_id: post_id, post_type: post_type)
+            deleted_id = spicy.id
             spicy.destroy
             if post_type === "Article"
                 article = Article.find(post_id.to_i)
@@ -18,6 +20,7 @@ module Mutations
                 SwyleSchema.subscriptions.trigger("imageUpdated", {}, image)
                 image
             end
+            {id: deleted_id}
         end
     end
   end
