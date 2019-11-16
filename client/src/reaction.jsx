@@ -47,7 +47,7 @@ class Reaction extends Component {
         const creation = CREATE_MUTATIONS[this.props.reactionType];
         const deletion = DELETE_MUTATIONS[this.props.reactionType];
         const Tag = ICONS[this.props.reactionType]
-//    TODOS: likes-section into reaction-outer, like-or-dislike into reaction-inner
+
         return (
             <div className="likes-section">
                 <div className="reaction">
@@ -65,9 +65,7 @@ class Reaction extends Component {
                                             <span className={`reaction-${this.props.reactionType}-yes`}
                                                 onClick={event => {
                                                     event.preventDefault();
-                                            console.log( "Reaction Props After Click:", this.props);
-                                            console.log("Current User:",  this .state.currentUser
-                                            );
+                                        
                                                     if (!this.state.currentUser) {
                                                         return false;
                                                     }
