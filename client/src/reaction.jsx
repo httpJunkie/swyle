@@ -1,13 +1,3 @@
-/**
- * Expected Props
- *     users: array of integers, IDs of users who have reacted
- *     reactionType: string, type of reaction
- *     postType: string, type of post.
- *     postId: integer, ID of post.
- *     count: integer, number of current reactions of this type
- *     currentUser: Object representing a user.
- */
-
 import React, { Component } from 'react';
 import { FaRegGrinSquint, FaRegLightbulb, FaRegThumbsUp, FaPepperHot }from 'react-icons/fa';
 import { Mutation } from 'react-apollo';
@@ -19,15 +9,22 @@ import createSpicy from './mutations/create_spicy';
 import deleteSpicy from './mutations/delete_spicy';
 import article from './queries/article';
 import image from './queries/image';
-/**
- * TODO BY LIKE LUNCH
- * Add the relevant mutation and icons for the new spicy reactions.
- */
+
 
 const QUERIES = { "Article": article, "ImagePost": image };
 const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny, "spicy": createSpicy}
 const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': createFunny, "spicy": deleteSpicy}
 const ICONS = { 'like': FaRegThumbsUp, 'funny': FaRegGrinSquint, 'smart': FaRegLightbulb, 'spicy': FaPepperHot}
+
+/**
+ * Expected Props
+ *     users: array of integers, IDs of users who have reacted
+ *     reactionType: string, type of reaction
+ *     postType: string, type of post.
+ *     postId: integer, ID of post.
+ *     count: integer, number of current reactions of this type
+ *     currentUser: Object representing a user.
+ */
 
 class Reaction extends Component {
     constructor(props) {
