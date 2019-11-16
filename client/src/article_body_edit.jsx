@@ -27,7 +27,6 @@ class ArticleBodyEdit extends Component {
 
     render() {
 
-        console.log(this.bodyEditHeight)
         return (
             <div className="edit-body">
                 <Mutation mutation={updateArticleBody}
