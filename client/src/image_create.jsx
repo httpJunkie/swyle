@@ -70,8 +70,10 @@ class ImageCreate extends Component {
         }
         await axios.put(signedRequest, file, options)
             .then(res => {
-               
-            }).catch(console.log("Aws failed to save, please check your bucket"));
+               console.log("Sucessful upload")
+            }).catch(
+                console.log("Aws failed to save, please check your bucket")
+                );
     }
 
    async save(e) {
