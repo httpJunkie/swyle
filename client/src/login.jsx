@@ -74,7 +74,7 @@ class Login extends Component {
                                                         password: this.state.password
                                                     }
                                                 }).then(res => {
-                                                    console.log("result:", res)
+                                                    console.log("Login Result:", res)
                                                     const token = res.data.signInUser.token
                                                     if (token) {
                                                         localStorage.setItem("mlToken", token)
@@ -112,8 +112,5 @@ class Login extends Component {
       }
 }
 
-// export default graphql(currentUser)(
-//     graphql(mutation)(Login)
-// );
 
 export default(Login);
