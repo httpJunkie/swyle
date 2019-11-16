@@ -1019,6 +1019,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Y
      cursor: pointer;
 }
 
+.reaction-spicy-yes:hover{
+     cursor: pointer;
+}
+
+.reaction-spicy-no:hover {
+     cursor: pointer;
+}
+
 .search-results-spread {
   display: flex;
   flex-direction: column;
