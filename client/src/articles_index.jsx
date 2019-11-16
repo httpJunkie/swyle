@@ -5,6 +5,12 @@ import {Link} from 'react-router-dom';
 import ArticleTags from './article_tags';
 import Subscription from './articles_subscription';
 
+/**
+ * Displays all articles, newest first.
+ * 
+ * TODO: Create a ArticleCard component
+ */
+
 const ArticlesIndex = () => {
         const date = Date.now();
         return (
