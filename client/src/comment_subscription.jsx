@@ -14,7 +14,6 @@ const Subscription = ({ subscribeToMore }) => {
         return subscribeToMore({
             document: CommentSubscription,
             updateQuery: (prev, { subscriptionData }) => {
-                console.log("subdata:", subscriptionData)
                 if (!subscriptionData.data) return prev;
 
                 const { commentAdded } = subscriptionData.data;
