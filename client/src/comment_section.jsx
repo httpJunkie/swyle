@@ -6,11 +6,11 @@ import commentsByPost from './queries/comments_by_post';
 import Comment from './comment';
 import Subscription from './comment_subscription';
 /**
- * Deprecated version; the delete subscription was returning errors.
+ * Deprecated version; the delete subscription was returning errors.'
+ * Might reinstate if I can get the other version of the subscription to work.
  */
 
 class CommentSection extends Component {
-    //Will need to refetch queries upon a successful commentation
 
     constructor(props) {
         super(props)
