@@ -8,7 +8,7 @@ module Mutations
             context[:current_user] = nil
             #Maybe this?
             context[:cookies].signed[:user_id] = nil
-            token = ""
+            token = SecureRandom::urlsafe_base64
             {email: token}
         end
     end
