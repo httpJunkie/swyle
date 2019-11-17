@@ -52,7 +52,9 @@ const getTokens = async () => {
     return authToken ? { ...tokens, Authorization: authToken } : tokens;
 };
  
-
+/**
+ * Asynchronously set the tokens that will appear in the wss headers
+ */
 const setTokenForOperation = async operation => {
     return operation.setContext({
         headers: {
