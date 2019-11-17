@@ -36,6 +36,7 @@ class Reaction extends Component {
 
 
     componentDidUpdate(newProps) {
+        console.log(`old: ${this.state.currentUser} New: ${newProps.currentUser}`)
         if (this.state.currentUser !== newProps.currentUser) {
             this.setState({ currentUser: newProps.currentUser })
         }
