@@ -5,6 +5,7 @@ import {findMatch} from './helpers';
 
 /**
  * This updates the search page when a post matching the query happens to get created.
+ * 
  */
 const Subscription = ({ subscribeToMore, query}) => {
     useEffect(() => {
