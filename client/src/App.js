@@ -41,11 +41,11 @@ class App extends Component {
       <BrowserRouter history={history}>
         <ApolloProvider client={client}>
           <Query query={currentUser}> 
-            {({data, loading })=> {
+            {({data, loading, client})=> {
             if (loading) return <p/>
             return (
             <div>
-              <Header currentUser={data.currentUser}/>
+              <Header currentUser={data.currentUser} client={client} />
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
                   <Route exact path={"/articles/new"} component={ArticleCreate} />

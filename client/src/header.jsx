@@ -31,7 +31,7 @@ class Header extends Component {
 
     logout () {
         this.props.mutate({ 
-            // refetchQueries: [{ query: currentUser }],
+            refetchQueries: [{ query: currentUser }],
             // update: (cache) => cache.writeQuery({
             //     query: currentUser,
             //     data: { currentUser: null },
@@ -39,8 +39,9 @@ class Header extends Component {
             update: cache => cache.reset()
         })
             .then( res => {
-            localStorage.setItem("mlToken", res.data.logout.email);
-            this.setState({ currentUser: null })
+                this.props.client.resetStore();
+                localStorage.setItem("mlToken", res.data.logout.email);
+                this.setState({ currentUser: null })
         })
     }
 
