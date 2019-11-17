@@ -73,7 +73,7 @@ class ArticleShow extends Component {
     render() {
        const argument = parseInt(this.props.match.params.articleID)
         return (
-            <Query query={article} variables={{ id: argument}}>
+            <Query query={article} variables={{ id: argument }} fetchPolicy="cache-and-network">
                 {({ loading, error, data, subscribeToMore}) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
