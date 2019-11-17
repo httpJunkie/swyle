@@ -1,9 +1,6 @@
 module Mutations
     class Logout < BaseMutation    
         field :email, String, null: true
-        # def resolve 
-        # {email: ""}
-        # end
 
         def resolve
             user = context[:current_user]
@@ -11,7 +8,7 @@ module Mutations
             context[:current_user] = nil
             #Maybe this?
             context[:cookies].signed[:user_id] = nil
-            token = SecureRandom::urlsafe_base64
+            token = ""
             {email: token}
         end
     end
