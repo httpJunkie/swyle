@@ -36,7 +36,7 @@ class Reaction extends Component {
 
 
     componentDidUpdate(newProps) {
-        if (this.props.currentUser !== newProps.currentUser) {
+        if (this.state.currentUser !== newProps.currentUser) {
             this.setState({ currentUser: newProps.currentUser })
         }
     }
@@ -67,6 +67,7 @@ class Reaction extends Component {
                                                     event.preventDefault();
                                         
                                                     if (!this.state.currentUser) {
+                                                        alert("Must be logged in to react")
                                                         return false;
                                                     }
                                                     deletion({
@@ -102,7 +103,7 @@ class Reaction extends Component {
                                                 onClick={event => {
                                                     event.preventDefault();
                                                     if (!this.state.currentUser) {
-                                                        alert("Must be logged in to like")
+                                                        alert("Must be logged in to react")
                                                         return false;
                                                     }
                                                     creation({
