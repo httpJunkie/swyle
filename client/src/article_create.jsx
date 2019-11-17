@@ -43,7 +43,7 @@ class ArticleCreate extends Component {
 
     render() {
         if (this.props.data.loading) {
-            return <p>Loading</p>
+            return <div><img alt="loady" src="https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=790b7611672a658dd9b96b70df5cfe96a2bf98f81e8ab339&rid=giphy.gif" /></div>
         }
         if (!this.props.data.currentUser) {
             return <Redirect to="/login" />
