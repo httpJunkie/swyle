@@ -2,8 +2,7 @@ import React from 'react';
 
 /**
  * 
- * This displays all of the tags belonging to an article.
- * TODO: Change to PostTags
+ * This displays all of the tags belonging to a post.
  */
 const Tags = (props) => {
     return (

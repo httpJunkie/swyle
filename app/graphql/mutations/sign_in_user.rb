@@ -14,9 +14,7 @@ module Mutations
         if user && user.authenticate(email[:password])
           context[:session][:session_token] = user.reset_token        
           context[:current_user] = user 
-          
           context[:cookies].signed[:user_id] = user.id
-          # token = user.session_token
           # This token is used exclusively for websockets
           token = SecureRandom::urlsafe_base64
           { user: user, token: token }
