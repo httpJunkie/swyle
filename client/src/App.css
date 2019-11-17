@@ -203,18 +203,11 @@ body {
 .article-section > p {
   text-align: left;
 }
-/* 
-.darken {
-
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(YOUR IMAGE HERE);
-
-} */
 
 .comments-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: normal; */
     font-family: sans-serif;
     font-weight: 400;
     border: 1px solid black;
