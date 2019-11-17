@@ -16,7 +16,7 @@ const ArticlesIndex = () => {
         return (
             <Query query={articles}>
                 {({ loading, error, data, subscribeToMore }) => {
-                    if (loading) return <p>Loading...</p>;
+                    if (loading) return <div><img alt="load" src="https://i.gifer.com/origin/4d/4dc11d17f5292fd463a60aa2bbb41f6a_w200.gif"/></div>;
                     if (error) return <p>Error :(</p>;
                     const articles = data.articles;
                     return (
