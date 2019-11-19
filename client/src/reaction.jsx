@@ -7,13 +7,15 @@ import createFunny from './mutations/create_funny';
 import deleteFunny from './mutations/delete_funny';
 import createSpicy from './mutations/create_spicy';
 import deleteSpicy from './mutations/delete_spicy';
+import createSmart from './mutations/create_smart';
+import deleteSmart from './mutations/delete_smart';
 import article from './queries/article';
 import image from './queries/image';
 
 
 const QUERIES = { "Article": article, "ImagePost": image };
-const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createFunny, "spicy": createSpicy}
-const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': createFunny, "spicy": deleteSpicy}
+const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createSmart, "spicy": createSpicy}
+const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': deleteSmart, "spicy": deleteSpicy}
 const ICONS = { 'like': FaRegThumbsUp, 'funny': FaRegGrinSquint, 'smart': FaRegLightbulb, 'spicy': FaPepperHot}
 
 /**
