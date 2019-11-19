@@ -55,6 +55,10 @@ class Article  < ApplicationRecord
         self.spicies.map {|spicy| spicy.user_id}
     end
 
+    def enlightened
+        self.smarts.map {|smart| smart.user_id}
+    end
+
     #Number of spicies. Seems to be required even when the field exists on the GraphQL type
      def spicy_count
         self.spicies.size
@@ -71,6 +75,7 @@ class Article  < ApplicationRecord
            {count: self.like_count, users: self.likers, type: "like"},
            {count: self.funnies.size, users: self.laughers, type: "funny"},
            {count: self.spicy_count, users: self.burned, type: "spicy"}
+           {count: self.smarts.size, users: self.enlightened, type: "smart"}
        ]
     end
 end
