@@ -25,6 +25,11 @@ class Article  < ApplicationRecord
     foreign_key: :post_id,
     class_name: "Spicy"
 
+    has_many :smarts, as: :post, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: "Smart"
+
     belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
