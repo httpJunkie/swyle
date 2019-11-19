@@ -22,6 +22,9 @@ module Types
 
     field :create_spicy, mutation: Mutations::CreateSpicy
     field :delete_spicy, mutation: Mutations::DeleteSpicy
+
+    field :create_smart, mutation: Mutations::CreateSmart
+    field :delete_smart, mutation: Mutations::DeleteSmart
     
     field :create_image_post, mutation: Mutations::CreateImagePost
     field :update_image_title, mutation: Mutations::UpdateImageTitle
