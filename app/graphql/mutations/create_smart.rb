@@ -5,7 +5,7 @@ module Mutations
         argument :post_id, Integer, required: true
         type Types::SmartType
         def resolve(user_id: nil, post_id: nil, post_type: nil)
-            smart = smart.new
+            smart = Smart.new
             smart.user_id = user_id
             smart.post_id = post_id
             smart.post_type = post_type
