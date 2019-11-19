@@ -921,8 +921,8 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 5rem;
-  position: absolute;
-  right: 35rem;
+  position: relative;
+  /* right: 35rem; */
 }
 
 .post-delete-btn {
