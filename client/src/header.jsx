@@ -36,7 +36,7 @@ class Header extends Component {
             //     query: currentUser,
             //     data: { currentUser: null },
             // })
-            update: cache => cache.reset()
+            // update: cache => cache.reset()
         })
             .then( res => {
                 this.props.client.resetStore();
