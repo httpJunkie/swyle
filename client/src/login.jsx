@@ -85,6 +85,7 @@ class Login extends Component {
                                                     this.props.history.push('/')
                                                 })
                                                     .catch(res => {
+                                                        console.log(res)
                                                         this.setState({ errors: res.graphQLErrors })
                                                     })
                                     }} className="session-form">
