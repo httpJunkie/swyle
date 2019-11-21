@@ -55,6 +55,7 @@ class Login extends Component {
                     <Mutation
                         mutation={mutation}
                             update={(cache, { data: { signInUser } }) => {
+                                console.log("signInUser:", signInUser.user)
                             cache.writeQuery({
                                 query: currentUser,
                                 data: { currentUser: signInUser.user }
