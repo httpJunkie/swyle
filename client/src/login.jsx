@@ -55,7 +55,6 @@ class Login extends Component {
                     <Mutation
                         mutation={mutation}
                             update={(cache, { data: { signInUser } }) => {
-                                console.log("signInUser:", signInUser.user)
                             cache.writeQuery({
                                 query: currentUser,
                                 data: { currentUser: signInUser.user }
@@ -75,7 +74,6 @@ class Login extends Component {
                                                         password: this.state.password
                                                     }
                                                 }).then(res => {
-                                                    console.log("Login Result:", res)
                                                     const token = res.data.signInUser.token
                                                     if (token) {
                                                         localStorage.setItem("mlToken", token)
@@ -85,7 +83,6 @@ class Login extends Component {
                                                     this.props.history.push('/')
                                                 })
                                                     .catch(res => {
-                                                        console.log("Error Res:", res)
                                                         this.setState({ errors: res.graphQLErrors })
                                                     })
                                     }} className="session-form">
@@ -106,7 +103,6 @@ class Login extends Component {
                 </Mutation>
                 );
             }
-            console.log("Data In Mutation:", data);
             return <Redirect to="/" />
             }}
             </Query>
