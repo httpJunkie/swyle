@@ -31,7 +31,6 @@ const Subscription = ({ subscribeToMore }) => {
                 const { articleUpdated } = subscriptionData.data;
                 
                 if (articleUpdated) {
-                    console.log("Updated Article:", articleUpdated)
                     return {
                         article: articleUpdated
                     }
