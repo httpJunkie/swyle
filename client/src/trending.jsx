@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import query from './queries/posts_by_popularity';
+import { parseUrl} from './helpers';
 
 /**
  * The trending page allows users to sort posts by Likes and by number of Comments. No insane analytics, just the goods fair and plain.
@@ -71,6 +72,7 @@ class Trending extends Component {
                 {
                         posts.map(
                             post => {
+                                const url = parseUrl(post.__typename)
                                 return (
                                     <div className="user-posts-card" key={`${post.title}${post.id}`}>
                                         <h3 >{post.title}</h3>
