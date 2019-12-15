@@ -19,8 +19,8 @@ const getCableUrl =  () => {
     const port = process.env.CABLE_PORT || '3000';
     const authToken =  localStorage.getItem('mlToken') || 'loggedouttoken';
     if (process.env.NODE_ENV === 'development') {
-        debugger;
-    return `${protocol}//${host}:${port}/cable?token=${authToken}`;
+        console.log(`${protocol}//${host}:${port}/cable?token=${authToken}`)
+        return `${protocol}//${host}:${port}/cable?token=${authToken}`;
     } else {
         return `wss://afternoon-eyrie-69554.herokuapp.com/cable?token=${authToken}`;
     }
