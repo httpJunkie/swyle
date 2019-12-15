@@ -33,12 +33,14 @@ class User < ApplicationRecord
 
 #Resets the session token, returns the session token.
   def reset_token
-    self.session_token = Jwt::TokenProvider.(user_id: self.id)
+    # self.session_token = Jwt::TokenProvider.(user_id: self.id)
+    self.session_token = SecureRandom::urlsafe_base64
     self.save!
     self.session_token
   end
 #Returns a new session token...shouldnt this be ||=? TODO: Check.
   def ensure_token
-    self.session_token ||= Jwt::TokenProvider.(user_id: self.id)
+    # self.session_token ||= Jwt::TokenProvider.(user_id: self.id)
+    self.session_token ||= SecureRandom::urlsafe_base64
   end
 end
