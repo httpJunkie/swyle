@@ -1,0 +1,2 @@
+NOTICE:
+Before re-deploying to Heroku, you may need to change the proxy back to localhost:3001 again.
