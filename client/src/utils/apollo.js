@@ -18,8 +18,12 @@ const getCableUrl =  () => {
     const host = window.location.hostname;
     const port = process.env.CABLE_PORT || '3000';
     const authToken =  localStorage.getItem('mlToken') || 'loggedouttoken';
-    // return `${protocol}//${host}:${port}/cable?token=${authToken}`;
-    return `wss://afternoon-eyrie-69554.herokuapp.com/cable?token=${authToken}`;
+    if (process.env.NODE_ENV === 'development') {
+        debugger;
+    return `${protocol}//${host}:${port}/cable?token=${authToken}`;
+    } else {
+        return `wss://afternoon-eyrie-69554.herokuapp.com/cable?token=${authToken}`;
+    }
 };
 
 /**
