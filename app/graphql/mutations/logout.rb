@@ -5,9 +5,9 @@ module Mutations
         def resolve
             user = context[:current_user]
             puts "Logging Out: #{context[:session][:session_token]}";
-            debugger
+            # debugger
             user.reset_token
-            debugger
+            # debugger
             context[:current_user] = nil
             context[:session][:session_token] = nil
             #Maybe this?

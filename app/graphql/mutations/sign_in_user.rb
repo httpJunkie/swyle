@@ -10,7 +10,7 @@ module Mutations
 
       def resolve(email: nil)
         return unless email
-        debugger
+        # debugger
         user = User.find_by email: email[:email]
         if user && user.authenticate(email[:password])
           puts "Authentication SUCCESS FOR #{user.username}"
