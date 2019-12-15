@@ -23,7 +23,7 @@ module Mutations
           token = SecureRandom::urlsafe_base64
           { user: user, token: token }
         else
-         { errors: user.errors.full_messages}
+         { errors: ["Invalid credentials; username or password is incorrect"]}
         end
       end
 
