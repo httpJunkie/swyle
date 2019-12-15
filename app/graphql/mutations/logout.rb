@@ -7,6 +7,7 @@ module Mutations
             puts "Logging Out: #{context[:session][:session_token]}";
             debugger
             user.reset_token
+            debugger
             context[:current_user] = nil
             context[:session][:session_token] = nil
             #Maybe this?
