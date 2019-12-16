@@ -1,0 +1,38 @@
+.nav-bar {
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  padding: .1rem;
+  justify-content: space-around;
+  border-bottom: 1px solid gray;
+  background: rgb(5, 2, 48);
+}
+
+.nav-bar-link {
+  text-decoration: none;
+  color: white;
+  padding: .5rem;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-bar-link-active {
+  border-bottom: 3px solid white;
+  text-decoration: none;
+  padding: .5rem;
+  color: white;
+}
+
+
+.nav-bar-link:visited {
+  color: white;
+}
+
+.nav-bar-link-active:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar-link:hover {
+  cursor: pointer;
+}

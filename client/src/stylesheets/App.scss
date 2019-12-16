@@ -11,50 +11,11 @@
 @import '/adverts';
 @import '/confirmation';
 @import '/editing';
+@import '/reactions';
+@import '/navigation';
 
 body {
    background: #001935;
-}
-
-
-.likes-section {
- background: rgba(255, 255, 255, .6);
- padding: .5rem;
- display: flex;
- justify-content: center;
- width: 100%;
- margin: .2rem;
-}
-
-.like-or-dislike {
-   color: black;
-   font-family: sans-serif;
-   font-weight: bold;  
-   position: relative;
-   display: flex;
-   align-items: center;
-}
-
-.like-or-dislike > span {
-  display: flex;
-  align-items: center;
-}
-
-.like-thumb-yes {
-  color: blue;
-  padding: .5rem;
-}
-
-.like-thumb-no {
-  color: gray;
-  padding: .5rem;
-}
-
-.like-thumb-no:hover {
-  cursor: pointer;
-}
-.like-thumb-yes:hover {
-  cursor: pointer;
 }
 
 .loading-div {
@@ -69,44 +30,6 @@ body {
  
 } */
 
-.nav-bar {
-  color: white;
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  padding: .1rem;
-  justify-content: space-around;
-  border-bottom: 1px solid gray;
-  background: rgb(5, 2, 48);
-}
-
-.nav-bar-link {
-  text-decoration: none;
-  color: white;
-  padding: .5rem;
-  border-bottom: 3px solid transparent;
-}
-
-.nav-bar-link-active {
-  border-bottom: 3px solid white;
-  text-decoration: none;
-  padding: .5rem;
-  color: white;
-}
-
-
-.nav-bar-link:visited {
-  color: white;
-}
-
-.nav-bar-link-active:visited {
-  text-decoration: none;
-  color: white;
-}
-
-.nav-bar-link:hover {
-  cursor: pointer;
-}
 
 .new-post-btn {
   padding: .5rem;
@@ -149,100 +72,6 @@ body {
   cursor: pointer;
   color: blue;
   transition: all .1s;
-}
-
-.reaction-section {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-}
-
-.reaction {
-   color: black;
-   font-family: sans-serif;
-   font-weight: bold;  
-   position: relative;
-   display: flex;
-   align-items: center;
-}
-
-.reaction > span {
-  display: flex;
-  align-items: center;
-}
-
-.reaction-funny-yes {
-  color: green;
-    padding: .5rem;
-}
-
-.reaction-funny-no {
-  color: gray;
-    padding: .5rem;
-
-}
-
-.reaction-like-yes {
-  color: blue;
-  padding: .5rem;
-}
-
-.reaction-like-no {
-  color: gray;
-  padding: .5rem;
-}
-
-.reaction-smart-yes {
-  color: yellow;
-  padding: .5rem;
-}
-
-.reaction-smart-no {
-  color: gray;
-  padding: .5rem;
-}
-
-.reaction-spicy-no {
-  color: gray;
-  padding: .5rem;
-}
-
-.reaction-spicy-yes {
-  color: red;
-  padding: .5rem;
-}
-
-/* TODO: convert this to scss...mak this .reaction--&:hover  */
-.reaction-like-yes:hover {
-   cursor: pointer;
-}
-.reaction-like-no:hover {
-   cursor: pointer;
-}
-
-.reaction-funny-yes:hover {
-   cursor: pointer;
-}
-
-.reaction-funny-no:hover {
-   cursor: pointer;
-}
-
-.reaction-smart-yes:hover{
-     cursor: pointer;
-}
-
-.reaction-smart-no:hover {
-     cursor: pointer;
-}
-
-.reaction-spicy-yes:hover{
-     cursor: pointer;
-}
-
-.reaction-spicy-no:hover {
-     cursor: pointer;
 }
 
 .search-results-spread {
