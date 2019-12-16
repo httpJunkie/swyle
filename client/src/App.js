@@ -43,7 +43,7 @@ class App extends Component {
           <Query query={currentUser}> 
             {({data, loading, client})=> {
             if (loading) return <p/>
-            const colorScheme = data.currentUser.colorScheme || "standard"
+            const colorScheme = data.currentUser ? data.currentUser.colorScheme : "standard"
             return (
             <div>
               <Header currentUser={data.currentUser} client={client} colorScheme={colorScheme} />
