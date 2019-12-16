@@ -14,6 +14,7 @@
 @import '/editing';
 @import '/reactions';
 @import '/navigation';
+@import '/trending';
 
 body {
    background: #001935;
@@ -26,11 +27,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-/* .loading-img {
- 
-} */
-
 
 .post-delete-btn {
   position: absolute;
@@ -51,53 +47,6 @@ body {
   align-items: center;
 }
 
-.session-page {
-  background: #001935;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: calc(100%-10rem);
-  position: fixed;
-}
-
-.session-form {
-  background: rgba(255, 255, 255, .6);
-  width: 20rem;
-  padding: 1.5rem;
-  position: relative;
-  top: 1rem;
-  border-radius: 4px;
-  border: 1px solid gray;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.session-form > h1 {
-  text-align: center;
-  font-weight: 300;
-  font-size: 28pt;
-  color: rgb(245, 245, 245);
-}
-
-.session-form > input {
-  padding: 1rem;
-  border: none;
-  border-radius: 4px;
-  background: transparent;
-  border-bottom: 1px solid gray;
-  color: white;
-  position: relative;
-  margin: .2rem;
-  font-size: large;
-}
-
-.session-form > input:focus {
-  outline: none;
-}
 
 .submit {
   border-radius: 5px;
@@ -116,132 +65,4 @@ body {
   background:#659bb1;
 }
 
-.trending-posts-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.trending-posts-nav {
-  display: flex;
-  width: 100%;
-  justify-content: flex-start;
-  margin-left: 1rem;
-  margin-bottom: -1rem;
-}
-
-.trending-posts-tab-active {
- background: white; 
- padding: 1rem;
- border-radius: 4px;
-}
-
-.trending-posts-tab-inactive {
-  background: rgba(255, 255, 255, .5);
-  padding: 1rem;
-  border-radius: 4px;
-  position: relative;
-  z-index: 10;
-}
-
-.trending-posts-tab-inactive:hover {
-  cursor: pointer;
-}
-
-.trending-posts-tab-active:hover {
-  cursor: pointer;
-}
-
-.trending-posts-backpane {
-  background: rgba(255, 255, 255, .5);
-  width: 50rem;
-  z-index: 0;
-  padding: 1rem;
-  position: relative;
-}
-
-.trending-posts-content {
-  background: white;
-  width: 49rem;
-}
-
-.trending-posts-title {
-  color: white;
-  font-weight: 200;
-  margin-left: 2rem;
-}
-
-.user-dashboard {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.user-dashboard-title {
-  font-weight: 300;
-  color: white;
-}
-
-.user-recent-activity {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  background: rgba(255, 255, 255, .5);
-  position: relative;
-}
-
-.user-recent-message {
-  font-size: 3rem;
-  font-weight: 200;
-  text-align: center;
-  margin-block-end: unset;
-  background: rgba(255, 255, 255, .5);
-  color: white;
-}
-
-.user-posts {
-  width: 35rem;
-  margin: 1rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.user-comments {
-  width: 35rem;
-  margin: 1rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.user-posts-card{
-  background: white;
-  padding: 1rem;
-  border-radius: 3px;
-  width: 30rem;
-  margin: .5rem;
-}
-
-.user-comments-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 3px;
-  width: 30rem;
-  margin: .5rem;
-}
-
-.user-comments-card-body {
-  color: gray;
-  font-style: italic;
-}
-
-.user-posts-thumbnail-container {
-  width: 30rem;
-}
-
-.user-posts-thumbnail-container > img{
-  width: 100%;
-}

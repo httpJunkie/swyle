@@ -1,0 +1,47 @@
+.session-page {
+  background: #001935;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100%-10rem);
+  position: fixed;
+}
+
+.session-form {
+  background: rgba(255, 255, 255, .6);
+  width: 20rem;
+  padding: 1.5rem;
+  position: relative;
+  top: 1rem;
+  border-radius: 4px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form > h1 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 28pt;
+  color: rgb(245, 245, 245);
+}
+
+.session-form > input {
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  border-bottom: 1px solid gray;
+  color: white;
+  position: relative;
+  margin: .2rem;
+  font-size: large;
+}
+
+.session-form > input:focus {
+  outline: none;
+}

@@ -1,0 +1,54 @@
+.trending-posts-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trending-posts-nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  margin-bottom: -1rem;
+}
+
+.trending-posts-tab-active {
+ background: white; 
+ padding: 1rem;
+ border-radius: 4px;
+}
+
+.trending-posts-tab-inactive {
+  background: rgba(255, 255, 255, .5);
+  padding: 1rem;
+  border-radius: 4px;
+  position: relative;
+  z-index: 10;
+}
+
+.trending-posts-tab-inactive:hover {
+  cursor: pointer;
+}
+
+.trending-posts-tab-active:hover {
+  cursor: pointer;
+}
+
+.trending-posts-backpane {
+  background: rgba(255, 255, 255, .5);
+  width: 50rem;
+  z-index: 0;
+  padding: 1rem;
+  position: relative;
+}
+
+.trending-posts-content {
+  background: white;
+  width: 49rem;
+}
+
+.trending-posts-title {
+  color: white;
+  font-weight: 200;
+  margin-left: 2rem;
+}

@@ -1,0 +1,75 @@
+
+.user-dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.user-dashboard-title {
+  font-weight: 300;
+  color: white;
+}
+
+.user-recent-activity {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, .5);
+  position: relative;
+}
+
+.user-recent-message {
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+  margin-block-end: unset;
+  background: rgba(255, 255, 255, .5);
+  color: white;
+}
+
+.user-posts {
+  width: 35rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-comments {
+  width: 35rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-posts-card{
+  background: white;
+  padding: 1rem;
+  border-radius: 3px;
+  width: 30rem;
+  margin: .5rem;
+}
+
+.user-comments-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 3px;
+  width: 30rem;
+  margin: .5rem;
+}
+
+.user-comments-card-body {
+  color: gray;
+  font-style: italic;
+}
+
+.user-posts-thumbnail-container {
+  width: 30rem;
+}
+
+.user-posts-thumbnail-container > img{
+  width: 100%;
+}
