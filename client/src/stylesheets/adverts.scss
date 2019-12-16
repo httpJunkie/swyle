@@ -1,0 +1,21 @@
+.adverts-page {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  
+}
+
+.adverts-greeting {
+  text-align: center;
+  color: white;
+  background: rgba(255, 255, 255, .5);
+}
+
+.adverts-greeting > h2 {
+  font-weight: 200;
+
+}
+
+.adverts-index {
+    min-height: fit-content;
+}

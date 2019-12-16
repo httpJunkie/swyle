@@ -1,62 +1,19 @@
 /* 
   TODO: Split into different scss files and place into a stylesheets folder.
 */
+@import '/about';
+@import '/articles';
+@import '/dashboard';
+@import '/errors';
+@import '/header';
+@import '/images';
+@import '/session';
+@import '/adverts';
 
 body {
    background: #001935;
 }
 
-.about-page {
- display: flex;
- flex-direction: column;
- align-items: center;
- background: #001935;
- position: relative;
- top: -8rem;
- padding-top: 8rem;
- padding-left: 2rem;
- padding-right: 2rem;
- font-family: sans-serif;
-}
-
-.about-page >h1 {
-  color: white;
-}
-
-.about-section {
-  background: white;
-  width: 40rem;
-  border-radius: 4px;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  font-weight: 500;
-}
-
-.about-section > h2 {
-    text-align: center;
-}
-
-.adverts-page {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  
-}
-
-.adverts-greeting {
-  text-align: center;
-  color: white;
-  background: rgba(255, 255, 255, .5);
-}
-
-.adverts-greeting > h2 {
-  font-weight: 200;
-
-}
-
-.adverts-index {
-    min-height: fit-content;
-}
 
 .article-create-page {
  display: flex;
@@ -300,7 +257,6 @@ body {
   padding: .6rem;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('./images/editpen.png');
   position: absolute;
   right: 3rem;
 }
@@ -315,7 +271,6 @@ body {
   padding: .6rem;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('./images/deletex.png');
 }
 
 .comment-delete-btn:hover {
@@ -528,7 +483,7 @@ body {
   font-size: 28px;
   margin: 1rem;
   color: white;
-  background-image: url("./images/swyle_logo_005.png");
+  background-image: url("../images/swyle_logo_005.png");
   height: 4rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -706,7 +661,6 @@ body {
   padding: .6rem;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('./images/editpenwhite.png');
 }
 
 .image-edit-btn:hover{
