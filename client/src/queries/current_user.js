@@ -9,6 +9,7 @@ const currentUser = gql`{
     id
     email
     username
+    colorScheme
     }
 }`
 

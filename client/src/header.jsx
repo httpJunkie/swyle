@@ -66,11 +66,11 @@ class Header extends Component {
                     </div>
                     }
                     <div className="new-post-buttons">
-                        <Link className="new-post-btn" to="/images/new" style={{"right":"0"}}><FaImage /></Link>/>
-                        <Link className="new-post-btn" to="/articles/new"><FaRegNewspaper /></Link>
+                        <Link className={`new-post-btn new-post-btn-${colorScheme}`} to="/images/new" style={{"right":"0"}}><FaImage /></Link>/>
+                        <Link className={`new-post-btn new-post-btn-${colorScheme}`} to="/articles/new"><FaRegNewspaper /></Link>
                     </div>
                 </div>
-                <NavBar />
+                <NavBar colorScheme={colorScheme}/>
             </div>
         )
 

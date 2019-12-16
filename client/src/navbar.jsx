@@ -8,7 +8,7 @@ import { Link, withRouter } from 'react-router-dom';
 const NavBar = props => {
     const currentPanel = props.location.pathname
     return (
-        <div className="nav-bar">
+        <div className={`nav-bar nav-bar-${props.colorScheme}`}>
             <Link className={`nav-bar-link${currentPanel === "/" ? "-active" : ''}`} to="/">Text</Link>
             <Link className={`nav-bar-link${currentPanel === "/images" ? "-active" : ''}`} to="/images">Images</Link>
             <Link className={`nav-bar-link${currentPanel === "/trending" ? "-active" : ''}`} to="/trending">Swyl'd 'n Crazy</Link>
