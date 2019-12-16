@@ -43,9 +43,10 @@ class App extends Component {
           <Query query={currentUser}> 
             {({data, loading, client})=> {
             if (loading) return <p/>
+            const colorScheme = data.currentUser.colorScheme || "standard"
             return (
             <div>
-              <Header currentUser={data.currentUser} client={client} />
+              <Header currentUser={data.currentUser} client={client} colorScheme={colorScheme} />
                <Switch>
                   <Route exact path="/" component={ArticlesIndex} />
                   <Route exact path={"/articles/new"} component={ArticleCreate} />

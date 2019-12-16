@@ -46,12 +46,12 @@ class Header extends Component {
     }
 
     render() {
-        const colorScheme = "red";
+        const colorScheme = this.props.colorScheme;
         return (
             <div className={`header header-${colorScheme}`}>
                 <div className="header-top" >
                     <div className="header-site-name" />
-                    <HeaderSearch />
+                    <HeaderSearch colorScheme={colorScheme}/>
                     {
                         !this.state.currentUser ?
                                                 
