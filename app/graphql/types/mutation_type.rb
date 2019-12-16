@@ -3,6 +3,7 @@ module Types
     field :create_user, mutation: Mutations::CreateUser
     field :sign_in_user, mutation: Mutations::SignInUser
     field :logout, mutation: Mutations::Logout
+    field :update_user_color_scheme, mutation: Mutations::UpdateUserColorScheme
 
     field :create_article, mutation: Mutations::CreateArticle
     field :update_article_title, mutation: Mutations::UpdateArticleTitle
