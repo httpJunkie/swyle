@@ -1,0 +1,117 @@
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-weight: 400;
+    border: 1px solid black;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 40rem;
+    background: rgba(255, 255, 255, .5);
+}
+
+.comment {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* width: 100%; */
+  max-width: 40rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 400;
+  border-radius: 4px;
+  margin: .2rem;
+}
+
+.comment-add {
+  height: 7rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.comment-add > textarea {
+    width: -webkit-fill-available;
+    height: 3rem;
+    padding: 1rem;
+    resize: none;
+    border-radius: 4px;
+    resize: none;
+}
+
+.comments-section > h4 {
+  margin-left: 1rem;
+  text-align: center;
+  font-weight: 200;
+  color: white;
+  font-size: 28px;
+  font-family: sans-serif;
+}
+
+.comment-submit {
+  /* width: 4rem; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin-top: .5rem;
+  background: blue;
+  color: silver;
+  font-family: sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  /* margin-right: 1rem; */
+}
+
+.comment-submit:hover {
+  cursor: pointer;
+  background: navy;
+  transition: all .2s;
+}
+
+.comment-body {
+  word-wrap: normal;
+  width:33rem;
+}
+
+.comment-buttons {
+  display: flex;
+  justify-content: inherit;
+  align-items: flex-start;
+  height: fit-content;
+}
+
+.comment-edit-btn {
+  margin: 5px;
+  padding: .6rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 3rem;
+}
+
+.comment-edit-btn:hover {
+  cursor: pointer;
+  color: light-gray;
+}
+
+.comment-delete-btn {
+  margin: 5px;
+  padding: .6rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.comment-delete-btn:hover {
+  cursor: pointer;
+}
+
+.comment-who-and-when {
+  font-size: 14px;
+  font-style: italic;
+  color: gray;
+}
