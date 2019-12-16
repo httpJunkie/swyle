@@ -9,6 +9,7 @@
 @import '/images';
 @import '/session';
 @import '/adverts';
+@import '/comments';
 @import '/confirmation';
 @import '/editing';
 @import '/reactions';
@@ -30,36 +31,6 @@ body {
  
 } */
 
-
-.new-post-btn {
-  padding: .5rem;
-  border-radius: 50%;
-  border: 2px solid white;
-  background: #0A0458;
-  color: white;
-  font-size: 18px;
-  position: absolute;
-  text-align: center;
-  display: flex;
-}
-
-.new-post-btn:hover {
-  padding: .6rem;
-  font-size: 24px;
-  transition: all .1s ease-in-out;
-  z-index: 9000;
-  background: rgb(4, 41, 86);
-}
-
-
-.new-post-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 5rem;
-  position: relative;
-  /* right: 35rem; */
-}
 
 .post-delete-btn {
   position: absolute;
