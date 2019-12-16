@@ -1,7 +1,7 @@
 /**
  * TODO: Split this into different modules
  */
-import './App.css';
+import './App.scss';
 import React, { Component } from 'react';
 import { ApolloProvider } from "react-apollo"
 import ArticlesIndex from './articles_index';

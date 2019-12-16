@@ -4,7 +4,7 @@ module Mutations
     class UpdateUserColorScheme < BaseMutation
       argument :id, Int, required: true
       argument :color_scheme, String, required: true
-      type Types::userType
+      type Types::UserType
       def resolve(id, color_scheme)
         user = User.find(id)
         user.color_scheme = color_scheme

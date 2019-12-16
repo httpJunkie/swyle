@@ -46,7 +46,7 @@ body {
 .adverts-greeting {
   text-align: center;
   color: white;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
 }
 
 .adverts-greeting > h2 {
@@ -77,7 +77,7 @@ body {
   padding: 1rem;
   justify-content: space-between;
   height:fit-content;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   margin-top: 2rem;
   width: 40rem;
 }
@@ -92,7 +92,7 @@ body {
   border-left: none;
   border-right: none;
   margin-bottom: .5rem;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   padding: .5rem;
 
 }
@@ -109,7 +109,7 @@ body {
   min-height: 20rem;
   padding: .5rem;
   border: none;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
 
 }
 
@@ -218,7 +218,7 @@ body {
     box-sizing: border-box;
     overflow: hidden;
     width: 40rem;
-    background: rgb(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .5);
 }
 
 .comment {
@@ -337,7 +337,7 @@ body {
     right: 0;
     top: 0;
     z-index: 9000;
-    background: rgb(0,0,0,.5);
+    background: rgba(0,0,0,.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -478,7 +478,7 @@ body {
     right: 0;
     top: 0;
     z-index: 9000;
-    background: rgb(0,0,0,.5);
+    background: rgba(0,0,0,.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -647,7 +647,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   justify-content: space-between;
 }
 
@@ -668,13 +668,13 @@ body {
 .image-creation-title {
   border: none;
   font-size: 32px;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   padding: .5rem;
 }
 
 .image-creation-desc {
   border: none;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
  padding: .5rem;
 }
 
@@ -683,7 +683,7 @@ body {
   width: 20rem;
   padding: 1rem;
   border: 1px dashed black;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -805,7 +805,7 @@ body {
 }
 
 .likes-section {
- background: rgb(255, 255, 255, .6);
+ background: rgba(255, 255, 255, .6);
  padding: .5rem;
  display: flex;
  justify-content: center;
@@ -1049,7 +1049,7 @@ body {
 }
 
 .session-form {
-  background: rgb(255, 255, 255, .6);
+  background: rgba(255, 255, 255, .6);
   width: 20rem;
   padding: 1.5rem;
   position: relative;
@@ -1124,7 +1124,7 @@ body {
 }
 
 .trending-posts-tab-inactive {
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   padding: 1rem;
   border-radius: 4px;
   position: relative;
@@ -1140,7 +1140,7 @@ body {
 }
 
 .trending-posts-backpane {
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   width: 50rem;
   z-index: 0;
   padding: 1rem;
@@ -1173,7 +1173,7 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   position: relative;
 }
 
@@ -1182,7 +1182,7 @@ body {
   font-weight: 200;
   text-align: center;
   margin-block-end: unset;
-  background: rgb(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .5);
   color: white;
 }
 
