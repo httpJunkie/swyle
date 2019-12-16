@@ -7,5 +7,6 @@ module Types
       field :comments, [CommentType], null: true, method: :comments
       field :likes, [LikeType], null: true, method: :likes
       field :funnies, [FunnyType], null: true, method: :funnies
+      field :color_scheme, String, null: false
     end
   end
