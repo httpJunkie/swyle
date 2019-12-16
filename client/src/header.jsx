@@ -46,8 +46,9 @@ class Header extends Component {
     }
 
     render() {
+        const colorScheme = "red";
         return (
-            <div className="header">
+            <div className={`header header-${colorScheme}`}>
                 <div className="header-top" >
                     <div className="header-site-name" />
                     <HeaderSearch />

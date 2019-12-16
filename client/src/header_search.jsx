@@ -18,10 +18,10 @@ const HeaderSearch = (props) => {
     }
 
     const [query, setQuery] = useState("");
-
+    const colorScheme = "red";
     return (
         <form className="header-search" onSubmit={handleSubmit}>
-            <input className="header-search-bar" type="text" value={query} onChange={handleInputChange}>
+            <input className={`header-search-bar header-search-bar-${colorScheme}`} type="text" value={query} onChange={handleInputChange}>
             </input>
             <button type="submit" className="header-search-submit"> <FaSearch /></button>
         </form>

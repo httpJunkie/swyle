@@ -1,3 +1,7 @@
+/*
+* TODO: Media breakpoints for the header and buttons so that it looks good on mobile
+*/
+
 .header { 
   height: auto;
   width: 100%;
@@ -5,6 +9,9 @@
   top: 0;
   z-index: 9000;
   background: rgb(10, 4, 88);
+  &-red {
+        background: rgb(150, 11, 13)
+  }
 }
 
 .header-top {
@@ -30,6 +37,7 @@
 .header-search {
   position: relative;
 }
+
 .header-search-bar {
   padding: .4rem;
   border-radius: 4px;
@@ -37,6 +45,9 @@
   border: none;
   color: white;
   font-size: 16px;
+  &-red {
+      background: rgb(190, 11, 13);
+  }
 }
 
 .header-search-submit {
