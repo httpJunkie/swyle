@@ -70,6 +70,9 @@
  &-red{
       background: rgb(127, 20, 20)
   }
+  &-green {
+    background: rgb(20, 120, 20)
+  }
 }
 
 .article-index-page > h1 {
@@ -125,6 +128,9 @@
   align-items: center;
   &-red{
       background: rgb(127, 20, 20)
+  }
+  &-green {
+    background: rgb(20, 120, 20)
   }
 }
 
