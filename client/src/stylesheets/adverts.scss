@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+   &-red{
+      background: rgb(127, 20, 20)
+  }
+  &-green {
+    background: rgb(20, 120, 20)
+  }
   
 }
 
