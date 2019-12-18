@@ -48,7 +48,7 @@ class App extends Component {
             <div>
               <Header currentUser={data.currentUser} client={client} colorScheme={colorScheme} />
                <Switch>
-                  <Route exact path="/" component={ArticlesIndex} />
+                  <Route exact path="/" render={(props) => <ArticlesIndex colorScheme={colorScheme}/> } />
                   <Route exact path={"/articles/new"} component={ArticleCreate} />
                   <Route exact path={"/articles/:articleID"} component={ArticleShow}/>
 
