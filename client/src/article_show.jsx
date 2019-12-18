@@ -72,6 +72,7 @@ class ArticleShow extends Component {
 
     render() {
        const argument = parseInt(this.props.match.params.articleID)
+       const colorScheme = this.props.colorScheme || "standard"
         return (
             <Query query={article} variables={{ id: argument }} >
                 {({ loading, error, data, subscribeToMore}) => {
@@ -79,7 +80,7 @@ class ArticleShow extends Component {
                     if (error) return <p>Error :(</p>;
                         const article = data.article;
                     return (
-                        <div className="article-show-page">
+                        <div className={`article-show-page article-show-page-${colorScheme}`}>
                             <div className="article-section">
                                 {data.currentUser && (article.author.id === data.currentUser.id) && 
                                  <MdDelete className="post-delete-btn"  onClick={this.openModal}>DeleteMe</MdDelete>}
