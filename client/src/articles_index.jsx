@@ -11,7 +11,7 @@ import Subscription from './articles_subscription';
  * TODO: Create a ArticleCard component
  */
 
-const ArticlesIndex = () => {
+const ArticlesIndex = (props) => {
         const date = Date.now();
         return (
             <Query query={articles} fetchPolicy="cache-and-network">
@@ -19,8 +19,9 @@ const ArticlesIndex = () => {
                     if (loading) return <div className="loading-div"><img className="loading-img" alt="load" src="https://i.gifer.com/origin/4d/4dc11d17f5292fd463a60aa2bbb41f6a_w200.gif"/></div>;
                     if (error) return <p>Error :(</p>;
                     const articles = data.articles;
+                    const colorScheme = props.colorScheme || "standard"
                     return (
-                        <div className="article-index-page">
+                        <div className={`article-index-page article-index-page-${colorScheme}`}>
                             <h1>Newest Articles</h1>
                             {articles.map((article) => (
                                 <div className="article-index-card" key={`${article.id}${article.title}${date}`}>
