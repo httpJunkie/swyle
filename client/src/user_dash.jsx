@@ -8,6 +8,7 @@ import {Query} from 'react-apollo';
 import postsByUser from './queries/posts_by_user';
 import commentsByUser from './queries/comments_by_user';
 import {Redirect, withRouter} from 'react-router-dom';
+import UserOptions from './user_options';
 
 class UserDash extends Component {
 
@@ -31,6 +32,7 @@ class UserDash extends Component {
               <div className="user-dashboard">
               <div className="user-profile">
           <h3>{this.state.currentUser.username}'s Dashboard</h3>
+          <UserOptions colorScheme={this.state.currentUser.colorScheme} />
               </div>
 
                 <div>
