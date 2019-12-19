@@ -32,7 +32,7 @@ class UserDash extends Component {
               <div className="user-dashboard">
               <div className="user-profile">
           <h3>{this.state.currentUser.username}'s Dashboard</h3>
-          <UserOptions colorScheme={this.state.currentUser.colorScheme} />
+          <UserOptions colorScheme={this.state.currentUser.colorScheme} userId={this.state.currentUser.id}/>
               </div>
 
                 <div>

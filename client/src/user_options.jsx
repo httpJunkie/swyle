@@ -4,10 +4,10 @@ import {graphql} from 'react-apollo';
 
 const UserOptions  = (props) => {
     const [colorScheme, changeColorScheme] = useState(props.colorScheme)
+
     const handleClick = (event) => {
-        debugger;
-        changeColorScheme(event.target.name)
-        debugger;
+        changeColorScheme(event.target.getAttribute("name"))
+        console.log(props)
     //    this.props.mutate({}).then( res => {
     //         debugger;
     //     })
