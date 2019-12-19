@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import colorScheme from './mutations/update_user_color_scheme';
+import mutation from './mutations/update_user_color_scheme';
+import graphql from 'react-apollo';
 
 const UserOptions  = (props) => {
     return (
@@ -9,4 +10,4 @@ const UserOptions  = (props) => {
     )
 }
 
-export default UserOptions;
+export default graphql(mutation)(UserOptions);
