@@ -75,7 +75,6 @@ class Login extends Component {
                                                     }
                                                 }).then(res => {
                                                     const token = res.data.signInUser.token
-                                                    debugger;
                                                     if (token) {
                                                         localStorage.setItem("mlToken", token)
                                                     }
