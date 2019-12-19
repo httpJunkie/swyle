@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import mutation from './mutations/update_user_color_scheme';
 import {graphql} from 'react-apollo';
+import currentUser from './queries/current_user';
 
 const UserOptions  = (props) => {
     const [colorScheme, changeColorScheme] = useState(props.colorScheme)
@@ -8,7 +9,9 @@ const UserOptions  = (props) => {
     const handleClick = (event) => {
         changeColorScheme(event.target.getAttribute("name"))
         console.log(props)
-        props.mutate({ variables:{id: props.userId, colorScheme: colorScheme}}).then( res => {
+        props.mutate({
+            variables: { id: props.userId, colorScheme: colorScheme },
+            refetchQueries: [{ currentUser }]}).then( res => {
          debugger;
          })
     }

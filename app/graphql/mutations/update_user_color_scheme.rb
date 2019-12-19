@@ -6,6 +6,7 @@ module Mutations
       argument :color_scheme, String, required: true
       type Types::UserType
       def resolve(id, color_scheme)
+        debugger
         user = User.find(id)
         user.color_scheme = color_scheme
         user.save
