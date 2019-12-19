@@ -7,17 +7,18 @@ const UserOptions  = (props) => {
     const handleClick = (event) => {
         debugger;
         changeColorScheme(event.target.name)
-       this.props.mutate({}).then( res => {
-            debugger;
-        })
+        debugger;
+    //    this.props.mutate({}).then( res => {
+    //         debugger;
+    //     })
     }
     return (
         <div className="user-options">
             <div className="user-option">
                 <h4>Color Scheme</h4>
-                <span onClick={handleClick} name="standard" className={colorScheme === "standard" ? "option-selected" : "option-unselected"}>Classic</span>
-                <span onClick={handleClick} name="red" className={colorScheme === "red" ? "option-selected" : "option-unselected"}>Radical Red</span>
-                <span onClick={handleClick} name="green" className={colorScheme === "green" ? "option-selected" : "option-unselected"}>Groovy Green</span>
+                <div onClick={handleClick} name="standard" className={colorScheme === "standard" ? "option option-selected" : "option option-unselected"}>Classic</div>
+                <div onClick={handleClick} name="red" className={colorScheme === "red" ? "option option-selected" : "option option-unselected"}>Radical Red</div>
+                <div onClick={handleClick} name="green" className={colorScheme === "green" ? "option option-selected" : "option option-unselected"}>Groovy Green</div>
             </div>
 
         </div>

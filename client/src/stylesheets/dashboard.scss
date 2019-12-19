@@ -10,6 +10,21 @@
   color: white;
 }
 
+.user-option {
+  background: white;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-selected {
+  border: 3px solid black;
+}
+
+.option-unselected {
+  border:3px solid white;
+}
+
 .user-recent-activity {
   display: flex;
   width: 100%;
