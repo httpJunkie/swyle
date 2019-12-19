@@ -71,7 +71,6 @@ class ArticleShow extends Component {
     }
 
     render() {
-        debugger;
        const argument = parseInt(this.props.match.params.articleID)
        const colorScheme = this.props.colorScheme || "standard"
         return (
