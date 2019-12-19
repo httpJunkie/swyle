@@ -171,6 +171,12 @@
      background: rgb(4, 41, 86);   
     }
   }
+  &-green {
+    background: #07460b;
+    &:hover{
+      background: rgb(11, 150, 11);
+    }
+  }
 }
 
 .new-post-btn:hover {
