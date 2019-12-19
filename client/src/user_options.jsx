@@ -7,12 +7,11 @@ const UserOptions  = (props) => {
     const [colorScheme, changeColorScheme] = useState(props.colorScheme)
 
     const handleClick = (event) => {
-        changeColorScheme(event.target.getAttribute("name"))
-        console.log(props)
+        
         props.mutate({
-            variables: { id: props.userId, colorScheme: colorScheme },
-            refetchQueries: [{ currentUser }]}).then( res => {
-         debugger;
+            variables: { id: props.userId, colorScheme: event.target.getAttribute("name") },
+            refetchQueries: [{ query: currentUser }]}).then( res => {
+                changeColorScheme(res.data.updateUserColorScheme.colorScheme)
          })
     }
     return (
