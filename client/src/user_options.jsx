@@ -6,9 +6,12 @@ const UserOptions  = (props) => {
     const [colorScheme, changeColorScheme] = useState(props.colorScheme)
     return (
         <div className="user-options">
-            <form>
-
-            </form>
+            <div className="user-option">
+                <h4>Color Scheme</h4>
+                <span className={colorScheme === "standard" ? "option-selected" : "option-unselected"}>Classic</span>
+                <span className={colorScheme === "red" ? "option-selected" : "option-unselected"}>Radical Red</span>
+                <span className={colorScheme === "green" ? "option-selected" : "option-unselected"}>Groovy Green</span>
+            </div>
 
         </div>
     )
