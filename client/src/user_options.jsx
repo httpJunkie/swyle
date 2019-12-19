@@ -8,9 +8,9 @@ const UserOptions  = (props) => {
     const handleClick = (event) => {
         changeColorScheme(event.target.getAttribute("name"))
         console.log(props)
-    //    this.props.mutate({}).then( res => {
-    //         debugger;
-    //     })
+        props.mutate({ variables:{id: props.userId, colorScheme: colorScheme}}).then( res => {
+         debugger;
+         })
     }
     return (
         <div className="user-options">

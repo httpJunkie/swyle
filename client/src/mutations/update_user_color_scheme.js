@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 const updateUserColorScheme = gql`
-    mutation updateUserColorScheme($id: Int!, $title: String!) {
-        updateUserColorScheme(id: $id, title: $title) {
+    mutation updateUserColorScheme($id: Int!, $colorScheme: String!) {
+        updateUserColorScheme(id: $id, colorScheme: $colorScheme) {
             id
             email
             username
