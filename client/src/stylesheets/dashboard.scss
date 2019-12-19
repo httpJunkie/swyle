@@ -5,16 +5,18 @@
   padding: 1rem;
   background: #001935;
   &-red{
-    background: rgb(127, 20, 20)
+    background: #630909
   }
  &-green {
-    background: rgb(20, 120, 20)
+    background: #07460b;
   }
 }
 
 .user-dashboard-title {
   font-weight: 300;
+  text-align: center;
   color: white;
+  font-size: 3rem;
 }
 
 .user-option {
@@ -30,6 +32,7 @@
   border: 3px solid black;
   padding: .2rem;
   text-align: center;
+  font-weight: bold;
   &:hover{
     cursor: pointer;
   }
