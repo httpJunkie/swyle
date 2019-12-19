@@ -5,10 +5,10 @@ module Mutations
       argument :id, Int, required: true
       argument :color_scheme, String, required: true
       type Types::UserType
-      def resolve(id, color_scheme)
+      def resolve(args)
         debugger
-        user = User.find(id)
-        user.color_scheme = color_scheme
+        user = User.find(args[:id])
+        user.color_scheme = args[:color_scheme]
         user.save
         user
       end
