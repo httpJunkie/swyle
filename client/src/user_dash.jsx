@@ -29,7 +29,7 @@ class UserDash extends Component {
           return (<Redirect to="/login"/>)
       } else {
           return (
-              <div className="user-dashboard">
+              <div className={`user-dashboard user-dashboard-${this.state.currentUser.colorScheme}`}>
               <div className="user-profile">
           <h3>{this.state.currentUser.username}'s Dashboard</h3>
           <UserOptions colorScheme={this.state.currentUser.colorScheme} userId={this.state.currentUser.id}/>
