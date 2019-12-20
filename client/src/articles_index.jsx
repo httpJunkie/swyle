@@ -16,7 +16,8 @@ const ArticlesIndex = (props) => {
         return (
             <Query query={articles} fetchPolicy="cache-and-network">
                 {({ loading, error, data, subscribeToMore }) => {
-                    if (loading) return <div className="loading-div"><img className="loading-img" alt="load" src="https://i.gifer.com/origin/4d/4dc11d17f5292fd463a60aa2bbb41f6a_w200.gif"/></div>;
+                    
+                    if (loading) return <div className={`loading-div loading-div-${props.colorScheme}`}><img className="loading-img" alt="load" src="https://i.gifer.com/origin/4d/4dc11d17f5292fd463a60aa2bbb41f6a_w200.gif"/></div>;
                     if (error) return <p>Error :(</p>;
                     const articles = data.articles;
                     const colorScheme = props.colorScheme || "standard"
