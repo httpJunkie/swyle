@@ -82,7 +82,7 @@ class ImageShow extends Component {
                     const next = ownIndex === data.imageIds.length - 1 ? data.imageIds[0] : data.imageIds[ownIndex + 1];
                     const prev = ownIndex === 0 ? (data.imageIds[data.imageIds.length - 1]) : data.imageIds[ownIndex - 1];
                     return (
-                        <div className="article-show-page">
+                        <div className={`article-show-page article-show-page-${this.props.colorScheme}`}>
                             <div style={{"flexDirection": "row", "display": "flex", "alignItems":"center"}}>
                                 <Link className="image-show-carousel" to={`/images/${prev}`}><MdNavigateBefore /></Link>
                                 <div style={{ "flexDirection": "column", "display": "flex", "alignItems": "center"}}>
