@@ -6,11 +6,11 @@
   width: 100%;
   height: calc(100%-10rem);
   position: fixed;
-   &-red{
-      background: rgb(127, 20, 20)
+ &-red{
+    background: #630909
   }
-  &-green {
-    background: rgb(20, 120, 20)
+ &-green {
+    background: #07460b;
   }
 }
 

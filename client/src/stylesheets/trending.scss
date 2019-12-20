@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  &-red{
+      background: #630909
+    }
   &-green {
-    background: #07460b;
-  }
+      background: #07460b;
+    }
 }
 
 .trending-posts-nav {
