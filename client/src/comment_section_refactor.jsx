@@ -34,7 +34,6 @@ class CommentSection extends Component {
     render() {
         const query = this.props.postType === "Article" ? article : image;
         const comments = this.props.comments;
-        debugger;
         return (
 
                         <div className="comments-section">
@@ -43,7 +42,7 @@ class CommentSection extends Component {
                                 <Mutation mutation={postComment}
                                     update={(cache, { data: { postComment } }) => {
                                     }}
-                                    refetchQueries={[{ query: query, variables: { postId: this.props.postId } }]}
+                                    refetchQueries={[{ query: query, variables: { id: this.props.postId } }]}
                                 >
                                     {(postComment, loading) =>
                                         !loading ? (
@@ -56,7 +55,7 @@ class CommentSection extends Component {
                                                             body: this.state.body,
                                                             userId: this.props.currentUser.id,
                                                             postId: this.props.postId,
-                                                            postType: this.props.type
+                                                            postType: this.props.postType
                                                         }
                                                     }).then(res => {
                                                         this.setState({ body: "" })
