@@ -131,7 +131,7 @@ class ArticleShow extends Component {
                                                        
                             </div>
 
-                              <CommentSection type={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} comments={article.comments}/>
+                              <CommentSection postType={"Article"} currentUser={data.currentUser} postId={argument} articleAuthorId={article.author.id} comments={article.comments}/>
                             {this.state.confirmationOpen && <ConfirmationModal title={article.title} cancel={this.closeModal} confirm={this.deleteArticle}/>}
                             <Subscription subscribeToMore={subscribeToMore} />
                         </div>

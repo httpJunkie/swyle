@@ -127,7 +127,7 @@ class ImageShow extends Component {
                                 <Link className="image-show-carousel" to={`/images/${next}`}><MdNavigateNext /></Link>
                             </div>
                              
-                            <CommentSection type={"ImagePost"} currentUser={data.currentUser} postId={argument} comments={image.comments} />
+                            <CommentSection postType={"ImagePost"} currentUser={data.currentUser} postId={argument} comments={image.comments} />
                             <Subscription subscribeToMore={subscribeToMore} />
                         </div>
                     )
