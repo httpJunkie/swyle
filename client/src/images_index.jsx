@@ -7,6 +7,7 @@ import Subscription from './images_subscription';
 /**
  * Component for displaying all of the images in chronological order.  No analytics, no metrics,
  * no assumptions. Deal with it.
+ * TODO: change to functional component
  */
 class ImagesIndex extends Component {
     constructor(props) {
