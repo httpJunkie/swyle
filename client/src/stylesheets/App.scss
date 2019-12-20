@@ -19,6 +19,12 @@
 
 body {
    background: #001935;
+   &-red{
+    background: #630909
+  }
+  &-green {
+    background: #07460b;
+  }
 }
 
 .loading-div {

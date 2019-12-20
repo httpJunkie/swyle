@@ -44,6 +44,7 @@ class App extends Component {
             {({data, loading, client})=> {
             if (loading) return <p/>
             const colorScheme = data.currentUser ? data.currentUser.colorScheme : "standard"
+            document.body.classList.add(`body-${colorScheme}`);
             return (
             <div>
               <Header currentUser={data.currentUser} client={client} colorScheme={colorScheme} />
