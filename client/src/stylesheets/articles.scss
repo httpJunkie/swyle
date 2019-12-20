@@ -9,7 +9,7 @@
  padding-left: 2rem;
  padding-right: 2rem;
  height: -webkit-fill-available;
- &-red{
+&-red{
     background: #630909
   }
  &-green {
@@ -70,11 +70,11 @@
  padding-top: 8rem;
  padding-left: 2rem;
  padding-right: 2rem;
- &-red{
-      background: rgb(127, 20, 20)
+&-red{
+    background: #630909
   }
-  &-green {
-    background: rgb(20, 120, 20)
+ &-green {
+    background: #07460b;
   }
 }
 
@@ -129,11 +129,11 @@
   flex-direction: column;
   padding: 1rem;
   align-items: center;
-  &-red{
-      background: rgb(127, 20, 20)
+ &-red{
+    background: #630909
   }
-  &-green {
-    background: rgb(20, 120, 20)
+ &-green {
+    background: #07460b;
   }
 }
 
