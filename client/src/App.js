@@ -48,21 +48,21 @@ class App extends Component {
             <div>
               <Header currentUser={data.currentUser} client={client} colorScheme={colorScheme} />
                <Switch>
-                  <Route exact path="/" render={(props) => <ArticlesIndex colorScheme={colorScheme}/> } />
+                  <Route exact path="/" render={(props) => <ArticlesIndex colorScheme={colorScheme} {...props}/> } />
                   <Route exact path={"/articles/new"} component={ArticleCreate} />
                   {/* <Route exact path={"/articles/:articleID"} component={ArticleShow}/> */}
                   <Route exact path={"/articles/:articleID"} render={(props) => <ArticleShow colorScheme={colorScheme} {...props}/>} />
 
-                  <Route exact path="/images/new" component={ImageCreate} />
-                  <Route exact path={"/images/:imageID"} component={ImageShow} />
-                  <Route exact path="/images" render={(props) => <ImagesIndex colorScheme={colorScheme}/>} />
+                  <Route exact path="/images/new" render={(props) => <ImageCreate colorScheme={colorScheme} {...props}/>} />
+                  <Route exact path={"/images/:imageID"} render={(props) => <ImageShow colorScheme={colorScheme} {...props}/>} />
+                  <Route exact path="/images" render={(props) => <ImagesIndex colorScheme={colorScheme} {...props}/>} />
 
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
 
-                  <Route exact path="/dashboard" render={(props) => <UserDash currentUser={data.currentUser}/>} />
+                  <Route exact path="/dashboard" render={(props) => <UserDash currentUser={data.currentUser} {...props}/>} />
 
-                  <Route exact path="/trending" render={(props) => <Trending colorScheme={colorScheme}/>} />
+                  <Route exact path="/trending" render={(props) => <Trending colorScheme={colorScheme} {...props}/>} />
                   <Route exact path="/headertest" component={testArea}/>
                   <Route exact path="/about" component={About} />
                   <Route path="/search" component={Search} />
