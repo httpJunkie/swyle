@@ -23,7 +23,7 @@ class ImagesIndex extends Component {
                     if (error) return <p>Error :(</p>;
 
                     return (
-                        <div className="image-index-page">
+                        <div className={`image-index-page image-index-page-${this.props.colorScheme}`}>
                             <h1>Newest Images</h1>
                             <div className="image-index-spread">
                             {data.images.map(image =>
