@@ -55,7 +55,7 @@ class App extends Component {
 
                   <Route exact path="/images/new" component={ImageCreate} />
                   <Route exact path={"/images/:imageID"} component={ImageShow} />
-                  <Route exact path="/images" component={ImagesIndex} />
+                  <Route exact path="/images" render={(props) => <ImagesIndex colorScheme={colorScheme}/>} />
 
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
