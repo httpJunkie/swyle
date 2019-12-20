@@ -9,6 +9,12 @@
  padding-left: 2rem;
  padding-right: 2rem;
  font-family: sans-serif;
+ &-red{
+    background: #630909
+  }
+ &-green {
+    background: #07460b;
+  }
 }
 
 .about-page >h1 {

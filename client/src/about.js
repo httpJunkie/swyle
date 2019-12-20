@@ -1,8 +1,8 @@
 import React from 'react'
 
-const About = () => {
+const About = (props) => {
     return (
-        <div className="about-page">
+        <div className={`about-page about-page-${props.colorScheme}`}>
             <h1>About Swyle</h1>
             <div className="about-section">
                 <h2>Mission</h2>

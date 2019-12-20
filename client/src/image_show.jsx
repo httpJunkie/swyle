@@ -75,7 +75,7 @@ class ImageShow extends Component {
         return (
             <Query query={image} variables={{ id: argument }}>
                 {({ loading, error, data, subscribeToMore }) => {
-                    if (loading) return <div className="loading-div"><img className="loading-img" alt="load" src="https://i.gifer.com/origin/4d/4dc11d17f5292fd463a60aa2bbb41f6a_w200.gif" /></div>;
+                    if (loading) return <div className={`loading-div loading-div-${this.props.colorScheme}`}><img className="loading-img" alt="load" src="https://i.gifer.com/origin/4d/4dc11d17f5292fd463a60aa2bbb41f6a_w200.gif" /></div>;
                     if (error) return <p>Error :(</p>;
                     const image = data.image;
                     const ownIndex = data.imageIds.indexOf(image.id)

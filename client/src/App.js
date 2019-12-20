@@ -64,7 +64,7 @@ class App extends Component {
 
                   <Route exact path="/trending" render={(props) => <Trending colorScheme={colorScheme} {...props}/>} />
                   <Route exact path="/headertest" component={testArea}/>
-                  <Route exact path="/about" component={About} />
+                  <Route exact path="/about" render={(props) => <About colorScheme={colorScheme} {...props}/>} />
                   <Route path="/search" component={Search} />
                   <Route exact path="/sponsors" component={Adverts} />
               </Switch>
