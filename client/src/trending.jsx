@@ -43,15 +43,13 @@ class Trending extends Component {
 
     render() {
         if (this.props.data.loading) {
-            return <div className="spinny-loady-container">
-                Insert spinny thingy here.
-            </div>
+            return <div className={`loading-div loading-div-${this.props.colorScheme}`}><img className="loading-img" alt="load" src="https://i.gifer.com/origin/4d/4dc11d17f5292fd463a60aa2bbb41f6a_w200.gif" /></div>;
         }
         const attribute = this.state.activePane === 'comments' ? 'count' : 'likeCount'
         const posts = this.sortPosts(attribute);
         
         return (  
-        <div className="trending-posts-page">
+            <div className={`trending-posts-page trending-posts-page-${this.props.colorScheme}`}>
             <h1 className="trending-posts-title">Most Popular Posts</h1>
           
             <div className="trending-posts-backpane">

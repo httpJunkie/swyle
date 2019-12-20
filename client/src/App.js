@@ -44,7 +44,6 @@ class App extends Component {
             {({data, loading, client})=> {
             if (loading) return <p/>
             const colorScheme = data.currentUser ? data.currentUser.colorScheme : "standard"
-            document.body.classList.add(`body-${colorScheme}`);
             return (
             <div>
               <Header currentUser={data.currentUser} client={client} colorScheme={colorScheme} />
@@ -63,7 +62,7 @@ class App extends Component {
 
                   <Route exact path="/dashboard" render={(props) => <UserDash currentUser={data.currentUser}/>} />
 
-                  <Route exact path="/trending" component={Trending} />
+                  <Route exact path="/trending" render={(props) => <Trending colorScheme={colorScheme}/>} />
                   <Route exact path="/headertest" component={testArea}/>
                   <Route exact path="/about" component={About} />
                   <Route path="/search" component={Search} />

@@ -29,10 +29,17 @@ body {
 
 .loading-div {
   width: 100%;
-  height: 20rem;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+   background: #001935;
+   &-red{
+    background: #630909
+  }
+  &-green {
+    background: #07460b;
+  }
 }
 
 .post-delete-btn {
