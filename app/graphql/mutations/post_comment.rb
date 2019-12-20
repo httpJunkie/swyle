@@ -12,18 +12,16 @@ module Mutations
             comment.post_id = post_id.to_i
             comment.post_type = post_type
 
+            #TODO: Clean this up a bit.
             if comment.save
                 if post_type === "Article"
-                    debugger
                     SwyleSchema.subscriptions.trigger("articleUpdated", {}, comment.post)
                     return comment
 
                 end
                 if post_type === "ImagePost"
-                    debugger
                     SwyleSchema.subscriptions.trigger("imageUpdated", {}, comment.post)
                     return comment
-
                 end
             end 
             # SwyleSchema.subscriptions.trigger("commentAdded", {}, comment)
