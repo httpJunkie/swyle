@@ -30,6 +30,12 @@
   padding: 1rem;
   margin-bottom: 2rem;
   font-weight: 500;
+   @media (max-width: 426px) {
+    width: 20rem;
+  }
+   @media (max-width: 350px) {
+    width: 15rem;
+  }
 }
 
 .about-section > h2 {
