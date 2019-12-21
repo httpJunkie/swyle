@@ -1,4 +1,6 @@
 import React from 'react';
+import commentsByUser from './queries/comments_by_user';
+
 
 const UserComments = (props) => {
     return (
