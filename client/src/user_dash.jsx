@@ -29,9 +29,7 @@ class UserDash extends Component {
 
   selectTab(event) {
     event.preventDefault();
-      debugger;
-
-      this.setState({ currentTab: event.target.getAttribute('name')})
+    this.setState({ currentTab: event.target.getAttribute('name')});
   }
 
   render() {
@@ -45,20 +43,20 @@ class UserDash extends Component {
                         <h3 className="user-dashboard-title">{this.state.currentUser.username}'s Dashboard</h3>
                         <UserOptions colorScheme={this.state.currentUser.colorScheme} userId={this.state.currentUser.id}/>
                   </div>
+                  <h2 className="user-recent-message">Your Recent Activity</h2>
 
                 <div>
 
-                  <h2 className="user-recent-message">Your Recent Activity</h2>
 
                 <div className="user-recent-activity">  
-                          <div className="trending-posts-nav">
-                              <div className={`trending-posts-tab${this.state.currentTab === 'posts' ? '-active' : '-inactive'}`}
+                          <div className="user-posts-nav">
+                              <div className={`user-posts-tab${this.state.currentTab === 'posts' ? '-active' : '-inactive'}`}
                                   name="posts"
                                   onClick={this.selectTab}
                               >
                                   Posts
                 </div>
-                              <div className={`trending-posts-tab${this.state.currentTab === 'comments' ? '-active' : '-inactive'}`}
+                              <div className={`user-posts-tab${this.state.currentTab === 'comments' ? '-active' : '-inactive'}`}
                                   name="comments"
                                   onClick={this.selectTab}
                               >

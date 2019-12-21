@@ -73,7 +73,7 @@
 
 .user-posts {
   width: 35rem;
-  margin: 1rem;
+  // margin: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@
 
 .user-comments {
   width: 35rem;
-  margin: 1rem;
+  // margin: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -125,4 +125,27 @@
 
 .user-posts-thumbnail-container > img{
   width: 100%;
+}
+
+.user-posts-nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-bottom: -2rem;
+
+}
+
+.user-posts-tab-active {
+ background: white; 
+ padding: 1rem;
+ border-radius: 4px;
+}
+
+.user-posts-tab-inactive {
+  background: rgba(255, 255, 255, .5);
+  padding: 1rem;
+  border-radius: 4px;
+  position: relative;
+  z-index: 10;
 }
