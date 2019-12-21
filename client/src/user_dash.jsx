@@ -32,19 +32,32 @@ class UserDash extends Component {
       } else {
           return (
               <div className={`user-dashboard user-dashboard-${this.state.currentUser.colorScheme}`}>
-              <div className="user-profile">
-          <h3 className="user-dashboard-title">{this.state.currentUser.username}'s Dashboard</h3>
-          <UserOptions colorScheme={this.state.currentUser.colorScheme} userId={this.state.currentUser.id}/>
-              </div>
+                  <div className="user-profile">
+                        <h3 className="user-dashboard-title">{this.state.currentUser.username}'s Dashboard</h3>
+                        <UserOptions colorScheme={this.state.currentUser.colorScheme} userId={this.state.currentUser.id}/>
+                  </div>
 
                 <div>
 
-                
                   <h2 className="user-recent-message">Your Recent Activity</h2>
 
                 <div className="user-recent-activity">  
+                    <UserPosts userId={this.state.currentUser.id} />
+                    <UserComments userId={this.state.currentUser.id} />
 
-                    <div className="user-posts">
+                </div>
+            </div>
+
+            </div>
+          )
+      }
+  }
+}
+
+export default withRouter(UserDash);
+
+/**
+ *              <div className="user-posts">
                           <h3 style={{ "textAlign": "center", "color":"white"}}> Posts</h3>
                           <Query query={postsByUser} variables={{ userId: this.state.currentUser.id }}>
                               {({ loading, error, data }) => {
@@ -82,8 +95,8 @@ class UserDash extends Component {
                                                     <h4>You commented:</h4>
                                                     <p className="user-comments-card-body">"{comment.body}"</p>
                                                     <h5> <span>
-                                                          On <span>{comment.post.title}</span> by <span>{comment.post.author.username}</span> 
-                                                          <span> at {comment.createdAt}</span>  
+                                                          On <span>{comment.post.title}</span> by <span>{comment.post.author.username}</span>
+                                                          <span> at {comment.createdAt}</span>
                                                       </span> </h5>
                                                   </div>
                                               )
@@ -93,14 +106,4 @@ class UserDash extends Component {
                               }}
                           </Query>
                     </div>
-
-                </div>
-            </div>
-
-              </div>
-          )
-      }
-  }
-}
-
-export default withRouter(UserDash);
+ */

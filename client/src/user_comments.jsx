@@ -1,5 +1,6 @@
 import React from 'react';
 import commentsByUser from './queries/comments_by_user';
+import { Query } from 'react-apollo';
 
 
 const UserComments = (props) => {
