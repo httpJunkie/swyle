@@ -116,7 +116,7 @@
     padding: 2rem;
     margin: .5rem;
     background: white;
-    /* width: 10rem; */
+    //  width: 10rem; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,6 +125,10 @@
 
 .image-index-thumb {
   width: 20rem;
+  @media (max-width: 400px) {
+    width: 10rem;
+}
+
 }
 
 .image-likes-container {

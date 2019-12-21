@@ -18,13 +18,14 @@
 @import '/trending';
 
 body {
-   background: #001935;
-   &-red{
-    background: #630909
-  }
-  &-green {
-    background: #07460b;
-  }
+  //  background: #001935;
+  //  &-red{
+  //   background: #630909
+  // }
+  // &-green {
+  //   background: #07460b;
+  // }
+  width: 100vw;
 }
 
 .loading-div {
