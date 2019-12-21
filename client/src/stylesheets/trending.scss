@@ -8,6 +8,7 @@
   &-green {
       background: #07460b;
     }
+    
 }
 
 .trending-posts-nav {
@@ -16,6 +17,7 @@
   justify-content: flex-start;
   margin-left: 1rem;
   margin-bottom: -1rem;
+
 }
 
 .trending-posts-tab-active {
@@ -46,11 +48,17 @@
   z-index: 0;
   padding: 1rem;
   position: relative;
+  @media (max-width: 426px) {
+    width: 21rem;
+  }
 }
 
 .trending-posts-content {
   background: white;
   width: 49rem;
+  @media (max-width: 426px) {
+    width: 20rem;
+  }
 }
 
 .trending-posts-title {

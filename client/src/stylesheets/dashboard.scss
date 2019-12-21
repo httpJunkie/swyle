@@ -93,6 +93,9 @@
   border-radius: 3px;
   width: 30rem;
   margin: .5rem;
+    @media (max-width: 426px) {
+    width: 16rem;
+  }
 }
 
 .user-comments-card {
@@ -110,6 +113,9 @@
 
 .user-posts-thumbnail-container {
   width: 30rem;
+  @media (max-width: 426px) {
+    width: 16rem;
+  }
 }
 
 .user-posts-thumbnail-container > img{
