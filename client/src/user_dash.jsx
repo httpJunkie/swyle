@@ -9,6 +9,8 @@ import postsByUser from './queries/posts_by_user';
 import commentsByUser from './queries/comments_by_user';
 import {Redirect, withRouter} from 'react-router-dom';
 import UserOptions from './user_options';
+import UserComments from './user_comments';
+import UserPosts from './user_posts';
 
 class UserDash extends Component {
 
