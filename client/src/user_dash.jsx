@@ -16,7 +16,8 @@ class UserDash extends Component {
 
     constructor(props) {
         super(props)
-        this.state={currentUser: this.props.currentUser}
+        this.state={currentUser: this.props.currentUser, currentTab: "posts"}
+        this.selectTab = this.selectTab.bind(this)
     }
 
     //TODO: Change up the Hooks and make this component functional to appease the snobs.
@@ -26,10 +27,18 @@ class UserDash extends Component {
       }
   }
 
+  selectTab(event) {
+    event.preventDefault();
+      debugger;
+
+      this.setState({ currentTab: event.target.getAttribute('name')})
+  }
+
   render() {
       if (!this.state.currentUser) {
           return (<Redirect to="/login"/>)
       } else {
+          const tabs = {"posts": <UserPosts userId = { this.state.currentUser.id } />, "comments": <UserComments userId={this.state.currentUser.id} />}
           return (
               <div className={`user-dashboard user-dashboard-${this.state.currentUser.colorScheme}`}>
                   <div className="user-profile">
@@ -42,8 +51,21 @@ class UserDash extends Component {
                   <h2 className="user-recent-message">Your Recent Activity</h2>
 
                 <div className="user-recent-activity">  
-                    <UserPosts userId={this.state.currentUser.id} />
-                    <UserComments userId={this.state.currentUser.id} />
+                          <div className="trending-posts-nav">
+                              <div className={`trending-posts-tab${this.state.currentTab === 'posts' ? '-active' : '-inactive'}`}
+                                  name="posts"
+                                  onClick={this.selectTab}
+                              >
+                                  Posts
+                </div>
+                              <div className={`trending-posts-tab${this.state.currentTab === 'comments' ? '-active' : '-inactive'}`}
+                                  name="comments"
+                                  onClick={this.selectTab}
+                              >
+                                Comments
+                </div>
+                          </div>
+                          {tabs[this.state.currentTab]} 
 
                 </div>
             </div>

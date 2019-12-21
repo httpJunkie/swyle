@@ -6,7 +6,6 @@ import { Query } from 'react-apollo';
 const UserComments = (props) => {
     return (
         <div className="user-comments">
-            <h3 style={{ "textAlign": "center", "color": "white" }}> Comments</h3>
             <Query query={commentsByUser} variables={{ userId: props.userId }}>
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;

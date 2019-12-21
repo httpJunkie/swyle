@@ -12,7 +12,6 @@ import { Query } from 'react-apollo';
 const UserPosts = (props) => {
 return (
     <div className="user-posts">
-        <h3 style={{ "textAlign": "center", "color": "white" }}> Posts</h3>
         <Query query={postsByUser} variables={{ userId: props.userId }}>
             {({ loading, error, data }) => {
                 if (loading) return <p>Loading...</p>;
