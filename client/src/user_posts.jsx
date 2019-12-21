@@ -1,4 +1,6 @@
 import React from 'react';
+import postsByUser from './queries/posts_by_user';
+
 
 /**
  * Expected Props:
