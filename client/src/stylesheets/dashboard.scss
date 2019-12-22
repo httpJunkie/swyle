@@ -140,6 +140,9 @@
  background: white; 
  padding: 1rem;
  border-radius: 4px;
+   &:hover{
+    cursor: pointer;
+  }
 }
 
 .user-posts-tab-inactive {
@@ -148,4 +151,7 @@
   border-radius: 4px;
   position: relative;
   z-index: 10;
+    &:hover{
+    cursor: pointer;
+  }
 }
