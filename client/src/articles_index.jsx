@@ -26,12 +26,17 @@ const ArticlesIndex = (props) => {
                             <h1>Newest Articles</h1>
                             {articles.map((article) => (
                                 <div className="article-index-card" key={`${article.id}${article.title}${date}`}>
-                                    <h2 className="article-index-title">{article.title}</h2>
+                                  <Link className="article-index-show-link" to={`/articles/${article.id}`}>        
+                                     <h2 className="article-index-title">{article.title}</h2>
+                                  </Link>
                                     <h3 className="article-index-subtitle">by {article.author.username}</h3>
                                     <p className="article-index-snippet">{article.snippet}<Link className="article-index-show-link" to={`/articles/${article.id}`}>{"...more"}</Link></p>
                                     <ArticleTags tags={["lookAtThisTag", "othertag"]} />
                                     <h4>{article.count} Commented {article.likeCount} Liked</h4>
+                             
                                 </div>
+                              
+                               
                             ))}
                             <Subscription subscribeToMore={subscribeToMore} />
                         </div>
