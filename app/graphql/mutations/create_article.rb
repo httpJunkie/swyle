@@ -7,7 +7,7 @@ module Mutations
     
 
     def resolve(title: nil, body: nil)
-       snippet = body[0, 300]
+        snippet = body[0, 500]
         article = Article.new
         article.title =  title
         article.body = body
