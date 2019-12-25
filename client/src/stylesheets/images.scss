@@ -165,6 +165,9 @@
 
 .image-show-image {
   height: 25rem;
+  @media (max-width: 1026px) {
+    height: 15rem;
+  }
 }
 
 .image-show-inner {
