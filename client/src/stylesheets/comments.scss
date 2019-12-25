@@ -7,7 +7,10 @@
     border: 1px solid black;
     box-sizing: border-box;
     overflow: hidden;
-    width: 80vh;
+    width: 80vw;
+    @media(max-width: 426) {
+      width: 60vw
+    }
     background: rgba(255, 255, 255, .5);
 }
 
