@@ -7,7 +7,7 @@ module Jwt::TokenProvider
  
   private
   def issue_token(payload)
-    debugger
+    
      raise StandardError.new("payload is nil") unless payload
     # JWT.encode(payload, Rails.application.secrets.secret_key_base)
     JWT.encode(payload, ENV['SECRET_KEY_BASE'])
