@@ -7,9 +7,9 @@
     border: 1px solid black;
     box-sizing: border-box;
     overflow: hidden;
-    width: 80vw;
+    width: 95vw;
     @media(max-width: 426) {
-      width: 60vw
+      width: 70vw
     }
     background: rgba(255, 255, 255, .5);
 }
@@ -26,6 +26,7 @@
   z-index: 400;
   border-radius: 4px;
   margin: .2rem;
+  width: 100%;
 }
 
 .comment-add {
