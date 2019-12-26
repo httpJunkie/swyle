@@ -140,7 +140,7 @@
 .article-show-body {
   display: flex;
   flex-direction: row-reverse;
-  word-wrap: w
+  white-space: pre-line;
 }
 
 .article-show-title {
