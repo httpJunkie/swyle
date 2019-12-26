@@ -157,6 +157,9 @@
   flex-direction: column;
   margin: 1rem;
   position: relative;
+  @media(max-width: 326px) {
+    width: 20rem;
+  }
 }
 
 .article-section > p {
