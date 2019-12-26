@@ -157,8 +157,11 @@
   flex-direction: column;
   margin: 1rem;
   position: relative;
-  @media(max-width: 326px) {
-    width: 20rem;
+  @media(max-width: 325px) {
+    width: 10rem;
+  }
+  @media(max-width: 426px) {
+    width: 15rem;
   }
 }
 
