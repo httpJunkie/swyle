@@ -18,6 +18,10 @@ class ArticleBodyEdit extends Component {
         this.bodyEditHeight = document.getElementById("article-body").offsetHeight;
     }
 
+    /**
+     * Changes a specific value within state depending on which field is being manipulated
+     * @param {*} field 
+     */
     handleFormChange(field) {
         return event =>
           this.setState({
