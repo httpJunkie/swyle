@@ -143,6 +143,7 @@ class ArticleShow extends Component {
                                  <div className="reaction-section">
                                     {
                                         article.reactions.map(reaction => {
+                                            //TODO: Wrap reaction section in its own component, maybe. 
                                             return (
                                                 <div key={`shutuplint${reaction.type}`}>
                                                     <Reaction 

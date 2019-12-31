@@ -1,5 +1,8 @@
 import React from 'react'
-
+/**
+ * Information about the website, the project, the app.
+ * @param {} props 
+ */
 const About = (props) => {
     return (
         <div className={`about-page about-page-${props.colorScheme}`}>

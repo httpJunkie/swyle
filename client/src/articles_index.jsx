@@ -7,6 +7,7 @@ import Subscription from './articles_subscription';
 
 /**
  * Displays all articles, newest first.
+ * Uses a Subscription component that keeps the front-end updated live.
  * 
  * TODO: Create a ArticleCard component
  */
