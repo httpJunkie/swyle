@@ -41,6 +41,9 @@ class ArticleShow extends Component {
         this.setState({confirmationOpen: false})
     }
 
+    /**
+     * Used to open a dialog modal asking the user to confirm whether to delete an article.
+     */
     openModal() {
         $('body').css('overflow', 'hidden');
         this.setState({ confirmationOpen: true })
