@@ -62,18 +62,29 @@ class ArticleShow extends Component {
 
     /**
      * TODO: Find out if removing this one, or the above one, would make the app still work
-     * @param {} field 
+     * @param {*} field 
      */
     finishEdit(field) {
         $('body').css('overflow', 'auto');
         this.setState({ [`editing${field}`]: false })
     }
 
+    /**
+     * Opens a form in place of an article element, e.g. Title, Body
+     * Dynamically sets a slice of state equal to the id of the target of the click event.
+     * @param {*} event 
+     */
     editField(event) {
         event.preventDefault();
         this.setState({ [`editing${event.target.id}`]: true });
     }
 
+    /**
+     * Calls the mutation deleteArticle which, as one might guess, removes the current article from the database
+     * Upon completion, the articles index query is refetched and the user is redirected to the articles index page. 
+     *
+     * @param {*} e 
+     */
     deleteArticle(e) {
         e.preventDefault();
         const id = this.props.match.params.articleID
