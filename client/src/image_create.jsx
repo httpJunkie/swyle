@@ -50,6 +50,10 @@ class ImageCreate extends Component {
         });
     }
 
+    /**
+     * Makes the file name of an image somewhat uniform.
+     * @param {string} filename 
+     */
     formatFilename(filename) {
         const date = moment().format("MMDDYYYY");
         const rando = Math.random()
