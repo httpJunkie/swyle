@@ -129,6 +129,10 @@ class ImageCreate extends Component {
    }
 }
 
+/**
+ * AWS mojo. 
+ * TODO: Write a better comment.
+ */
 const s3Sign = gql`
   mutation($filename: String!, $filetype: String!) {
     signS3(filename: $filename, filetype: $filetype) {
