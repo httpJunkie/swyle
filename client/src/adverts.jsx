@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * A space for commercials where sponsors can roam free.
+ * @param {} props 
+ */
+
 const Adverts = (props) => {
     console.log(props)
     return (
