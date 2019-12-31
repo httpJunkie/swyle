@@ -96,6 +96,11 @@ class ArticleShow extends Component {
         })
     }
 
+    /**
+     * It's the render method.  It renders a Query component with all of our relevant data inside of it.
+     * The Subscription element at the bottom of the component allows the article to automatically update when it is changed, reacted to, or commented on
+     * TODO: would love to change this into a functional component with React Hooks.
+     */
     render() {
        const argument = parseInt(this.props.match.params.articleID)
        const colorScheme = this.props.colorScheme || "standard"
