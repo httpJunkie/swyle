@@ -6,7 +6,6 @@ import React, {Component} from 'react';
 import {Mutation} from 'react-apollo';
 import updateArticleBody from './mutations/update_article_body'
 import article from './queries/article';
-// import "react-quill/dist/quill.snow.css";
 
 class ArticleBodyEdit extends Component {
     constructor(props) {

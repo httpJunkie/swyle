@@ -33,7 +33,9 @@ class ArticleShow extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
     }
-
+    /**
+     * Closes the confirmation modal, used for article deletion
+     */
     closeModal(){
         $('body').css('overflow', 'auto');
         this.setState({confirmationOpen: false})
