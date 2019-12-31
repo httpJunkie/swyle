@@ -34,6 +34,7 @@ class ArticleShow extends Component {
         this.openModal = this.openModal.bind(this);
     }
     /**
+     * Params: None
      * Closes the confirmation modal, used for article deletion
      */
     closeModal(){
@@ -42,6 +43,7 @@ class ArticleShow extends Component {
     }
 
     /**
+     * Params: None
      * Used to open a dialog modal asking the user to confirm whether to delete an article.
      */
     openModal() {
@@ -49,11 +51,19 @@ class ArticleShow extends Component {
         this.setState({ confirmationOpen: true })
     }
 
+    /**
+     * Returns a field (body or title) to its read-only state.
+     * @param {*} event 
+     */
     cancelEdit(event) {
         $('body').css('overflow', 'auto');
         this.setState({ [`editing${event.target.name}`]: false })
     }
 
+    /**
+     * TODO: Find out if removing this one, or the above one, would make the app still work
+     * @param {} field 
+     */
     finishEdit(field) {
         $('body').css('overflow', 'auto');
         this.setState({ [`editing${field}`]: false })
