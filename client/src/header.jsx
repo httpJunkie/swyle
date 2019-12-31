@@ -29,6 +29,10 @@ class Header extends Component {
         }
     }
 
+    /**
+     * Logs the user out, then resets the store.
+     * TODO: Figure out what is causing the invariant violation.
+     */
     logout () {
         this.props.mutate({ 
             refetchQueries: [{ query: currentUser }],
