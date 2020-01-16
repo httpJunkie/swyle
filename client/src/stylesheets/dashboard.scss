@@ -35,7 +35,7 @@
 }
 
 .option-selected {
-  border: 3px solid black;
+  border-radius: 4px;
   padding: .2rem;
   text-align: center;
   font-weight: bold;
@@ -45,7 +45,7 @@
 }
 
 .option-unselected {
-  border:3px solid white;
+  border-radius: 4px;
   padding: .2rem;
   text-align: center;
    &:hover{
