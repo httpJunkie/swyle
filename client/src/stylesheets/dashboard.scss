@@ -36,6 +36,7 @@
 
 .option-selected {
   border-radius: 4px;
+  background: transparent;
   padding: .2rem;
   text-align: center;
   font-weight: bold;
@@ -46,6 +47,7 @@
 
 .option-unselected {
   border-radius: 4px;
+  background: white;
   padding: .2rem;
   text-align: center;
    &:hover{
