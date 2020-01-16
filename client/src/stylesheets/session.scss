@@ -27,6 +27,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 426px) {
+    position: absolute;
+    z-index: 9000;
+  }
 }
 
 .session-form > h1 {
