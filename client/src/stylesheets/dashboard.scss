@@ -54,6 +54,8 @@
   margin: .2rem;
    &:hover{
     cursor: pointer;
+    color: white;
+    transition: all .2s;
   }
 }
 
