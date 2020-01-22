@@ -87,14 +87,20 @@ class Register extends Component {
                                                         })
                                                 }} className="session-form">
                                                     <h1>Sign Up</h1>
+                                                    <span className="session-form-label">Email</span>
                                                     <input className="auth-field" type="text" value={this.state.email}
-                                                        onChange={this.handleFormChange('email')} placeholder="Email" />
+                                                        onChange={this.handleFormChange('email')} placeholder="example@example.com" />
+                                                    <span className="session-form-label">Username</span>
+
                                                     <input className="auth-field" type="text" value={this.state.username}
-                                                        onChange={this.handleFormChange('username')} placeholder="username" />
+                                                        onChange={this.handleFormChange('username')} placeholder="YourNameHere" />
+                                                   
+                                                    <span className="session-form-label">Password</span>
                                                     <input className="auth-field" type="password" value={this.state.password}
-                                                        onChange={this.handleFormChange('password')} placeholder="Password" />
-                                                    <input className="auth-field" type="password" value={this.state.passwordConfirm}
-                                                        onChange={this.handleFormChange('passwordConfirm')} placeholder="Confirm Password" />
+                                                        onChange={this.handleFormChange('password')} />
+                                                    <span className="session-form-label">Confirm Password</span>
+                                                    <input className="auth-field" type="password" value={this.state.passwordConfirm} 
+                                                        onChange={this.handleFormChange('passwordConfirm')}  />
                                                     <div className="form-footer">
                                                         <input className="submit" type="submit" />
                                                     </div>
