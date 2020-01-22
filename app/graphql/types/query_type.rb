@@ -100,7 +100,7 @@ module Types
       queries = args[:search_query].gsub("?q=", '').split(' ')
       posts = []
       queries.each do |query|
-        posts += Article.where("body like ?", "%#{query}%").or(Article.where("title like ?", "%#{query}%"))
+        posts += Article.where("lower(body) like ?", "%#{query.downcase}%").or(Article.where("lower(title) like ?", "%#{query.downcase}%"))
         posts += ImagePost.where("description like ?", "%#{query}%").or(ImagePost.where("title like ?", "%#{query}%"))
       end
       posts.uniq.sort_by { |k| k[:created_at] }
