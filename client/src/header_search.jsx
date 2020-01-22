@@ -21,7 +21,12 @@ const HeaderSearch = (props) => {
     const colorScheme = props.colorScheme;
     return (
         <form className="header-search" onSubmit={handleSubmit}>
-            <input className={`header-search-bar header-search-bar-${colorScheme}`} type="text" value={query} onChange={handleInputChange}>
+            <input className={`header-search-bar header-search-bar-${colorScheme}`} 
+                    type="text" 
+                    value={query} 
+                    onChange={handleInputChange}
+                    placeholder="Search Swyle!"
+                    >
             </input>
             <button type="submit" className="header-search-submit"> <FaSearch /></button>
         </form>

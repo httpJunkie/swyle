@@ -17,6 +17,11 @@
 @import '/search';
 @import '/trending';
 
+::placeholder{
+  color: white;
+  opacity: .6;
+}
+
 body {
    background: #001935;
   //  &-red{
