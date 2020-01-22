@@ -120,8 +120,15 @@
   color: gray;
 }
 
+.please-login-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .please-login-message {
   padding: .5rem;
+  margin: 1rem;
 }
 
 .please-login-button {
