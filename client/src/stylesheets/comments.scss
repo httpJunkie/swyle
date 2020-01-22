@@ -119,3 +119,25 @@
   font-style: italic;
   color: gray;
 }
+
+.please-login-message {
+  padding: .5rem;
+}
+
+.please-login-button {
+  text-decoration: none;
+    color: navy;
+    background: white;
+    padding: .5rem;
+    border-radius: 4px;
+    margin: .1rem;
+  &-visited {
+    color: navy;
+  }
+
+  &.inverse{
+    background: navy;
+    color: white;
+    border: 2px solid white;
+  }
+}
