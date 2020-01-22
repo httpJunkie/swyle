@@ -69,7 +69,7 @@ class CommentSection extends Component {
 
                                 </Mutation>
                                 :
-                                <span>Please <Link to="/login">Log In</Link> or <Link to="register">Sign Up</Link> to post comments</span>
+                    <span className="please-login-message">Please <Link className="please-login-button" to="/login">Log In</Link> or <Link className="please-login-button" to="register">Sign Up</Link> to post comments</span>
                             }
                             <h4 style={{ "marginLeft": "1rem" }}>Latest Comments</h4>
                             {comments.map(
