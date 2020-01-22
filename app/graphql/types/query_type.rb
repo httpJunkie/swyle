@@ -101,9 +101,7 @@ module Types
       posts = []
       queries.each do |query|
         posts += Article.where("body like ?", "%#{query}%").or(Article.where("title like ?", "%#{query}%"))
-        # posts += Article.where("title like ?", "%#{query}%")
-        posts += ImagePost.where("description like ?", "%#{query}%") 
-        posts += ImagePost.where("title like ?", "%#{query}%")
+        posts += ImagePost.where("description like ?", "%#{query}%").or(ImagePost.where("title like ?", "%#{query}%"))
       end
       posts.uniq.sort_by { |k| k[:created_at] }
     end
