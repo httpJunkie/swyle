@@ -15,6 +15,11 @@
  &-green {
     background: #07460b;
   }
+  &-bonetrousle{
+    background: black;
+    border: 3px solid white;
+    font-family: 'Undertale';
+  }
 }
 
 .article-create-form {
@@ -76,6 +81,11 @@
  &-green {
     background: #07460b;
   }
+  &-bonetrousle{
+    background: black;
+    border: 3px solid white;
+  }
+  
 }
 
 .article-index-page > h1 {
@@ -138,6 +148,10 @@
   }
  &-green {
     background: #07460b;
+  }
+  &-bonetrousle{
+    background: black;
+    border: 3px solid white;
   }
 }
 

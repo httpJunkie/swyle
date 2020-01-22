@@ -17,6 +17,15 @@
 @import '/search';
 @import '/trending';
 
+@font-face { /* Undertale */
+    font-family: 'Undertale';
+    src: url('http://vignette2.wikia.nocookie.net/heliosanctus/images/c/c0/Determination.eot');
+    src: url('http://vignette2.wikia.nocookie.net/heliosanctus/images/c/c0/Determination.eot?#iefix') format('embedded-opentype'),
+         url('http://vignette3.wikia.nocookie.net/heliosanctus/images/a/aa/Determination.woff2') format('woff2'),
+         url('http://vignette3.wikia.nocookie.net/heliosanctus/images/3/37/Determination.woff') format('woff'),
+         url('http://vignette2.wikia.nocookie.net/heliosanctus/images/c/cd/Determination.ttf') format('truetype'),
+         url('http://vignette3.wikia.nocookie.net/heliosanctus/images/7/7f/Determination.svg#Undertale') format('svg');}
+
 ::placeholder{
   color: white;
   opacity: .6;

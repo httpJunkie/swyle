@@ -33,7 +33,9 @@ class UserDash extends Component {
       if (!this.state.currentUser) {
           return (<Redirect to="/login"/>)
       } else {
-          const tabs = {"posts": <UserPosts userId = { this.state.currentUser.id } />, "comments": <UserComments userId={this.state.currentUser.id} />}
+          const colorScheme = this.state.currentUser.colorScheme || "";
+          const tabs = {"posts": <UserPosts userId = { this.state.currentUser.id } colorScheme={colorScheme}/>, 
+                        "comments": <UserComments userId={this.state.currentUser.id} colorScheme={colorScheme}/>}
           return (
               <div className={`user-dashboard user-dashboard-${this.state.currentUser.colorScheme}`}>
                   <div className="user-profile">
