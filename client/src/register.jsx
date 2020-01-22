@@ -89,11 +89,11 @@ class Register extends Component {
                                                     <h1>Sign Up</h1>
                                                     <span className="session-form-label">Email</span>
                                                     <input className="auth-field" type="text" value={this.state.email}
-                                                        onChange={this.handleFormChange('email')} placeholder="example@example.com" />
+                                                        onChange={this.handleFormChange('email')}  />
                                                     <span className="session-form-label">Username</span>
 
                                                     <input className="auth-field" type="text" value={this.state.username}
-                                                        onChange={this.handleFormChange('username')} placeholder="YourNameHere" />
+                                                        onChange={this.handleFormChange('username')}  />
                                                    
                                                     <span className="session-form-label">Password</span>
                                                     <input className="auth-field" type="password" value={this.state.password}

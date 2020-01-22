@@ -80,4 +80,20 @@ body {
   background:#659bb1;
 }
 
+.demo-login {
+  border-radius: 5px;
+  border: none;
+  color: #00b8ff;
+  background: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding: .6rem;
+  margin: .2rem;
+  width: fit-content;
+  &:hover{
+      color:#659bb1;
+      cursor: pointer;
+  }
+}
+
 

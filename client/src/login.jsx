@@ -24,7 +24,22 @@ class Login extends Component {
         // This format is far, far easier to debug than using the arrow methods.
         this.handleFormChange = this.handleFormChange.bind(this);
         this.clearErrors = this.clearErrors.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
+
+     demoLogin(event) {
+        event.preventDefault();
+            const login = "demo@demo.com";
+            const password = "demodemo";
+            const emailField = document.getElementById("email-field");
+            const passwordField = document.getElementById("password-field");
+            emailField.value = login;
+            passwordField.value = password;
+        //  this.setState({ email: "demo@demo.com", password: "demodemo" });
+        const submit = document.getElementById("form-submit");
+    }
+
+
 
     clearErrors() {
         this.setState({ errors: null })
@@ -87,12 +102,15 @@ class Login extends Component {
                                                     })
                                     }} className="session-form">
                                         <h1>Log In</h1>
-                                        <input className="auth-field" type="text" value={this.state.email} 
+                                        <span className="session-form-label">Email</span>
+                                        <input id="email-field" className="auth-field" type="text" value={this.state.email} 
                                             onChange={this.handleFormChange('email')} placeholder="Email" />
-                                        <input className="auth-field" type="password" value={this.state.password} 
+                                        <span className="session-form-label">Password</span>
+                                        <input id="password-field" className="auth-field" type="password" value={this.state.password} 
                                             onChange={this.handleFormChange('password')} placeholder="Password" />
                                         <div className="form-footer">
-                                            <input className="submit" type="submit" />
+                                            <input id="form-submit" className="submit" type="submit" />
+                                            <button className="demo-login" onClick={this.demoLogin}>DEMO!</button>
                                         </div>
                                     </form>
                                     { this.state.errors && <ErrorsModal errors={this.state.errors} clearErrors={this.clearErrors} /> }
