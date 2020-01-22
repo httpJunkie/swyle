@@ -100,8 +100,8 @@ module Types
       queries = args[:search_query].gsub("?q=", '').split(' ')
       posts = []
       queries.each do |query|
-        posts += Article.where("body like ?", "%#{query}%") 
-        posts += Article.where("title like ?", "%#{query}%")
+        posts += Article.where("body like ?", "%#{query}%").or(Article.where("title like ?", "%#{query}%"))
+        # posts += Article.where("title like ?", "%#{query}%")
         posts += ImagePost.where("description like ?", "%#{query}%") 
         posts += ImagePost.where("title like ?", "%#{query}%")
       end
