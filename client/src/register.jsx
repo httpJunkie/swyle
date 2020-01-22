@@ -75,7 +75,6 @@ class Register extends Component {
                                                             password: this.state.password,
                                                         }
                                                     }).then(res => {
-                                                        console.log("Register Result:", res)
                                                         const token = res.data.createUser.token
                                                         if (token) {
                                                             localStorage.setItem("mlToken", token)

@@ -55,3 +55,11 @@
 .session-form > input:focus {
   outline: none;
 }
+
+
+.session-form-label {
+  color: white;
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+}
