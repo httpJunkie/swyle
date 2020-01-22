@@ -11,7 +11,7 @@ import { Query } from 'react-apollo';
 
 const UserPosts = (props) => {
 return (
-    <div className="user-posts">
+    <div className={`user-posts user-posts-${props.colorScheme}`}>
         <Query query={postsByUser} variables={{ userId: props.userId }}>
             {({ loading, error, data }) => {
                 if (loading) return <p>Loading...</p>;
@@ -20,7 +20,7 @@ return (
                     <div>
                         {data.postsByUser.map(post => {
                             return (
-                                <div className="user-posts-card" key={`${post.title}${post.id}`}>
+                                <div className={`user-posts-card user-posts-card-${props.colorScheme}`} key={`${post.title}${post.id}`}>
                                     <h3 >{post.title}</h3>
                                     {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={post.image.title} /> </div>}
                                     {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}

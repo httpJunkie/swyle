@@ -5,7 +5,7 @@ import { Query } from 'react-apollo';
 
 const UserComments = (props) => {
     return (
-        <div className="user-comments">
+        <div className={`user-comments user-comments-${props.colorScheme}`}>
             <Query query={commentsByUser} variables={{ userId: props.userId }}>
                 {({ loading, error, data }) => {
                     if (loading) return <p>Loading...</p>;
@@ -14,9 +14,9 @@ const UserComments = (props) => {
                         <div>
                             {data.commentsByUser.map(comment => {
                                 return (
-                                    <div className="user-comments-card" key={`${comment.id}`}>
+                                    <div className={`user-comments-card user-comments-card-${props.colorScheme}`} key={`${comment.id}`}>
                                         <h4>You commented:</h4>
-                                        <p className="user-comments-card-body">"{comment.body}"</p>
+                                        <p className={`user-comments-card-body user-comments-card-body-${props.colorScheme}`}>{comment.body}"</p>
                                         <h5> <span>
                                             On <span>{comment.post.title}</span> by <span>{comment.post.author.username}</span>
                                             <span> at {comment.createdAt}</span>

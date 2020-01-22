@@ -16,7 +16,7 @@ const UserOptions  = (props) => {
     }
     return (
         <div className={`user-options user-options-${colorScheme}`}>
-            <div className={`user-option user-options-${colorScheme}`}>
+            <div className={`user-option user-option-${colorScheme}`}>
                 <h4>Color Scheme</h4>
                 <div onClick={handleClick} name="standard" className={colorScheme === "standard" ? "option option-selected" : "option option-unselected"}>Classic</div>
                 <div onClick={handleClick} name="red" className={colorScheme === "red" ? "option option-selected" : "option option-unselected"}>Radical Red</div>

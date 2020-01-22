@@ -132,8 +132,6 @@
   flex-direction: column;
   align-items: center;
    &-bonetrousle{
-    background: black;
-    border: 3px solid white;
     font-family: 'Undertale';
     color: white;
   }
@@ -147,8 +145,6 @@
   flex-direction: column;
   align-items: center;
    &-bonetrousle{
-    background: black;
-    border: 3px solid white;
     font-family: 'Undertale';
     color: white;
   }
@@ -214,9 +210,8 @@
   justify-content: center;
   margin-left: 1rem;
   margin-bottom: -2rem;
-   &-bonetrousle{
-    background: black;
-    border: 3px solid white;
+  &-bonetrousle{
+     margin-bottom: -1.7rem;
     font-family: 'Undertale';
     color: white;
   }
@@ -227,12 +222,14 @@
  background: white; 
  padding: 1rem;
  border-radius: 4px;
+   z-index: 10;
    &:hover{
     cursor: pointer;
   }
-   &-bonetrousle{
+   &.bonetrousle{
     background: black;
     border: 3px solid white;
+    border-bottom: none;
     font-family: 'Undertale';
     color: white;
   }
@@ -243,13 +240,13 @@
   padding: 1rem;
   border-radius: 4px;
   position: relative;
-  z-index: 10;
-    &:hover{
+  &:hover{
     cursor: pointer;
   }
-   &-bonetrousle{
+   &.bonetrousle{
     background: black;
     border: 3px solid white;
+    border-bottom: 3px solid white;
     font-family: 'Undertale';
     color: white;
   }

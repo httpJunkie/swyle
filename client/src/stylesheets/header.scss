@@ -16,6 +16,11 @@
   &-green {
     background: rgb(11, 150, 11);
   }
+  &-bonetrousle{
+    background: black;
+    border: 3px solid white;
+    font-family: 'Undertale';
+  }
 }
 
 .header-top {
@@ -40,6 +45,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100px;
+ 
 }
 
 .header-search {
@@ -58,6 +64,11 @@
   }
   &-green {
     background: rgb(11, 200, 11);
+  }
+  &-bonetrousle{
+    background: black;
+    border: 3px solid white;
+    font-family: 'Undertale';
   }
 }
 
