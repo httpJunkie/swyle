@@ -25,9 +25,9 @@ const HeaderSearch = (props) => {
                     type="text" 
                     value={query} 
                     onChange={handleInputChange}
-                    placeholder="Search Swyle!"
                     >
             </input>
+            <span className="header-search-label">Search Swyle</span>
             <button type="submit" className="header-search-submit"> <FaSearch /></button>
         </form>
     )
