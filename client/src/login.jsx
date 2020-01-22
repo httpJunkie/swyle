@@ -29,14 +29,16 @@ class Login extends Component {
 
      demoLogin(event) {
         event.preventDefault();
-            const login = "demo@demo.com";
-            const password = "demodemo";
-            const emailField = document.getElementById("email-field");
-            const passwordField = document.getElementById("password-field");
-            emailField.value = login;
-            passwordField.value = password;
-        //  this.setState({ email: "demo@demo.com", password: "demodemo" });
-        const submit = document.getElementById("form-submit");
+            // const login = "demo@demo.com";
+            // const password = "demodemo";
+            // const emailField = document.getElementById("email-field");
+            // const passwordField = document.getElementById("password-field");
+            // emailField.value = login;
+            // passwordField.value = password;
+        this.setState({ email: "demo@demo.com", password: "demodemo" }, () => {
+           const submit = document.getElementById("form-submit");
+           submit.click();
+        });
     }
 
 
