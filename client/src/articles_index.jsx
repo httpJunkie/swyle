@@ -29,11 +29,12 @@ const ArticlesIndex = (props) => {
                                 <div className="article-index-card" key={`${article.id}${article.title}${date}`}>
                                   <Link className="article-index-show-link" to={`/articles/${article.id}`}>        
                                      <h2 className="article-index-title">{article.title}</h2>
+                                     <h3 className="article-index-subtitle">by {article.author.username}</h3>
+                                     <p className="article-index-snippet">{article.snippet}{"..."}</p>
+                                     <ArticleTags tags={["lookAtThisTag", "othertag"]} />
+                                     <h4>{article.count} Commented {article.likeCount} Liked</h4>
                                   </Link>
-                                    <h3 className="article-index-subtitle">by {article.author.username}</h3>
-                                    <p className="article-index-snippet">{article.snippet}{"..."}</p>
-                                    <ArticleTags tags={["lookAtThisTag", "othertag"]} />
-                                    <h4>{article.count} Commented {article.likeCount} Liked</h4>
+                                 
                              
                                 </div>
                               
