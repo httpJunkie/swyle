@@ -11,7 +11,7 @@ const NavBar = props => {
         <div className={`nav-bar nav-bar-${props.colorScheme}`}>
             <Link className={`nav-bar-link${currentPanel === "/" ? "-active" : ''}`} to="/">Text</Link>
             <Link className={`nav-bar-link${currentPanel === "/images" ? "-active" : ''}`} to="/images">Images</Link>
-            <Link className={`nav-bar-link${currentPanel === "/trending" ? "-active" : ''}`} to="/trending">Swyl'd 'n Crazy</Link>
+            <Link className={`nav-bar-link${currentPanel === "/trending" ? "-active" : ''}`} to="/trending">Popular</Link>
             <Link className={`nav-bar-link${currentPanel === "/about" ? "-active" : ''}`} to="/about">About</Link>
             <Link className={`nav-bar-link${currentPanel === "/dashboard" ? "-active" : ''}`} to="/dashboard">Dashboard</Link>
         </div>
