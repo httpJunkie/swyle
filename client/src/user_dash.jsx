@@ -42,7 +42,7 @@ class UserDash extends Component {
                         <h3 className="user-dashboard-title">{this.state.currentUser.username}'s Dashboard</h3>
                         <UserOptions colorScheme={this.state.currentUser.colorScheme} userId={this.state.currentUser.id}/>
                   </div>
-                  <h2 className="user-recent-message">Your Recent Activity</h2>
+                  <h2 className={`user-recent-message user-recent-message-${colorScheme}`}>Your Recent Activity</h2>
 
                 <div>
 
