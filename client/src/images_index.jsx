@@ -28,7 +28,7 @@ class ImagesIndex extends Component {
                             <div className="image-index-spread">
                             {data.images.map(image =>
                                   {return (
-                                      <div className="image-index-card" 
+                                      <div className={`image-index-card ${this.props.colorScheme}`} 
                                       key={`${image.title}${image.author.username}`}>
                                           <Link to={`/images/${image.id}`}>
                                            <img className="image-index-thumb"src={image.image} alt={image.title} />
