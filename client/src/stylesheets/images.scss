@@ -100,6 +100,11 @@
   &-green {
     background: #07460b;
   }
+
+  &-bonetrousle {
+    background: black;
+    font-family: 'Undertale';
+  }
 }
 
 .image-index-spread {
@@ -126,6 +131,12 @@
       background: rgba(255, 255, 255, 0.911);
       font-weight: bold;
       transition: all .1s;
+    }
+    &.bonetrousle {
+      background: black;
+      color: white;
+      font-family: 'Undertale';
+      border: 3px solid white;
     }
 }
 
