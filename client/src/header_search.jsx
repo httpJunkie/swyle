@@ -24,10 +24,10 @@ const HeaderSearch = (props) => {
             <input className={`header-search-bar header-search-bar-${colorScheme}`} 
                     type="text" 
                     value={query} 
+                    placeholder="Search Swyle"
                     onChange={handleInputChange}
                     >
             </input>
-            <span className="header-search-label">Search Swyle</span>
             <button type="submit" className="header-search-submit"> <FaSearch /></button>
         </form>
     )
