@@ -66,7 +66,7 @@ class Header extends Component {
                     :
                     <div className="header-personal-greeting">
                         <h3>Hello, {this.state.currentUser.username || "nobody"} </h3>
-                        <button className="header-login" onClick={this.logout}>Logout</button>
+                        <button className={`header-login ${colorScheme}`} onClick={this.logout}>Logout</button>
                     </div>
                     }
                     <div className="new-post-buttons">

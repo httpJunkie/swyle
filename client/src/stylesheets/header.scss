@@ -115,17 +115,32 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  &.bonetrousle {
+    background: black;
+    border: 3px solid white;
+    font-family: "Undertale";
+    color: white;
+    border-radius: none;
+  }
 }
 
 .header-login:visited {
     color: rgb(10, 4, 88);
     text-decoration: none;
+    &.bonetrousle {
+      color: white;
+    }
 }
 
 .header-login:hover {
   background: lightgray;
   color: rgb(23, 12, 175);
   transition: all .1s;
+  &.bonetrousle{
+    background: white;
+    color: black;
+    cursor: pointer;
+  }
 }
 
 .header-register:hover {
