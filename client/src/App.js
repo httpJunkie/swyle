@@ -50,7 +50,6 @@ class App extends Component {
                <Switch>
                   <Route exact path="/" render={(props) => <ArticlesIndex colorScheme={colorScheme} {...props}/> } />
                   <Route exact path={"/articles/new"} component={ArticleCreate} />
-                  {/* <Route exact path={"/articles/:articleID"} component={ArticleShow}/> */}
                   <Route exact path={"/articles/:articleID"} render={(props) => <ArticleShow colorScheme={colorScheme} {...props}/>} />
 
                   <Route exact path="/images/new" render={(props) => <ImageCreate colorScheme={colorScheme} {...props}/>} />
