@@ -51,7 +51,7 @@ class Trending extends Component {
         
         return (  
             <div className={`trending-posts-page trending-posts-page-${this.props.colorScheme}`}>
-            <h1 className="trending-posts-title">Most Popular Posts</h1>
+            <h1 className={`trending-posts-title trending-posts-title-${this.props.colorScheme}`}>Most Popular Posts</h1>
           
             <div className="trending-posts-backpane">
                   <div className="trending-posts-nav">
