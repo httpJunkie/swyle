@@ -53,7 +53,7 @@ class Trending extends Component {
             <div className={`trending-posts-page trending-posts-page-${this.props.colorScheme}`}>
             <h1 className={`trending-posts-title trending-posts-title-${this.props.colorScheme}`}>Most Popular Posts</h1>
           
-            <div className="trending-posts-backpane">
+                <div className={`trending-posts-backpane ${colorScheme}`}>
                   <div className="trending-posts-nav">
                 <div className={`trending-posts-tab${this.state.activePane === 'likes' ? `-active ${colorScheme}` : `-inactive ${colorScheme}`}`} 
                 name="likes"

@@ -80,9 +80,8 @@
   @media (max-width: 426px) {
     width: 21rem;
   }
-   &-bonetrousle {
+   &.bonetrousle {
     background: black;
-    border: 3px solid white;
   }
 }
 
@@ -91,6 +90,10 @@
   width: 49rem;
   @media (max-width: 426px) {
     width: 20rem;
+  }
+  &.bonetrousle {
+    background: black;
+    border: 3px solid white;
   }
 }
 
