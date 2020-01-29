@@ -47,6 +47,7 @@ class Trending extends Component {
         }
         const attribute = this.state.activePane === 'comments' ? 'count' : 'likeCount'
         const posts = this.sortPosts(attribute);
+        const colorScheme = this.props.colorScheme;
         
         return (  
             <div className={`trending-posts-page trending-posts-page-${this.props.colorScheme}`}>
