@@ -20,9 +20,9 @@
   justify-content: flex-start;
   margin-left: 1rem;
   margin-bottom: -1rem;
-   &-bonetrousle {
+   &.bonetrousle {
     background: black;
-    margin-bottom: -1.7rem;
+    // margin-bottom: .1rem;
     font-family: 'Undertale';
     color: white;
   }
@@ -88,12 +88,16 @@
 .trending-posts-content {
   background: white;
   width: 49rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   @media (max-width: 426px) {
     width: 20rem;
   }
   &.bonetrousle {
     background: black;
     border: 3px solid white;
+    margin-top: .8rem;
   }
 }
 

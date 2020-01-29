@@ -54,7 +54,7 @@ class Trending extends Component {
             <h1 className={`trending-posts-title trending-posts-title-${this.props.colorScheme}`}>Most Popular Posts</h1>
           
                 <div className={`trending-posts-backpane ${colorScheme}`}>
-                  <div className="trending-posts-nav">
+                  <div className={`trending-posts-nav ${colorScheme}`}>
                 <div className={`trending-posts-tab${this.state.activePane === 'likes' ? `-active ${colorScheme}` : `-inactive ${colorScheme}`}`} 
                 name="likes"
                 onClick={this.selectPane}
@@ -74,7 +74,7 @@ class Trending extends Component {
                             post => {
                                 const url = parseUrl(post.__typename)
                                 return (
-                                    <div className="user-posts-card" key={`${post.title}${post.id}`}>
+                                    <div className={`user-posts-card user-posts-card-${colorScheme}`} key={`${post.title}${post.id}`}>
                                         <h3 ><Link to={`${url}/${post.id}`}>{post.title}</Link></h3>
                                         {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={post.image.title} /> </div>}
                                         {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
