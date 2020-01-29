@@ -20,6 +20,9 @@
   justify-content: flex-start;
   margin-left: 1rem;
   margin-bottom: -1rem;
+   &-bonetrousle {
+    background: black;
+  }
 
 }
 
@@ -27,6 +30,9 @@
  background: white; 
  padding: 1rem;
  border-radius: 4px;
+  &-bonetrousle {
+    background: black;
+  }
 }
 
 .trending-posts-tab-inactive {
@@ -35,6 +41,9 @@
   border-radius: 4px;
   position: relative;
   z-index: 10;
+   &-bonetrousle {
+    background: black;
+  }
 }
 
 .trending-posts-tab-inactive:hover {
@@ -53,6 +62,10 @@
   position: relative;
   @media (max-width: 426px) {
     width: 21rem;
+  }
+   &-bonetrousle {
+    background: black;
+    border: 3px solid white;
   }
 }
 
