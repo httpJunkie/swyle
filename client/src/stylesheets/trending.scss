@@ -22,6 +22,9 @@
   margin-bottom: -1rem;
    &-bonetrousle {
     background: black;
+    margin-bottom: -1.7rem;
+    font-family: 'Undertale';
+    color: white;
   }
 
 }
@@ -30,8 +33,15 @@
  background: white; 
  padding: 1rem;
  border-radius: 4px;
-  &-bonetrousle {
+  &:hover{
+    cursor: pointer;
+  }
+  &.bonetrousle{
     background: black;
+    border: 3px solid white;
+    border-bottom: none;
+    font-family: 'Undertale';
+    color: white;
   }
 }
 
@@ -41,8 +51,15 @@
   border-radius: 4px;
   position: relative;
   z-index: 10;
-   &-bonetrousle {
+   &:hover{
+    cursor: pointer;
+  }
+  &.bonetrousle{
     background: black;
+    border: 3px solid white;
+    border-bottom: 3px solid white;
+    font-family: 'Undertale';
+    color: white;
   }
 }
 
