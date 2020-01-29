@@ -2,6 +2,8 @@
 
 Swyle is the newest contender in the blog posting world.  
 
+[Live Demo](https://afternoon-eyrie-69554.herokuapp.com/)
+
 # Features
 
 ## Image Post
