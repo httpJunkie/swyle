@@ -60,7 +60,7 @@ class App extends Component {
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
 
-                  <Route exact path="/dashboard" render={(props) => <UserDash currentUser={data.currentUser} {...props}/>} />
+                  <Route exact path="/dashboard" render={(props) => <UserDash currentUser={data.currentUser} colorScheme={colorScheme} {...props}/>} />
 
                   <Route exact path="/trending" render={(props) => <Trending colorScheme={colorScheme} {...props}/>} />
                   <Route exact path="/headertest" component={testArea}/>
