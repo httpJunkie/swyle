@@ -55,20 +55,20 @@ class Trending extends Component {
           
             <div className="trending-posts-backpane">
                   <div className="trending-posts-nav">
-                <div className={`trending-posts-tab${this.state.activePane === 'likes' ? '-active' : '-inactive'}`} 
+                <div className={`trending-posts-tab${this.state.activePane === 'likes' ? `-active ${colorScheme}` : `-inactive ${colorScheme}`}`} 
                 name="likes"
                 onClick={this.selectPane}
                 >
                     By Likes
                 </div>
-                    <div className={`trending-posts-tab${this.state.activePane === 'comments' ? '-active' : '-inactive'}`} 
+                        <div className={`trending-posts-tab${this.state.activePane === 'comments' ? `-active ${colorScheme}` : `-inactive ${colorScheme}` }`} 
                     name="comments"
                     onClick={this.selectPane}
                     >
                     By Comments
                 </div>
             </div>
-                <div className="trending-posts-content">
+                <div className={`trending-posts-content ${colorScheme}`}>
                 {
                         posts.map(
                             post => {
