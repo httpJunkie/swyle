@@ -21,7 +21,7 @@ const UserOptions  = (props) => {
                 <div onClick={handleClick} name="standard" className={colorScheme === "standard" ? "option option-selected" : "option option-unselected"}>Classic</div>
                 <div onClick={handleClick} name="red" className={colorScheme === "red" ? "option option-selected" : "option option-unselected"}>Radical Red</div>
                 <div onClick={handleClick} name="green" className={colorScheme === "green" ? "option option-selected" : "option option-unselected"}>Groovy Green</div>
-                <div onClick={handleClick} name="bonetrousle" className={colorScheme === "bonetrousle" ? "option option-selected option-selected-bonetrousle" : "option option-unselected"}>Bonetrousle</div>
+                <div onClick={handleClick} name="bonetrousle" className={colorScheme === "bonetrousle" ? "option option-selected option-selected-bonetrousle" : "option option-unselected"}>Deep Dark</div>
             </div>
 
         </div>
