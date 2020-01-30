@@ -1,7 +1,7 @@
 import React from 'react';
 import postsByUser from './queries/posts_by_user';
 import { Query } from 'react-apollo';
-
+import PostCard from './post_card';
 
 
 /**
