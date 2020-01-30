@@ -1,0 +1,10 @@
+.post-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 3px;
+  width: 30rem;
+  margin: .5rem;
+    @media (max-width: 426px) {
+    width: 16rem;
+  }
+}
