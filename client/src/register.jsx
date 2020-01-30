@@ -14,10 +14,10 @@ class Register extends Component {
     constructor(props) {
         super(props) 
             this.state = {
-                username: null,
-                email: null,
-                password: null,
-                passwordConfirm: null
+                username: "",
+                email: "",
+                password: "",
+                passwordConfirm: ""
             }
         this.handleFormChange = this.handleFormChange.bind(this);
         this.clearErrors = this.clearErrors.bind(this);
@@ -102,7 +102,7 @@ class Register extends Component {
                                                     <input className="auth-field" type="password" value={this.state.passwordConfirm} 
                                                         onChange={this.handleFormChange('passwordConfirm')}  />
                                                     <div className="form-footer">
-                                                        <input className="submit" type="submit" />
+                                                        <input className="submit" type="submit" name="Register"/>
                                                     </div>
                                                 </form>
                                                 {this.state.errors && <ErrorsModal errors={this.state.errors} clearErrors={this.clearErrors} />}
