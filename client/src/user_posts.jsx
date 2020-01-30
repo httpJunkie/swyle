@@ -20,11 +20,7 @@ return (
                     <div>
                         {data.postsByUser.map(post => {
                             return (
-                                <div className={`user-posts-card user-posts-card-${props.colorScheme}`} key={`${post.title}${post.id}`}>
-                                    <h3 >{post.title}</h3>
-                                    {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={post.image.title} /> </div>}
-                                    {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
-                                </div>
+                             <PostCard post={post} colorScheme={props.colorScheme} />
                             )
                         })}
                     </div>
@@ -37,3 +33,11 @@ return (
 }
 
 export default UserPosts;
+
+/**
+ *    <div className={`user-posts-card user-posts-card-${props.colorScheme}`} key={`${post.title}${post.id}`}>
+                                    <h3 >{post.title}</h3>
+                                    {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={post.image.title} /> </div>}
+                                    {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
+                                </div>
+ */
