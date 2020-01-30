@@ -14,3 +14,18 @@
     color: white;
   }
 }
+
+.post-thumbnail-container {
+  width: 30rem;
+  @media (max-width: 426px) {
+    width: 16rem;
+  }
+   &-bonetrousle{
+    background: black;
+    border: 3px solid white;
+  }
+}
+
+.post-thumbnail-container > img{
+  width: 100%;
+}
