@@ -4,6 +4,7 @@ import {graphql} from 'react-apollo';
 import query from './queries/posts_by_popularity';
 import { parseUrl} from './helpers';
 import {Link} from 'react-router-dom';
+import PostCard from './post_card';
 
 /**
  * The trending page allows users to sort posts by Likes and by number of Comments. No insane analytics, just the goods fair and plain.
@@ -74,12 +75,7 @@ class Trending extends Component {
                             post => {
                                 const url = parseUrl(post.__typename)
                                 return (
-                                    <div className={`user-posts-card user-posts-card-${colorScheme}`} key={`${post.title}${post.id}`}>
-                                        <h3 ><Link to={`${url}/${post.id}`}>{post.title}</Link></h3>
-                                        {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={post.image.title} /> </div>}
-                                        {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
-                                        <h4>{post.count} Comments {post.likeCount} Likes</h4>
-                                    </div>
+                                    <PostCard colorScheme={colorScheme} post={post} />
                                 )
                             }
                         )
@@ -93,3 +89,12 @@ class Trending extends Component {
 }
 
 export default graphql(query)(Trending);
+
+/**
+ * <div className={`user-posts-card user-posts-card-${colorScheme}`} key={`${post.title}${post.id}`}>
+                                        <h3 ><Link to={`${url}/${post.id}`}>{post.title}</Link></h3>
+                                        {post.image && <div className="user-posts-thumbnail-container"><img src={post.image} alt={post.image.title} /> </div>}
+                                        {post.snippet && <p>{post.snippet}<span style={{ "color": "gray" }}>...</span></p>}
+                                        <h4>{post.count} Comments {post.likeCount} Likes</h4>
+                                    </div>
+ */

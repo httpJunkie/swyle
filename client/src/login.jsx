@@ -111,7 +111,7 @@ class Login extends Component {
                                         <input id="password-field" className="auth-field" type="password" value={this.state.password} 
                                             onChange={this.handleFormChange('password')} placeholder="Password" />
                                         <div className="form-footer">
-                                            <input id="form-submit" className="submit" type="submit" />
+                                            <input id="form-submit" className="submit" type="submit">Log In</input>
                                             <button className="demo-login" onClick={this.demoLogin}>DEMO!</button>
                                         </div>
                                     </form>
