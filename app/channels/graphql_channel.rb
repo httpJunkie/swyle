@@ -35,8 +35,10 @@ class GraphqlChannel < ApplicationCable::Channel
   end
 
   def context
+    id = current_user ? current_user.id : 1
+    # debugger
     {
-      current_user_id: current_user.id,
+      current_user_id: id,
       current_user: current_user,
       channel: self
     }
