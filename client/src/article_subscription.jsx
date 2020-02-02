@@ -12,6 +12,7 @@ const Subscription = ({ subscribeToMore }) => {
         return subscribeToMore({
             document: ArticleSubscription,
             updateQuery: (prev, { subscriptionData }) => {
+                console.log(subscriptionData)
                 if (!subscriptionData.data) return prev;
                
                 const { articleLiked } = subscriptionData.data;
@@ -29,8 +30,10 @@ const Subscription = ({ subscribeToMore }) => {
                 }
 
                 const { articleUpdated } = subscriptionData.data;
+                console.log(articleUpdated);
                 
                 if (articleUpdated) {
+                    console.log(articleUpdated)
                     return {
                         article: articleUpdated
                     }
