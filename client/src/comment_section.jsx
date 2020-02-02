@@ -36,7 +36,7 @@ class CommentSection extends Component {
                     if (error) return <p>Error :(</p>;
                         
                 return (
-                    <div className="comments-section">
+                    <div className={`comments-section ${colorScheme}`}>
 
                         {this.props.currentUser ?
                             <Mutation mutation={postComment}
