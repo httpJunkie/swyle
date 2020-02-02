@@ -72,7 +72,10 @@ subscription ArticleSubscription {
                 username
               }
             }
-    }
+    },
+      currentUser {
+        id
+      }
       
 }`
 
