@@ -75,6 +75,7 @@ subscription ArticleSubscription {
     },
       currentUser {
         id
+        colorScheme
       }
       
 }`

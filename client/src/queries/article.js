@@ -29,6 +29,7 @@ const article = gql`
     },
       currentUser {
         id
+        colorScheme
       }
 }
 `
