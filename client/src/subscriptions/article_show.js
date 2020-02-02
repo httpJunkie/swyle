@@ -70,11 +70,7 @@ subscription ArticleSubscription {
                 username
               }
             }
-    },
-      currentUser {
-        id
-        colorScheme
-      }
+    }
       
 }`
 

@@ -24,11 +24,7 @@ const article = gql`
                 username
               }
             }
-    },
-      currentUser {
-        id
-        colorScheme
-      }
+    }
 }
 `
 

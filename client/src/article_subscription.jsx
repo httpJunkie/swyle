@@ -13,8 +13,6 @@ const Subscription = ({ subscribeToMore }) => {
             document: ArticleSubscription,
             updateQuery: (prev, { subscriptionData }) => {
                 console.log(subscriptionData)
-                debugger;
-
                 if (!subscriptionData.data) return prev;
                
                 // const { articleLiked } = subscriptionData.data;
