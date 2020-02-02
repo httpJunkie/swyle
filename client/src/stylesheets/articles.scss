@@ -182,6 +182,11 @@
   @media(max-width: 426px) {
     width: 15rem;
   }
+
+  &.bonetrousle {
+    background: black;
+    border: 2px solid white;
+  }
 }
 
 .article-section > p {
