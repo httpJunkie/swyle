@@ -12,6 +12,11 @@
       width: 70vw
     }
     background: rgba(255, 255, 255, .5);
+    &.bonetrousle {
+       border: 3px solid white;
+       background: black;
+       font-family: 'Undertale';
+    }
 }
 
 .comment {
