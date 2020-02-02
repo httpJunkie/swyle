@@ -34,10 +34,9 @@ class CommentSection extends Component {
     render() {
         const query = this.props.postType === "Article" ? article : image;
         const comments = this.props.comments;
-        const colorScheme = this.props.currentUser.colorScheme || "";
         return (
 
-            <div className={`comments-section ${colorScheme}`}>
+            <div className={`comments-section ${this.props.colorScheme}`}>
 
                             {this.props.currentUser ?
                                 <Mutation mutation={postComment}
