@@ -28,6 +28,7 @@ class CommentSection extends Component {
 
 
     render () {
+        const colorScheme = this.props.currentUser.colorScheme || ""
         return (
             <Query query={commentsByPost} variables={{postId: this.props.postId, postType: this.props.type}}>
             {({ loading, error, data, subscribeToMore}) => {
