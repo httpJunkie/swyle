@@ -13,21 +13,23 @@ const Subscription = ({ subscribeToMore }) => {
             document: ArticleSubscription,
             updateQuery: (prev, { subscriptionData }) => {
                 console.log(subscriptionData)
+                debugger;
+
                 if (!subscriptionData.data) return prev;
                
-                const { articleLiked } = subscriptionData.data;
+                // const { articleLiked } = subscriptionData.data;
 
-                if (articleLiked) {
-                    return {
-                        article: articleLiked
-                    }
-                }
-                const { articleUnliked } = subscriptionData.data
-                if (articleUnliked) {
-                    return {
-                        article: articleUnliked
-                    }
-                }
+                // if (articleLiked) {
+                //     return {
+                //         article: articleLiked
+                //     }
+                // }
+                // const { articleUnliked } = subscriptionData.data
+                // if (articleUnliked) {
+                //     return {
+                //         article: articleUnliked
+                //     }
+                // }
 
                 const { articleUpdated } = subscriptionData.data;
                 console.log(articleUpdated);

@@ -1,5 +1,7 @@
 module Types
   class SubscriptionType < GraphQL::Schema::Object
+  extend GraphQL::Subscriptions::SubscriptionRoot
+
     field :article_added, Types::ArticleType, null: false, description: "An article was posted"
     def article_added    
     end
@@ -13,9 +15,7 @@ module Types
     end
 
     field :article_updated, Types::ArticleType, null: false, description: "Article was updated"
-    def article_updated 
-    end
-
+    
 
 
     field :image_added, Types::ImageType, null: false, description: "An image was posted"
@@ -31,8 +31,6 @@ module Types
     end
 
     field :image_updated, Types::ImageType, null: false, description: "image was updated"
-    def image_updated 
-    end
     
    end
 end

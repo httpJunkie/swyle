@@ -10,8 +10,6 @@ const article = gql`
             id
             title
             body
-            likers
-            likeCount
             author {
                 id
                 username

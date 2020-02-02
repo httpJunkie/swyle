@@ -104,6 +104,7 @@ class ArticleShow extends Component {
     render() {
        const argument = parseInt(this.props.match.params.articleID)
        const colorScheme = this.props.colorScheme || "standard"
+       const currentUser = this.props.currentUser;
         return (
             <Query query={article} variables={{ id: argument }} >
                 {({ loading, error, data, subscribeToMore}) => {
@@ -121,7 +122,7 @@ class ArticleShow extends Component {
                                  
                                     {article.title}
 
-                                     { data.currentUser && (article.author.id === data.currentUser.id) && 
+                                     { currentUser && (article.author.id === currentUser.id) && 
                                         <MdEdit className="comment-edit-btn" onClick={this.editField} name="Title" id="Title"/>
                                      }
                                  </h1> 
@@ -132,7 +133,7 @@ class ArticleShow extends Component {
                                  <h3>by {article.author.username}</h3>
                                 {!this.state.editingBody ? 
                                   <p className="article-show-body" id="article-body">
-                                        {data.currentUser && (article.author.id === data.currentUser.id) && 
+                                        {currentUser && (article.author.id === currentUser.id) && 
                                             <MdEdit className="comment-edit-btn" onClick={this.editField} 
                                         name="Body" id="Body" />}
                                     {article.body} 
@@ -148,7 +149,7 @@ class ArticleShow extends Component {
                                                 <div key={`shutuplint${reaction.type}`}>
                                                     <Reaction 
                                                         postType={"Article"} 
-                                                        currentUser={data.currentUser}
+                                                        currentUser={currentUser}
                                                         postId={argument} 
                                                         reactionType={reaction.type} 
                                                         users={reaction.users} 
