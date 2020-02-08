@@ -10,7 +10,7 @@ module Mutations
 
       def resolve(email: nil)
         return unless email
-        user = User.find_by email: email[:email]
+        user = User.find_by email: email[:email].downcase
         if user && user.authenticate(email[:password])
           puts "Authentication SUCCESS FOR #{user.username}"
           puts "Before Reset: #{context[:session][:session_token] } User's: #{user.session_token}"
