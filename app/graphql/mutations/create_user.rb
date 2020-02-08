@@ -13,7 +13,7 @@ module Mutations
       def resolve(username: nil, auth_provider: nil)
         user = User.new(
           username: username.downcase,
-          email: auth_provider&.[](:email)&.[](:email),
+          email: auth_provider&.[](:email)&.[](:email).downcase,
           password: auth_provider&.[](:email)&.[](:password)
         )
         if user.save
