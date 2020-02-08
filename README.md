@@ -32,11 +32,8 @@ Ruby on Rails, GraphQL, Apollo Server, React, Node, Webpack, AWS
 
 
 ## TODOS
-
-*  Force all usernames to lower case prior to saving, then convert login and register usernames and email to lower case as well.
-*  Refactor class components into functional components with  Hooks
+*  Refactor all class components into functional components with  Hooks
 *  Implement lazy loading or pagination
-*  Give trending and users tab the same classnames
 *  Change the -colorScheme to .colorScheme everywhere in the scss files and jsx elemental classNames
 *  Create a reusable component to be used across the index, trending, and recent user posts.
 
