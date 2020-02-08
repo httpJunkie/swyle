@@ -76,18 +76,17 @@ class Register extends Component {
                                                         }
                                                     }).then(res => {
                                                         const token = res.data.createUser.token
-                                                        debugger
+                                                        const errors = res.data.createUser.errors
+                                                    
                                                         if (token) {
                                                             localStorage.setItem("mlToken", token)
                                                         }
-                                                        const errors = res.data.createUser.errors
                                                         if (errors) {
                                                             this.setState({errors})
                                                         } else {
                                                             this.props.history.push('/')
                                                         }           
                                                     }).catch(res => {
-                                                        debugger
                                                             this.setState({ errors: res.graphQLErrors })
                                                         })
                                                 }} className="session-form">
