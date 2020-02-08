@@ -56,7 +56,7 @@ export const validateEntry =(field, value) => {
             return /^[a-zA-Z\d-_]+$/.test(value);
         }
         case "password": {
-            return (!hasTooManyRepeats(value) && !isSequential(value))
+            return (!hasTooManyRepeats(value) && !isSequential(value) && value.length >= 6)
         }
     }
 }

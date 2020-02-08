@@ -51,6 +51,7 @@ class Register extends Component {
 
     render() {
         this.allowOrPreventScrolling();
+        const readyToSubmit = (this.state.passwordValid && this.state.usernameValid && this.state.emailValid && this.state.password === this.state.passwordConfirm)
         return (
             <Query query={currentUser}>
                 {({ data, error, loading }) => {
@@ -111,7 +112,7 @@ class Register extends Component {
                                                     <input className={`auth-field ${this.state.password !== this.state.passwordConfirm ? 'invalid' : ''}`} type="password" value={this.state.passwordConfirm} 
                                                         onChange={this.handleFormChange('passwordConfirm')}  />
                                                     <div className="form-footer">
-                                                        <input className="submit" type="submit" name="Register"/>
+                                                        <input className={`submit ${readyToSubmit ? "" : "disabled"}`} type="submit" name="Register" disabled={!readyToSubmit}/>
                                                     </div>
                                                 </form>
                                                 {this.state.errors && <ErrorsModal errors={this.state.errors} clearErrors={this.clearErrors} />}

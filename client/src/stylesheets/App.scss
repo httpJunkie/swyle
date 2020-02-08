@@ -83,6 +83,13 @@ body {
   padding: .6rem;
   margin: .2rem;
   width: fit-content;
+  &.disabled {
+    background: gray;
+    &:hover {
+      background: gray;
+      cursor:not-allowed;
+    }
+  }
 }
 
 .submit:hover {
