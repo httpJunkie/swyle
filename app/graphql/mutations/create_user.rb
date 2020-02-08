@@ -9,6 +9,7 @@ module Mutations
   
       field :token, String, null: true
       field :user, Types::UserType, null: true
+      field :errors, [String], null: true
 
       def resolve(username: nil, auth_provider: nil)
         user = User.new(
@@ -24,9 +25,10 @@ module Mutations
           context[:cookies].signed[:user_id] = user.id
           # This token is used exclusively for websockets
           token = SecureRandom::urlsafe_base64
-          { user: user, token: token }
+          { user: user, token: token, errors: null}
         else 
-         { errors: user.errors.full_messages}
+      
+         { user: null, token: null, errors: user.errors.full_messages}
         end
       #end
       rescue ActiveRecord::RecordInvalid => e

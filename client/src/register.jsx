@@ -76,6 +76,7 @@ class Register extends Component {
                                                         }
                                                     }).then(res => {
                                                         const token = res.data.createUser.token
+                                                        debugger
                                                         if (token) {
                                                             localStorage.setItem("mlToken", token)
                                                         }
@@ -83,6 +84,7 @@ class Register extends Component {
                                                     }).then(() => {
                                                         this.props.history.push('/')
                                                     }).catch(res => {
+                                                        debugger
                                                             this.setState({ errors: res.graphQLErrors })
                                                         })
                                                 }} className="session-form">
