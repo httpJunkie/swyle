@@ -5,6 +5,7 @@ import mutation from './mutations/register';
 import currentUser from './queries/current_user';
 import $ from 'jquery';
 import ErrorsModal from './errors_modal';
+import {validateEntry} from './helpers';
 
 /**
  * Form for creating a new user.  Class component chosen largely for aesthetic reasons and 
@@ -17,7 +18,10 @@ class Register extends Component {
                 username: "",
                 email: "",
                 password: "",
-                passwordConfirm: ""
+                passwordConfirm: "",
+                usernameValid: null,
+                emailValid: null,
+                passwordValid: null
             }
         this.handleFormChange = this.handleFormChange.bind(this);
         this.clearErrors = this.clearErrors.bind(this);
@@ -29,6 +33,7 @@ class Register extends Component {
     handleFormChange(field) {
         return event => this.setState({
             [field]: event.currentTarget.value,
+            [`${field}Valid`]: validateEntry(field, event.currentTarget.value)
         });
     }
 

@@ -53,6 +53,7 @@
   &:focus{
     background:white;
     color: black;
+    outline: none;
   }
   &.invalid{
     background: pink;
@@ -60,9 +61,7 @@
   }
 }
 
-.session-form > input:focus {
-  outline: none;
-}
+
 
 
 .session-form-label {
