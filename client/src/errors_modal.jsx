@@ -12,8 +12,10 @@ const ErrorsModal = (props) => {
     return (
         <div className="error-modal">
             <div className="error-dialog">
-                {props.errors.map(error => <span className="error-message" key={error.message + "isthekey"}>{error.message}</span>)}
-                <button onClick={props.clearErrors}>OK</button>
+                {props.errors.map(error => <span className="error-message" key={error + "isthekey"}>{error}</span>)}
+                <div className="error-button-container">
+                    <button className={`error-clear-btn`} onClick={props.clearErrors}>OK</button>
+                </div>
             </div>
         </div>
     );
