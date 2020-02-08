@@ -39,15 +39,23 @@
   font-weight: bold;
 }
 
-.error-clear-button {
+.error-clear-btn {
   border-radius: 4px;
   background: navy;
   padding: .5rem;
   width: 4rem;
   border: none;
   color: white;
+  &:hover {
+    cursor: pointer;
+    background: rgb(10, 10, 168);
+    color: lightgray;
+    transition: all .2s;
+  }
 }
 
 .error-button-container {
   display: flex;
+  justify-content: center;
+  margin-top: .6rem;
 }
