@@ -81,8 +81,13 @@ class Register extends Component {
                                                             localStorage.setItem("mlToken", token)
                                                         }
 
-                                                    }).then(() => {
-                                                        this.props.history.push('/')
+                                                    }).then((res) => {
+                                                        const errors = res.data.createUser.errors
+                                                        if (errors) {
+                                                            this.setState({errors})
+                                                        } else {
+                                                            this.props.history.push('/')
+                                                        }           
                                                     }).catch(res => {
                                                         debugger
                                                             this.setState({ errors: res.graphQLErrors })

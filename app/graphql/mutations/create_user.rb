@@ -27,8 +27,7 @@ module Mutations
           token = SecureRandom::urlsafe_base64
           { user: user, token: token, errors: null}
         else 
-      
-         { user: null, token: null, errors: user.errors.full_messages}
+         { errors: user.errors.full_messages}
         end
       #end
       rescue ActiveRecord::RecordInvalid => e

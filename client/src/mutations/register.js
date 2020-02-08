@@ -16,8 +16,9 @@ const register = gql`mutation createUser($email: String!, $username: String!, $p
         username  
        } 
        token
+       errors
     }
-    errors
+    
 }`
 
 export default register;
