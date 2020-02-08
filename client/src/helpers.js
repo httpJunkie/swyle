@@ -48,6 +48,7 @@ export const hasTooManyRepeats = (string) => {
 }
 
 export const validateEntry =(field, value) => {
+    if (value === "") return null;
     switch (field) {
         case "email": {
             return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
