@@ -80,8 +80,6 @@ class Register extends Component {
                                                         if (token) {
                                                             localStorage.setItem("mlToken", token)
                                                         }
-
-                                                    }).then((res) => {
                                                         const errors = res.data.createUser.errors
                                                         if (errors) {
                                                             this.setState({errors})
