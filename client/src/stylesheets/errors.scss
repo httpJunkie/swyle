@@ -23,13 +23,31 @@
   height: 5rem;
   z-index: 9000;
   text-align:center;
-  background: white;
+  background: rgba(255, 255, 255, .6);
   margin: .2rem;
   display: flex;
   flex-direction: column;
+  font-family: sans-serif;
+  & .bonetrousle {
+    font-family: 'Undertale';
+  }
   /* justify-content: space-between; */
 }
 
 .error-message {
   margin-top: .5rem;
+  font-weight: bold;
+}
+
+.error-clear-button {
+  border-radius: 4px;
+  background: navy;
+  padding: .5rem;
+  width: 4rem;
+  border: none;
+  color: white;
+}
+
+.error-button-container {
+  display: flex;
 }
