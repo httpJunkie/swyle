@@ -51,7 +51,8 @@ class Register extends Component {
 
     render() {
         this.allowOrPreventScrolling();
-        const readyToSubmit = (this.state.passwordValid && this.state.usernameValid && this.state.emailValid && this.state.password === this.state.passwordConfirm)
+        const passwordIsPassword = this.state.password.toLowerCase() === "password";
+        const readyToSubmit = (this.state.passwordValid && this.state.usernameValid && this.state.emailValid && this.state.password === this.state.passwordConfirm && !passwordIsPassword)
         return (
             <Query query={currentUser}>
                 {({ data, error, loading }) => {
@@ -115,6 +116,7 @@ class Register extends Component {
                                                         <input className={`auth-field ${this.state.passwordValid === false ? 'invalid' : ''}`}type="password" value={this.state.password}
                                                             onChange={this.handleFormChange('password')} />
                                                         <InlineError message={"Password must be six characters or more, non-sequential and with fewer than three repeated characters"} visible={this.state.passwordValid === false} />
+                                                        <InlineError message={"PASSWORD is not a valid password"} visible={this.state.password === "password"} />
                                                     </div>
 
                                                     <span className="session-form-label">Confirm Password</span>

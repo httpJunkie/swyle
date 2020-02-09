@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import query from './queries/posts_by_popularity';
 import { parseUrl} from './helpers';
-import {Link} from 'react-router-dom';
 import PostCard from './post_card';
 
 /**
@@ -73,7 +72,6 @@ class Trending extends Component {
                 {
                         posts.map(
                             post => {
-                                const url = parseUrl(post.__typename)
                                 return (
                                     <PostCard colorScheme={colorScheme} post={post} />
                                 )
