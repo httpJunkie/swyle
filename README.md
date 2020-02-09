@@ -70,6 +70,78 @@ const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': del
 const ICONS = { 'like': FaRegThumbsUp, 'funny': FaRegGrinSquint, 'smart': FaRegLightbulb, 'spicy': FaPepperHot}
 ```
 
+In the component's render() we first check to see whether the current user has already reacted in this specific way to this specific given reaction - a user may find a post both funny and spicy, for example, but may not "like" a post twice.  The "users" prop contains an array of user ids against which the current user's ID will be checked.  The variables refetch, creation, and deletion are be set to the appropriate values based on the component's props.
+
+```
+      const userReacted = this.state.currentUser && this.props.users.includes(this.state.currentUser.id);
+      const refetch = QUERIES[this.props.postType];
+      const creation = CREATE_MUTATIONS[this.props.reactionType];
+      const deletion = DELETE_MUTATIONS[this.props.reactionType];
+      const Tag = ICONS[this.props.reactionType]
+```
+A ternary operation based on `userReacted` will determine the props of the Mutation component.  
+``` <div className="reaction">
+                    {userReacted ?
+                        <Mutation
+                            mutation={deletion}
+                            refetchQueries={[{ query: refetch, variables: { id: this.props.postId, } }]}
+                            update={(cache, { data: { deletion } }) => {
+                            }}>
+                  ...
+ ```
+
+In any event, when the icon gets clicked Apollo will make an HTTP request to the GraphQL controller and call the appropriate resolver.  For example, here is the resolver for the mutation that creates a new entry on the Likes table.  
+
+
+```
+def resolve(user_id: nil, post_id: nil, post_type: nil)
+            like = Like.new
+            like.user_id = user_id
+            like.post_id = post_id
+            like.post_type = post_type
+            like.save
+            if post_type === "Article"
+                article = Article.find(post_id.to_i)
+                SwyleSchema.subscriptions.trigger("articleUpdated", {}, article)
+            end
+            if post_type === "ImagePost"
+                image = ImagePost.find(post_id.to_i)
+                SwyleSchema.subscriptions.trigger("imageUpdated", {}, image)
+            end
+            like
+        end
+```
+
+Most excitingly, after the new Like has been saved the function will trigger the subscription service.  (Please see the Live Updates section for additional details)
+
+All reactions belong to a post, which may be of any sort (Articles and Images, possibly more in the future) using a polymorphic association.
+
+```
+class Like < ApplicationRecord
+
+    validates :user_id, uniqueness: { scope: :post_id }
+    
+    belongs_to :post, polymorphic: true,
+    primary_key: :id,
+    foreign_key: :post_id
+
+    belongs_to :user,
+    primary_key: :id, 
+    foreign_key: :user_id,
+    class_name: "User"
+
+end
+```
+
+
+
+## Live updates
+
+This section is WIP, but here's a brief rundown: Swyle uses Redis, GraphQL Subscription, and the Rails ActionCable to provide live updates to articles, comments, and the index.
+
+## Search
+
+This was the first feature I implemented after I learned React Hooks.  (this section is under construction)
 
 # Technologies Used
 
