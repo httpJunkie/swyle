@@ -35,6 +35,8 @@ const InlineError = props => {
 }
 ```
 
+### Demo Login Feature
+![alt text](https://i.imgur.com/nvxKfDq.png "Demo Login")
 
 ## Tags - Future Feature
 
