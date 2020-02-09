@@ -34,7 +34,7 @@ class Login extends Component {
 
      demoLogin(event) {
         event.preventDefault(); 
-        this.setState({ email: "demo@demo.com", password: "demodemo" }, () => {
+        this.setState({ email: "demo@demo.com", password: "demodemo", passwordValid:true, emailValid: true}, () => {
            const submit = document.getElementById("form-submit");
            submit.click();
         });
@@ -63,7 +63,7 @@ class Login extends Component {
 
     render() {
         this.allowOrPreventScrolling();
-        const readyToSubmit = (this.state.passwordValid && this.state.usernameValid && this.state.emailValid && this.state.password === this.state.passwordConfirm)
+        const readyToSubmit = (this.state.passwordValid &&  this.state.emailValid )
 
         return (
             <Query query={currentUser}>
@@ -120,7 +120,7 @@ class Login extends Component {
                                             <InlineError message={"Password must be six characters or more, non-sequential and with fewer than three repeated characters"} visible={this.state.passwordValid === false} />
                                             </div>
                                         <div className="form-footer">
-                                            <input className={`submit ${readyToSubmit ? "" : "disabled"}`} type="submit" name="Register" disabled={!readyToSubmit} />
+                                            <input id="form-submit" className={`submit ${readyToSubmit ? "" : "disabled"}`} type="submit" name="Register" disabled={!readyToSubmit} />
                                             <button className="demo-login" onClick={this.demoLogin}>DEMO!</button>
                                         </div>
                                     </form>
