@@ -95,12 +95,13 @@
 
 .comment-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   height: fit-content;
   color: black;
   position: absolute;
   right: 0;
+  top: -5px;
   &.bonetrousle {
     color: white;
   }
