@@ -12,7 +12,7 @@ A user may post an image together with a brief description if so desired.  The R
 
 ![alt text](https://i.imgur.com/HWlWEJE.png "Image Show")
 
-![alt text](https://i.imgur.com/undefined.png "Image Index")
+![alt text](https://i.imgur.com/rdkLjZC.png "Image Index")
 
 ## Article Post
 
