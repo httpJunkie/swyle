@@ -76,8 +76,9 @@ class CommentSection extends Component {
                             <h4 style={{ "marginLeft": "1rem" }}>Latest Comments</h4>
                             {comments.map(
                                 (comment, index) => {
-
-                                    const commentStyle = index % 2 === 0 ? { "background": "lightgrey" } : { "background": "white" }
+                                    let commentStyle = index % 2 === 0 ? { "background": "lightgrey" } : { "background": "white" }
+                                    if (this.props.colorScheme === "bonetrousle")  commentStyle = {"background": "black"};
+                                      
                                     return <Comment
                                         comment={comment}
                                         commentStyle={commentStyle}

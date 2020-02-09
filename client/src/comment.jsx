@@ -3,6 +3,8 @@ import {graphql} from 'react-apollo';
 import comments from './queries/comments_by_post';
 import deleteComment from './mutations/delete_comment';
 import CommentEdit from './comment_edit';
+import { MdDelete, MdEdit } from 'react-icons/md';
+
 
 /**
  * Displays the body, user, and time stamps of a single comment.
@@ -59,21 +61,25 @@ class Comment extends Component {
     }
 
     render() {
+        let colorScheme = "classic"
+        if (this.props.currentUser) {
+             colorScheme = this.props.currentUser.colorScheme;
+        }
         if (this.state.editing) {
             return < CommentEdit comment={this.props.comment} cancelEdit={this.cancelEdit} postId={this.props.postId} postType={this.props.postType}/>
         } else {
             
             return (
-                <div id={`the-comment${this.props.comment.id}`} key={this.props.comment.body} className="comment" style={this.props.commentStyle}>
+                <div id={`the-comment${this.props.comment.id}`} key={this.props.comment.body} className={`comment ${colorScheme}`} style={this.props.commentStyle}>
                     <div style={{ "display": "flex", "flexDirection": "column" }}>
                         <p className="comment-body">{this.props.comment.body}</p>
                         <span className="comment-who-and-when"> {`${this.props.comment.commentor.username}, on ${this.props.comment.createdAt}`}</span>
                     </div>
-                    <div className="comment-buttons">
-                        {this.props.currentUser && ( (this.props.currentUser.id === this.props.comment.commentor.id)) && <span className="comment-edit-btn" onClick={this.editComment}/>}
-                        {this.props.currentUser &&  ((this.props.currentUser.id === this.props.comment.commentor.id) || this.props.currentUser.id === this.props.articleAuthorId) && <span className="comment-delete-btn" onClick={this.openConfirmationModal} />}
+                    <div className={`comment-buttons ${colorScheme}`}>
+                        {this.props.currentUser && ( (this.props.currentUser.id === this.props.comment.commentor.id)) && <span className="comment-btn" onClick={this.editComment}><MdEdit /> </span>}
+                        {this.props.currentUser &&  ((this.props.currentUser.id === this.props.comment.commentor.id) || this.props.currentUser.id === this.props.articleAuthorId) && <span className="comment-btn" onClick={this.openConfirmationModal}><MdDelete /></span>}
                         {this.state.confirmationOpen && (
-                            <div className="confirmation-modal" style={{"top":`${this.state.top}`}}>
+                            <div className="comment-delete-confirm" style={{"top":`${this.state.top}`}}>
                                 <div className="confirmation-dialog">
                                     <h4>Remove Comment?</h4>
                                     <div style={{ "display": "flex", "justifyContent": "center" }}>
