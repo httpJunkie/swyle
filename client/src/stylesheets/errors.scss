@@ -59,3 +59,33 @@
   justify-content: center;
   margin-top: .6rem;
 }
+
+.errors-inline {
+  font-size: 14px;
+  color: red;
+  font-weight: bold;
+  background: pink;
+  padding: .2rem;
+  position: absolute;
+  overflow: visible;
+  margin: .2rem;
+  min-width: fit-content;
+  display: inline-block;
+  border-color: transparent pink transparent transparent;
+
+}
+
+
+.error-message-inline {
+   text-align: center;
+}
+
+.error-tooltip-arrow {
+   width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right:10px solid pink; 
+  position: absolute;
+  left: -5px;
+}

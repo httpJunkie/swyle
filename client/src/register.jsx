@@ -6,6 +6,7 @@ import currentUser from './queries/current_user';
 import $ from 'jquery';
 import ErrorsModal from './errors_modal';
 import {validateEntry} from './helpers';
+import InlineError from './inline_error';
 
 /**
  * Form for creating a new user.  Class component chosen largely for aesthetic reasons and 
@@ -98,19 +99,32 @@ class Register extends Component {
                                                 }} className="session-form">
                                                     <h1>Sign Up</h1>
                                                     <span className="session-form-label">Email</span>
-                                                    <input className={`auth-field ${this.state.emailValid === false ? 'invalid': ''}`} type="text" value={this.state.email}
-                                                        onChange={this.handleFormChange('email')}  />
+                                                    <div className="session-form-input-wrapper">
+                                                       
+                                                        <input className={`auth-field ${this.state.emailValid === false ? 'invalid' : ''}`} type="text" value={this.state.email}
+                                                            onChange={this.handleFormChange('email')} />
+                                                        <InlineError message={"Please enter a valid email address."} visible={this.state.emailValid === false} />
+                                                    </div>
                                                     <span className="session-form-label">Username</span>
+                                                    <div className="session-form-input-wrapper">
+                                                        <input className={`auth-field ${this.state.usernameValid === false ? 'invalid' : ''}`} type="text" value={this.state.username}
+                                                            onChange={this.handleFormChange('username')}  />
+                                                        <InlineError message={"Letters, numbers, hyphens, and underscores only please"} visible={this.state.usernameValid === false} />
+                                                    </div>
 
-                                                    <input className={`auth-field ${this.state.usernameValid === false ? 'invalid' : ''}`} type="text" value={this.state.username}
-                                                        onChange={this.handleFormChange('username')}  />
-                                                   
                                                     <span className="session-form-label">Password</span>
-                                                    <input className={`auth-field ${this.state.passwordValid === false ? 'invalid' : ''}`}type="password" value={this.state.password}
-                                                        onChange={this.handleFormChange('password')} />
+                                                    <div className="session-form-input-wrapper">
+                                                        <input className={`auth-field ${this.state.passwordValid === false ? 'invalid' : ''}`}type="password" value={this.state.password}
+                                                            onChange={this.handleFormChange('password')} />
+                                                        <InlineError message={"Password must be six characters or more, non-sequential and with fewer than three repeated characters"} visible={this.state.passwordValid === false} />
+                                                    </div>
+
                                                     <span className="session-form-label">Confirm Password</span>
-                                                    <input className={`auth-field ${this.state.password !== this.state.passwordConfirm ? 'invalid' : ''}`} type="password" value={this.state.passwordConfirm} 
-                                                        onChange={this.handleFormChange('passwordConfirm')}  />
+                                                    <div className="session-form-input-wrapper">
+                                                         <input className={`auth-field ${this.state.password !== this.state.passwordConfirm ? 'invalid' : ''}`} type="password" value={this.state.passwordConfirm} 
+                                                                onChange={this.handleFormChange('passwordConfirm')}  />
+                                                        <InlineError message={"Password confirmation must match password"} visible={this.state.password !== this.state.passwordConfirm} />
+                                                    </div>
                                                     <div className="form-footer">
                                                         <input className={`submit ${readyToSubmit ? "" : "disabled"}`} type="submit" name="Register" disabled={!readyToSubmit}/>
                                                     </div>
