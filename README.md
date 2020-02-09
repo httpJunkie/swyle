@@ -37,14 +37,39 @@ const InlineError = props => {
 }
 ```
 
-### Demo Login Feature
+## Demo Login Feature
 ![alt text](https://i.imgur.com/nvxKfDq.png "Demo Login")
 
 
 
 ## Reactions
 
-Posts (articles only for the moment) can have many reactions (like, spicy, funny, and smart) that will update live on every user's client thanks to GraphQL subscriptions and the Rails ActionCable.  
+Posts (articles only for the moment) can have many reactions (like, spicy, funny, and smart) that will update live on every user's client thanks to GraphQL subscriptions and the Rails ActionCable.
+
+The Reaction component imports a number of [mutation strings](https://github.com/apollographql/graphql-tag) like the one below.
+
+```
+const likePost = gql`
+mutation likePost($postType: String!, $userId: Int!, $postId: Int!) { 
+        likePost(postType: $postType, userId: $userId, postId: $postId) {
+            id
+            liker{
+                id
+                username
+            }
+    }  
+}
+`;
+```
+The mutations are stored in JSON objects for O(1) access.  One constant stores mutations that create a new model, and the other stores mutations that destroy a model.  Additionally, because the Mutation can trigger the refetching of a query, we utilize another object that can be keyed into with the type of post.  A reaction also has a Font Awesome Icon that will vary depending on the type of reaction. 
+
+```
+const QUERIES = { "Article": article, "ImagePost": image };
+const CREATE_MUTATIONS = {'like': likePost, 'funny': createFunny, 'smart': createSmart, "spicy": createSpicy}
+const DELETE_MUTATIONS = {'like': unlikePost, 'funny': deleteFunny, 'smart': deleteSmart, "spicy": deleteSpicy}
+const ICONS = { 'like': FaRegThumbsUp, 'funny': FaRegGrinSquint, 'smart': FaRegLightbulb, 'spicy': FaPepperHot}
+```
+
 
 # Technologies Used
 
