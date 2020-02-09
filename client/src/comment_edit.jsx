@@ -30,7 +30,7 @@ class CommentEdit extends Component {
                 <Mutation mutation={updateComment}
                     update={(cache, { data: { updateComment } }) => {
                     }}
-                    refetchQueries={[{ query: refetch, variables: { postId: this.props.postId} }]}
+                    refetchQueries={[{ query: refetch, variables: { id: this.props.postId} }]}
                 >
                     {(updateComment, loading) =>
                         !loading ? (
