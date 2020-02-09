@@ -40,9 +40,7 @@ const InlineError = props => {
 ### Demo Login Feature
 ![alt text](https://i.imgur.com/nvxKfDq.png "Demo Login")
 
-## Tags - Future Feature
 
-Posts may have a many-to-many relation with any number of tags; clicking on a tag will fetch articles that are linked to that tag on the join table.
 
 ## Reactions
 
@@ -50,17 +48,25 @@ Posts (articles only for the moment) can have many reactions (like, spicy, funny
 
 # Technologies Used
 
-Ruby on Rails, GraphQL, Apollo Server, React, Node, Webpack, AWS
+Ruby on Rails, GraphQL, Apollo Server, React, Node, Webpack, AWS.  Rails Action Cable and GraphQL Subscriptions are utilized to create an immersive blog experience featuring live updates.
+
+
+# Future
+
+## New Features
+
+### Tags
+Posts may have a many-to-many relation with any number of tags; clicking on a tag will fetch articles that are linked to that tag on the join table.
+
+### Videos
+I hope to implement video uploads, or at least embedding.
 
 
 ## TODOS
 *  Refactor all class components into functional components with  Hooks
 *  Implement lazy loading or pagination
 *  Change the -colorScheme to .colorScheme everywhere in the scss files and jsx elemental classNames
-*  Create a reusable component to be used across the index, trending, and recent user posts.
-
-## Known Bugs
-*  Adding a comment, and then navigating to image index by way of the navbar, does not update the comment count; refreshing the page does. 
+*  Create a reusable component to be used across the index, trending, and recent user posts. 
 
 # Bugs Overcome
 *  Leaving the title edit component open and then navigating by way of the next / prev link will cause the mutation to apply to the image newly loaded regardless of owner. Expected behavior: it should close the edit components out. I solved this by entering logic in componentDidUpdate - should the paramaters change the component's state will update so that editingTitle and editingDescription are both false, thereby closing the editors.
