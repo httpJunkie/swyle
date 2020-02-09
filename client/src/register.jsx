@@ -116,7 +116,7 @@ class Register extends Component {
                                                         <input className={`auth-field ${this.state.passwordValid === false ? 'invalid' : ''}`}type="password" value={this.state.password}
                                                             onChange={this.handleFormChange('password')} />
                                                         <InlineError message={"Password must be six characters or more, non-sequential and with fewer than three repeated characters"} visible={this.state.passwordValid === false} />
-                                                        <InlineError message={"PASSWORD is not a valid password"} visible={this.state.password === "password"} />
+                                                        <InlineError message={"PASSWORD is not a valid password"} visible={passwordIsPassword} />
                                                     </div>
 
                                                     <span className="session-form-label">Confirm Password</span>
