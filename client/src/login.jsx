@@ -8,6 +8,7 @@ import $ from 'jquery';
 import ErrorsModal from './errors_modal';
 import {Redirect} from 'react-router-dom';
 import { validateEntry } from './helpers';
+import InlineError from './inline_error';
 
 
 
@@ -32,8 +33,7 @@ class Login extends Component {
     }
 
      demoLogin(event) {
-        event.preventDefault();
-          
+        event.preventDefault(); 
         this.setState({ email: "demo@demo.com", password: "demodemo" }, () => {
            const submit = document.getElementById("form-submit");
            submit.click();
@@ -49,6 +49,7 @@ class Login extends Component {
     handleFormChange(field) {
         return event => this.setState({
             [field]: event.currentTarget.value,
+            [`${field}Valid`]: validateEntry(field, event.currentTarget.value)
         });
     }
 
@@ -62,6 +63,8 @@ class Login extends Component {
 
     render() {
         this.allowOrPreventScrolling();
+        const readyToSubmit = (this.state.passwordValid && this.state.usernameValid && this.state.emailValid && this.state.password === this.state.passwordConfirm)
+
         return (
             <Query query={currentUser}>
                 {({ data, loading }) => {
@@ -104,8 +107,12 @@ class Login extends Component {
                                     }} className="session-form">
                                         <h1>Log In</h1>
                                         <span className="session-form-label">Email</span>
-                                        <input id="email-field" className="auth-field" type="text" value={this.state.email} 
-                                            onChange={this.handleFormChange('email')} placeholder="Email" />
+                                        <div className="session-form-input-wrapper">
+                                            <input className={`auth-field ${this.state.emailValid === false ? 'invalid' : ''}`} type="text" value={this.state.email}
+                                                   onChange={this.handleFormChange('email')} />
+                                            <InlineError message={"Please enter a valid email address."} visible={this.state.emailValid === false} />
+                                        </div>
+
                                         <span className="session-form-label">Password</span>
                                         <input id="password-field" className="auth-field" type="password" value={this.state.password} 
                                             onChange={this.handleFormChange('password')} placeholder="Password" />

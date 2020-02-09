@@ -99,7 +99,6 @@ class Register extends Component {
                                                     <h1>Sign Up</h1>
                                                     <span className="session-form-label">Email</span>
                                                     <div className="session-form-input-wrapper">
-                                                       
                                                         <input className={`auth-field ${this.state.emailValid === false ? 'invalid' : ''}`} type="text" value={this.state.email}
                                                             onChange={this.handleFormChange('email')} />
                                                         <InlineError message={"Please enter a valid email address."} visible={this.state.emailValid === false} />
