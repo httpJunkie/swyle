@@ -10,9 +10,9 @@ Swyle is the newest contender in the blog posting world.
 
 A user may post an image together with a brief description if so desired.  The Rails model includes a link to an AWS bucket where the image is stored.
 
-[Image Show](https://i.imgur.com/HWlWEJE.png)
+![alt text](https://i.imgur.com/HWlWEJE.png "Image Show")
 
-[Images Index](https://i.imgur.com/undefined.png)
+![alt text](https://i.imgur.com/undefined.png "Image Index")
 
 ## Article Post
 
