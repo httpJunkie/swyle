@@ -20,6 +20,11 @@ This is an option for all-text post - usually a story or a blog.
 
 ![alt text](https://i.imgur.com/lSAnTao.png "Article")
 
+## Comments
+
+When logged in, a user may comment on a post.
+![alt text](https://i.imgur.com/aAxm8Ru.png "Comments")
+
 ## User Authorization
 
 Full registration and login functionality using bcrypt and the Rails auth pattern.
