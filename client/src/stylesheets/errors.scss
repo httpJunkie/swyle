@@ -62,9 +62,8 @@
 
 .errors-inline {
   font-size: 14px;
-  color: red;
-  font-weight: bold;
-  background: pink;
+  color: #D8000C;;
+  background:rgba(255,186,186, .8);
   padding: .2rem;
   position: absolute;
   overflow: visible;
@@ -72,7 +71,7 @@
   min-width: fit-content;
   display: inline-block;
   border-color: transparent pink transparent transparent;
-
+  border-radius: 4px;
 }
 
 
@@ -85,7 +84,7 @@
   height: 0; 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent; 
-  border-right:10px solid pink; 
+  border-right:10px solid #FFBABA; 
   position: absolute;
-  left: -5px;
+  left: -6px;
 }
