@@ -120,7 +120,7 @@ class Login extends Component {
                                             <InlineError message={"Password must be six characters or more, non-sequential and with fewer than three repeated characters"} visible={this.state.passwordValid === false} />
                                             </div>
                                         <div className="form-footer">
-                                            <input id="form-submit" className="submit" type="submit" name="Log In"/>
+                                            <input className={`submit ${readyToSubmit ? "" : "disabled"}`} type="submit" name="Register" disabled={!readyToSubmit} />
                                             <button className="demo-login" onClick={this.demoLogin}>DEMO!</button>
                                         </div>
                                     </form>
