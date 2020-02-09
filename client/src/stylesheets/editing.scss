@@ -36,3 +36,22 @@
 .edit-body-textarea {
    width: 100%;
 }
+
+.comment-edit-form {
+  // position: absolute;
+  display: flex;
+  background: rgba(255, 255, 255, .3);
+  padding: 2rem;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.comment-edit-body {
+  resize: none;
+  width: 100%;
+}
+
+.comment-edit-buttons {
+  display: flex;
+  flex-direction: column;
+}

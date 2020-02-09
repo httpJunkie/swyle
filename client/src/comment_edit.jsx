@@ -36,9 +36,8 @@ class CommentEdit extends Component {
                         !loading ? (
                             "..."
                         ) : ( 
-                                <form style={{ "display": "flex", "width":"100%"}} onSubmit={event => {
+                    <form className="comment-edit-form" onSubmit={event => {
                                     event.preventDefault();
-                    
                                     updateComment({
                                         variables: {
                                             body: this.state.body,
@@ -49,9 +48,11 @@ class CommentEdit extends Component {
                                         this.props.cancelEdit();
                                     })
                                 }}>
-                    <textarea value={this.state.body} style={{"width":"100%", "height":"100%"}} onChange={this.handleFormChange("body")}/>
-                    <input className="submit-or-cancel" type="submit" />
-                    <button className="submit-or-cancel" onClick={this.props.cancelEdit}> Cancel</button>
+                    <textarea className="comment-edit-body" value={this.state.body} onChange={this.handleFormChange("body")}/>
+                    <div className="comment-edit-buttons">
+                        <input className="confirm-btn-yes" type="submit" />
+                        <button className="confirm-btn-no" onClick={this.props.cancelEdit}> Cancel</button>
+                    </div>
                 </form>
                             )}
                 </Mutation>  

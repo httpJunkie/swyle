@@ -78,13 +78,12 @@ class CommentSection extends Component {
                                 (comment, index) => {
                                     let commentStyle = index % 2 === 0 ? { "background": "lightgrey" } : { "background": "white" }
                                     if (this.props.colorScheme === "bonetrousle")  commentStyle = {"background": "black"};
-                                      
                                     return <Comment
                                         comment={comment}
                                         commentStyle={commentStyle}
                                         currentUser={this.props.currentUser}
                                         articleAuthorId={this.props.articleAuthorId}
-                                        postType={this.props.type}
+                                        postType={this.props.postType}
                                         postId={this.props.postId}
                                         key={`SHUT UP, LINT! ${comment.id}`}
                                     />
