@@ -25,6 +25,10 @@ This is an option for all-text post - usually a story or a blog.
 When logged in, a user may comment on a post.
 ![alt text](https://i.imgur.com/aAxm8Ru.png "Comments")
 
+## Color Themes
+
+Every user has a color scheme preference set at the model level. 
+
 ## User Authorization
 
 Full registration and login functionality using bcrypt and the Rails auth pattern.
