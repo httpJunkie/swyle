@@ -73,7 +73,7 @@ class Trending extends Component {
                         posts.map(
                             post => {
                                 return (
-                                    <PostCard colorScheme={colorScheme} post={post} />
+                                    <PostCard colorScheme={colorScheme} post={post} key={post.title + post.id} />
                                 )
                             }
                         )

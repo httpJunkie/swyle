@@ -100,6 +100,12 @@
   margin: .5rem;
   background: white;
   width: 50%;
+  &.bonetrousle{
+    background: black;
+    border: 3px solid white;
+    color: white;
+    font-family: "Undertale";
+  }
 }
 
 .article-index-card:hover {
@@ -124,11 +130,13 @@
   color: black;
   &:visited {
     color: black;
+    &.bonetrousle {
+      color: white;
+    }
   }
 }
 
 .article-index-snippet {
-  // font-family: sans-serif;
   font-size: 20px;
   font-weight: 600;
 }

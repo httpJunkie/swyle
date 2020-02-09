@@ -20,7 +20,7 @@ return (
                     <div>
                         {data.postsByUser.map(post => {
                             return (
-                             <PostCard post={post} colorScheme={props.colorScheme} />
+                                <PostCard post={post} colorScheme={props.colorScheme} key={post.title + post.id} />
                             )
                         })}
                     </div>

@@ -26,8 +26,8 @@ const ArticlesIndex = (props) => {
                         <div className={`article-index-page article-index-page-${colorScheme}`}>
                             <h1>Newest Articles</h1>
                             {articles.map((article) => (
-                                <div className="article-index-card" key={`${article.id}${article.title}${date}`}>
-                                  <Link className="article-index-show-link" to={`/articles/${article.id}`}>        
+                                <div className={`article-index-card ${colorScheme}`} key={`${article.id}${article.title}${date}`}>
+                                  <Link className={`article-index-show-link ${colorScheme}`} to={`/articles/${article.id}`}>        
                                      <h2 className="article-index-title">{article.title}</h2>
                                      <h3 className="article-index-subtitle">by {article.author.username}</h3>
                                      <p className="article-index-snippet">{article.snippet}{"..."}</p>
