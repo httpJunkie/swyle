@@ -114,8 +114,11 @@ class Login extends Component {
                                         </div>
 
                                         <span className="session-form-label">Password</span>
-                                        <input id="password-field" className="auth-field" type="password" value={this.state.password} 
-                                            onChange={this.handleFormChange('password')} placeholder="Password" />
+                                        <div className="session-form-input-wrapper">
+                                            <input className={`auth-field ${this.state.passwordValid === false ? 'invalid' : ''}`} type="password" value={this.state.password}
+                                                    onChange={this.handleFormChange('password')} />
+                                            <InlineError message={"Password must be six characters or more, non-sequential and with fewer than three repeated characters"} visible={this.state.passwordValid === false} />
+                                            </div>
                                         <div className="form-footer">
                                             <input id="form-submit" className="submit" type="submit" name="Log In"/>
                                             <button className="demo-login" onClick={this.demoLogin}>DEMO!</button>
