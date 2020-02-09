@@ -9,8 +9,7 @@ import {validateEntry} from './helpers';
 import InlineError from './inline_error';
 
 /**
- * Form for creating a new user.  Class component chosen largely for aesthetic reasons and 
- * because it contains inputs.  
+ * Form for creating a new user. 
  */
 class Register extends Component {
     constructor(props) {

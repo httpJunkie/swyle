@@ -19,6 +19,8 @@ class Login extends Component {
         this.state = {
             password: "",
             email: "",
+            passwordValid: null,
+            emailValid: null,
             errors: null
         }
         // This format is far, far easier to debug than using the arrow methods.
