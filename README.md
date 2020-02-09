@@ -17,6 +17,21 @@ This is an option for all-text post - usually a story or a blog.
 ## User Authorization
 
 Full registration and login functionality using bcrypt and the Rails auth pattern.
+I ensure valid data is sent to the API with front-end validation.
+![alt text](https://imgur.com/mWGzBVg "Front-End validation")
+
+The error messages are a reusable react component of my own design. They receive two props: a string message, and a boolean that determines whether the component is visible when it renders.
+```
+const InlineError = props => {
+    const {message, visible} = props;
+    return (
+        <span className="errors-inline" style={{"visibility":`${visible ? 'visible' : 'hidden'}`}}>
+            <div className="error-tooltip-arrow"/><span className="error-message-inline">{message}</span>
+        </span>
+    )
+}
+```
+
 
 ## Tags - Future Feature
 
