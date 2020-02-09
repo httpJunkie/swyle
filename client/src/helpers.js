@@ -51,13 +51,16 @@ export const validateEntry =(field, value) => {
     if (value === "") return null;
     switch (field) {
         case "email": {
-            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);  // eslint-disable-line
         }
         case "username": {
-            return /^[a-zA-Z\d-_]+$/.test(value);
+            return /^[a-zA-Z\d-_]+$/.test(value); // eslint-disable-line 
         }
         case "password": {
             return (!hasTooManyRepeats(value) && !isSequential(value) && value.length >= 6)
+        } 
+        default: {
+            return true;
         }
     }
 }

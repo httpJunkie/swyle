@@ -50,7 +50,6 @@ class UserDash extends Component {
                 <div className={`user-recent-activity user-recent-activity-${colorScheme}`}>  
                           <div className={`user-posts-nav user-posts-nav-${colorScheme}`}>
                               <div className={`user-posts-tab${this.state.currentTab === 'posts' ? `-active ${colorScheme}` : `-inactive ${colorScheme}`}`}
-                                  name="comments"
                                   name="posts"
                                   onClick={this.selectTab}
                               >
