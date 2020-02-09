@@ -14,6 +14,8 @@ A user may post an image together with a brief description if so desired.  The R
 
 This is an option for all-text post - usually a story or a blog.  
 
+![alt text](https://i.imgur.com/lSAnTao.png "Article")
+
 ## User Authorization
 
 Full registration and login functionality using bcrypt and the Rails auth pattern.
@@ -44,7 +46,7 @@ Posts may have a many-to-many relation with any number of tags; clicking on a ta
 
 ## Reactions
 
-Posts (articles only for the moment) can have many reactions (like, spicy, funny, and smart) that will update live on every user's client thanks to GraphQL subscriptions and the Rails ActionCable.
+Posts (articles only for the moment) can have many reactions (like, spicy, funny, and smart) that will update live on every user's client thanks to GraphQL subscriptions and the Rails ActionCable.  
 
 # Technologies Used
 
