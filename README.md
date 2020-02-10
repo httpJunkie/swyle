@@ -37,7 +37,6 @@ I ensure valid data is sent to the API with front-end validation.
 
 The error messages are a reusable react component of my own design. They receive two props: a string message, and a boolean that determines whether the component is visible when it renders.
 
-**If you wanna have some fun** Try typing in "password" as your password when you register a new account!
 
 ```
 const InlineError = props => {
