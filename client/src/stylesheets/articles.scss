@@ -4,8 +4,6 @@
  align-items: center;
  background: #001935;
  position: relative;
- top: -8rem;
- padding-top: 8rem;
  padding-left: 2rem;
  padding-right: 2rem;
  height: -webkit-fill-available;
@@ -27,7 +25,7 @@
   flex-direction: column;
   padding: 1rem;
   justify-content: space-between;
-  height:fit-content;
+  height: 100%;
   background: rgba(255, 255, 255, .5);
   margin-top: 2rem;
   width: 40rem;
@@ -50,6 +48,11 @@
   margin-bottom: .5rem;
   background: rgba(255, 255, 255, .5);
   padding: .5rem;
+  &.bonetrousle {
+    background: black;
+    border: 1px solid white;
+    color: white;
+  }
 
 }
 
@@ -58,10 +61,15 @@
 }
 
 .article-create-body {
-  min-height: 20rem;
+  min-height: 15rem;
   padding: .5rem;
   border: none;
   background: rgba(255, 255, 255, .5);
+    &.bonetrousle {
+    background: black;
+    border: 1px solid white;
+    color: white;
+  }
 
 }
 
