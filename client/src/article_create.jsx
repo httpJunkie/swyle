@@ -49,7 +49,7 @@ class ArticleCreate extends Component {
             return <Redirect to="/login" />
         }
         return (
-            <div className="article-create-page">
+            <div className={`article-create-page ${this.props.colorScheme || 'classic'}`}>
                 <form className="article-create-form"onSubmit={this.save}>
                     <span className="post-creation-label">Article Title</span>
                     <input className="article-create-title" type="text" onChange={this.handleFormChange("title")}  value={this.state.title} />
