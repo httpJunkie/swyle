@@ -51,7 +51,9 @@ class ArticleCreate extends Component {
         return (
             <div className="article-create-page">
                 <form className="article-create-form"onSubmit={this.save}>
+                    <span>Article Title</span>
                     <input className="article-create-title" type="text" onChange={this.handleFormChange("title")} placeholder="Article Title" value={this.state.title} />
+                    <span>Article Body</span>
                     <textarea className="article-create-body" type="text" onChange={this.handleFormChange("body")} placeholder="Write your article here" value={this.state.description} />
                     <input type="submit" className="submit" value="Post Article" disabled={!this.state.body} />
                 </form>
