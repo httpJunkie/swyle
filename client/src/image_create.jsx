@@ -126,7 +126,7 @@ class ImageCreate extends Component {
              
                 <input className="image-creation-title" type="text" onChange={this.handleFormChange("title")} placeholder="Image Title" value={this.state.title}/>
                 <input className="image-creation-desc" type="text" onChange={this.handleFormChange("description")} placeholder="Description (optional)" value={this.state.description}/>
-                <input type="submit" className="submit" value="Post Image" disabled={!this.state.image}/>
+                   <input type="submit" className={`submit ${this.props.colorScheme}`} value="Post Image" disabled={!this.state.image}/>
                </form>
         </div>
       )

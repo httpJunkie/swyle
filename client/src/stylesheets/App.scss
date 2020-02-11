@@ -83,6 +83,37 @@ body {
   padding: .6rem;
   margin: .2rem;
   width: fit-content;
+  &:hover {
+    cursor: pointer;
+    background:#659bb1;
+    transition: all .2s;
+  }
+
+  &.red {
+    background: #590A0A;
+    &:hover {
+      background: rgb(156, 30, 30);
+    }
+  }
+
+  &.green {
+    background: #093009;
+    &:hover {
+      background: #166616
+    }
+  }
+
+  &.bonetrousle {
+    border-radius: 0;
+    border: 3px solid white;
+    background: black;
+    font-family: "Undertale";
+    &:hover {
+      color: black;
+      background: white;
+    }
+  }
+
   &.disabled {
     background: gray;
     &:hover {
@@ -92,10 +123,6 @@ body {
   }
 }
 
-.submit:hover {
-  cursor: pointer;
-  background:#659bb1;
-}
 
 .demo-login {
   border-radius: 5px;
