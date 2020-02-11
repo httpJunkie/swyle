@@ -50,7 +50,7 @@ class ArticleCreate extends Component {
         }
         return (
             <div className={`article-create-page ${this.props.colorScheme || 'classic'}`}>
-                <form className="article-create-form"onSubmit={this.save}>
+                <form className={`article-create-form ${this.props.colorScheme || 'classic'}`} onSubmit={this.save}>
                     <span className="post-creation-label">Article Title</span>
                     <input className="article-create-title" type="text" onChange={this.handleFormChange("title")}  value={this.state.title} />
                     <span className="post-creation-label">Article Body</span>
