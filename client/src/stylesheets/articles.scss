@@ -31,6 +31,11 @@
   background: rgba(255, 255, 255, .5);
   margin-top: 2rem;
   width: 40rem;
+   &.bonetrousle{
+    background: black;
+    border: 3px solid white;
+    font-family: 'Undertale';
+  }
 }
 
 .article-create-form > input {
