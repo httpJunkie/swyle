@@ -6,7 +6,7 @@
  position: relative;
  padding-left: 2rem;
  padding-right: 2rem;
- height: -webkit-fill-available;
+ height: fit-content;
 &-red{
     background: #630909
   }
@@ -28,7 +28,8 @@
   height: 100%;
   background: rgba(255, 255, 255, .5);
   margin-top: 2rem;
-  width: 40rem;
+  min-width: 40rem;
+  width: fit-content;
    &.bonetrousle{
     background: black;
     border: 3px solid white;
@@ -62,6 +63,7 @@
 
 .article-create-body {
   min-height: 15rem;
+  // width: 100%;
   padding: .5rem;
   border: none;
   background: rgba(255, 255, 255, .5);
