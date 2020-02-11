@@ -106,6 +106,7 @@
   padding-left: 13px;
   padding-right: 13px;  
   color: rgb(10, 4, 88);
+  border: none;
   background: white;
   font-weight: 700;
   height: 32px;
@@ -122,6 +123,32 @@
     color: white;
     border-radius: none;
   }
+
+   &.red {
+    color: #590A0A;
+    &:hover {
+      color: rgb(156, 30, 30);
+    }
+  }
+
+  &.green {
+    color: #093009;
+    &:hover {
+      color: #166616
+    }
+  }
+
+  &.bonetrousle {
+    border-radius: 0;
+    border: 3px solid white;
+    background: black;
+    font-family: "Undertale";
+    &:hover {
+      color: black;
+      background: white;
+    }
+  }
+  
 }
 
 .header-login:visited {
@@ -136,10 +163,10 @@
   background: lightgray;
   color: rgb(23, 12, 175);
   transition: all .1s;
+  cursor: pointer;
   &.bonetrousle{
     background: white;
     color: black;
-    cursor: pointer;
   }
 }
 
