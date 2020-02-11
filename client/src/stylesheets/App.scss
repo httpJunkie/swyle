@@ -113,4 +113,11 @@ body {
   }
 }
 
-
+.post-creation-label {
+  color: white;
+  font-size: medium;
+  font-family: sans-serif;
+  &.bonetrousle {
+    font-family: 'Undertale';
+  }
+}
