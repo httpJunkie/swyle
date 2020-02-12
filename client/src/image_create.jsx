@@ -16,6 +16,7 @@ class ImageCreate extends Component {
     constructor(props) {
         super(props)
         this.state = { 
+            errors: null,
             image: null, 
             fileTooBig: false, 
             invalidType: false, 
@@ -74,9 +75,9 @@ class ImageCreate extends Component {
         }
         await axios.put(signedRequest, file, options)
             .then(res => {
-               console.log("Sucessful upload")
+               debugger;
             }).catch(
-                console.log("Aws failed to save, please check your bucket")
+                this.setState({errors: ["Upload failed at the S3 bucket level, pleaase reach out to the web master."] })     
                 );
     }
 
