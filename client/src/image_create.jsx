@@ -75,7 +75,7 @@ class ImageCreate extends Component {
         }
         await axios.put(signedRequest, file, options)
             .then(res => {
-               debugger;
+               console.log("TODO: Get a real logger")
             }).catch(
                 this.setState({errors: ["Upload failed at the S3 bucket level, pleaase reach out to the web master."] })     
                 );
