@@ -114,15 +114,16 @@ class ArticleShow extends Component {
                     return (
                         <div className={`article-show-page article-show-page-${colorScheme}`}>
                             <div className="article-section">
-                                {data.currentUser && (article.author.id === data.currentUser.id) && 
-                                 <MdDelete className="post-delete-btn"  onClick={this.openModal}>DeleteMe</MdDelete>}
+                                {currentUser && (article.author.id === currentUser.id) && 
+                                 <MdDelete className={`post-delete-btn ${colorScheme}`}  onClick={this.openModal} />}
 
                                 {!this.state.editingTitle ? 
                                  <h1 className="article-show-title">
                                  
                                     {article.title}
 
-                                     { currentUser && (article.author.id === currentUser.id) && 
+                                     { 
+                                        currentUser && (article.author.id === currentUser.id) && 
                                         <MdEdit className="comment-edit-btn" onClick={this.editField} name="Title" id="Title"/>
                                      }
                                  </h1> 
