@@ -8,11 +8,16 @@
   width: 100%;
   padding: 2rem;
   justify-content: space-around;
-  &-red{
+  &.red{
     background: #630909
   }
- &-green {
+ &.green {
     background: #07460b;
+  }
+
+  &.bonetrousle {
+    background: black;
+    font-family: "Undertale"
   }
 }
 

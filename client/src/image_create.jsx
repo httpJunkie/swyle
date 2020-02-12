@@ -114,7 +114,7 @@ class ImageCreate extends Component {
                <div className="image-input-container">
                    {this.state.image ? <div className="image-creation-preview"><img src={this.state.photoURL} alt="Preview"/></div> : <div className="image-creation-placeholder"><p>Your image will appear here in preview</p></div>}
                </div>
-            <form onSubmit={this.save} className={`image-creation-form" ${this.props.colorScheme}`}>
+            <form onSubmit={this.save} className={`image-creation-form ${this.props.colorScheme}`}>
                    <h1>Post a New Image</h1>
                <label className="image-input">
                    <input className="image-input"
