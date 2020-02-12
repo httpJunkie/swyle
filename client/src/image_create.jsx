@@ -117,7 +117,7 @@ class ImageCreate extends Component {
             <form onSubmit={this.save} className={`image-creation-form ${this.props.colorScheme}`}>
                    <h1>Post a New Image</h1>
                <label className="image-input">
-                   <input className="image-input"
+                   <input className={`image-input ${this.props.colorScheme}`}
                        type="file"
                        onChange={this.handleFileChange}
                        accept="image/png, image/jpeg, image/gif, image/bmp, image/jpg"
