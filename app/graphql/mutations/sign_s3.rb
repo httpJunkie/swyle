@@ -5,7 +5,6 @@ module Mutations
     type Types::S3PayloadType
 
     def resolve(filename: "", filetype: "")
-        bitch = "you"
         aws_credentials = Aws::Credentials.new(
             ENV['AWS_ACCESS_KEY_ID'],
             ENV['AWS_SECRET_ACCESS_KEY']
