@@ -132,8 +132,8 @@ class ArticleShow extends Component {
                                                 onClick={this.editField} 
                                                 name="Title" 
                                                 id="Title"
-                                                onMouseEnter={() => this.setState({titleTooltipOpen: true})}
-                                                onMouseLeave={() => this.setState({ titleTooltipOpen: false })}
+                                                onMouseOver={() => this.setState({titleTooltipOpen: true})}
+                                                onMouseOut={() => this.setState({ titleTooltipOpen: false })}
                                                 />
                                                 <Tooltip message={"Edit article title"} visibility={this.state.titleTooltipOpen}/>
                                         </div>

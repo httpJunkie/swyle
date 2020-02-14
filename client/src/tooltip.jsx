@@ -2,9 +2,10 @@ import React from 'react';
 
 const Tooltip = props => {
     const {message, visibility} = props;
+    console.log(message)
     return (
         <div className={`"tooltip-${visibility === true ? 'visible' : 'hidden'}`}>
-
+            <span>{message}</span>
         </div>
     )
 }
