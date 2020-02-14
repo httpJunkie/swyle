@@ -17,6 +17,7 @@
 @import '/search';
 @import '/trending';
 @import '/post_card';
+@import '/tooltips';
 
 @font-face { /* Undertale */
     font-family: 'Undertale';
@@ -62,7 +63,7 @@ body {
   font-size: 24px;
   padding:.5rem;
   position: absolute;
-  right: .5rem;
+   right: 0;
   // top: .5rem;
   padding: .5rem;
   border-radius: 5px;

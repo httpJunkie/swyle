@@ -1,7 +1,13 @@
-.tooltip-visible {
+.tooltip {
     visibility: visible;
+    color: black;
+    background: rgba(255, 255, 255, .5);
+    position: absolute;
+    font-size: small;
+    right: 0;
+
+    &.hidden {
+        visibility: hidden;
+    }
 }
 
-.tooltip-hidden {
-    visibility: hidden;
-}
