@@ -124,7 +124,7 @@ class ArticleShow extends Component {
 
                                      { 
                                         currentUser && (article.author.id === currentUser.id) && 
-                                        <MdEdit className="comment-edit-btn" onClick={this.editField} name="Title" id="Title"/>
+                                        <MdEdit className="post-edit-btn" onClick={this.editField} name="Title" id="Title"/>
                                      }
                                  </h1> 
                                    : 
@@ -135,7 +135,7 @@ class ArticleShow extends Component {
                                 {!this.state.editingBody ? 
                                   <p className="article-show-body" id="article-body">
                                         {currentUser && (article.author.id === currentUser.id) && 
-                                            <MdEdit className="comment-edit-btn" onClick={this.editField} 
+                                            <MdEdit className="post-edit-btn" onClick={this.editField} 
                                         name="Body" id="Body" />}
                                     {article.body} 
                                   </p> 
