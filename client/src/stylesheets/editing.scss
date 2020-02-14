@@ -60,10 +60,11 @@
   font-size: 1rem;
   padding:.5rem;
   position: absolute;
-  right: 0;
+  right: 10px;
   padding: .5rem;
   &:hover{
     cursor: pointer;
+    color: blue;
   }
 
   &.bonetrousle{
