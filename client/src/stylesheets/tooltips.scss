@@ -1,7 +1,7 @@
 .tooltip {
     visibility: visible;
     color: white;
-    background: rgba(24, 139, 253, 0.5);
+    background: rgba(24, 139, 253, 1);
     position: absolute;
     font-size: small;
     right: -7rem;
@@ -9,23 +9,23 @@
     padding-top: .15rem;
     padding-bottom: .3rem;
     padding-right: .5rem;
-     margin: .2rem;
-  min-width: fit-content;
-  display: inline-block;
-  border-radius: 4px;
+    margin: .2rem;
+    min-width: fit-content;
+    display: inline-block;
+    border-radius: 4px;
     &.hidden {
         visibility: hidden;
     }
 }
 
-.tooltip >
+
 
 .tooltip-arrow {
   width: 0; 
   height: 0; 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent; 
-  border-right:10px solid rgba(24, 139, 253, 0.5); 
+  border-right:10px solid rgba(24, 139, 253, 1); 
   position: absolute;
   left: -.6rem;
 }
