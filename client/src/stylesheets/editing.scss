@@ -55,3 +55,22 @@
   display: flex;
   flex-direction: column;
 }
+
+.post-edit-btn {
+  font-size: 1rem;
+  padding:.5rem;
+  position: absolute;
+  right: 0;
+  padding: .5rem;
+  &:hover{
+    cursor: pointer;
+  }
+
+  &.bonetrousle{
+    color: white;
+    &:hover{
+      background: white;
+      color: black;
+    }
+  }
+}
