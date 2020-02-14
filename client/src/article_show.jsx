@@ -16,6 +16,7 @@ import { MdDelete, MdEdit} from 'react-icons/md';
 import ConfirmationModal from './confirmation_modal';
 import Subscription from './article_subscription';
 import Reaction from './reaction';
+import Tooltip from './tooltip';
 
 class ArticleShow extends Component {
 
@@ -24,7 +25,9 @@ class ArticleShow extends Component {
         this.state = {
             editingBody: false,
             editingTitle: false,
-            confirmationOpen: false
+            confirmationOpen: false,
+            titleTooltipOpen: false,
+            bodyTooltipOpen: false
         }
         this.cancelEdit = this.cancelEdit.bind(this);
         this.finishEdit = this.finishEdit.bind(this);
@@ -124,7 +127,17 @@ class ArticleShow extends Component {
 
                                      { 
                                         currentUser && (article.author.id === currentUser.id) && 
-                                        <MdEdit className="post-edit-btn" onClick={this.editField} name="Title" id="Title"/>
+                                        <div>
+                                             <MdEdit className="post-edit-btn" 
+                                                onClick={this.editField} 
+                                                name="Title" 
+                                                id="Title"
+                                                onMouseEnter={() => this.setState({titleTooltipOpen: true})}
+                                                onMouseLeave={() => this.setState({ titleTooltipOpen: false })}
+                                                />
+                                                <Tooltip message={"Edit article title"} visibility={this.state.titleTooltipOpen}/>
+                                        </div>
+                                       
                                      }
                                  </h1> 
                                    : 
