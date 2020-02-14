@@ -58,6 +58,28 @@ body {
   }
 }
 
+.post-edit-btn {
+  font-size: 24px;
+  padding:.5rem;
+  position: absolute;
+  right: .5rem;
+  // top: .5rem;
+  padding: .5rem;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+    color: blue;
+  }
+
+  &.bonetrousle{
+    color: white;
+    &:hover{
+      background: white;
+      color: black;
+    }
+  }
+}
+
 .post-delete-btn {
   position: absolute;
   right: .5rem;

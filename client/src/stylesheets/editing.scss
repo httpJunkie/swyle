@@ -57,11 +57,12 @@
 }
 
 .post-edit-btn {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding:.5rem;
   position: absolute;
   right: 10px;
   padding: .5rem;
+  border-radius: 5px;
   &:hover{
     cursor: pointer;
     color: blue;
