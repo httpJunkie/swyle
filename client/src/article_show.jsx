@@ -127,7 +127,7 @@ class ArticleShow extends Component {
 
                                      { 
                                         currentUser && (article.author.id === currentUser.id) && 
-                                        <div>
+                                        <div className="edit-btn-container">
                                              <MdEdit className="post-edit-btn" 
                                                 onClick={this.editField} 
                                                 name="Title" 

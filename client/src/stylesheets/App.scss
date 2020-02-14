@@ -62,9 +62,9 @@ body {
 .post-edit-btn {
   font-size: 24px;
   padding:.5rem;
-  position: absolute;
-   right: 0;
-  // top: .5rem;
+  // position: absolute;
+  // // right: .5rem;
+  // // top: 0;
   padding: .5rem;
   border-radius: 5px;
   &:hover{
@@ -79,6 +79,13 @@ body {
       color: black;
     }
   }
+}
+
+.edit-btn-container {
+  position: absolute;
+  top: 0;
+  // left:0;
+   right: 0;
 }
 
 .post-delete-btn {
